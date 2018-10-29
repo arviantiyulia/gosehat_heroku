@@ -103,6 +103,8 @@ def callback():
 def handle_text_message(event):
     text = event.message.text
 
+    print(text)
+
     if text == 'profile':
         if isinstance(event.source, SourceUser):
             profile = line_bot_api.get_profile(event.source.user_id)
