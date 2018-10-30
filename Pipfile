@@ -50,6 +50,7 @@ service_identity = "==17.0.0"
 Twisted = "==18.4.0"
 Werkzeug = "==0.14.1"
 psycopg2 = "==2.7.5"
+Sastrawi = "==1.0.1"
 
 [dev-packages]
 

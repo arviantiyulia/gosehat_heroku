@@ -3,10 +3,8 @@ from itertools import groupby
 import psycopg2
 from config import config
 
-import mysql.connector
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from operator import itemgetter
-from collections import Counter
 
 
 # def create_connection():
