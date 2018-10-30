@@ -44,6 +44,8 @@ from linebot.models import (
     SeparatorComponent, QuickReply, QuickReplyButton
 )
 
+from certainty_factor import get_cf
+
 app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
@@ -103,7 +105,6 @@ def callback():
 def handle_text_message(event):
     text = event.message.text
 
-    print(text)
 
     if text == 'profile':
         if isinstance(event.source, SourceUser):
@@ -314,8 +315,9 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
+        result = get_cf(text)
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=event.message.text))
+            event.reply_token, TextSendMessage(text=result))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
