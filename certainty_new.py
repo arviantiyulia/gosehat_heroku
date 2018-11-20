@@ -269,7 +269,9 @@ def get_cf(text):
 
     disease = get_disease(conn, cf_calculate, uniq_id)
 
-    return disease
+    # print(disease[0][0])
+
+    return disease[0][0]
 
 
 def main():
