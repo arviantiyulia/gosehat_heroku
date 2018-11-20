@@ -291,4 +291,4 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    get_cf("saya batuk darah, demam, flu dan pusing, lidah berwarna putih")
+    get_cf("saya batuk darah, lidah berwarna putih")

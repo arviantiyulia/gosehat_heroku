@@ -318,8 +318,9 @@ def handle_text_message(event):
                     ])))
     else:
         result = get_cf(text)
+
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage("selamat pagi ", text=result))
+            event.reply_token, TextSendMessage(text=result))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
