@@ -318,7 +318,6 @@ def handle_text_message(event):
                     ])))
     else:
         result = get_cf(text)
-
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=result))
 

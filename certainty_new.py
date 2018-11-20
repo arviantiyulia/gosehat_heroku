@@ -4,10 +4,8 @@ import psycopg2
 from config import config
 import csv
 
-import mysql.connector
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from operator import itemgetter
-from collections import Counter
 
 
 # def create_connection():
