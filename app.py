@@ -50,7 +50,8 @@ app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv('LINE_CHANNEL_SECRET', '8b8036d6cf2acdbdb6d4eaf32db728d6')
-channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', 'n88a6ebbe8saM6ztF8MF9XSr8APpmCzqQIXDiQMEEGdaEafx2KvewK0Dra7Wbpp/dvHRDKU+nPp0xzaXeO3o68WuTq9p/11qTqd+GKA/8cpH4dgSBLDNnIH9s/v5LYPAtmeBndXjUIBFH2TVnXhuOQdB04t89/1O/w1cDnyilFU=')
+channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN',
+                                 'n88a6ebbe8saM6ztF8MF9XSr8APpmCzqQIXDiQMEEGdaEafx2KvewK0Dra7Wbpp/dvHRDKU+nPp0xzaXeO3o68WuTq9p/11qTqd+GKA/8cpH4dgSBLDNnIH9s/v5LYPAtmeBndXjUIBFH2TVnXhuOQdB04t89/1O/w1cDnyilFU=')
 if channel_secret is None:
     print('Specify LINE_CHANNEL_SECRET as environment variable.')
     sys.exit(1)
@@ -74,10 +75,12 @@ def make_static_tmp_dir():
         else:
             raise
 
+
 @app.route("/")
 def test():
     return 'It Works'
-    
+
+
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -104,7 +107,6 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text
-
 
     if text == 'profile':
         if isinstance(event.source, SourceUser):
@@ -317,7 +319,7 @@ def handle_text_message(event):
     else:
         result = get_cf(text)
         line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=result))
+            event.reply_token, TextSendMessage("selamat pagi ", text=result))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

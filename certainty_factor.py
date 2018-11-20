@@ -132,6 +132,7 @@ def get_max_id(inputs, split_gejala, temp_id, count_arr):
     sorted_ti = sorted(temp_id)
     max_ti = max(sorted_ti, key=itemgetter(1))
     id_max = max_ti[0]
+    print("max_ti = ", max_ti)
 
     return id_max
 
@@ -156,12 +157,13 @@ def get_id_disease(conn, symptoms):
     for row in rows:
         for item in row:
             arr_item.append(item)
-
+    print(arr_item)
     arr_item.sort(key=lambda tup: tup[0])
     for k, g in groupby(arr_item, key=lambda tup: tup[0]):
         groups_id.append(list(g))  # Store group iterator as a list
         uniquekeys.append(k)
 
+    # print(groups_id)
     return groups_id, uniquekeys
 
 
@@ -213,7 +215,7 @@ def get_disease(conn, cf, id):
 
     print(disease)
 
-    return disease[0][0]
+    return disease
 
 
 def get_cf(text):
@@ -236,7 +238,7 @@ def get_cf(text):
 
 def main():
     conn = create_connection()
-    text = "saya merasa lelah, sakit tenggorokan, pilek, batuk darah. kira-kira saya kenapa ?"
+    text = "batuk"
     stopwords = get_stopword('konjungsi.csv')
     contents = tokenizing(text)
     filters = filtering(contents, stopwords)
@@ -251,4 +253,4 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    get_cf("Saya merasa lelah, sakit tenggorokan, pilek, batuk darah. kira-kira saya kenapa ?")
+    get_cf("batuk")
