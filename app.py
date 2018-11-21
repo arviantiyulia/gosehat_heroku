@@ -321,14 +321,17 @@ def handle_text_message(event):
     else:
         result = get_cf(text)
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0, second=0):
-            salam = "Selamat pagi"
+            salam = "Selamat Pagi "
         elif dt.datetime.now() > dt.datetime.now().replace(hour=12, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=18, minute=0, second=0):
-            salam = "Selamat siang"
+            salam = "Selamat Siang "
         elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=0, minute=0, second=0):
-            salam = "selamat malam"
+            salam = "selamat Malam "
+
+        msg_penyakit = "Anda terkena penyakit "
+        msg_pengobatan = " Pengobatan yang harus dilakukan adalah "
 
         line_bot_api.reply_message(
-            event.reply_token,TextSendMessage(text=(salam + profile.display_name + "\n" + "Anda terkena penyakit " + result + "Pengobatan yang harus dilakukan adalah ")))
+            event.reply_token,TextSendMessage(text=(salam + profile.display_name + "\n" + msg_penyakit + result + msg_pengobatan)))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
