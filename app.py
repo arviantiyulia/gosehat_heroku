@@ -45,6 +45,7 @@ from linebot.models import (
 )
 
 from certainty_new import get_cf
+import datetime as dt
 
 app = Flask(__name__)
 
@@ -319,9 +320,15 @@ def handle_text_message(event):
                     ])))
     else:
         result = get_cf(text)
+        if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0, second=0):
+            salam = "Selamat pagi"
+        elif dt.datetime.now() > dt.datetime.now().replace(hour=12, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=18, minute=0, second=0):
+            salam = "Selamat siang"
+        elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=0, minute=0, second=0):
+            salam = "selamat malam"
 
         line_bot_api.reply_message(
-            event.reply_token,TextSendMessage(text=("Selamat pagi " + profile.display_name + "\n" + "Anda terkena penyakit " + result + "Pengobatan yang harus dilakukan adalah ")))
+            event.reply_token,TextSendMessage(text=(salam + profile.display_name + "\n" + "Anda terkena penyakit " + result + "Pengobatan yang harus dilakukan adalah ")))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

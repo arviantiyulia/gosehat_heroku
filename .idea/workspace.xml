@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="320" column="29" lean-forward="true" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
+            <state relative-caret-position="242">
+              <caret line="330" column="112" selection-start-line="330" selection-start-column="90" selection-end-line="330" selection-end-column="112" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -251,7 +250,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.63036305" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27887788" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30332828" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -620,8 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="320" column="29" lean-forward="true" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
+        <state relative-caret-position="242">
+          <caret line="330" column="112" selection-start-line="330" selection-start-column="90" selection-end-line="330" selection-end-column="112" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
