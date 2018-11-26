@@ -324,13 +324,13 @@ def handle_text_message(event):
             salam = "Selamat Pagi "
         elif dt.datetime.now() > dt.datetime.now().replace(hour=12, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=17, minute=0, second=0):
             salam = "Selamat Siang "
-        elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0) and dt.datetime.now():
+        elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0):
             salam = "selamat Malam "
         else:
             salam = "Assalamualaikum"
 
         msg_penyakit = "Anda terkena penyakit "
-        msg_pengobatan = " Pengobatan yang harus dilakukan adalah "
+        msg_pengobatan = "Pengobatan yang harus dilakukan adalah "
 
         line_bot_api.reply_message(
             event.reply_token,TextSendMessage(text=(salam + profile.display_name + "\n" + msg_penyakit + result + "\n" + msg_pengobatan + result)))
