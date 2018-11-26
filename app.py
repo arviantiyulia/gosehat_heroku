@@ -324,7 +324,7 @@ def handle_text_message(event):
             salam = "Selamat Pagi "
         elif dt.datetime.now() > dt.datetime.now().replace(hour=12, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=18, minute=0, second=0):
             salam = "Selamat Siang "
-        elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0) and dt.datetime.now() < dt.datetime.now().replace(hour=0, minute=0, second=0):
+        elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0):
             salam = "selamat Malam "
         else:
             salam = "Assalamualaikum "
