@@ -1,5 +1,5 @@
 import re
-import time
+# import time
 from itertools import groupby
 import psycopg2
 from config import config
@@ -256,7 +256,7 @@ def get_disease(conn, cf, id):
 
 
 def get_cf(text):
-    start_time = time.time()
+    # start_time = time.time()
     conn = create_connection()
     input = text
     stopwords = get_stopword('konjungsi.csv')
@@ -273,7 +273,7 @@ def get_cf(text):
 
     # print(disease[0][0])
 
-    end_time = time.time() - start_time
+    # end_time = time.time() - start_time
 
     return disease[0][0], end_time
 
