@@ -275,7 +275,9 @@ def get_cf(text):
 
     end_time = time.time() - start_time
 
-    return disease[0][0], end_time
+    print(end_time)
+
+    return disease[0][0]
 
 
 def main():

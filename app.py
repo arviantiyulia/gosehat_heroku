@@ -318,7 +318,7 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
-        result, time = get_cf(text)
+        result = get_cf(text)
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                          second=0) and dt.datetime.now() > dt.datetime.now().replace(
             hour=0, minute=0, second=0):
@@ -337,7 +337,7 @@ def handle_text_message(event):
 
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=(
-                    salam + profile.display_name + "\n" + msg_penyakit + result + "\n" + msg_pengobatan + result + "\n runtime = " + str(time))))
+                    salam + profile.display_name + "\n" + msg_penyakit + result + "\n" + msg_pengobatan + result )))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
