@@ -19,7 +19,7 @@ def get_cf(text):
     cf_calculate = certainty_calculate(count_disease_id)
     disease = get_disease(conn, cf_calculate, uniq_id)
 
-    return disease
+    return disease[0][0]
 
 
 if __name__ == "__main__":
