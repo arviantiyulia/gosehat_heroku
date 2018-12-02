@@ -1,5 +1,5 @@
 from operator import itemgetter
-from preprocessing import stemming
+from processing.preprocessing import stemming
 
 
 def get_symptoms(conn, inputs):

@@ -1,10 +1,10 @@
-from db import create_connection
-from preprocessing import get_stopword, tokenizing, filtering, stemming
-from sinonim import get_sinonim
-from symptoms import get_symptoms
-from disease_symptoms import get_id_disease
-from lama.certainty_factor import certainty_calculate
-from disease import get_disease
+from processing.db import create_connection
+from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
+from processing.sinonim import get_sinonim
+from processing.symptoms import get_symptoms
+from processing.disease_symptoms import get_id_disease
+from processing.certaintyfactor import certainty_calculate
+from processing.disease import get_disease
 
 
 def get_cf(text):
