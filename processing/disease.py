@@ -12,6 +12,6 @@ def get_disease(conn, cf, id):
     cursor.execute("SELECT nama_penyakit FROM penyakit WHERE id_penyakit = " + str(id_disease))
     disease = cursor.fetchall()
 
-    print(disease)
+    print("penyakit: " + str(disease))
 
     return disease

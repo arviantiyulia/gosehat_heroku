@@ -1,10 +1,10 @@
-from db import create_connection
-from preprocessing import get_stopword, tokenizing, filtering, stemming
-from sinonim import get_sinonim
-from symptoms import get_symptoms
-from disease_symptoms import get_id_disease
-from certaintyfactor import certainty_calculate
-from disease import get_disease
+from processing.db import create_connection
+from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
+from processing.sinonim import get_sinonim
+from processing.symptoms import get_symptoms
+from processing.disease_symptoms import get_id_disease
+from processing.certaintyfactor import certainty_calculate
+from processing.disease import get_disease
 import time
 
 
@@ -23,10 +23,6 @@ def get_cf(text):
 
     end_time = time.time() - start_time
 
-    print(end_time)
+    print("waktu yang dibutuhkan: " + str(end_time))
 
     return disease[0][0]
-
-
-if __name__ == "__main__":
-    get_cf("saya batuk darah, demam, flu dan pusing, lidah putih")

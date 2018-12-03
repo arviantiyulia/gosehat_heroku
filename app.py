@@ -44,7 +44,7 @@ from linebot.models import (
     SeparatorComponent, QuickReply, QuickReplyButton
 )
 
-from processing.app_main import get_cf
+from processing.app import get_cf
 
 app = Flask(__name__)
 

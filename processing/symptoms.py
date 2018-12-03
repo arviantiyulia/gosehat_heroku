@@ -1,5 +1,5 @@
 from operator import itemgetter
-from preprocessing import stemming
+from processing.preprocessing import stemming
 
 
 def get_symptoms(conn, inputs):
@@ -20,7 +20,7 @@ def get_symptoms(conn, inputs):
 
     result_id = symptoms_count(rows, inputs)
 
-    print(result_id)
+    print("daftar gejala: " + str(result_id))
 
     return result_id
 
