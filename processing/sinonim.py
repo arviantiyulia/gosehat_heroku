@@ -9,7 +9,7 @@ def get_sinonim(inputs):
     sinonims = []
     sin_inputs = []
 
-    with open('../file/sinonim.csv', 'r') as csvfile:
+    with open('file/sinonim.csv', 'r') as csvfile:
         read_data = csv.reader(csvfile)
         for r in read_data:
             sinonims.append(r)

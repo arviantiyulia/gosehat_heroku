@@ -11,7 +11,7 @@ import time
 def get_cf(text):
     start_time = time.time()
     conn = create_connection()
-    stopwords = get_stopword('../file/konjungsi.csv')
+    stopwords = get_stopword('file/konjungsi.csv')
     contents = tokenizing(text)
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
