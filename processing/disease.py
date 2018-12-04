@@ -4,6 +4,10 @@ def get_disease(conn, cf, id):
     id_disease = 0
     cursor = conn.cursor()
 
+    # print("id perhitungan cf = ", id)
+    # print("hasil perhitungan cf = ", cf)
+    print("hasil cf", list(zip(id, cf)))
+
     for len_cf in range(len(cf)):
         if cf[len_cf] > max_item:
             max_item = cf[len_cf]

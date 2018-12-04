@@ -16,14 +16,20 @@ def get_id_disease(conn, symptoms):
                 i))
         rows.append(cursor.fetchall())
 
+    # print("id penyakit dan bobot sesuai id gejala = ", rows)
+
     # looping untuk menyimpan id penyakit berdasarkan gejala
     for row in rows:
         for item in row:
             arr_item.append(item)
 
     arr_item.sort(key=lambda tup: tup[0])
+
+    #looping yang digunakan untuk mengelompokkan id yang sama dalam satu list
     for k, g in groupby(arr_item, key=lambda tup: tup[0]):
-        groups_id.append(list(g))  # Store group iterator as a list
+        groups_id.append(list(g))
         uniquekeys.append(k)
+
+    print("group_id = ", groups_id)
 
     return groups_id, uniquekeys

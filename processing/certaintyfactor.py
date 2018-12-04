@@ -28,4 +28,5 @@ def certainty_calculate(id_dis):
             cf_old = calculate_cf(cf_ur, len(cf_ur))
 
         arr_cf.append(cf_old)
+
     return arr_cf
