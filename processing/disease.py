@@ -6,16 +6,23 @@ def get_disease(conn, cf, id):
 
     # print("id perhitungan cf = ", id)
     # print("hasil perhitungan cf = ", cf)
-    print("hasil cf", list(zip(id, cf)))
+    
+    # debug only
+    print("hasil CF: ")
+    for cf_list in list(zip(id, cf)):
+        # print(cf_list)
+        cursor.execute("SELECT nama_penyakit FROM penyakit WHERE id_penyakit = " + str(cf_list[0]))
+        disease_name = cursor.fetchall()
+        print("ID: ", cf_list[0], " Nama: ", disease_name, " CF: ", cf_list[1])
 
-    for len_cf in range(len(cf)):
-        if cf[len_cf] > max_item:
-            max_item = cf[len_cf]
-            id_disease = id[len_cf]
+    for index in range(len(cf)):
+        if cf[index] > max_item:
+            max_item = cf[index]
+            id_disease = id[index]
 
     cursor.execute("SELECT nama_penyakit FROM penyakit WHERE id_penyakit = " + str(id_disease))
-    disease = cursor.fetchall()
+    disease_name = cursor.fetchall()
 
-    print("penyakit: " + str(disease))
+    print("penyakit: " + str(disease_name))
 
-    return disease
+    return disease_name
