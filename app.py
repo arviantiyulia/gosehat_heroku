@@ -342,9 +342,9 @@ def handle_text_message(event):
                     salam + profile.display_name + "\n" +
                     msg_penyakit + result[0][1] + "\n" +
                     result[0][2] +
-                    msg_pengobatan + result[0][3] + "\n" +
-                    msg_pencegahan + result[0][4] + "\n" +
-                    msg_komplikasi + result[0][4] + "\n")))
+                    msg_pengobatan + result[0][4] + "\n" +
+                    msg_pencegahan + result[0][5] + "\n" +
+                    msg_komplikasi + result[0][6] + "\n")))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
