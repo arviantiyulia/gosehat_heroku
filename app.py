@@ -333,9 +333,9 @@ def handle_text_message(event):
             salam = "Assalamualaikum "
 
         msg_penyakit = "Kemungkinan Anda terkena penyakit "
-        msg_pengobatan = "#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
-        msg_pencegahan = "#Pencegahan \nPencegahan yang bisa dilakukan adalah "
-        msg_komplikasi = "#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
+        msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
+        msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
+        msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
 
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=(
