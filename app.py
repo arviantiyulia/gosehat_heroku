@@ -337,7 +337,7 @@ def handle_text_message(event):
 
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=(
-                    salam + profile.display_name + "\n" + msg_penyakit + result + "\n" + msg_pengobatan + result )))
+                    salam + profile.display_name + "\n" + msg_penyakit + result[0][1] + "\n" + msg_pengobatan + result[0][3] )))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

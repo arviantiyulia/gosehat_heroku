@@ -11,18 +11,19 @@ def get_disease(conn, cf, id):
     print("hasil CF: ")
     for cf_list in list(zip(id, cf)):
         # print(cf_list)
-        cursor.execute("SELECT nama_penyakit FROM penyakit WHERE id_penyakit = " + str(cf_list[0]))
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[0]))
         disease_name = cursor.fetchall()
-        print("ID: ", cf_list[0], " Nama: ", disease_name, " CF: ", cf_list[1])
+        # print('disease = ', disease_name[0][0])
+        print("ID: ", cf_list[0], " Nama: ", disease_name[0][1], " CF: ", cf_list[1])
 
     for index in range(len(cf)):
         if cf[index] > max_item:
             max_item = cf[index]
             id_disease = id[index]
 
-    cursor.execute("SELECT nama_penyakit FROM penyakit WHERE id_penyakit = " + str(id_disease))
+    cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_disease))
     disease_name = cursor.fetchall()
 
-    print("penyakit: " + str(disease_name))
+    print("penyakit: " + str(disease_name[0][0]))
 
     return disease_name

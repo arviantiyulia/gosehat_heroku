@@ -9,7 +9,7 @@ def open_csv():
     """
     gejala = []
 
-    with open('file/penyakit.csv', 'r') as csvfile:
+    with open('file\gejala.csv', 'r') as csvfile:
         read_data = csv.reader(csvfile)
         #looping tiap baris dari file csv
         for r in read_data:
@@ -72,10 +72,10 @@ def import_gejala_penyakit(conn, gp):
 
 
 def main():
-    conn = create_connection()
-    gj = open_csv()
+    # conn = create_connection()
+    open_csv()
     # import_gejala(conn,gj)
-    import_penyakit(conn, gj)
+    # import_penyakit(conn, gj)
     # import_gejala_penyakit(conn, gj)
 
 if __name__ == "__main__":

@@ -24,5 +24,6 @@ def get_cf(text):
     end_time = time.time() - start_time
 
     print("waktu yang dibutuhkan: " + str(end_time))
+    print(disease)
 
-    return disease[0][0]
+    return disease
