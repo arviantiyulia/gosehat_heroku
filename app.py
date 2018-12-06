@@ -332,12 +332,19 @@ def handle_text_message(event):
         else:
             salam = "Assalamualaikum "
 
-        msg_penyakit = "Anda terkena penyakit "
-        msg_pengobatan = "Pengobatan yang harus dilakukan adalah "
+        msg_penyakit = "Kemungkinan Anda terkena penyakit "
+        msg_pengobatan = "#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
+        msg_pencegahan = "#Pencegahan \nPencegahan yang bisa dilakukan adalah "
+        msg_komplikasi = "#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
 
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=(
-                    salam + profile.display_name + "\n" + msg_penyakit + result[0][1] + "\n" + msg_pengobatan + result[0][3] )))
+                    salam + profile.display_name + "\n" +
+                    msg_penyakit + result[0][1] + "\n" +
+                    result[0][2] +
+                    msg_pengobatan + result[0][3] + "\n" +
+                    msg_pencegahan + result[0][4] + "\n" +
+                    msg_komplikasi + result[0][4] + "\n")))
 
 
 @handler.add(MessageEvent, message=LocationMessage)
