@@ -26,7 +26,7 @@ def get_symptoms(conn, inputs):
         cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
         rows.append(cursor.fetchall())
 
-    print("\nDaftar gejala: " + str(result_id))
+    print("\nDaftar gejala: ")
     for row in rows:
         print("ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
