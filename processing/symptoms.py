@@ -14,13 +14,23 @@ def get_symptoms(conn, inputs):
     rows = []
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
-    for i in inputs:
-        cursor.execute("SELECT * FROM gejala WHERE nama_gejala LIKE '%" + i + "%'")
+    for nama_gejala in inputs:
+        cursor.execute("SELECT * FROM gejala WHERE nama_gejala LIKE '%" + nama_gejala + "%'")
         rows.append(cursor.fetchall())
 
     result_id = symptoms_count(rows, inputs)
 
-    print("daftar gejala: " + str(result_id))
+    # --- HANYA UNTUK TUJUAN DEBUG ---
+    rows = []
+    for id_gejala in result_id:
+        cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
+        rows.append(cursor.fetchall())
+
+    print("\nDaftar gejala: " + str(result_id))
+    for row in rows:
+        print("ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+    
+    # --- AKHIR DARI DEBUG ---
 
     return result_id
 
