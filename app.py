@@ -45,6 +45,11 @@ from linebot.models import (
 )
 
 from processing.app import get_cf
+from processing.db import create_connection
+from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
+from processing.sinonim import get_sinonim
+from processing.cek_input import inputs_check
+from processing.greeting import check_greeting
 
 app = Flask(__name__)
 
@@ -318,7 +323,7 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
-        result = get_cf(text)
+        # result = get_cf(text)
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                          second=0) and dt.datetime.now() > dt.datetime.now().replace(
             hour=0, minute=0, second=0):
@@ -332,19 +337,35 @@ def handle_text_message(event):
         else:
             salam = "Assalamualaikum "
 
-        msg_penyakit = "Kemungkinan Anda terkena penyakit "
-        msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
-        msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
-        msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
+        conn = create_connection()
+        stopwords = get_stopword('file/konjungsi.csv')
+        contents = tokenizing(text)
+        filters = filtering(contents, stopwords)
+        stems = stemming(filters)
+        sinonim = get_sinonim(stems)
+        gejala_list = inputs_check(conn, sinonim)
 
-        line_bot_api.reply_message(
-            event.reply_token, TextSendMessage(text=(
-                    salam + profile.display_name + "\n" +
-                    msg_penyakit + result[0][1] + "\n" +
-                    result[0][2] +
-                    msg_pengobatan + result[0][4] + "\n" +
-                    msg_pencegahan + result[0][5] + "\n" +
-                    msg_komplikasi + result[0][6] + "\n")))
+        # jika gejala kosong maka tampilkan pesan
+        if gejala_list == "kosong":
+            disease = check_greeting(sinonim)
+            line_bot_api.reply_message(
+                event.reply_token, TextSendMessage(text=(salam + disease)))
+
+        elif gejala_list == "ada":
+            result = get_cf(conn, sinonim)
+            msg_penyakit = "Kemungkinan Anda terkena penyakit "
+            msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
+            msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
+            msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
+
+            line_bot_api.reply_message(
+                event.reply_token, TextSendMessage(text=(
+                        salam + profile.display_name + "\n" +
+                        msg_penyakit + result[0][1] + "\n" +
+                        result[0][2] +
+                        msg_pengobatan + result[0][4] + "\n" +
+                        msg_pencegahan + result[0][5] + "\n" +
+                        msg_komplikasi + result[0][6] + "\n")))
 
 
 @handler.add(MessageEvent, message=LocationMessage)

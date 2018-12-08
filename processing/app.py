@@ -10,9 +10,9 @@ from processing.greeting import check_greeting
 import time
 
 
-def get_cf(sinonim):
+def get_cf(conn, sinonim):
     start_time = time.time()
-    conn = create_connection()
+    # conn = create_connection()
     # stopwords = get_stopword('file/konjungsi.csv')
     # contents = tokenizing(text)
     # filters = filtering(contents, stopwords)
