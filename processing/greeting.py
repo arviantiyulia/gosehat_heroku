@@ -25,4 +25,4 @@ def check_greeting(input):
     if save_greeting == "":
         return "Maaf data yang anda masukkan tidak ada, silahkan masukkan dengan data lain"
     else:
-        return save_greeting
+        return str(save_greeting)
