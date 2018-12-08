@@ -20,10 +20,7 @@ def get_symptoms(conn, inputs):
 
     result_id = symptoms_count(rows, inputs)
 
-    print("daftar gejala: " + str(result_id))
-
     return result_id
-
 
 def symptoms_count(rows, inputs):
     """
