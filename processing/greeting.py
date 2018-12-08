@@ -23,6 +23,6 @@ def check_greeting(input):
                 break;
 
     if save_greeting == "":
-        return print("Maaf data yang anda masukkan tidak ada, silahkan masukkan dengan data lain")
+        return "Maaf data yang anda masukkan tidak ada, silahkan masukkan dengan data lain"
     else:
-        return print(save_greeting)
+        return save_greeting
