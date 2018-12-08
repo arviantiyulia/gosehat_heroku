@@ -349,7 +349,7 @@ def handle_text_message(event):
         if gejala_list == "kosong":
             disease = check_greeting(sinonim)
             line_bot_api.reply_message(
-                event.reply_token, TextSendMessage(text=(salam + str(disease))))
+                event.reply_token, TextSendMessage(text=(str(disease))))
 
         elif gejala_list == "ada":
             result = get_cf(conn, sinonim)
