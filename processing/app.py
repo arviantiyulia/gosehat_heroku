@@ -10,14 +10,14 @@ from processing.greeting import check_greeting
 import time
 
 
-def get_cf(text):
+def get_cf(sinonim):
     start_time = time.time()
     conn = create_connection()
-    stopwords = get_stopword('file/konjungsi.csv')
-    contents = tokenizing(text)
-    filters = filtering(contents, stopwords)
-    stems = stemming(filters)
-    sinonim = get_sinonim(stems)
+    # stopwords = get_stopword('file/konjungsi.csv')
+    # contents = tokenizing(text)
+    # filters = filtering(contents, stopwords)
+    # stems = stemming(filters)
+    # sinonim = get_sinonim(stems)
     # gejala_list = inputs_check(conn, sinonim)
     symptoms = get_symptoms(conn, sinonim)
     count_disease_id, uniq_id = get_id_disease(conn, symptoms)
