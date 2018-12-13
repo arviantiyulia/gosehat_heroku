@@ -24,6 +24,8 @@ def get_cf(conn, sinonim):
     cf_calculate = certainty_calculate(count_disease_id)
     disease = get_disease(conn, cf_calculate, uniq_id)
 
+    # TODO: Simpan input user, gejala dan hasil di DB
+
     end_time = time.time() - start_time
 
     print("waktu yang dibutuhkan: " + str(end_time))

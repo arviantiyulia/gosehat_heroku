@@ -346,6 +346,7 @@ def handle_text_message(event):
         kondisi_gejala = inputs_check(conn, sinonim)
 
         # jika gejala kosong maka tampilkan pesan
+        # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
         if kondisi_gejala == "kosong":
             disease = check_greeting(sinonim)
             line_bot_api.reply_message(
@@ -353,11 +354,20 @@ def handle_text_message(event):
 
         # jika gejalanya kurang
         elif kondisi_gejala == "kurang":
-            print("User id: ", event.source.user_id)
+            # set user_id dan profile (untuk nama)
+            user_id = event.source.user_id;
+            nama = line_bot_api.get_profile(event.source.user_id).display_name
+
+            # TODO: masukin gejala ke database, panggil fungsi bantuan
+            # kolom: user_id | nama | gejala
+            # gejala disimpan string dipisah dengan koma: panas, pusing
+
             message = "Kurang! tambahin gejala lagi :("
             line_bot_api.reply_message(
                 event.reply_token, TextSendMessage(text=message))
 
+        # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
+        # setelah sukses hapus yang ada di db
         elif kondisi_gejala == "ada":
             result = get_cf(conn, sinonim)
             msg_penyakit = "Kemungkinan Anda terkena penyakit "
