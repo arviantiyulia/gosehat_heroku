@@ -343,15 +343,22 @@ def handle_text_message(event):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
-        gejala_list = inputs_check(conn, sinonim)
+        kondisi_gejala = inputs_check(conn, sinonim)
 
         # jika gejala kosong maka tampilkan pesan
-        if gejala_list == "kosong":
+        if kondisi_gejala == "kosong":
             disease = check_greeting(sinonim)
             line_bot_api.reply_message(
                 event.reply_token, TextSendMessage(text=(str(disease))))
 
-        elif gejala_list == "ada":
+        # jika gejalanya kurang
+        elif kondisi_gejala == "kurang":
+            print("User id: ", event.source.user_id)
+            message = "Kurang! tambahin gejala lagi :("
+            line_bot_api.reply_message(
+                event.reply_token, TextSendMessage(text=message))
+
+        elif kondisi_gejala == "ada":
             result = get_cf(conn, sinonim)
             msg_penyakit = "Kemungkinan Anda terkena penyakit "
             msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "

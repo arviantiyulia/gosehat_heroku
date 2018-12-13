@@ -7,19 +7,22 @@ from processing.greeting import check_greeting
 
 """ untuk kegunaan tes preprocessing => python app_test.py"""
 if __name__ == "__main__":
-    text = "saya muntah,sakit kepala, bintik merah pada kulit"
+    # text = "saya muntah,sakit kepala, bintik merah pada kulit"
+    text = "saya muntah"
     conn = create_connection()
     stopwords = get_stopword('file/konjungsi.csv')
     contents = tokenizing(text)
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    gejala_list = inputs_check(conn, sinonim)
+    kondisi_gejala = inputs_check(conn, sinonim)
 
     # jika gejala kosong maka tampilkan pesan
-    if gejala_list == "kosong":
+    if kondisi_gejala == "kosong":
         disease = check_greeting(sinonim)
         print(disease)
-    elif gejala_list == "ada":
+    elif kondisi_gejala == "kurang":
+        print("Gejala yang anda masukkan kurang! Woy!")
+    elif kondisi_gejala == "ada":
         get_cf(conn, sinonim)
 
