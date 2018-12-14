@@ -8,7 +8,7 @@ from processing.greeting import check_greeting
 """ untuk kegunaan tes preprocessing => python app_test.py"""
 if __name__ == "__main__":
     # text = "saya muntah,sakit kepala, bintik merah pada kulit"
-    text = "saya muntah"
+    text = "saya muntah, demam, pusing, mual"
     conn = create_connection()
     stopwords = get_stopword('file/konjungsi.csv')
     contents = tokenizing(text)
@@ -25,4 +25,5 @@ if __name__ == "__main__":
         print("Gejala yang anda masukkan kurang! Woy!")
     elif kondisi_gejala == "ada":
         get_cf(conn, sinonim)
+
 
