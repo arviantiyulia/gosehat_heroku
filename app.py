@@ -50,6 +50,7 @@ from processing.preprocessing import get_stopword, tokenizing, filtering, stemmi
 from processing.sinonim import get_sinonim
 from processing.cek_input import inputs_check
 from processing.greeting import check_greeting
+from processing.save_input import save_input
 
 app = Flask(__name__)
 
@@ -359,6 +360,7 @@ def handle_text_message(event):
             nama = line_bot_api.get_profile(event.source.user_id).display_name
 
             # TODO: masukin gejala ke database, panggil fungsi bantuan
+            save = save_input(user_id, nama, sinonim, conn)
             # kolom: user_id | nama | gejala
             # gejala disimpan string dipisah dengan koma: panas, pusing
 
