@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/save_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/save_input.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +35,8 @@
       <file leaf-file-name="save_input.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/save_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="160">
+              <caret line="8" column="99" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="99" />
             </state>
           </provider>
         </entry>
@@ -183,7 +182,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -395,7 +394,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32013202" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24917492" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.5874587" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
@@ -652,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/processing/save_input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="160">
+          <caret line="8" column="99" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="99" />
         </state>
       </provider>
     </entry>
