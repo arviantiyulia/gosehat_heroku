@@ -54,8 +54,8 @@ def get_disease(conn, cf, id):
             disease_name.append(cursor.fetchall())
 
 
-    print(disease_name)
-    print(disease_name[0][0][1])
+    # print(disease_name)
+    # print(disease_name[0][0][1])
     # HANYA UNTUK TUJUAN DEBUG
     # print("\nKemungkinan penyakit yang diderita: " + str(disease_name[0][1]))
     # print("Dengan nilai certainty factor: ", max_cf)

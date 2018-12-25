@@ -21,8 +21,8 @@ def flat(listoflist):
 if __name__ == "__main__":
     # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
     text = "saya batuk, pilek, pusing, demam"
-    user_id = 1;
-    name_user = "admin";
+    user_id = 1
+    name_user = "admin"
     conn = create_connection()
     stopwords = get_stopword('file/konjungsi.csv')
     contents = tokenizing(text)
@@ -44,7 +44,6 @@ if __name__ == "__main__":
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = " + str(user_id))
         count_input = cursor.fetchall()
-        print(count_input)
 
         if count_input[0][0] <= 3:
             print("Gejala yang anda masukkan kurang, silahkan tambahkan lagi")
