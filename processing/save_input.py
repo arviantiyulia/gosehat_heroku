@@ -6,7 +6,7 @@ def save_input(user_id, name_user, inputs, conn):
     print(user_id + " " + name_user)
 
     for i in range(len(inputs)):
-        cursor.execute("INSERT INTO gejala_input(user_id, nama_user, nama_gejala) VALUES('"+str(user_id)+"', '"+name_user+"','"+inputs[i]+"')")
+        cursor.execute("INSERT INTO gejala_input(user_id, nama_user, nama_gejala) VALUES('"+user_id+"', '"+name_user+"','"+inputs[i]+"')")
         conn.commit()
 
     return inputs
