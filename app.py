@@ -371,7 +371,7 @@ def handle_text_message(event):
             # TODO: masukin gejala ke database, panggil fungsi bantuan
             save_input(user_id, name_user, sinonim, conn)
 
-            cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = " + user_id)
+            cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
             count_input = cursor.fetchall()
 
             if count_input[0][0] <= 3:
@@ -379,7 +379,7 @@ def handle_text_message(event):
                 line_bot_api.reply_message(
                     event.reply_token, TextSendMessage(text=message))
             else:
-                cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + user_id)
+                cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 gejala_db = cursor.fetchall()
                 gejala_new = [i[0] for i in gejala_db]
                 result = get_cf(conn, gejala_new)
@@ -387,7 +387,7 @@ def handle_text_message(event):
         # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
         # setelah sukses hapus yang ada di db
         elif kondisi_gejala == "ada":
-            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + user_id)
+            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
             gejala_db = cursor.fetchall()
 
             if gejala_db is None:
