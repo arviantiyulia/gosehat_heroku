@@ -401,8 +401,11 @@ def handle_text_message(event):
                 sinonim.append(gejala_new)
                 gejala_new2 = flat(sinonim)
                 result = get_cf(conn, gejala_new2)
+                for output in range(len(result)):
+                    for i in range(len(output)):
+                        print("output = ", result[0])
 
-            line_bot_api.reply_message(
+                line_bot_api.reply_message(
                 event.reply_token, TextSendMessage(text=(
                         salam + profile.display_name + "\n" +
                         msg_penyakit + result[0][1] + "\n" +
@@ -411,6 +414,8 @@ def handle_text_message(event):
                         msg_pencegahan + result[0][5] + "\n" +
                         msg_komplikasi + result[0][6] + "\n")))
 
+        cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+        conn.commit()
 
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
