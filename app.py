@@ -414,22 +414,21 @@ def handle_text_message(event):
                 gejala_new2 = flat(sinonim)
                 result = get_cf(conn, gejala_new2)
 
-                if len(result) == 1:
-                    for output in result:
-                        message = message + salam + name_user + "\n" \
-                                  + msg_penyakit + output[0][1] + "\n" + output[0][2] \
-                                  + msg_pengobatan + output[0][4] + "\n" \
-                                  + msg_pencegahan + output[0][5] + "\n" \
-                                  + msg_komplikasi + str(output[0][6])
-                else:
-                    # print("hasil = ", result)
-                    message = message + salam + name_user + "\n" \
-                              + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
-                              + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
-
-
                 cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 conn.commit()
+
+            if len(result) == 1:
+                for output in result:
+                    message = message + salam + name_user + "\n" \
+                              + msg_penyakit + output[0][1] + "\n" + output[0][2] \
+                              + msg_pengobatan + output[0][4] + "\n" \
+                              + msg_pencegahan + output[0][5] + "\n" \
+                              + msg_komplikasi + str(output[0][6])
+            else:
+                # print("hasil = ", result)
+                message = message + salam + name_user + "\n" \
+                          + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
+                          + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
