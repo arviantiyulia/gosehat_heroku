@@ -21,8 +21,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="383" column="41" selection-start-line="383" selection-start-column="41" selection-end-line="383" selection-end-column="41" />
+            <state relative-caret-position="298">
+              <caret line="402" lean-forward="true" selection-start-line="402" selection-end-line="402" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -375,7 +375,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33663365" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.32013202" />
@@ -637,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="383" column="41" selection-start-line="383" selection-start-column="41" selection-end-line="383" selection-end-column="41" />
+        <state relative-caret-position="298">
+          <caret line="402" lean-forward="true" selection-start-line="402" selection-end-line="402" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
