@@ -390,11 +390,18 @@ def handle_text_message(event):
                                   + msg_pengobatan + output[0][4] + "\n" \
                                   + msg_pencegahan + output[0][5] + "\n" \
                                   + msg_komplikasi + str(output[0][6])
+
+                    output_sistem = msg_penyakit + result[0][0][1]
+                    save_history(user_id, name_user, text, output_sistem, conn)
+
                 else:
                     # print("hasil = ", result)
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
                               + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
+
+                    output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+                    save_history(user_id, name_user, text, output_sistem, conn)
 
                 cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 conn.commit()
@@ -424,15 +431,21 @@ def handle_text_message(event):
                               + msg_pengobatan + output[0][4] + "\n" \
                               + msg_pencegahan + output[0][5] + "\n" \
                               + msg_komplikasi + str(output[0][6])
+
+                output_sistem = msg_penyakit + result[0][0][1]
+                save_history(user_id, name_user, text, output_sistem, conn)
+
             else:
                 # print("hasil = ", result)
                 message = message + salam + name_user + "\n" \
                           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
                           + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
 
+                output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+                save_history(user_id, name_user, text, output_sistem, conn)
+
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
-        save_history(user_id, name_user, text, message, conn)
 
 
 @handler.add(MessageEvent, message=LocationMessage)
