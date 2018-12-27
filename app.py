@@ -400,9 +400,6 @@ def handle_text_message(event):
 
             if gejala_db is None:
                 result = get_cf(conn, sinonim)
-                for output in range(len(result)):
-                    for i in range(len(output)):
-                        print("output = ", result[0])
 
             else:
                 gejala_new = [i[0] for i in gejala_db]
