@@ -52,6 +52,7 @@ from processing.preprocessing import get_stopword, tokenizing, filtering, stemmi
 from processing.save_input import flat
 from processing.save_input import save_input
 from processing.sinonim import get_sinonim
+from processing.save_input import save_history
 
 app = Flask(__name__)
 
@@ -325,7 +326,6 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
-        # result = get_cf(text)
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                          second=0) and dt.datetime.now() > dt.datetime.now().replace(
             hour=0, minute=0, second=0):
@@ -431,6 +431,8 @@ def handle_text_message(event):
                           + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
+
+        save_history(user_id, name_user, text, message, conn)
 
 
 @handler.add(MessageEvent, message=LocationMessage)
