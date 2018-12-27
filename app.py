@@ -376,6 +376,8 @@ def handle_text_message(event):
 
             if count_input[0][0] <= 3:
                 message = message + "Kurang! tambahin gejala lagi :("
+                save_history(user_id, name_user, text, message, conn)
+
             else:
                 cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 gejala_db = cursor.fetchall()
