@@ -21,7 +21,7 @@ def flat(listoflist):
 if __name__ == "__main__":
     # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
     text = "saya batuk, pilek, pusing, demam"
-    user_id = 1
+    user_id = "1"
     name_user = "admin"
     conn = create_connection()
     stopwords = get_stopword('file/konjungsi.csv')

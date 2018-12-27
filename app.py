@@ -381,13 +381,20 @@ def handle_text_message(event):
                 gejala_db = cursor.fetchall()
                 gejala = [i[0] for i in gejala_db]
                 result = get_cf(conn, gejala)
-                print("result = ", result)
-                for output in result:
-                    message = message + salam + name_user + "\n" \
-                              + msg_penyakit + output[0][1] + "\n" + output[0][2] \
-                              + msg_pengobatan + output[0][4] + "\n" \
-                              + msg_pencegahan + output[0][5] + "\n" \
-                              + msg_komplikasi + str(output[0][6])
+                # print("result = ", result)
+
+                if len(result) == 1:
+                    for output in result:
+                        message = message + salam + name_user + "\n" \
+                                  + msg_penyakit + output[0][1] + "\n" + output[0][2] \
+                                  + msg_pengobatan + output[0][4] + "\n" \
+                                  + msg_pencegahan + output[0][5] + "\n" \
+                                  + msg_komplikasi + str(output[0][6])
+                else:
+                    for output in result:
+                        message = message + salam + name_user + "\n" \
+                                  + msg_penyakit + output[0][1] + " , " + output[1][1] + " , " + output[2][1] + "\n" \
+                                  + "\n" + output[0][2] + "\n" + output[1][2] + "\n" + output[2][2]
 
                 cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 conn.commit()
