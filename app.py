@@ -381,6 +381,15 @@ def handle_text_message(event):
                 gejala_db = cursor.fetchall()
                 gejala = [i[0] for i in gejala_db]
                 result = get_cf(conn, gejala)
+                for output in result:
+                    message = message + salam + name_user + "\n" \
+                              + msg_penyakit + output[0][1] + "\n" + output[0][2] \
+                              + msg_pengobatan + output[0][4] + "\n" \
+                              + msg_pencegahan + output[0][5] + "\n" \
+                              + msg_komplikasi + output[0][6]
+
+                cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+                conn.commit()
 
         # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
         # setelah sukses hapus yang ada di db
