@@ -399,9 +399,8 @@ def handle_text_message(event):
                 sinonim.append(gejala_new)
                 gejala_new2 = flat(sinonim)
                 result = get_cf(conn, gejala_new2)
-                for output in range(len(result)):
-                    for i in range(len(output)):
-                        print("output = ", result[0])
+                for output in result:
+                        print("output = ", output)
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
