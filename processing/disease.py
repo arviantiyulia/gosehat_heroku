@@ -53,6 +53,7 @@ def get_disease(conn, cf, id):
             cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_new))
             disease_name.append(cursor.fetchall())
 
+    print("jumlah penyakit = ", len(disease_name))
 
     # print(disease_name)
     # print(disease_name[0][0][1])
