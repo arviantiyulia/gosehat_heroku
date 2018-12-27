@@ -393,7 +393,7 @@ def handle_text_message(event):
                 else:
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit + result[0][0][1] + " , " + result[0][1][1] + " , " + result[0][2][1] + "\n" \
-                              + "\n" + result[0][0][2] + "\n" + result[0][1][2] + "\n" + result[0][2][2]
+                              + "\n" + result[0][0][2] + "\n" + result[0][0][2] + "\n" + result[0][0][2]
 
                 cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 conn.commit()
