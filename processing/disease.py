@@ -25,8 +25,8 @@ def get_disease(conn, cf, id):
         else:
             id_somedisease.append(cf_new[i][0])
 
-    print("id_somedisease = ", id_somedisease)
-    print("id_disease = ", id_disease)
+    # print("id_somedisease = ", id_somedisease)
+    # print("id_disease = ", id_disease)
     # for index in range(len(cf)):
     #     if cf[index] > max_cf:
     #         max_cf = cf[index]

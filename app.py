@@ -344,6 +344,7 @@ def handle_text_message(event):
         msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
         msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
 
+        message = ""
         conn = create_connection()
         stopwords = get_stopword('file/konjungsi.csv')
         contents = tokenizing(text)
@@ -362,8 +363,7 @@ def handle_text_message(event):
         # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
         if kondisi_gejala == "kosong":
             disease = check_greeting(sinonim)
-            line_bot_api.reply_message(
-                event.reply_token, TextSendMessage(text=(str(disease))))
+            message = message + str(disease)
 
         # jika gejalanya kurang
         elif kondisi_gejala == "kurang":
@@ -375,14 +375,12 @@ def handle_text_message(event):
             count_input = cursor.fetchall()
 
             if count_input[0][0] <= 3:
-                message = "Kurang! tambahin gejala lagi :("
-                line_bot_api.reply_message(
-                    event.reply_token, TextSendMessage(text=message))
+                message = message + "Kurang! tambahin gejala lagi :("
             else:
                 cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 gejala_db = cursor.fetchall()
-                gejala_new = [i[0] for i in gejala_db]
-                result = get_cf(conn, gejala_new)
+                gejala = [i[0] for i in gejala_db]
+                result = get_cf(conn, gejala)
 
         # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
         # setelah sukses hapus yang ada di db
@@ -405,14 +403,7 @@ def handle_text_message(event):
                     for i in range(len(output)):
                         print("output = ", result[0])
 
-                line_bot_api.reply_message(
-                event.reply_token, TextSendMessage(text=(
-                        salam + profile.display_name + "\n" +
-                        msg_penyakit + result[0][1] + "\n" +
-                        result[0][2] +
-                        msg_pengobatan + result[0][4] + "\n" +
-                        msg_pencegahan + result[0][5] + "\n" +
-                        msg_komplikasi + result[0][6] + "\n")))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
         cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
         conn.commit()
