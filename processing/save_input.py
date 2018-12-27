@@ -9,6 +9,8 @@ def save_input(user_id, name_user, inputs, conn):
         cursor.execute("INSERT INTO gejala_input(user_id, nama_user, nama_gejala) VALUES('"+user_id+"', '"+name_user+"','"+inputs[i]+"')")
         conn.commit()
 
+    print("conn = ", conn)
+
     return inputs
 
 def flat(listoflist):
