@@ -381,6 +381,7 @@ def handle_text_message(event):
                 gejala_db = cursor.fetchall()
                 gejala = [i[0] for i in gejala_db]
                 result = get_cf(conn, gejala)
+                print("result = ", result)
                 for output in result:
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit +  "\n"  \
