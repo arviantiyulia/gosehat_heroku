@@ -400,12 +400,18 @@ def handle_text_message(event):
                 gejala_new2 = flat(sinonim)
                 result = get_cf(conn, gejala_new2)
                 for output in result:
-                        print("output = ", output)
+                    message = message + salam + profile.display_name + "\n" +
+                    msg_penyakit + output[0][1] + "\n" +
+                    output[0][2] +
+                    msg_pengobatan + output[0][4] + "\n" +
+                    msg_pencegahan + output[0][5] + "\n" +
+                    msg_komplikasi + output[0][6] + "\n"
+
+                cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+                conn.commit()
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
-        # cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-        # conn.commit()
 
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
