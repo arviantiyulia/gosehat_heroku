@@ -405,8 +405,8 @@ def handle_text_message(event):
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
 
-        cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-        conn.commit()
+        # cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+        # conn.commit()
 
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
