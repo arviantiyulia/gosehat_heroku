@@ -50,9 +50,9 @@ from processing.db import create_connection
 from processing.greeting import check_greeting
 from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
 from processing.save_input import flat
+from processing.save_input import save_history
 from processing.save_input import save_input
 from processing.sinonim import get_sinonim
-from processing.save_input import save_history
 
 app = Flask(__name__)
 
@@ -399,8 +399,8 @@ def handle_text_message(event):
                 else:
                     # print("hasil = ", result)
                     message = message + salam + name_user + "\n" \
-                              + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
-                              + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
+                              + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
+                              + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]
 
                     output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
                     save_history(user_id, name_user, text, output_sistem, conn)
@@ -440,14 +440,13 @@ def handle_text_message(event):
             else:
                 # print("hasil = ", result)
                 message = message + salam + name_user + "\n" \
-                          + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] + "\n" \
-                          + "\n" + result[0][0][2] + "\n" + result[1][0][2] + "\n" + result[2][0][2]
+                          + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
+                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
                 save_history(user_id, name_user, text, output_sistem, conn)
 
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
-
 
 
 @handler.add(MessageEvent, message=LocationMessage)
