@@ -375,7 +375,7 @@ def handle_text_message(event):
             count_input = cursor.fetchall()
 
             if count_input[0][0] <= 3:
-                message = message + "Kurang! tambahin gejala lagi :("
+                message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
                 save_history(user_id, name_user, text, message, conn)
 
             else:
