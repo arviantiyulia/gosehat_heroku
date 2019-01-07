@@ -24,4 +24,5 @@ def get_sinonim(inputs):
         if found == False:
             sin_inputs.append(input)
 
+    print("sinonim = ", sin_inputs)
     return sin_inputs
