@@ -53,7 +53,7 @@ def get_disease(conn, cf, id):
     #     cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0]))
     #     disease_name = cursor.fetchall()
     #     print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[1])
-    print("cf_list = ", cf_list)
+    print("cf_list = ", cf_list[0][0])
 
     # print(disease_name)
     # print(disease_name[0][0][1])
