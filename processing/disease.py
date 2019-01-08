@@ -32,13 +32,6 @@ def get_disease(conn, cf, id):
     #         max_cf = cf[index]
     #         id_disease = id[index]
 
-    # --- HANYA UNTUK TUJUAN DEBUG ---
-    # print("\nHasil Certainty Factor: ")
-    # for item in cf_list:
-    #     cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0]))
-    #     disease_name = cursor.fetchall()
-    #     print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[1])
-
     # --- AKHIR DARI DEBUG ---
     if id_disease != 0:
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_disease))
@@ -52,6 +45,14 @@ def get_disease(conn, cf, id):
         for id_new in id_somedisease:
             cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_new))
             disease_name.append(cursor.fetchall())
+
+
+    # --- HANYA UNTUK TUJUAN DEBUG ---
+    print("\nHasil Certainty Factor: ")
+    for item in cf_list:
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0]))
+        disease_name = cursor.fetchall()
+        print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[1])
 
     # print(disease_name)
     # print(disease_name[0][0][1])
