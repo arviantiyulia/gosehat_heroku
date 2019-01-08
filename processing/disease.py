@@ -49,8 +49,8 @@ def get_disease(conn, cf, id):
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
     print("\nHasil Certainty Factor: ")
-    for item in cf_list:
-        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0]))
+    for item in id_new:
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item))
         disease_name = cursor.fetchall()
         print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[1])
 
