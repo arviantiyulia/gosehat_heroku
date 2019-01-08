@@ -48,12 +48,12 @@ def get_disease(conn, cf, id):
 
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
-    # print("\nHasil Certainty Factor: ")
-    # for item in cf_list:
-    #     cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0]))
-    #     disease_name = cursor.fetchall()
-    #     print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[1])
-    print("cf_list = ", cf_list[0][0])
+    print("\nHasil Certainty Factor: ")
+    for item in cf_list:
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(item[0][0]))
+        disease_name = cursor.fetchall()
+        print("ID: ", item[0], " Nama: ", disease_name[0][1], " CF: ", item[0][1])
+    # print("cf_list = ", cf_list[0][0])
 
     # print(disease_name)
     # print(disease_name[0][0][1])
