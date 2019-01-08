@@ -42,19 +42,19 @@ if __name__ == "__main__":
     elif kondisi_gejala == "kurang":
         input_db = save_input(user_id, name_user, sinonim, conn)
 
-        cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = " + str(user_id))
+        cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = " + user_id)
         count_input = cursor.fetchall()
 
         if count_input[0][0] <= 3:
             print("Gejala yang anda masukkan kurang, silahkan tambahkan lagi")
         else:
-            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + str(user_id))
+            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + user_id)
             gejala_db = cursor.fetchall()
             gejala_new = [i[0] for i in gejala_db]
             get_cf(conn, gejala_new)
 
     elif kondisi_gejala == "ada":
-        cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + str(user_id))
+        cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
         if gejala_db is None:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
             gejala_new2 = flat(sinonim)
             get_cf(conn, gejala_new2)
 
-    cursor.execute("DELETE FROM gejala_input WHERE user_id = " + str(user_id))
+    cursor.execute("DELETE FROM gejala_input WHERE user_id = " + user_id)
     conn.commit()
 
 
