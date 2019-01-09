@@ -392,7 +392,8 @@ def handle_text_message(event):
                                   + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                                   + msg_pengobatan + output[0][4] + "\n" \
                                   + msg_pencegahan + output[0][5] + "\n" \
-                                  + msg_komplikasi + str(output[0][6])
+                                  + msg_komplikasi + str(output[0][6]) \
+                                  + "\n\n" + msg_peringatan
 
 
                     output_sistem = msg_penyakit + result[0][0][1]
@@ -402,7 +403,8 @@ def handle_text_message(event):
                     # print("hasil = ", result)
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                              + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]
+                              + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]\
+                              + "\n\n" + msg_peringatan
 
 
                     output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
@@ -435,7 +437,8 @@ def handle_text_message(event):
                               + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                               + msg_pengobatan + output[0][4] + "\n" \
                               + msg_pencegahan + output[0][5] + "\n" \
-                              + msg_komplikasi + str(output[0][6])
+                              + msg_komplikasi + str(output[0][6]) \
+                              + "\n\n" + msg_peringatan
 
 
                 output_sistem = msg_penyakit + result[0][0][1]
@@ -445,7 +448,7 @@ def handle_text_message(event):
                 # print("hasil = ", result)
                 message = message + salam + name_user + "\n" \
                           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]
+                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] + + "\n\n" + msg_peringatan
 
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
