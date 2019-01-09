@@ -60,23 +60,21 @@ def get_gejalapenyakit():
     cursor.execute("SELECT gejala.nama_gejala FROM gejala_penyakit JOIN gejala ON gejala_penyakit.id_gejala = gejala.id_gejala WHERE gejala_penyakit.id_penyakit = " + str(1))
     id_gejala = cursor.fetchall()
 
-#
     name_gejala = [item[0].split(" ") for item in id_gejala]
     gj = flat(name_gejala)
-#
+
     print("name gejala = ", gj)
     stopwords = get_stopword('file/konjungsi.csv')
-    # contents = tokenizing(name_gejala)
     filters = filtering(gj, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
     result = get_cf(conn, sinonim)
-
-    with open('testing.csv', 'a') as csvFile:
-        writer = csv.writer(csvFile)
-        writer.writerow(result)
-
-    csvFile.close()
+    #
+    #     with open('testing.csv', 'a') as csvFile:
+    #         writer = csv.writer(csvFile)
+    #         writer.writerow(result)
+    #
+    # csvFile.close()
 
     #
     #     comb = itertools.combinations(id_gejala, hitung_gejala[idx])

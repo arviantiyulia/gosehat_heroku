@@ -37,9 +37,9 @@ def get_disease(conn, cf, id):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_disease))
         disease_new = cursor.fetchall()
         disease_name = [[i] for i in disease_new]
-        # tup = tuple(disease_new)
-        # disease_old = np.array(tup)
-        # disease_name = np.array(disease_old)
+        # print("\nKemungkinan penyakit yang diderita: " + str(disease_name))
+        # print("Dengan nilai certainty factor: ", max_cf)
+
     else:
         print("3 id tertinggi = ", id_somedisease)
         for id_new in id_somedisease:
@@ -51,14 +51,14 @@ def get_disease(conn, cf, id):
     print("\nHasil Certainty Factor: ")
     for item in range(len(cf_list)):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
-        disease_name = cursor.fetchall()
-        print("ID: ", item, " Nama: ", disease_name[0][1], " CF: ", cf_list[item][1])
+        disease_name2 = cursor.fetchall()
+        print("ID: ", item, " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
     # print("cf_list = ", cf_list[0][)
 
     # print(disease_name)
     # print(disease_name[0][0][1])
     # HANYA UNTUK TUJUAN DEBUG
-    print("\nKemungkinan penyakit yang diderita: " + str(disease_name))
-    # print("Dengan nilai certainty factor: ", max_cf)
+    print("\nKemungkinan penyakit yang diderita: " + str(disease_name[0][0][1]))
+    print("Dengan nilai certainty factor: ", max_cf)
 
     return disease_name
