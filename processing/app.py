@@ -22,6 +22,7 @@ def get_cf(conn, sinonim):
     symptoms = get_symptoms(conn, sinonim)
     count_disease_id, uniq_id = get_id_disease(conn, symptoms)
     cf_calculate = certainty_calculate(count_disease_id)
+    # print("calculate = ", cf_calculate)
     disease = get_disease(conn, cf_calculate, uniq_id)
 
     # TODO: Simpan input user, gejala dan hasil di DB

@@ -20,7 +20,7 @@ def flat(listoflist):
 """ untuk kegunaan tes preprocessing => python app_test.py"""
 if __name__ == "__main__":
     # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-    text = "saya merasa muntah, sakit kepala akhir2 ini, mual, dan muncul bintik merah di kulit. Saya kenapa ya ?"
+    text = "saya merasa muntah, sakit kepala akhir2 ini, bersin - bersin, mual, dan muncul bintik merah di kulit. Saya kenapa ya ?"
     user_id = "1"
     name_user = "admin"
     conn = create_connection()
@@ -42,13 +42,13 @@ if __name__ == "__main__":
     elif kondisi_gejala == "kurang":
         input_db = save_input(user_id, name_user, sinonim, conn)
 
-        cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = " + user_id)
+        cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
 
         if count_input[0][0] <= 3:
             print("Gejala yang anda masukkan kurang, silahkan tambahkan lagi")
         else:
-            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = " + user_id)
+            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
             gejala_db = cursor.fetchall()
             gejala_new = [i[0] for i in gejala_db]
             get_cf(conn, gejala_new)
@@ -65,7 +65,7 @@ if __name__ == "__main__":
             gejala_new2 = flat(sinonim)
             get_cf(conn, gejala_new2)
 
-    cursor.execute("DELETE FROM gejala_input WHERE user_id = " + user_id)
+    cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
     conn.commit()
 
 

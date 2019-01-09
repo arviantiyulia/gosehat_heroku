@@ -393,7 +393,7 @@ def handle_text_message(event):
                                   + msg_pengobatan + output[0][4] + "\n" \
                                   + msg_pencegahan + output[0][5] + "\n" \
                                   + msg_komplikasi + str(output[0][6]) \
-                                  + "\n\n" + msg_peringatan
+
 
                     output_sistem = msg_penyakit + result[0][0][1]
                     save_history(user_id, name_user, text, output_sistem, conn)
@@ -403,7 +403,7 @@ def handle_text_message(event):
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
                               + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] \
-                              + "\n\n" + msg_peringatan
+
 
                     output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
                     save_history(user_id, name_user, text, output_sistem, conn)
@@ -436,7 +436,7 @@ def handle_text_message(event):
                               + msg_pengobatan + output[0][4] + "\n" \
                               + msg_pencegahan + output[0][5] + "\n" \
                               + msg_komplikasi + str(output[0][6]) \
-                              + "\n\n" + msg_peringatan
+
 
                 output_sistem = msg_penyakit + result[0][0][1]
                 save_history(user_id, name_user, text, output_sistem, conn)
@@ -446,7 +446,7 @@ def handle_text_message(event):
                 message = message + salam + name_user + "\n" \
                           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
                           + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] \
-                          + "\n\n" + msg_peringatan
+
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
                 save_history(user_id, name_user, text, output_sistem, conn)

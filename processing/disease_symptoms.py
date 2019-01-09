@@ -101,10 +101,10 @@ def normalize_weight(gejala_selected, all_gejala_penyakit):
     normalized_data = []
     for i in range(len(gejala_selected)):
         for j in range(len(gejala_selected[i])):
+
             sum_of_weight = get_sum_of_weight(all_gejala_penyakit[i])
             norm = gejala_selected[i][j][1] / sum_of_weight
             result.append((gejala_selected[i][j][0], norm))
-    
     #looping yang digunakan untuk mengelompokkan id yang sama dalam satu list
     for k, g in groupby(result, key=lambda tup: tup[0]):
         normalized_data.append(list(g))

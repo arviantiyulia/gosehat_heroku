@@ -6,6 +6,7 @@ def calculate_cf(arr, length):
     arr[0] = res
     if length == 2:
         return res
+    print("res = ", res)
 
     return calculate_cf(arr, length - 1)
 
@@ -23,9 +24,12 @@ def certainty_calculate(id_dis):
 
         if len(cf_ur) < 2:
             cf_old = cf_ur[0]
+            print("cf_old1 = ", cf_old)
 
         elif len(cf_ur) >= 2:
             cf_old = calculate_cf(cf_ur, len(cf_ur))
+
+            print("cf_old2 = ", cf_old)
 
         arr_cf.append(cf_old)
 
