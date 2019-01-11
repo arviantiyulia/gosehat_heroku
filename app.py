@@ -54,6 +54,7 @@ from processing.save_input import save_history
 from processing.save_input import save_input
 from processing.sinonim import get_sinonim
 from processing.save_input import save_menuinformasi
+from processing.save_input import save_menukonsultasi
 
 app = Flask(__name__)
 
@@ -327,7 +328,6 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
-
         conn = create_connection()
 
         # set user_id dan profile (untuk nama)
@@ -353,7 +353,9 @@ def handle_text_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
         elif text == '\konsultasi':
-            messages  = message_bot(user_id, name_user, salam, text, conn)
+            save_menukonsultasi(user_id, name_user, text, conn)
+            messages = "masukkan konsultasi"
+            # messages  = message_bot(user_id, name_user, salam, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
         else:
             messages = message_bot(user_id, name_user, salam, text, conn)
