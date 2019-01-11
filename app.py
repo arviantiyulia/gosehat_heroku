@@ -362,7 +362,7 @@ def handle_text_message(event):
             cursor.execute("SELECT status FROM menu WHERE id_user LIKE '%" + user_id + "%'")
             count_menu = cursor.fetchall()
 
-        print("count menu = ", count_menu[0][0])
+        print("count menu = ", count_menu)
 
         if count_menu[0][0] == '\informasi':
             # print("informasi")
