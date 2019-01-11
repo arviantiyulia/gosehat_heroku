@@ -364,7 +364,7 @@ def handle_text_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
 
-        cursor.execute("SELECT status FROM menu WHERE user_id LIKE '%" + user_id + "%'")
+        cursor.execute("SELECT status FROM menu WHERE id_user LIKE '%" + user_id + "%'")
         count_menu = cursor.fetchall()
         print("count menu = ", count_menu)
         # if count_menu == 1:
