@@ -339,97 +339,58 @@ def handle_text_message(event):
         else:
             salam = "Assalamualaikum "
 
-        msg_penyakit = "Kemungkinan Anda terkena penyakit "
-        msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
-        msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
-        msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
-        msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
-
-        message = ""
-        conn = create_connection()
-        stopwords = get_stopword('file/konjungsi.csv')
-        contents = tokenizing(text)
-        filters = filtering(contents, stopwords)
-        stems = stemming(filters)
-        sinonim = get_sinonim(stems)
-        kondisi_gejala = inputs_check(conn, sinonim)
-
-        cursor = conn.cursor()
-
-        # set user_id dan profile (untuk nama)
-        user_id = event.source.user_id;
-        name_user = line_bot_api.get_profile(event.source.user_id).display_name
-
-        # jika gejala kosong maka tampilkan pesan
-        # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
-        if kondisi_gejala == "kosong":
-            disease = check_greeting(sinonim)
-            message = message + str(disease)
-
-        # jika gejalanya kurang
-        elif kondisi_gejala == "kurang":
-
-            # TODO: masukin gejala ke database, panggil fungsi bantuan
-            save_input(user_id, name_user, sinonim, conn)
-
-            cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-            count_input = cursor.fetchall()
-
-            if count_input[0][0] <= 3:
-                message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
-                save_history(user_id, name_user, text, message, conn)
-
-            else:
-                cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-                gejala_db = cursor.fetchall()
-                gejala = [i[0] for i in gejala_db]
-                result, cf = get_cf(conn, gejala)
-                # print("result = ", result)
-
-                if len(result) == 1:
-                    for output in result:
-                        message = message + salam + name_user + "\n" \
-                                  + msg_penyakit + output[0][1] + "\n" + output[0][2] \
-                                  + msg_pengobatan + output[0][4] + "\n" \
-                                  + msg_pencegahan + output[0][5] + "\n" \
-                                  + msg_komplikasi + str(output[0][6]) \
-                                  + "\n\n" + msg_peringatan
+        # if text == '\informasi':
+        messages  = message_bot(event, salam, text)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
 
-                    output_sistem = msg_penyakit + result[0][0][1]
-                    save_history(user_id, name_user, text, output_sistem, conn)
+def message_bot(event, salam, text):
+    msg_penyakit = "Kemungkinan Anda terkena penyakit "
+    msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
+    msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
+    msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
+    msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
-                else:
-                    # print("hasil = ", result)
-                    message = message + salam + name_user + "\n" \
-                              + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                              + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2]\
-                              + "\n\n" + msg_peringatan
+    message = ""
+    conn = create_connection()
+    stopwords = get_stopword('file/konjungsi.csv')
+    contents = tokenizing(text)
+    filters = filtering(contents, stopwords)
+    stems = stemming(filters)
+    sinonim = get_sinonim(stems)
+    kondisi_gejala = inputs_check(conn, sinonim)
 
+    cursor = conn.cursor()
 
-                    output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-                    save_history(user_id, name_user, text, output_sistem, conn)
+    # set user_id dan profile (untuk nama)
+    user_id = event.source.user_id;
+    name_user = line_bot_api.get_profile(event.source.user_id).display_name
 
-                cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-                conn.commit()
+    # jika gejala kosong maka tampilkan pesan
+    # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
+    if kondisi_gejala == "kosong":
+        disease = check_greeting(sinonim)
+        message = message + str(disease)
 
-        # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
-        # setelah sukses hapus yang ada di db
-        elif kondisi_gejala == "ada":
+    # jika gejalanya kurang
+    elif kondisi_gejala == "kurang":
+
+        # TODO: masukin gejala ke database, panggil fungsi bantuan
+        save_input(user_id, name_user, sinonim, conn)
+
+        cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+        count_input = cursor.fetchall()
+
+        if count_input[0][0] <= 3:
+            message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
+            save_history(user_id, name_user, text, message, conn)
+
+        else:
             cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
             gejala_db = cursor.fetchall()
-
-            if gejala_db is None:
-                result, cf = get_cf(conn, sinonim)
-
-            else:
-                gejala_new = [i[0] for i in gejala_db]
-                sinonim.append(gejala_new)
-                gejala_new2 = flat(sinonim)
-                result, cf = get_cf(conn, gejala_new2)
-
-                cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
-                conn.commit()
+            gejala = [i[0] for i in gejala_db]
+            result, cf = get_cf(conn, gejala)
+            # print("result = ", result)
 
             if len(result) == 1:
                 for output in result:
@@ -440,7 +401,6 @@ def handle_text_message(event):
                               + msg_komplikasi + str(output[0][6]) \
                               + "\n\n" + msg_peringatan
 
-
                 output_sistem = msg_penyakit + result[0][0][1]
                 save_history(user_id, name_user, text, output_sistem, conn)
 
@@ -448,13 +408,56 @@ def handle_text_message(event):
                 # print("hasil = ", result)
                 message = message + salam + name_user + "\n" \
                           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] + + "\n\n" + msg_peringatan
-
+                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] \
+                          + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
                 save_history(user_id, name_user, text, output_sistem, conn)
 
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(message)))
+            cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+            conn.commit()
+
+    # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
+    # setelah sukses hapus yang ada di db
+    elif kondisi_gejala == "ada":
+        cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+        gejala_db = cursor.fetchall()
+
+        if gejala_db is None:
+            result, cf = get_cf(conn, sinonim)
+
+        else:
+            gejala_new = [i[0] for i in gejala_db]
+            sinonim.append(gejala_new)
+            gejala_new2 = flat(sinonim)
+            result, cf = get_cf(conn, gejala_new2)
+
+            cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
+            conn.commit()
+
+        if len(result) == 1:
+            for output in result:
+                message = message + salam + name_user + "\n" \
+                          + msg_penyakit + output[0][1] + "\n" + output[0][2] \
+                          + msg_pengobatan + output[0][4] + "\n" \
+                          + msg_pencegahan + output[0][5] + "\n" \
+                          + msg_komplikasi + str(output[0][6]) \
+                          + "\n\n" + msg_peringatan
+
+            output_sistem = msg_penyakit + result[0][0][1]
+            save_history(user_id, name_user, text, output_sistem, conn)
+
+        else:
+            # print("hasil = ", result)
+            message = message + salam + name_user + "\n" \
+                      + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
+                      + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][
+                          2] + + "\n\n" + msg_peringatan
+
+            output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+            save_history(user_id, name_user, text, output_sistem, conn)
+
+    return message
 
 
 @handler.add(MessageEvent, message=LocationMessage)
