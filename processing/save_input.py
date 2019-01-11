@@ -45,7 +45,7 @@ def save_menuinformasi(user_id, name_user, text, conn):
 def save_menukonsultasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM menu")
+    cursor.execute("DELETE FROM menu WHERE user_id LIKE '%" + user_id + "%'")
     print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()

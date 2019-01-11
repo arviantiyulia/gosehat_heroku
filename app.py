@@ -330,6 +330,8 @@ def handle_text_message(event):
     else:
         conn = create_connection()
 
+        cursor = conn.cursor()
+
         # set user_id dan profile (untuk nama)
         user_id = event.source.user_id;
         name_user = line_bot_api.get_profile(event.source.user_id).display_name
@@ -360,6 +362,12 @@ def handle_text_message(event):
         else:
             messages = message_bot(user_id, name_user, salam, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+
+
+        cursor.execute("SELECT status FROM menu WHERE user_id LIKE '%" + user_id + "%'")
+        count_menu = cursor.fetchall()
+        print("count menu = ", count_menu)
+        # if count_menu == 1:
 
 
 def message_bot(user_id, name_user, salam, text, conn):
