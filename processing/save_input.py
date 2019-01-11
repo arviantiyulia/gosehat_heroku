@@ -37,7 +37,7 @@ def save_menuinformasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
     print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
-    cursor.execute("INSERT INTO menu(user_id, name_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
+    cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
 
     return user_id
