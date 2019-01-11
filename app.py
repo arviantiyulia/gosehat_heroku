@@ -55,6 +55,7 @@ from processing.save_input import save_input
 from processing.sinonim import get_sinonim
 from processing.save_input import save_menuinformasi
 from processing.save_input import save_menukonsultasi
+from processing.informasi import get_info
 
 app = Flask(__name__)
 
@@ -367,7 +368,8 @@ def handle_text_message(event):
         if len(count_menu) != 0:
             if count_menu[0][0] == '\informasi':
                 # print("informasi")
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(text)))
+                messages = get_info(text)
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             elif count_menu[0][0] == '\konsultasi':
                 messages = message_bot(user_id, name_user, salam, text, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
