@@ -36,6 +36,7 @@ def save_history(user_id, name_user, input, output, conn):
 def save_menuinformasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
+    cursor.execute("DELETE FROM menu WHERE id_user LIKE '%" + user_id + "%'")
     print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
