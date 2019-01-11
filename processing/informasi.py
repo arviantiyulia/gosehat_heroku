@@ -10,4 +10,6 @@ def get_info(text):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
 
+
+
     return sinonim
