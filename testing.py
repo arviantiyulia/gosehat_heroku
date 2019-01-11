@@ -59,19 +59,22 @@ def get_gejalapenyakit(penyakit):
         filters = filtering(gj, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
-        result = get_cf(conn, sinonim)
+        result, cf = get_cf(conn, sinonim)
 
+        print("result = ", cf)
         data = [result[0][0][1]]
         print("data = ", data)
-        rows = [list, data]
+        nilai_cf = [cf]
+        zips = zip(list, data, nilai_cf)
         newfilepath = 'testing.csv'
 
         with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
-            writer = csv.writer(f)
-            for row in rows:
-                writer.writerow(row)
+            writer = csv.writer(f, delimiter=";")
+            for row in zips:
+                tmp = row
+                writer.writerow(tmp)
 
-    return rows
+    return zips
 
 
 def combination_samegejala(penyakit):
@@ -83,7 +86,7 @@ def combination_samegejala(penyakit):
         arr_penyakit.append(tuple_comb)
         # print("arr = ", arr_penyakit)
 
-    for i in range(50):
+    for i in range(len(arr_penyakit)):
         list_gj = []
         arr_gejala = []
 
@@ -111,7 +114,7 @@ def combination_samegejala(penyakit):
             filters = filtering(gj, stopwords)
             stems = stemming(filters)
             sinonim = get_sinonim(stems)
-            result = get_cf(conn, sinonim)
+            result, cf = get_cf(conn, sinonim)
 
             list_gj = ",".join(map("".join, arr_gejala))
             list = [list_gj]
@@ -119,15 +122,17 @@ def combination_samegejala(penyakit):
             print("result = ", list)
             data = [result[0][0][1]]
             print("data = ", data)
-            rows = [list, data]
+            nilai_cf = [cf]
+            zips = zip(list, data, nilai_cf)
             newfilepath = 'testing.csv'
 
             with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
-                writer = csv.writer(f)
-                for row in rows:
-                    writer.writerow(row)
+                writer = csv.writer(f, delimiter=";")
+                for row in zips:
+                    tmp = row
+                    writer.writerow(tmp)
 
-    return rows
+    return zips
 
 def combination_other(penyakit):
     arr_penyakit = []
@@ -137,7 +142,7 @@ def combination_other(penyakit):
         tuple_comb = [element for tupl in cb for element in tupl]  # convert tuple of tuple to list
         arr_penyakit.append(tuple_comb)
 
-    for i in range(50):
+    for i in range(len(arr_penyakit)):
         list_gj = []
         arr_gejala = []
 
@@ -186,7 +191,7 @@ def combination_other(penyakit):
                     filters = filtering(gj, stopwords)
                     stems = stemming(filters)
                     sinonim = get_sinonim(stems)
-                    result = get_cf(conn, sinonim)
+                    result, cf= get_cf(conn, sinonim)
 
                     join_gj = ",".join(map("".join, list_comb))
                     list_gj = [join_gj]
@@ -194,13 +199,14 @@ def combination_other(penyakit):
                     print("result = ", list_gj)
                     data = [result[0][0][1]]
                     print("data = ", data)
-                    rows = [list_gj, data]
+                    nilai_cf = [cf]
+                    zips = zip(list_gj, data, nilai_cf)
                     newfilepath = 'testing.csv'
-
                     with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
-                        writer = csv.writer(f)
-                        for row in rows:
-                            writer.writerow(row)
+                        writer = csv.writer(f, delimiter=";")
+                        for row in zips:
+                            tmp = row
+                            writer.writerow(tmp)
 
     return arr_gejala
 

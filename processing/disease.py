@@ -61,4 +61,4 @@ def get_disease(conn, cf, id):
     print("\nKemungkinan penyakit yang diderita: " + str(disease_name[0][0][1]))
     print("Dengan nilai certainty factor: ", max_cf)
 
-    return disease_name
+    return disease_name, max_cf
