@@ -370,7 +370,7 @@ def handle_text_message(event):
                 # print("informasi")
                 messages = get_info(text)
                 print("messages = ", messages)
-                line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+                line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages[0])))
             elif count_menu[0][0] == '\konsultasi':
                 messages = message_bot(user_id, name_user, salam, text, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
