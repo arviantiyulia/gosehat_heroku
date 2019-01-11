@@ -383,7 +383,7 @@ def handle_text_message(event):
                 cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 gejala_db = cursor.fetchall()
                 gejala = [i[0] for i in gejala_db]
-                result = get_cf(conn, gejala)
+                result, cf = get_cf(conn, gejala)
                 # print("result = ", result)
 
                 if len(result) == 1:
@@ -420,13 +420,13 @@ def handle_text_message(event):
             gejala_db = cursor.fetchall()
 
             if gejala_db is None:
-                result = get_cf(conn, sinonim)
+                result, cf = get_cf(conn, sinonim)
 
             else:
                 gejala_new = [i[0] for i in gejala_db]
                 sinonim.append(gejala_new)
                 gejala_new2 = flat(sinonim)
-                result = get_cf(conn, gejala_new2)
+                result, cf = get_cf(conn, gejala_new2)
 
                 cursor.execute("DELETE FROM gejala_input WHERE user_id LIKE '%" + user_id + "%'")
                 conn.commit()

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="" />
+    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
@@ -86,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.ini" pinned="false" current-in-tab="false">
+      <file leaf-file-name="database.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/database.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="20">
+              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -145,7 +147,6 @@
       <find>user</find>
       <find>TextSendMessage</find>
       <find>datetime</find>
-      <find>get_cf</find>
       <find>gejala_penyakit_sele</find>
       <find>print</find>
       <find>profile</find>
@@ -156,6 +157,7 @@
       <find>spl</find>
       <find>certainty</find>
       <find>flat</find>
+      <find>get_cf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,10 +189,10 @@
         <option value="$PROJECT_DIR$/processing/certaintyfactor.py" />
         <option value="$PROJECT_DIR$/processing/app.py" />
         <option value="$PROJECT_DIR$/processing/preprocessing.py" />
-        <option value="$PROJECT_DIR$/processing/database.ini" />
         <option value="$PROJECT_DIR$/processing/disease.py" />
         <option value="$PROJECT_DIR$/testing.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/processing/database.ini" />
       </list>
     </option>
   </component>
@@ -674,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/database.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
@@ -725,6 +720,13 @@
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/database.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
