@@ -26,9 +26,18 @@ def flat(listoflist):
 def save_history(user_id, name_user, input, output, conn):
     cursor = conn.cursor()
 
-    print("INSERT INTO history(user_id, name_user, input_user, output_sistem) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "')")
+    # print("INSERT INTO history(user_id, name_user, input_user, output_sistem) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "')")
     cursor.execute(
         "INSERT INTO history(user_id, name_user, input_user, output_sistem) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "')")
+    conn.commit()
+
+    return user_id
+
+def save_menuinformasi(user_id, name_user, text, conn):
+    cursor = conn.cursor()
+
+    print("INSERT INTO menu(user_id, name_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
+    cursor.execute("INSERT INTO menu(user_id, name_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
 
     return user_id

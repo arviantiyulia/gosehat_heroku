@@ -53,6 +53,7 @@ from processing.save_input import flat
 from processing.save_input import save_history
 from processing.save_input import save_input
 from processing.sinonim import get_sinonim
+from processing.save_input import save_menuinformasi
 
 app = Flask(__name__)
 
@@ -326,6 +327,13 @@ def handle_text_message(event):
                         ),
                     ])))
     else:
+
+        conn = create_connection()
+
+        # set user_id dan profile (untuk nama)
+        user_id = event.source.user_id;
+        name_user = line_bot_api.get_profile(event.source.user_id).display_name
+
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                          second=0) and dt.datetime.now() > dt.datetime.now().replace(
             hour=0, minute=0, second=0):
@@ -341,17 +349,18 @@ def handle_text_message(event):
 
         if text == '\informasi':
             messages = "masukkan informasi"
+            save_menuinformasi(user_id, name_user, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
         elif text == '\konsultasi':
-            messages  = message_bot(event, salam, text)
+            messages  = message_bot(user_id, name_user, salam, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
         else:
-            messages = message_bot(event, salam, text)
+            messages = message_bot(user_id, name_user, salam, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
 
-def message_bot(event, salam, text):
+def message_bot(user_id, name_user, salam, text, conn):
     msg_penyakit = "Kemungkinan Anda terkena penyakit "
     msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
     msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
@@ -359,7 +368,6 @@ def message_bot(event, salam, text):
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
-    conn = create_connection()
     stopwords = get_stopword('file/konjungsi.csv')
     contents = tokenizing(text)
     filters = filtering(contents, stopwords)
@@ -368,10 +376,6 @@ def message_bot(event, salam, text):
     kondisi_gejala = inputs_check(conn, sinonim)
 
     cursor = conn.cursor()
-
-    # set user_id dan profile (untuk nama)
-    user_id = event.source.user_id;
-    name_user = line_bot_api.get_profile(event.source.user_id).display_name
 
     # jika gejala kosong maka tampilkan pesan
     # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
