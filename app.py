@@ -359,9 +359,7 @@ def handle_text_message(event):
             messages = "masukkan konsultasi"
             # messages  = message_bot(user_id, name_user, salam, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
-        else:
-            messages = message_bot(user_id, name_user, salam, text, conn)
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+
 
 
         cursor.execute("SELECT status FROM menu WHERE id_user LIKE '%" + user_id + "%'")
@@ -370,7 +368,11 @@ def handle_text_message(event):
         if count_menu[0][0] == '\informasi':
             print("informasi")
         elif count_menu[0][0] == '\konsultasi':
-            print("konsultasi")
+            messages = message_bot(user_id, name_user, salam, text, conn)
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+        else:
+            messages = message_bot(user_id, name_user, salam, text, conn)
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
 
 def message_bot(user_id, name_user, salam, text, conn):
