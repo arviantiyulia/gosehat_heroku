@@ -339,9 +339,16 @@ def handle_text_message(event):
         else:
             salam = "Assalamualaikum "
 
-        # if text == '\informasi':
-        messages  = message_bot(event, salam, text)
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+        if text == '\informasi':
+            messages = "masukkan informasi"
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+
+        elif text == '\konsultasi':
+            messages  = message_bot(event, salam, text)
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
+        else:
+            messages = message_bot(event, salam, text)
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
 
 def message_bot(event, salam, text):
