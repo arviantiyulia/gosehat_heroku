@@ -67,6 +67,9 @@ def get_max_id(input, row):
     min_item = 1000
     id_min_count = 0
 
+    print("input = ", input)
+    print("row = ", row)
+
     # digunakan untuk inisialisasi variabel baru yang berisi id gejala, count default 0, nama gejala
     for r in row:
         gejala_new = [r[0], 0, r[1]]
@@ -74,6 +77,8 @@ def get_max_id(input, row):
 
     gejala_arr = db_stemming(gejala_arr)
 
+
+    print("gj = ", gejala_arr)
     # digunakan untuk mencari nama gejala yang memiliki kata paling sedikit
     for gj in gejala_arr:
         count = 0
