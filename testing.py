@@ -103,7 +103,7 @@ def combination_samegejala(penyakit):
                 if list_gj[0][x] == list_gj[1][y]:
                     arr_gejala.append(list_gj[0][x])
 
-        if len(arr_gejala) >= 3:
+        if len(arr_gejala) > 2:
             # print(gj)
             name_gejala = [item.split(" ") for item in arr_gejala]
             # print("old = ", arr_gejala)
@@ -160,7 +160,7 @@ def combination_other(penyakit):
                 if list_gj[0][x] == list_gj[1][y]:
                     arr_gejala.append(list_gj[0][x])
 
-        if len(arr_gejala) >= 3:
+        if len(arr_gejala) >= 2:
             print("arr_gejala = ", arr_gejala)
 
             list_othergj = []
@@ -214,6 +214,6 @@ def combination_other(penyakit):
 if __name__ == "__main__":
     get_gejala()
     penyakit = get_penyakit()
-    # get_gejalapenyakit(penyakit)
-    # combination_samegejala(penyakit)
+    get_gejalapenyakit(penyakit)
+    combination_samegejala(penyakit)
     combination_other(penyakit)
