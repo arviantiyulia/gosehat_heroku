@@ -84,12 +84,13 @@ def combination_samegejala(penyakit):
     for cb in comb_penyakit:
         tuple_comb = [element for tupl in cb for element in tupl]  # convert tuple of tuple to list
         arr_penyakit.append(tuple_comb)
-        # print("arr = ", arr_penyakit)
+    print("kumpulan penyakit = ", arr_penyakit)
 
     for i in range(len(arr_penyakit)):
         list_gj = []
         arr_gejala = []
 
+        print("penyakit = ", arr_penyakit[i])
         for j in arr_penyakit[i]:
             cursor.execute(
                 "SELECT gejala.nama_gejala FROM gejala_penyakit JOIN gejala ON gejala_penyakit.id_gejala = gejala.id_gejala WHERE gejala_penyakit.id_penyakit = " + str(
@@ -98,17 +99,18 @@ def combination_samegejala(penyakit):
 
             list_gj.append([i[0] for i in id_gejala])  # convert list of tuple to list
 
+        print("gejala = ", list_gj)
         for x in range(len(list_gj[0])):
             for y in range(len(list_gj[1])):
                 if list_gj[0][x] == list_gj[1][y]:
                     arr_gejala.append(list_gj[0][x])
 
-        if len(arr_gejala) > 2:
+        if len(arr_gejala) >= 2:
             # print(gj)
             name_gejala = [item.split(" ") for item in arr_gejala]
             # print("old = ", arr_gejala)
             gj = [element for sub in name_gejala for element in sub]
-            # print("gj = ", gj)
+            print("gj = ", gj)
 
             stopwords = get_stopword('file/konjungsi.csv')
             filters = filtering(gj, stopwords)
@@ -154,6 +156,7 @@ def combination_other(penyakit):
 
             list_gj.append([i[0] for i in id_gejala])  # convert list of tuple to list
 
+        print("penyakit = ", list_gj)
         # compare list 1 dan list 2
         for x in range(len(list_gj[0])):
             for y in range(len(list_gj[1])):
@@ -161,7 +164,7 @@ def combination_other(penyakit):
                     arr_gejala.append(list_gj[0][x])
 
         if len(arr_gejala) >= 2:
-            print("arr_gejala = ", arr_gejala)
+            # print("arr_gejala = ", arr_gejala)
 
             list_othergj = []
 
@@ -171,7 +174,7 @@ def combination_other(penyakit):
                 other_gejala = cursor.fetchall()
 
                 list_othergj.append([i[0] for i in other_gejala])
-
+            # print("list_other gejala = ", list_othergj)
             for gj in list_othergj:
                 arr_gejalanew = []
                 arr_othergejala = [text for text in gj if text not in arr_gejala]
@@ -185,10 +188,10 @@ def combination_other(penyakit):
 
                     split_gj = [item.split(" ") for item in list_comb]
                     arr_gj = [element for sub in split_gj for element in sub]
-                    # print(arr_gj)
+                    print("ag = ", arr_gj)
 
                     stopwords = get_stopword('file/konjungsi.csv')
-                    filters = filtering(gj, stopwords)
+                    filters = filtering(arr_gj, stopwords)
                     stems = stemming(filters)
                     sinonim = get_sinonim(stems)
                     result, cf= get_cf(conn, sinonim)
@@ -211,9 +214,41 @@ def combination_other(penyakit):
     return arr_gejala
 
 
+def remove_duplicate():
+
+    data = []
+    with open('testing.csv', 'r') as csvfile:
+        read_data = csv.reader(csvfile, delimiter=';')
+        for r in read_data:
+            data.append(r)
+    print("data lama = ", data)
+
+    for i in data:
+        string_gj = i[0].split(',')
+        sort_gj = sorted(string_gj)
+
+        i[0] = sort_gj
+
+        join_gj = ",".join(map("".join, i[0]))
+        i[0] = join_gj
+
+    data2 = set(map(tuple,data))
+
+    newfilepath = 'duplicate.csv'
+    with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
+        writer = csv.writer(f, delimiter=";")
+        for row in data2:
+            tmp = row
+            writer.writerow(tmp)
+
+    print("panjang data2 = ", data2)
+
+    return data
+
 if __name__ == "__main__":
     get_gejala()
     penyakit = get_penyakit()
-    get_gejalapenyakit(penyakit)
-    combination_samegejala(penyakit)
-    combination_other(penyakit)
+    remove_duplicate()
+    # get_gejalapenyakit(penyakit)
+    # combination_samegejala(penyakit)
+    # combination_other(penyakit)

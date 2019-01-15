@@ -1,0 +1,802 @@
+demam,sakit kepala,sakit saat menelan,sakit tenggorokan;faringitis;0.41950113378684817
+adanya kotoran mata di pagi hari,kelopak mata sering menempel pada pagi hari,mata berair,mata gatal;konjungtivitis/mata merah;0.5095054825422038
+lemas,mual,muntah,nyeri otot,sakit kepala;demam berdarah dengue;0.35575521432682367
+mual,muntah,sakit kepala sebagian,sensitif terhadap suara;migrain;0.37810819467624207
+kehilangan nafsu makan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.44725631899022333
+diare,kehilangan nafsu makan,nyeri kepala,pusing;demam tifoid;0.2855372503280362
+batuk,bintik-bintik pada amandel,demam,sakit tenggorokan;faringitis;0.5438937479753807
+diare,muntah,nyeri otot,sembelit;demam tifoid;0.3513430299030854
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,kelelahan,mata merah;campak;0.3321013854465198
+diare,kehilangan nafsu makan,muntah,sembelit;demam tifoid;0.3513430299030854
+demam,kehilangan nafsu makan,kelelahan,nyeri kepala,pusing;hepatitis A;0.40491983117599134
+lemas,penglihatan kabur;hipertensi;0.2277318640955005
+demam turun pada hari keempat tanpa obat,mual,muntah,sakit kepala;demam berdarah dengue;0.3825668284749345
+bersin -bersin,hidung berair,kelelahan,sakit tenggorokan;infeksi saluran nafas akut;0.3815753568949258
+buang air besar lebih dari 2 kali sehari,dehidrasi,kehilangan nafsu makan,mual,muntah;diare akut;0.4127098389271122
+diare,kehilangan nafsu makan,mual,muntah,sembelit;demam tifoid;0.41108775083306437
+batuk,demam,hidung berair,hidung tersumbat,tubuh terasa sakit;infeksi saluran nafas akut;0.5071558399775653
+kehilangan nafsu makan,kelelahan,kembung,muntah,pusing;hepatitis A;0.4489998436814734
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,lemas;anemia;0.4894100578542816
+demam tinggi,lemas,mual,muntah,sakit kepala;demam berdarah dengue;0.42240122663784196
+kehilangan nafsu makan,kembung,kram perut,sakit perut;konstipasi/sembelit;0.3169865446349293
+demam,kehilangan nafsu makan,kelelahan,kembung;hepatitis A;0.4763294514348724
+demam,gangguan keseimbangan,gangguan pendengaran,keluar cairan berulang kali,nyeri bagian telinga;otitis media supuratif kronik;0.5732828261274535
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung,sakit perut;konstipasi/sembelit;0.4194385629396899
+kehilangan nafsu makan,kelelahan,nyeri kepala,pusing;anemia;0.28544423440453687
+demam tinggi di malam hari,mual,muntah,nyeri otot,pusing;demam tifoid;0.3575502736360702
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4063123426191287
+bersin -bersin,kehilangan nafsu makan,kelelahan,sensitif terhadap cahaya;campak;0.3042722765067915
+kehilangan nafsu makan,kelelahan,kembung,nyeri kepala,pusing;hepatitis A;0.40491983117599134
+bersin -bersin,hidung berair,hidung tersumbat,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.4668753076680394
+demam,kehilangan nafsu makan,kram perut,muntah;hepatitis A;0.35731341767007063
+demam,kembung,mual,nyeri kepala;hepatitis A;0.4990977361550953
+batuk,bersin -bersin,hidung berair,hidung tersumbat,sakit tenggorokan;infeksi saluran nafas akut;0.5261113845938128
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala;demam tifoid;0.41108775083306437
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kelelahan,mata berair;campak;0.3042722765067915
+demam,kehilangan nafsu makan,muntah,nyeri kepala;hepatitis A;0.40491983117599134
+demam tinggi,kelelahan,mata berair,mata merah;campak;0.4063123426191287
+diare,kehilangan nafsu makan,mual,sembelit;demam tifoid;0.3513430299030854
+batuk,bintik-bintik pada amandel,demam,sakit saat menelan,sakit tenggorokan;faringitis;0.5438937479753807
+demam tinggi di malam hari,diare,mual,sembelit;demam tifoid;0.4053977774111616
+demam tinggi di malam hari,kehilangan nafsu makan,nyeri otot,pusing;demam tifoid;0.26160787593710916
+dehidrasi,kram perut,mual,muntah;diare akut;0.34292381670085864
+mual,muntah,perih di ulu hati,rasa asam di mulut;maag;0.45390771134812247
+demam tinggi,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.5086722835468651
+mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.40631234261912874
+adanya kotoran mata di pagi hari,mata berair,mata gatal,mata merah;konjungtivitis/mata merah;0.5721218039197948
+batuk,demam,hidung berair,kelelahan,sakit tenggorokan;faringitis;0.5438937479753807
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,mual,muntah,sakit kepala;hepatitis A;0.35731341767007063
+bersendawa,mual,muntah,riwayat makan tidak teratur/makan pedas/asam,sakit kepala;maag;0.5070950991531752
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,mata berair,mata merah;campak;0.3815753568949258
+buang air besar lebih dari 2 kali sehari,kram perut,mual,muntah;diare akut;0.3815753568949257
+demam,kelelahan,mual,nyeri kepala;hepatitis A;0.4307928819944264
+kehilangan nafsu makan,kembung,mual,nyeri kepala;hepatitis A;0.4763294514348724
+demam,hidung berair,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.35683837117072276
+demam,kehilangan nafsu makan,kram perut,mual,muntah;hepatitis A;0.4763294514348723
+bintik merah dan tidak gatal pada kulit,lemas,mual,muntah,sakit kepala;demam berdarah dengue;0.40018588920083586
+lemas,penglihatan kabur,riwayat konsumsi obat antihipertensi,sesak napas;hipertensi;0.5269946311769502
+dehidrasi,demam,mual,muntah;hepatitis A;0.3852563125539805
+feses encer,kehilangan nafsu makan,kram perut,sakit kepala;diare akut;0.3815753568949258
+mual,muntah,nyeri kepala,pusing,sembelit;demam tifoid;0.37837040365712354
+mual,muntah,sakit kepala sebagian,sensitif terhadap suara;migrain;0.378108194676242
+adanya tekanan atau stress,diare,sakit perut,sembelit;irritable bowel syndrome;0.5338858058191239
+diare,lidah tertutup selaput putih kotor,muntah,sembelit;demam tifoid;0.4053977774111616
+bersin -bersin,hidung berair,hidung tersumbat,mata berair;rintis alergi;0.3455213289924034
+mual,muntah,pusing,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.4194385629396899
+iritasi pada mata,mata berair,mata nyeri,sensitif terhadap cahaya;keratitis akut;0.5623514781608128
+demam tinggi,lemas,mual,muntah,nyeri otot;demam berdarah dengue;0.42240122663784196
+demam tinggi,kelelahan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+kelelahan,kembung,mual,muntah;hepatitis A;0.43079288199442645
+detak jantung tak teratur,lemas,penglihatan kabur,riwayat konsumsi obat antihipertensi;hipertensi;0.5269946311769502
+bersin -bersin,hidung tersumbat,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.35580766343221437
+batuk,demam,kelelahan,sakit tenggorokan;faringitis;0.5438937479753807
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kelelahan,sensitif terhadap cahaya;campak;0.3042722765067915
+mual,muntah,perih di ulu hati,sakit kepala;maag;0.45390771134812247
+bintik-bintik pada amandel,demam,sakit kepala,sakit saat menelan;tonsilitis/amandel;0.32592592592592595
+kelelahan,kulit pucat,lemas,pusing,sesak napas;anemia;0.6004078713642204
+batuk,demam,keluar lendir dari hidung,nyeri wajah;rinosinusitis;0.47227763788367
+mata berair,mata nyeri,penglihatan berkurang,sensitif terhadap cahaya;keratitis akut;0.5623514781608128
+kehilangan nafsu makan,kram perut,muntah,sakit kepala;diare akut;0.3042722765067915
+demam tinggi di malam hari,mual,muntah,pusing,sembelit;demam tifoid;0.41108775083306437
+bersin -bersin,hidung gatal,hidung tersumbat,mata berair;rintis alergi;0.405019389993094
+bersin -bersin,hidung berair,hidung tersumbat,paru-paru terhambat,tubuh terasa sakit;infeksi saluran nafas akut;0.4668753076680394
+demam,gangguan pendengaran,nyeri bagian telinga;otitis media akut;0.5321397865776565
+buang air besar lebih dari 2 kali sehari,demam,kehilangan nafsu makan,kram perut;diare akut;0.3357661240723277
+mual,muntah,rasa asam di mulut,riwayat makan tidak teratur/makan pedas/asam;maag;0.44320001941377196
+diare,mual,muntah,sembelit;demam tifoid;0.37837040365712354
+batuk,demam,hidung berair,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.5071558399775653
+lidah tertutup selaput putih kotor,mual,muntah,nyeri otot,pusing;demam tifoid;0.3575502736360702
+kehilangan nafsu makan,kelelahan,kembung,mual;hepatitis A;0.4763294514348724
+kelelahan,pusing,sesak napas;anemia;0.34757951836935974
+bersin -bersin,hidung berair,mata bengkak,mata berair;rintis alergi;0.3851867029928638
+diare,mual,muntah,nyeri otot,pusing;demam tifoid;0.3575502736360702
+kehilangan nafsu makan,mual,pusing,sembelit;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,kelelahan,kembung,nyeri kepala;hepatitis A;0.40491983117599134
+batuk,bersin -bersin,demam,hidung berair,hidung tersumbat;infeksi saluran nafas akut;0.543662814794042
+demam,kehilangan nafsu makan,nyeri kepala,pusing;varisela / cacar air;0.36734693877551017
+batuk,bersin -bersin,demam,paru-paru terhambat,sakit tenggorokan;faringitis;0.5438937479753807
+diare,kehilangan nafsu makan,pusing,sembelit;irritable bowel syndrome;0.3476331360946745
+demam,kehilangan nafsu makan,kelelahan,mual,muntah,pusing;hepatitis A;0.5510369096663857
+demam,feses encer,kehilangan nafsu makan,mual,muntah;hepatitis A;0.4763294514348723
+kehilangan nafsu makan,kembung,kram perut,mengeden saat buang air besar,sakit perut;konstipasi/sembelit;0.47221687539971813
+batuk,demam,kelelahan,tubuh terasa sakit;faringitis;0.40136054421768713
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,kelelahan,sensitif terhadap cahaya;anemia;0.28544423440453687
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,kram perut,sakit kepala;diare akut;0.3815753568949258
+feses encer,kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+demam tinggi di malam hari,diare,mual,muntah,nyeri otot;demam tifoid;0.41108775083306437
+demam turun pada hari keempat tanpa obat,mual,muntah,nyeri untuk melirik;demam berdarah dengue;0.4251484265111459
+demam,kehilangan nafsu makan,kembung,mual,muntah,nyeri kepala;hepatitis A;0.6049124805064195
+demam turun pada hari keempat tanpa obat,mual,muntah,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.4622356248007494
+diare,lidah tertutup selaput putih kotor,mual,muntah,pusing;demam tifoid;0.41108775083306437
+bersin -bersin,hidung berair,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.4273845897175238
+diare,kehilangan nafsu makan,nyeri kepala,sembelit;demam tifoid;0.3795455068638209
+demam tinggi di malam hari,mual,muntah,sembelit;demam tifoid;0.3783704036571235
+batuk,bintik-bintik pada amandel,demam,napas bau;tonsilitis/amandel;0.43666666666666665
+kehilangan nafsu makan,kelelahan,muntah,nyeri kepala;hepatitis A;0.32377253542726286
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,mata berair,mata merah,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+batuk,demam,kelelahan,sakit tenggorokan,tubuh terasa sakit;faringitis;0.5438937479753807
+batuk,demam,hidung berair,hidung tersumbat,paru-paru terhambat;infeksi saluran nafas akut;0.5071558399775653
+mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+buang air besar lebih dari 2 kali sehari,dehidrasi,demam,sakit kepala;diare akut;0.3224814465537742
+demam,kelelahan,sakit tenggorokan,tubuh terasa sakit;faringitis;0.41950113378684817
+batuk,demam,hidung berair,sakit tenggorokan,tubuh terasa sakit;faringitis;0.5438937479753807
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung,tinja keras;konstipasi/sembelit;0.4774947066457209
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,hidung gatal,hidung tersumbat;rintis alergi;0.5602352070413602
+demam,gangguan keseimbangan,gangguan pendengaran,keluar cairan berulang kali,keluar cairan selain bening,nyeri bagian telinga;otitis media supuratif kronik;0.6681088647657971
+demam turun pada hari keempat tanpa obat,mual,muntah,nyeri otot;demam berdarah dengue;0.3825668284749345
+iritasi pada mata,mata berair,penglihatan berkurang,sensitif terhadap cahaya;keratitis akut;0.4894100578542816
+diare,lidah tertutup selaput putih kotor,mual,muntah,nyeri otot;demam tifoid;0.41108775083306437
+demam,kelelahan,kembung,muntah;hepatitis A;0.4307928819944264
+kelelahan,muntah,pusing,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.5249951878597463
+lemas,mual,muntah,nyeri otot;demam berdarah dengue;0.3113245394528116
+batuk,bersin -bersin,demam,hidung tersumbat,sakit tenggorokan;faringitis;0.5438937479753807
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,pusing,sembelit;demam tifoid;0.4885762046708191
+diare,lidah tertutup selaput putih kotor,nyeri otot,sembelit;demam tifoid;0.3795455068638209
+bersendawa,mual,muntah,sakit kepala;maag;0.42178463554507084
+dehidrasi,kehilangan nafsu makan,kram perut,muntah;diare akut;0.3429238167008586
+buang air besar lebih dari 2 kali sehari,demam,mual,muntah,sakit kepala;maag;0.3468307920046171
+diare,lidah tertutup selaput putih kotor,pusing,sembelit;demam tifoid;0.3795455068638209
+demam,kelelahan,mual,muntah;hepatitis A;0.43079288199442645
+bintik merah dan tidak gatal pada kulit,demam tinggi,mual,muntah,sakit kepala;demam berdarah dengue;0.4622356248007494
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,kram perut,mual;diare akut;0.3815753568949258
+diare,lidah tertutup selaput putih kotor,mual,sembelit;demam tifoid;0.4053977774111616
+bersin -bersin,demam,hidung berair,hidung tersumbat,tubuh terasa sakit;infeksi saluran nafas akut;0.48662066664329723
+dipengaruhi oleh siklus menstruasi atau makanan tertentu (kopi,mual,muntah,sensitif terhadap cahaya;migrain;0.4897298007599935
+mual,muntah,nyeri otot,sembelit;demam tifoid;0.3218586221714075
+kehilangan nafsu makan,kelelahan,kembung,mual,pusing;hepatitis A;0.5151198624396967
+demam,kelelahan,mual,pusing;hepatitis A;0.43079288199442645
+lemas,penglihatan kabur,riwayat konsumsi obat antihipertensi,sakit kepala belakang;hipertensi;0.46175251133928824
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,hidung tersumbat,mata gatal;rintis alergi;0.4951679672668676
+lemas,mual,muntah,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.40018588920083586
+mual,muntah,pusing,sesak napas;penyakit jantung koroner;0.3852878901714364
+kehilangan nafsu makan,nyeri otot,pusing,sembelit;demam tifoid;0.2616078759371091
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,nyeri kepala,pusing,sembelit;demam tifoid;0.4885762046708191
+demam tinggi,mual,muntah,nyeri otot;demam berdarah dengue;0.3825668284749345
+demam tinggi,demam turun pada hari keempat tanpa obat,mual,muntah;demam berdarah dengue;0.44643922552925164
+batuk,bersin -bersin,demam,kelelahan,sakit tenggorokan;faringitis;0.5438937479753807
+demam,kehilangan nafsu makan,kelelahan,kembung,mual,muntah;hepatitis A;0.6049124805064194
+demam tinggi di malam hari,diare,lidah tertutup selaput putih kotor,sembelit;demam tifoid;0.4312500479585024
+demam,feses encer,mual,sakit kepala;diare akut;0.36920686403282427
+mual,muntah,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.35881939880089353
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.48820029536131787
+demam tinggi,kehilangan nafsu makan,kelelahan,mata merah;campak;0.4063123426191287
+demam,kelelahan;varisela / cacar air;0.2857142857142857
+bersin -bersin,hidung berair,hidung gatal,mata berair;rintis alergi;0.405019389993094
+detak jantung tak teratur,kelelahan,kulit pucat,pusing,sesak napas;anemia;0.5338091832582571
+diare,kembung,kram perut,sakit perut,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.4848596660858136
+batuk,demam,hidung tersumbat,nyeri wajah,tercium bau tidak sedap jika menunduk;rinosinusitis;0.5450669292100603
+demam turun pada hari keempat tanpa obat,lemas,mual,muntah,nyeri otot;demam berdarah dengue;0.42240122663784196
+demam tinggi di malam hari,diare,muntah,sembelit;demam tifoid;0.4053977774111616
+diare,mual,muntah,nyeri otot,sembelit;demam tifoid;0.4110877508330644
+demam tinggi di malam hari,diare,pusing,sembelit;demam tifoid;0.3795455068638209
+kehilangan nafsu makan,kelelahan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.44725631899022333
+kehilangan nafsu makan,kembung;hepatitis A;0.3058984910836763
+kehilangan nafsu makan,kembung,kram perut,tinja keras;konstipasi/sembelit;0.3852878901714364
+demam,kehilangan nafsu makan,kelelahan,mual,muntah,nyeri kepala;hepatitis A;0.5510369096663857
+debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung gatal,mata berair,mata gatal;rintis alergi;0.405019389993094
+bersin -bersin,kehilangan nafsu makan,kelelahan,mata berair;campak;0.3042722765067915
+demam tinggi di malam hari,mual,muntah,nyeri otot,sembelit;demam tifoid;0.4110877508330644
+bersin -bersin,demam,hidung berair,hidung tersumbat,sakit tenggorokan;infeksi saluran nafas akut;0.48662066664329723
+bersin -bersin,kelelahan,paru-paru terhambat,sakit tenggorokan;infeksi saluran nafas akut;0.3042722765067915
+adanya tekanan atau stress,diare,kembung,kram perut,sakit perut;irritable bowel syndrome;0.5082751358091857
+bersin -bersin,demam tinggi,kelelahan,sensitif terhadap cahaya;campak;0.3815753568949258
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,mual,muntah,sakit kepala;diare akut;0.37816335886400126
+kembung,kram perut,sakit perut;konstipasi/sembelit;0.24868519909842224
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,pusing,sembelit;demam tifoid;0.32314055294235
+bersin -bersin,hidung gatal,mata berair,mata gatal;rintis alergi;0.405019389993094
+bersin -bersin,kehilangan nafsu makan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+diare,mual,muntah,pusing,sembelit;demam tifoid;0.41108775083306437
+diare,mual,muntah,pusing;demam tifoid;0.3218586221714075
+diare,mual,muntah,nyeri kepala,nyeri otot;demam tifoid;0.41108775083306437
+batuk,demam,hidung tersumbat,tercium bau tidak sedap jika menunduk,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.4502892061288229
+dehidrasi,demam,kehilangan nafsu makan,kram perut,mual,muntah;hepatitis A;0.4763294514348723
+bersin -bersin,demam,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.3300399699695029
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,sembelit;demam tifoid;0.41108775083306437
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,sembelit;demam tifoid;0.41108775083306437
+demam,kehilangan nafsu makan,kembung,mual,muntah,nyeri kepala,pusing;hepatitis A;0.6049124805064195
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kelelahan,mata merah;campak;0.3815753568949257
+kelelahan,mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing,sesak napas;penyakit jantung koroner;0.5681774435088602
+demam,kram perut,mual,muntah;hepatitis A;0.3852563125539805
+dehidrasi,demam,feses encer,sakit kepala;diare akut;0.4042509271421118
+bersin -bersin,hidung berair,hidung tersumbat,kelelahan,sakit tenggorokan;infeksi saluran nafas akut;0.4668753076680394
+buang air besar lebih dari 2 kali sehari,demam,muntah,sakit kepala;diare akut;0.2826274139981139
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,demam tinggi,kehilangan nafsu makan,kelelahan;campak;0.3321013854465198
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung,kram perut;konstipasi/sembelit;0.4194385629396899
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kelelahan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+kehilangan nafsu makan,muntah,nyeri otot,pusing;hepatitis A;0.2696743382614439
+dehidrasi,kehilangan nafsu makan,kram perut,mual,muntah;diare akut;0.38823941554907526
+kehilangan nafsu makan,nyeri kepala,pusing,sembelit;demam tifoid;0.2855372503280362
+kehilangan nafsu makan,kelelahan,lemas,pusing,sesak napas;anemia;0.5338091832582571
+demam tinggi di malam hari,kehilangan nafsu makan,lidah tertutup selaput putih kotor,pusing;demam tifoid;0.32314055294235006
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,demam tinggi,mata berair;campak;0.3815753568949258
+lemas,penglihatan kabur,sakit kepala belakang,sesak napas;hipertensi;0.3213401229930156
+mual,muntah,nyeri dada kiri luas dan tiba-tiba,sesak napas;penyakit jantung koroner;0.47749470664572097
+bersin -bersin,kehilangan nafsu makan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.48820029536131787
+bersin -bersin,demam tinggi,kelelahan,mata merah;campak;0.45028920612882284
+kehilangan nafsu makan,kelelahan,lemas,sesak napas;anemia;0.4894100578542816
+batuk,demam,hidung tersumbat,paru-paru terhambat,tubuh terasa sakit;infeksi saluran nafas akut;0.445550319974761
+kehilangan nafsu makan,kelelahan,mual,nyeri kepala,pusing;hepatitis A;0.40491983117599134
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,pusing;hepatitis A;0.35731341767007063
+demam tinggi di malam hari,diare,mual,muntah,pusing;demam tifoid;0.41108775083306437
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,kram perut,mual,muntah;diare akut;0.4242253322814826
+bersin -bersin,hidung gatal,mata bengkak,mata berair;rintis alergi;0.4410788209026034
+buang air besar lebih dari 2 kali sehari,demam,kram perut,sakit kepala;diare akut;0.33576612407232764
+bintik-bintik pada amandel,demam,napas bau,sakit kepala;tonsilitis/amandel;0.41580246913580243
+demam,kelelahan,nyeri kepala,pusing;varisela / cacar air;0.36734693877551017
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,mata berair,mata gatal;rintis alergi;0.405019389993094
+kelelahan,mual,muntah,nyeri kepala;hepatitis A;0.35317372953912096
+kelelahan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.44725631899022333
+mual,muntah,perih di ulu hati,riwayat makan tidak teratur/makan pedas/asam,sakit kepala;maag;0.5344787047557766
+kehilangan nafsu makan,mual,muntah,nyeri otot,pusing;hepatitis A;0.4049198311759913
+demam,kelelahan,mual,muntah,nyeri kepala,pusing;hepatitis A;0.47295637221706155
+lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,pusing;demam tifoid;0.37837040365712354
+buang air besar lebih dari 2 kali sehari,dehidrasi,mual,muntah,sakit kepala;diare akut;0.4127098389271122
+diare,kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+mual,muntah,riwayat makan tidak teratur/makan pedas/asam,sakit kepala;maag;0.44320001941377196
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,hidung tersumbat,mata berair;rintis alergi;0.4446847639935544
+batuk,demam,hidung tersumbat,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.44555031997476097
+bintik-bintik pada amandel,demam,sakit kepala,sakit tenggorokan;tonsilitis/amandel;0.4382716049382716
+demam,gangguan pendengaran,keluar cairan berulang kali,keluar cairan selain bening,nyeri bagian telinga;otitis media supuratif kronik;0.6069710240647598
+batuk,bersin -bersin,demam,hidung tersumbat,paru-paru terhambat;infeksi saluran nafas akut;0.4866206666432972
+kehilangan nafsu makan,mual,muntah,nyeri kepala,nyeri otot,pusing,sembelit;demam tifoid;0.4420831323681662
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kehilangan nafsu makan,kelelahan;campak;0.3042722765067915
+kehilangan nafsu makan,kembung,nyeri kepala,pusing;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,kelelahan,muntah,pusing;anemia;0.3475795183693598
+kencing lebih sering pada malam hari,lemas,mudah lapar,penglihatan kabur;diabetes melitus;0.46295814244064976
+kehilangan nafsu makan,mual,muntah,nyeri kepala;hepatitis A;0.4049198311759913
+demam,kehilangan nafsu makan,kembung,mual,muntah,pusing;hepatitis A;0.6049124805064194
+mual,muntah,nyeri otot;maag;0.3009943563558183
+buang air besar lebih dari 2 kali sehari,mual,muntah,sakit kepala;maag;0.3468307920046171
+bintik merah dan tidak gatal pada kulit,lemas,mual,muntah,nyeri otot;demam berdarah dengue;0.40018588920083586
+demam,gangguan pendengaran,nyeri bagian telinga,rasa penuh di bagian dalam telinga,tidak bisa tidur / insomnia;otitis media efusi;0.5555460423836042
+batuk,demam,pembengkakan kelenjar getah bening di leher,sakit tenggorokan;faringitis;0.5438937479753807
+dehidrasi,feses encer,mual,muntah,sakit kepala;diare akut;0.4127098389271122
+demam tinggi di malam hari,lidah tertutup selaput putih kotor,mual,muntah,nyeri otot;demam tifoid;0.41108775083306437
+batuk,bersin -bersin,hidung berair,kelelahan;infeksi saluran nafas akut;0.4502892061288229
+demam,muntah,nyeri kepala,pusing;varisela / cacar air;0.36734693877551017
+feses encer,kram perut,mual,muntah;diare akut;0.3815753568949257
+demam,kehilangan nafsu makan,kelelahan,mual,muntah,nyeri kepala,pusing;hepatitis A;0.5510369096663857
+kehilangan nafsu makan,kembung,muntah,nyeri kepala;hepatitis A;0.40491983117599134
+batuk,demam,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.4044799733062248
+dipengaruhi oleh siklus menstruasi atau makanan tertentu (kopi,mual,muntah,sensitif terhadap suara;migrain;0.4897298007599935
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,pusing,sesak napas;anemia;0.45611071380129997
+demam tinggi,kehilangan nafsu makan,mata berair,mata merah;campak;0.4063123426191287
+kembung,kram perut,mengeden saat buang air besar,sakit perut,tinja keras;konstipasi/sembelit;0.5249951878597463
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,demam tinggi,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+batuk,bersin -bersin,demam,hidung berair,sakit tenggorokan;faringitis;0.5438937479753807
+mata berair,mata merah;konjungtivitis/mata merah;0.3537101114955787
+demam,napas bau,pembengkakan kelenjar getah bening di leher,sakit kepala;tonsilitis/amandel;0.40456790123456793
+mual,muntah,nyeri kepala,nyeri otot;demam tifoid;0.3218586221714075
+demam,kram perut,mual,sakit kepala;diare akut;0.34292381670085864
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,perih di ulu hati;maag;0.4826494107508529
+kehilangan nafsu makan,kembung,mengeden saat buang air besar,tinja keras;konstipasi/sembelit;0.4774947066457209
+diare,kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,pusing;demam tifoid;0.4885762046708191
+bersin -bersin,kehilangan nafsu makan,mata berair,mata merah;campak;0.3815753568949258
+kehilangan nafsu makan,muntah,nyeri kepala,pusing;hepatitis A;0.2696743382614439
+demam tinggi di malam hari,kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah;demam tifoid;0.41108775083306437
+bersin -bersin,kelelahan,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.45028920612882284
+diare,lidah tertutup selaput putih kotor,mual,muntah;demam tifoid;0.37837040365712354
+bersendawa,mual,muntah,perih di ulu hati,sakit kepala;maag;0.5165740395540757
+diare,kehilangan nafsu makan,lidah tertutup selaput putih kotor,pusing;demam tifoid;0.32314055294235
+kehilangan nafsu makan,mual,muntah,sembelit;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,nyeri kepala,nyeri otot,pusing;demam tifoid;0.2205860912669485
+demam,gangguan pendengaran,nyeri bagian telinga,rasa penuh di bagian dalam telinga,riwayat pilek sebelumnya;otitis media efusi;0.633979093727674
+debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung tersumbat,mata berair,mata gatal;rintis alergi;0.405019389993094
+demam,mual,muntah,nyeri kepala;hepatitis A;0.43079288199442645
+hidung gatal,mata bengkak,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+feses encer,kehilangan nafsu makan,kram perut,mual,muntah;diare akut;0.4242253322814826
+batuk,demam,pembengkakan kelenjar getah bening di leher,sakit saat menelan,sakit tenggorokan;faringitis;0.5438937479753807
+demam,gangguan keseimbangan,gangguan pendengaran,keluar cairan selain bening,nyeri bagian telinga;otitis media akut;0.5921218652215466
+kehilangan nafsu makan,kelelahan,kulit pucat,lemas;anemia;0.5623514781608128
+demam tinggi di malam hari,kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,pusing;demam tifoid;0.4885762046708191
+batuk,demam,kelelahan,paru-paru terhambat;faringitis;0.40136054421768713
+kehilangan nafsu makan,kelelahan,pusing,sesak napas;anemia;0.40431173416332844
+adanya kotoran mata di pagi hari,kelopak mata sering menempel pada pagi hari,mata berair,mata merah;konjungtivitis/mata merah;0.5095054825422038
+batuk,bintik-bintik pada amandel,demam,sakit kepala,sakit tenggorokan;faringitis;0.5438937479753807
+buang air besar lebih dari 2 kali sehari,feses encer,kehilangan nafsu makan,mual,muntah;diare akut;0.4472563189902233
+bersin -bersin,hidung berair,hidung tersumbat,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.4668753076680394
+demam,gangguan pendengaran,nyeri bagian telinga,riwayat pilek sebelumnya,tidak bisa tidur / insomnia;otitis media akut;0.6281111124078808
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,riwayat makan tidak teratur/makan pedas/asam;maag;0.4725052815498892
+hidung berair,hidung tersumbat,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+bintik merah dan tidak gatal pada kulit,mual,muntah,nyeri untuk melirik;demam berdarah dengue;0.4030387506077284
+batuk,bersin -bersin,demam,sakit tenggorokan,tubuh terasa sakit;faringitis;0.5438937479753807
+bersin -bersin,demam,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.3796666388606509
+demam tinggi,kehilangan nafsu makan,kelelahan,sensitif terhadap cahaya;campak;0.3321013854465198
+buang air besar lebih dari 2 kali sehari,demam,kehilangan nafsu makan,sakit kepala;diare akut;0.2826274139981139
+kelelahan,mual,muntah,pusing;hepatitis A;0.35317372953912096
+mual,muntah,nyeri dada kiri luas dan tiba-tiba,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.5065227784987364
+bintik merah dan tidak gatal pada kulit,mual,muntah,nyeri otot;demam berdarah dengue;0.35881939880089353
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,hidung tersumbat,mata bengkak;rintis alergi;0.4783402328424299
+bersin -bersin,hidung berair,hidung tersumbat,paru-paru terhambat,sakit tenggorokan;infeksi saluran nafas akut;0.4668753076680394
+kelopak mata sering menempel pada pagi hari,mata berair,mata gatal,mata merah;konjungtivitis/mata merah;0.5211839234340562
+buang air besar lebih dari 2 kali sehari,kram perut,mual,muntah,sakit kepala;diare akut;0.4242253322814826
+mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing;penyakit jantung koroner;0.4194385629396899
+batuk,bersin -bersin,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.3815753568949257
+bintik merah dan tidak gatal pada kulit,mual,muntah,nyeri otot,sakit kepala;demam berdarah dengue;0.40018588920083586
+bintik merah dan tidak gatal pada kulit,lemas,mual,muntah;demam berdarah dengue;0.3588193988008935
+kehilangan nafsu makan,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.33210138544651985
+debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,mata berair,mata gatal;rintis alergi;0.405019389993094
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,pusing;hepatitis A;0.4049198311759913
+kehilangan nafsu makan,mual,muntah,nyeri kepala,sembelit;demam tifoid;0.41108775083306437
+bersin -bersin,demam,kelelahan,sakit tenggorokan;faringitis;0.41950113378684817
+demam,hidung berair,kelelahan,sakit tenggorokan;faringitis;0.41950113378684817
+demam,feses encer,kehilangan nafsu makan,kram perut,mual,muntah;diare akut;0.4937153783854416
+mual,muntah,sakit kepala sebagian,sensitif terhadap cahaya;migrain;0.37810819467624207
+batuk,demam,hidung tersumbat,keluar lendir dari hidung,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.5450669292100603
+kehilangan nafsu makan,kelelahan,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4063123426191287
+bintik merah dan tidak gatal pada kulit,mual,muntah,sakit kepala;demam berdarah dengue;0.3588193988008935
+kelelahan,nyeri dada kiri luas dan tiba-tiba,pusing,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.5962459096807844
+batuk,demam,tercium bau tidak sedap jika menunduk,tidak bisa atau kurang bisa mencium bau;faringitis;0.40136054421768713
+kesemutan,lemas,mudah haus,penglihatan kabur;diabetes melitus;0.39290920449812583
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.44725631899022333
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung gatal,mata berair;rintis alergi;0.4951679672668676
+bersin -bersin,demam tinggi,mata berair,mata merah;campak;0.4502892061288229
+demam tinggi di malam hari,kehilangan nafsu makan,nyeri kepala,pusing;demam tifoid;0.2855372503280362
+batuk,demam,hidung tersumbat,tercium bau tidak sedap jika menunduk;rinosinusitis;0.4502892061288229
+diare,kembung,kram perut,sembelit;irritable bowel syndrome;0.44413711004516643
+demam tinggi di malam hari,mual,muntah,nyeri kepala,pusing;demam tifoid;0.37837040365712354
+detak jantung tak teratur,kelelahan,kulit pucat,lemas,sesak napas;anemia;0.6004078713642204
+batuk,bersin -bersin,hidung berair,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.5261113845938128
+detak jantung tak teratur,lemas,riwayat konsumsi obat antihipertensi,sakit kepala belakang,sesak napas;hipertensi;0.5269946311769502
+batuk,demam,hidung tersumbat,kelelahan,sakit tenggorokan;faringitis;0.5438937479753807
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,kulit pucat;anemia;0.4894100578542816
+mual,muntah,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.4774947066457209
+kehilangan nafsu makan,kram perut,mual,muntah,sakit kepala;hepatitis A;0.3573134176700706
+demam,feses encer,kehilangan nafsu makan,sakit kepala;diare akut;0.36920686403282427
+adanya tekanan atau stress,kembung,kram perut,sakit perut,sembelit;irritable bowel syndrome;0.5082751358091857
+demam,hidung tersumbat,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.3300399699695029
+kelelahan,mual,nyeri dada kiri luas dan tiba-tiba,pusing,sesak napas;penyakit jantung koroner;0.5249951878597463
+bersin -bersin,kehilangan nafsu makan,kelelahan,mata merah;campak;0.3815753568949257
+kehilangan nafsu makan,kelelahan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+demam,feses encer,kram perut,sakit kepala;diare akut;0.41593228151187434
+demam turun pada hari keempat tanpa obat,lemas,mual,muntah;demam berdarah dengue;0.3825668284749345
+bersin -bersin,hidung berair,hidung tersumbat,mata bengkak,mata gatal;rintis alergi;0.4410788209026034
+demam,feses encer,mual,muntah;hepatitis A;0.3852563125539805
+batuk,demam,kelelahan,paru-paru terhambat,sakit tenggorokan;faringitis;0.5438937479753807
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,perih di ulu hati,sakit kepala;maag;0.5165740395540757
+bersendawa,mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah;maag;0.45221702314796186
+mual,muntah,perih di ulu hati,riwayat makan tidak teratur/makan pedas/asam;maag;0.5018105436860065
+batuk,demam,sakit kepala,sakit saat menelan;faringitis;0.40136054421768713
+batuk,demam,hidung tersumbat;faringitis;0.40136054421768713
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,pusing;anemia;0.4043117341633285
+demam,kehilangan nafsu makan,kram perut,sakit kepala;diare akut;0.34292381670085864
+kembung,mual,muntah,nyeri kepala;hepatitis A;0.43079288199442645
+kembung,mual,muntah,pusing;hepatitis A;0.43079288199442645
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,sesak napas;anemia;0.4043117341633285
+diare,kehilangan nafsu makan,lidah tertutup selaput putih kotor,sembelit;demam tifoid;0.3795455068638209
+diare,kehilangan nafsu makan,mual,pusing;hepatitis A;0.35731341767007063
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,nyeri kepala,nyeri otot,pusing;demam tifoid;0.4420831323681662
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,pusing;anemia;0.40431173416332844
+demam tinggi di malam hari,mual,muntah,nyeri kepala,nyeri otot;demam tifoid;0.41108775083306437
+demam,kehilangan nafsu makan,kelelahan,pusing;hepatitis A;0.40491983117599134
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kram perut,mengeden saat buang air besar;konstipasi/sembelit;0.5065227784987364
+batuk,bintik-bintik pada amandel,demam,sakit kepala;faringitis;0.40136054421768713
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,demam tinggi,kelelahan;campak;0.3815753568949258
+buang air besar lebih dari 2 kali sehari,feses encer,kehilangan nafsu makan,kram perut;diare akut;0.45028920612882284
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.3815753568949258
+dehidrasi,feses encer,kehilangan nafsu makan,mual,muntah;diare akut;0.4127098389271122
+batuk,bintik-bintik pada amandel,demam,pembengkakan kelenjar getah bening di leher;tonsilitis/amandel;0.42583333333333334
+mual,muntah,nyeri otot,pusing;hepatitis A;0.30142762790225064
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,nyeri kepala,pusing;demam tifoid;0.2855372503280362
+batuk,demam,nyeri wajah,tercium bau tidak sedap jika menunduk;rinosinusitis;0.4502892061288229
+demam,kehilangan nafsu makan,mual,nyeri kepala;hepatitis A;0.4763294514348724
+buang air besar lebih dari 2 kali sehari,feses encer,mual,muntah,sakit kepala;diare akut;0.4472563189902233
+kehilangan nafsu makan,mual,muntah,pusing;hepatitis A;0.4049198311759913
+batuk,demam,sakit saat menelan,sakit tenggorokan;faringitis;0.5438937479753807
+diare,nyeri otot,pusing,sembelit;irritable bowel syndrome;0.3476331360946745
+diare,mual,nyeri kepala,sembelit;demam tifoid;0.4053977774111616
+diare,sembelit;irritable bowel syndrome;0.3476331360946745
+detak jantung tak teratur,lemas,sesak napas;anemia;0.3475795183693598
+demam tinggi di malam hari,diare,kehilangan nafsu makan,mual,muntah;demam tifoid;0.41108775083306437
+iritasi pada mata,mata berair,riwayat kelilipan / trauma pada mata (ketusuk),sensitif terhadap cahaya;keratitis akut;0.538037671391969
+batuk,demam,hidung tersumbat,keluar lendir dari hidung,tercium bau tidak sedap jika menunduk;rinosinusitis;0.5450669292100603
+kehilangan nafsu makan,kelelahan,mual,muntah,pusing;hepatitis A;0.4489998436814734
+kehilangan nafsu makan,kembung,sakit perut,tinja keras;konstipasi/sembelit;0.3852878901714364
+batuk,bersin -bersin,hidung berair,hidung tersumbat,tubuh terasa sakit;infeksi saluran nafas akut;0.5261113845938128
+demam,sakit kepala;varisela / cacar air;0.2857142857142857
+bintik merah dan tidak gatal pada kulit,demam turun pada hari keempat tanpa obat,mual,muntah,sakit kepala;demam berdarah dengue;0.4622356248007494
+mual,muntah,pusing,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.5249951878597463
+buang air besar lebih dari 2 kali sehari,demam,mual,sakit kepala;diare akut;0.2826274139981139
+diare,kehilangan nafsu makan,mual,muntah,nyeri otot;demam tifoid;0.3575502736360702
+lidah tertutup selaput putih kotor,mual,muntah,nyeri otot;demam tifoid;0.3218586221714075
+mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+kehilangan nafsu makan,mual,muntah,nyeri otot,sembelit;demam tifoid;0.3575502736360702
+bintik merah dan tidak gatal pada kulit,demam tinggi,mual,muntah;demam berdarah dengue;0.4251484265111459
+demam,kehilangan nafsu makan,kembung,nyeri kepala;hepatitis A;0.4763294514348724
+kehilangan nafsu makan,kembung,muntah,pusing;hepatitis A;0.4049198311759913
+demam turun pada hari keempat tanpa obat,lemas,mual,muntah,sakit kepala;demam berdarah dengue;0.42240122663784196
+diare,mual,muntah,nyeri otot;demam tifoid;0.3218586221714075
+batuk,demam,hidung tersumbat,keluar lendir dari hidung;rinosinusitis;0.47227763788367
+adanya tekanan atau stress,diare,sembelit,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.44799726900318615
+kelelahan,mual,muntah,pusing,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.47221687539971813
+bersendawa,mual,muntah,perih di ulu hati;maag;0.4826494107508529
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung berair,mata berair;rintis alergi;0.4446847639935544
+diare,kembung,sembelit,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.36913973600364136
+demam,kehilangan nafsu makan,kelelahan,mual,pusing;hepatitis A;0.5151198624396967
+diare,kehilangan nafsu makan,mual,muntah,nyeri kepala,pusing,sembelit;demam tifoid;0.4885762046708191
+lidah tertutup selaput putih kotor,mual,muntah,pusing,sembelit;demam tifoid;0.41108775083306437
+detak jantung tak teratur,kehilangan nafsu makan,kulit pucat,lemas,sesak napas;anemia;0.5338091832582571
+kehilangan nafsu makan,kelelahan,lemas,pusing;anemia;0.48941005785428154
+demam,kehilangan nafsu makan,kembung,mual;hepatitis A;0.5391699172626877
+mual,muntah,pusing;hepatitis A;0.30142762790225064
+demam tinggi di malam hari,diare,mual,muntah;demam tifoid;0.37837040365712354
+feses encer,kehilangan nafsu makan,kram perut,muntah;diare akut;0.3815753568949258
+lemas,mual,muntah,nyeri untuk melirik;demam berdarah dengue;0.3588193988008935
+kehilangan nafsu makan,kelelahan,mual,muntah,nyeri kepala,pusing;hepatitis A;0.4489998436814734
+bersendawa,mual,muntah,rasa asam di mulut;maag;0.4217846355450709
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri otot;demam tifoid;0.3575502736360702
+bersin -bersin,hidung tersumbat,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.35580766343221437
+demam,kehilangan nafsu makan,kelelahan,kembung,pusing;hepatitis A;0.5151198624396967
+batuk,demam,napas bau,pembengkakan kelenjar getah bening di leher,sakit tenggorokan;faringitis;0.5438937479753807
+diare,kehilangan nafsu makan,mual,muntah,nyeri kepala,nyeri otot,pusing;demam tifoid;0.4420831323681662
+kehilangan nafsu makan,kelelahan,kulit pucat,lemas,pusing;anemia;0.6004078713642204
+demam tinggi di malam hari,kehilangan nafsu makan,muntah,pusing;demam tifoid;0.29237421443972955
+mual,muntah,nyeri otot,pusing,sembelit;demam tifoid;0.3575502736360702
+batuk,demam,hidung tersumbat,sakit tenggorokan,tubuh terasa sakit;faringitis;0.5438937479753807
+kehilangan nafsu makan,kram perut,mengeden saat buang air besar,sakit perut;konstipasi/sembelit;0.4194385629396899
+demam,kram perut,muntah,sakit kepala;diare akut;0.34292381670085864
+buang air besar lebih dari 2 kali sehari,feses encer,mual,muntah;diare akut;0.40631234261912874
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kram perut,sakit perut;konstipasi/sembelit;0.4194385629396899
+jarang buang air besar dari intensitas biasanya,kembung,kram perut,mengeden saat buang air besar,sakit perut;konstipasi/sembelit;0.5513843440897603
+kelelahan,mata berair,mata merah,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+demam,kembung,muntah,nyeri kepala;hepatitis A;0.43079288199442645
+mual,muntah,rasa asam di mulut,sakit kepala;maag;0.38966155974201927
+kehilangan nafsu makan,kembung,mengeden saat buang air besar,sakit perut;konstipasi/sembelit;0.4194385629396899
+dipengaruhi oleh siklus menstruasi atau makanan tertentu (kopi,mual,muntah,sakit kepala sebagian;migrain;0.41469006557763954
+kelopak mata sering menempel pada pagi hari,mata berair,mata gatal,riwayat kontak positif konjungtivitis;konjungtivitis/mata merah;0.4978270416503517
+bersin -bersin,mata bengkak,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+diare,kram perut,sembelit,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.36913973600364136
+bersin -bersin,kelelahan,mata merah,sensitif terhadap cahaya;campak;0.3815753568949258
+kesemutan,lemas,penglihatan kabur,penurunan berat badan;diabetes melitus;0.39290920449812583
+bersin -bersin,hidung tersumbat,mata berair,mata gatal;rintis alergi;0.405019389993094
+batuk,demam,paru-paru terhambat,sakit tenggorokan,tubuh terasa sakit;faringitis;0.5438937479753807
+mual,muntah,perih di ulu hati,rasa asam di mulut,sakit kepala;maag;0.48971704175152425
+buang air besar lebih dari 2 kali sehari,demam,feses encer,kehilangan nafsu makan,mual,muntah;diare akut;0.4472563189902233
+demam,napas bau,sakit kepala,sakit saat menelan;tonsilitis/amandel;0.32592592592592595
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,lemas,pusing;anemia;0.5338091832582571
+kram perut,mual,muntah,sakit kepala;maag;0.3468307920046171
+dehidrasi,kehilangan nafsu makan,kram perut,sakit kepala;diare akut;0.34292381670085864
+batuk,bintik-bintik pada amandel,demam,pembengkakan kelenjar getah bening di leher,sakit tenggorokan;faringitis;0.5438937479753807
+bersin -bersin,demam tinggi,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+bersin -bersin,hidung berair,hidung tersumbat,mata berair,mata gatal;rintis alergi;0.405019389993094
+buang air besar lebih dari 2 kali sehari,demam,kehilangan nafsu makan,mual,muntah,sakit kepala;diare akut;0.37816335886400126
+adanya tekanan atau stress,diare,kembung,sembelit;irritable bowel syndrome;0.5136199712895206
+mual,muntah,nyeri kepala,nyeri otot,pusing;vertigo;0.3321005917159763
+demam tinggi di malam hari,mual,muntah,nyeri kepala;demam tifoid;0.3783704036571235
+mual,muntah,sakit kepala;maag;0.3468307920046171
+bintik merah dan tidak gatal pada kulit,demam turun pada hari keempat tanpa obat,mual,muntah;demam berdarah dengue;0.4251484265111459
+kehilangan nafsu makan,kelelahan,kulit pucat,pusing;anemia;0.48941005785428154
+dehidrasi,demam,kehilangan nafsu makan,mual,muntah;hepatitis A;0.4763294514348723
+lidah tertutup selaput putih kotor,mual,muntah,sembelit;demam tifoid;0.3783704036571235
+bersin -bersin,kelelahan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,demam tinggi,mata berair,mata merah;campak;0.40631234261912874
+debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,mata bengkak,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+kehilangan nafsu makan,kelelahan,kembung,nyeri kepala;hepatitis A;0.4049198311759913
+demam,kelelahan,kembung,mual,muntah,pusing;hepatitis A;0.5705570440287168
+mata berair,mata gatal,mata merah,riwayat kontak positif konjungtivitis;konjungtivitis/mata merah;0.5619342278226471
+dehidrasi,demam,muntah,sakit kepala;diare akut;0.3297822930348758
+lidah tertutup selaput putih kotor,mual,muntah,pusing;demam tifoid;0.3218586221714075
+diare,lidah tertutup selaput putih kotor,nyeri kepala,sembelit;demam tifoid;0.4312500479585024
+demam,kembung,nyeri kepala,pusing;hepatitis A;0.3852563125539806
+mual,muntah,rasa asam di mulut,riwayat makan tidak teratur/makan pedas/asam,sakit kepala;maag;0.4797114935505738
+kelelahan,mual,muntah,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.4194385629396899
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,lemas,sesak napas;anemia;0.533809183258257
+adanya kotoran mata di pagi hari,mata berair,mata gatal,riwayat kontak positif konjungtivitis;konjungtivitis/mata merah;0.5512496967939312
+adanya tekanan atau stress,diare,kram perut,sembelit;irritable bowel syndrome;0.5136199712895206
+bersin -bersin,demam tinggi,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.45028920612882284
+batuk,demam,kesulitan menelan,sakit tenggorokan,suara serak;faringitis;0.6742098199824148
+buang air besar lebih dari 2 kali sehari,demam,feses encer,sakit kepala;diare akut;0.3623354791094346
+detak jantung tak teratur,kehilangan nafsu makan,pusing,sesak napas;anemia;0.3050303565238833
+demam,hidung berair,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.3568383711707228
+demam,kelelahan,kembung,nyeri kepala;hepatitis A;0.4307928819944264
+kehilangan nafsu makan,kelelahan,kulit pucat,sesak napas;anemia;0.4894100578542816
+bersin -bersin,demam tinggi,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.5450669292100603
+diare,kembung,kram perut,sakit perut,sembelit;irritable bowel syndrome;0.5082751358091857
+bintik merah dan tidak gatal pada kulit,demam turun pada hari keempat tanpa obat,mual,muntah,nyeri otot;demam berdarah dengue;0.4622356248007494
+dehidrasi,demam,kehilangan nafsu makan,kram perut;diare akut;0.37942804910636646
+demam,kehilangan nafsu makan,mual,muntah,nyeri kepala,pusing;hepatitis A;0.5151198624396965
+detak jantung tak teratur,kelelahan,lemas,pusing,sesak napas;anemia;0.5338091832582571
+feses encer,kram perut,mual,muntah,sakit kepala;diare akut;0.4242253322814826
+demam tinggi di malam hari,diare,kehilangan nafsu makan,pusing;demam tifoid;0.32314055294235006
+mual,muntah,nyeri kepala,sembelit;demam tifoid;0.3783704036571235
+diare,kehilangan nafsu makan,mual,muntah,pusing;hepatitis A;0.4049198311759913
+demam,kehilangan nafsu makan,kembung,pusing;hepatitis A;0.4763294514348724
+kehilangan nafsu makan,kram perut,sakit perut,tinja keras;konstipasi/sembelit;0.3852878901714364
+detak jantung tak teratur,lemas,penglihatan kabur,sakit kepala belakang,sesak napas;hipertensi;0.40360192626658953
+kehilangan nafsu makan,kram perut,mual,sakit kepala;hepatitis A;0.3058984910836763
+bersin -bersin,hidung tersumbat,kelelahan,sakit tenggorokan;infeksi saluran nafas akut;0.35580766343221437
+bersin -bersin,hidung berair,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.3815753568949257
+batuk,demam,hidung tersumbat,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.4502892061288229
+batuk,demam,hidung tersumbat,paru-paru terhambat,sakit tenggorokan;faringitis;0.5438937479753807
+demam tinggi,lemas,mual,muntah;demam berdarah dengue;0.3825668284749345
+kehilangan nafsu makan,kram perut,mual,muntah;hepatitis A;0.35731341767007063
+mata berair,penglihatan berkurang,riwayat kelilipan / trauma pada mata (ketusuk),sensitif terhadap cahaya;keratitis akut;0.538037671391969
+bersin -bersin,hidung tersumbat,mata bengkak,mata berair;rintis alergi;0.3851867029928638
+detak jantung tak teratur,kehilangan nafsu makan,kulit pucat,pusing;anemia;0.40431173416332855
+demam tinggi di malam hari,lidah tertutup selaput putih kotor,mual,muntah;demam tifoid;0.3783704036571235
+mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing,sesak napas;penyakit jantung koroner;0.5249951878597463
+dehidrasi,feses encer,mual,muntah;diare akut;0.36920686403282427
+buang air besar lebih dari 2 kali sehari,demam,kehilangan nafsu makan,kram perut,mual,muntah;diare akut;0.4242253322814826
+dehidrasi,demam,feses encer,kehilangan nafsu makan,mual,muntah;diare akut;0.4835896859531504
+batuk,demam,napas bau,sakit kepala;faringitis;0.40136054421768713
+demam,kulit gatal,lemas,nyeri kepala;varisela / cacar air;0.5517201166180759
+kencing lebih sering pada malam hari,kesemutan,lemas,penglihatan kabur;diabetes melitus;0.39290920449812583
+bintik merah dan tidak gatal pada kulit,mual,muntah,nyeri otot,nyeri untuk melirik;demam berdarah dengue;0.4415523796007782
+bintik merah dan tidak gatal pada kulit,mual,muntah,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.4415523796007782
+demam,feses encer,kehilangan nafsu makan,mual,muntah,sakit kepala;hepatitis A;0.4763294514348723
+kehilangan nafsu makan,kelelahan,lemas,pusing;anemia;0.4894100578542816
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,mata berair,mata merah;konjungtivitis/mata merah;0.3537101114955787
+lidah tertutup selaput putih kotor,mual,muntah,nyeri otot,sembelit;demam tifoid;0.4110877508330644
+diare,mual,nyeri otot,sembelit;demam tifoid;0.3513430299030854
+kehilangan nafsu makan,kembung,mual,pusing;hepatitis A;0.4763294514348724
+demam turun pada hari keempat tanpa obat,mual,muntah,nyeri otot,sakit kepala;demam berdarah dengue;0.42240122663784196
+batuk,demam,pembengkakan kelenjar getah bening di leher,sakit saat menelan;tonsilitis/amandel;0.4147916666666666
+batuk,demam,hidung berair,paru-paru terhambat,sakit tenggorokan;faringitis;0.5438937479753807
+mual,muntah,nyeri kepala,pusing;vertigo;0.3321005917159763
+demam,kehilangan nafsu makan,mual,muntah;hepatitis A;0.4763294514348724
+diare,kehilangan nafsu makan,muntah,pusing;demam tifoid;0.29237421443972955
+kehilangan nafsu makan,muntah,pusing,sembelit;demam tifoid;0.29237421443972955
+batuk,demam,kesulitan menelan,suara serak;faringitis;0.5724003887269193
+batuk,demam,kesulitan menelan,sakit tenggorokan;faringitis;0.6199114566461505
+kehilangan nafsu makan,kelelahan,muntah,nyeri kepala,pusing;hepatitis A;0.32377253542726286
+demam,feses encer,muntah,sakit kepala;diare akut;0.36920686403282427
+kencing lebih sering pada malam hari,lemas,penglihatan kabur,penurunan berat badan;diabetes melitus;0.46295814244064976
+mual,muntah,nyeri kepala,nyeri otot,sembelit;demam tifoid;0.41108775083306437
+bersin -bersin,mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4502892061288229
+kehilangan nafsu makan,mual,muntah,nyeri kepala,pusing;hepatitis A;0.4049198311759913
+kehilangan nafsu makan,mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4063123426191287
+batuk,demam,hidung berair,kelelahan;infeksi saluran nafas akut;0.4283007743739758
+demam tinggi,mual,muntah,sakit kepala;demam berdarah dengue;0.3825668284749345
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,nyeri otot,pusing;demam tifoid;0.4420831323681662
+kelelahan,muntah,nyeri dada kiri luas dan tiba-tiba,pusing,sesak napas;penyakit jantung koroner;0.5249951878597463
+demam,mual,muntah,sakit kepala;hepatitis A;0.3852563125539805
+demam,pembengkakan kelenjar getah bening di leher,sakit kepala,sakit saat menelan;tonsilitis/amandel;0.3129629629629629
+bersin -bersin,kelelahan;anemia;0.2173913043478261
+detak jantung tak teratur,kehilangan nafsu makan,kelelahan,kulit pucat,pusing;anemia;0.5338091832582571
+mata berair,mata nyeri,riwayat kelilipan / trauma pada mata (ketusuk),sensitif terhadap cahaya;keratitis akut;0.6040322897645449
+dehidrasi,demam,kram perut,sakit kepala;diare akut;0.37942804910636646
+detak jantung tak teratur,lemas,penglihatan kabur,riwayat konsumsi obat antihipertensi,sesak napas;hipertensi;0.5843286152767139
+kehilangan nafsu makan,kelelahan,mual,muntah;hepatitis A;0.4049198311759913
+demam tinggi di malam hari,diare,kehilangan nafsu makan,mual,muntah,nyeri kepala,pusing;demam tifoid;0.4885762046708191
+demam,hidung tersumbat,kelelahan,sakit tenggorokan;faringitis;0.41950113378684817
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung,kram perut,sakit perut;konstipasi/sembelit;0.47221687539971813
+kehilangan nafsu makan,kelelahan,kulit pucat,pusing;anemia;0.4894100578542816
+bersin -bersin,hidung berair,hidung gatal,hidung tersumbat,mata bengkak;rintis alergi;0.4410788209026034
+demam tinggi,mual,muntah,nyeri untuk melirik;demam berdarah dengue;0.4251484265111459
+kehilangan nafsu makan,lemas,pusing,sesak napas;anemia;0.40431173416332855
+diare,sakit perut,sembelit,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.39542558033682296
+kehilangan nafsu makan,mual,nyeri otot,pusing;hepatitis A;0.35731341767007063
+batuk,demam,keluar lendir dari hidung,tercium bau tidak sedap jika menunduk;rinosinusitis;0.4502892061288229
+kehilangan nafsu makan,kelelahan,kembung,mual,muntah,nyeri kepala,pusing;hepatitis A;0.5510369096663857
+bersendawa,mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,sakit kepala;maag;0.4881372183513742
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,kelelahan,mata berair;anemia;0.28544423440453687
+demam tinggi,kehilangan nafsu makan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+batuk,bersin -bersin,demam,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.48662066664329723
+demam,kelelahan,paru-paru terhambat,tubuh terasa sakit;varisela / cacar air;0.2857142857142857
+batuk,bersin -bersin,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.3815753568949257
+batuk,demam,hidung tersumbat,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.445550319974761
+kelelahan,mual,muntah,pusing,sesak napas;penyakit jantung koroner;0.44117080924676033
+demam,kehilangan nafsu makan,kram perut,mual;hepatitis A;0.43443580754966216
+mual,muntah,nyeri otot,sakit kepala;maag;0.3468307920046171
+buang air besar lebih dari 2 kali sehari,dehidrasi,mual,muntah;diare akut;0.36920686403282427
+detak jantung tak teratur,kelelahan,lemas,pusing,sesak napas;anemia;0.533809183258257
+dehidrasi,demam,kehilangan nafsu makan,sakit kepala;diare akut;0.3297822930348758
+demam,hidung berair,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.4044799733062248
+kehilangan nafsu makan,kelelahan;anemia;0.28544423440453687
+demam,kehilangan nafsu makan,kelelahan,muntah;hepatitis A;0.40491983117599134
+batuk,demam,sakit tenggorokan;faringitis;0.5438937479753807
+demam,kehilangan nafsu makan,mual,muntah,sakit kepala;hepatitis A;0.4763294514348723
+demam,mual,nyeri kepala,pusing;hepatitis A;0.3852563125539806
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kelelahan,mata berair,mata merah;konjungtivitis/mata merah;0.3537101114955787
+detak jantung tak teratur,kehilangan nafsu makan,lemas,pusing,sesak napas;anemia;0.45611071380129997
+adanya tekanan atau stress,kembung,kram perut,sakit perut,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.48485966608581366
+bersendawa,mual,muntah,rasa asam di mulut,sakit kepala;maag;0.4597003971486727
+mual,muntah,nyeri otot,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.40018588920083586
+adanya kotoran mata di pagi hari,mata berair,mata merah,riwayat kontak positif konjungtivitis;konjungtivitis/mata merah;0.5512496967939312
+demam,kram perut,mual,muntah,sakit kepala;diare akut;0.38823941554907526
+demam,feses encer,kehilangan nafsu makan,kram perut;diare akut;0.41593228151187434
+kehilangan nafsu makan,kelelahan,kembung,muntah;hepatitis A;0.40491983117599134
+dehidrasi,demam,kehilangan nafsu makan,mual,muntah,sakit kepala;hepatitis A;0.4763294514348723
+demam,hidung tersumbat,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.3300399699695029
+hidung berair,hidung gatal,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,nyeri otot,pusing;demam tifoid;0.2616078759371091
+lemas,mudah lapar,penglihatan kabur,penurunan berat badan;diabetes melitus;0.46295814244064976
+detak jantung tak teratur,lemas,penglihatan kabur,sakit kepala belakang;hipertensi;0.3213401229930156
+dehidrasi,demam,mual,sakit kepala;hepatitis A;0.33607681755829905
+demam tinggi di malam hari,diare,nyeri otot,sembelit;demam tifoid;0.3795455068638209
+bisul berisi air,demam,kulit gatal,nyeri kepala;varisela / cacar air;0.6384839650145773
+kehilangan nafsu makan,kelelahan,pusing;anemia;0.34757951836935974
+mual,muntah,sensitif terhadap cahaya,sensitif terhadap suara;migrain;0.457837913307493
+demam,kelelahan,mual,nyeri kepala;hepatitis A;0.43079288199442645
+bersin -bersin,demam,kelelahan,paru-paru terhambat;infeksi saluran nafas akut;0.3300399699695029
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah,pusing;hepatitis A;0.4049198311759913
+kehilangan nafsu makan,kram perut;diare akut;0.19738406658739596
+demam,kelelahan,muntah,nyeri kepala;varisela / cacar air;0.36734693877551017
+diare,mual,muntah,nyeri kepala;demam tifoid;0.37837040365712354
+demam,gangguan pendengaran,nyeri bagian telinga,rasa penuh di bagian dalam telinga,riwayat pilek sebelumnya,tidak bisa tidur / insomnia;otitis media efusi;0.6725076101773926
+kelelahan,kembung,mual,muntah,nyeri kepala,pusing;hepatitis A;0.47295637221706155
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,riwayat makan tidak teratur/makan pedas/asam,sakit kepala;maag;0.5070950991531752
+kembung,kram perut,sakit perut,sembelit,sembelit terjadi berulang-ulang;irritable bowel syndrome;0.362207205630055
+batuk,bersin -bersin,hidung berair,hidung tersumbat,paru-paru terhambat;infeksi saluran nafas akut;0.5261113845938128
+demam turun pada hari keempat tanpa obat,mual,muntah,nyeri otot,nyeri untuk melirik;demam berdarah dengue;0.4622356248007494
+dehidrasi,kram perut,mual,muntah,sakit kepala;diare akut;0.38823941554907526
+dehidrasi,demam,mual,muntah,sakit kepala;hepatitis A;0.3852563125539805
+bersin -bersin,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.3815753568949258
+demam tinggi,mual,muntah,nyeri untuk melirik,sakit kepala;demam berdarah dengue;0.4622356248007494
+dehidrasi,kehilangan nafsu makan,kram perut,mual;diare akut;0.34292381670085864
+dehidrasi,kehilangan nafsu makan,mual,muntah,sakit kepala;hepatitis A;0.3573134176700706
+demam,kehilangan nafsu makan,mual,sakit kepala;hepatitis A;0.43443580754966216
+bersin -bersin,kelelahan,mata berair,mata merah;campak;0.3815753568949258
+demam,kehilangan nafsu makan,kelelahan,muntah,pusing;hepatitis A;0.4489998436814734
+bersin -bersin,kelelahan,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.48820029536131787
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,nyeri otot;demam tifoid;0.3575502736360702
+kelelahan,mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing;penyakit jantung koroner;0.47221687539971813
+demam,gangguan pendengaran,keluar cairan selain bening,nyeri bagian telinga;otitis media akut;0.5921218652215466
+demam,kembung,mual,muntah;hepatitis A;0.4990977361550953
+feses encer,kehilangan nafsu makan,kram perut,mual;diare akut;0.3815753568949258
+demam tinggi di malam hari,diare,kehilangan nafsu makan,sembelit;demam tifoid;0.3795455068638209
+batuk,demam,napas bau,pembengkakan kelenjar getah bening di leher;tonsilitis/amandel;0.42583333333333334
+batuk,bintik-bintik pada amandel,demam,napas bau,sakit tenggorokan;faringitis;0.5438937479753807
+diare,muntah,nyeri kepala,sembelit;demam tifoid;0.4053977774111616
+kehilangan nafsu makan,kulit pucat,lemas,pusing;anemia;0.4894100578542816
+buang air besar lebih dari 2 kali sehari,dehidrasi,kehilangan nafsu makan,kram perut;diare akut;0.41593228151187434
+diare,kehilangan nafsu makan,nyeri otot,sembelit;irritable bowel syndrome;0.3476331360946745
+demam tinggi,mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.47227763788367
+bersin -bersin,kelelahan,sakit tenggorokan,tubuh terasa sakit;infeksi saluran nafas akut;0.3042722765067915
+demam tinggi,mata berair,mata merah,sensitif terhadap cahaya;campak;0.40631234261912874
+diare,mual,pusing,sembelit;demam tifoid;0.3513430299030854
+demam tinggi di malam hari,mual,muntah,nyeri otot;demam tifoid;0.3218586221714075
+demam tinggi di malam hari,kehilangan nafsu makan,mual,pusing;hepatitis A;0.35731341767007063
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+diare,mual,muntah,nyeri kepala,pusing;demam tifoid;0.37837040365712354
+lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala;demam tifoid;0.3783704036571235
+demam,mual,muntah,nyeri kepala;hepatitis A;0.4307928819944264
+kehilangan nafsu makan,kelelahan,mata merah,sensitif terhadap cahaya;campak;0.3321013854465198
+batuk,demam,hidung tersumbat,nyeri wajah;rinosinusitis;0.47227763788367
+batuk,demam,pembengkakan kelenjar getah bening di leher,sakit kepala,sakit tenggorokan;faringitis;0.5438937479753807
+bersin -bersin,hidung berair,kelelahan,tubuh terasa sakit;infeksi saluran nafas akut;0.3815753568949258
+mual,muntah;maag;0.3009943563558183
+batuk,demam,keluar lendir dari hidung,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.4502892061288229
+kehilangan nafsu makan,kelelahan,mual,pusing;hepatitis A;0.40491983117599134
+bersin -bersin,kelelahan,paru-paru terhambat,tubuh terasa sakit;infeksi saluran nafas akut;0.3042722765067915
+detak jantung tak teratur,kehilangan nafsu makan,lemas,pusing;anemia;0.40431173416332855
+batuk,demam,sakit tenggorokan,suara serak;faringitis;0.6090517839788978
+kehilangan nafsu makan,kelelahan,kembung,pusing;hepatitis A;0.40491983117599134
+batuk,demam,sakit kepala,sakit tenggorokan;faringitis;0.5438937479753807
+batuk,demam,hidung berair,hidung tersumbat,sakit tenggorokan;faringitis;0.5438937479753807
+kehilangan nafsu makan,kulit pucat,pusing,sesak napas;anemia;0.40431173416332855
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,kembung,mual,muntah;hepatitis A;0.4763294514348724
+kelelahan,mual,muntah,nyeri dada kiri luas dan tiba-tiba;penyakit jantung koroner;0.4194385629396899
+bersin -bersin,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,sensitif terhadap cahaya;campak;0.48820029536131787
+diare,kehilangan nafsu makan,lidah tertutup selaput putih kotor,mual,muntah;demam tifoid;0.41108775083306437
+detak jantung tak teratur,lemas,penglihatan kabur,sesak napas;hipertensi;0.40360192626658953
+kehilangan nafsu makan,mual,muntah,pusing,sembelit;hepatitis A;0.4049198311759913
+hidung gatal,hidung tersumbat,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+kelopak mata sering menempel pada pagi hari,mata berair,mata merah,riwayat kontak positif konjungtivitis;konjungtivitis/mata merah;0.4978270416503517
+kehilangan nafsu makan,kelelahan,kembung,muntah;hepatitis A;0.4049198311759913
+diare,muntah,pusing,sembelit;demam tifoid;0.3513430299030854
+mual,muntah,pusing,sembelit;demam tifoid;0.3218586221714075
+demam,kehilangan nafsu makan,kelelahan,nyeri kepala;hepatitis A;0.40491983117599134
+dipengaruhi oleh siklus menstruasi atau makanan tertentu (kopi,mual,muntah,sensitif terhadap suara;migrain;0.48972980075999345
+dehidrasi,mual,muntah,sakit kepala;maag;0.3468307920046171
+demam,feses encer,mual,muntah,sakit kepala;diare akut;0.41270983892711227
+demam,kelelahan,paru-paru terhambat,sakit tenggorokan;faringitis;0.41950113378684817
+bersin -bersin,hidung berair,hidung tersumbat;rintis alergi;0.3891532403929098
+bintik merah dan tidak gatal pada kulit,demam tinggi,mual,muntah,nyeri otot;demam berdarah dengue;0.4622356248007494
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,mata berair,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.5513843440897603
+demam tinggi di malam hari,diare,nyeri kepala,sembelit;demam tifoid;0.4312500479585024
+mual,muntah,nyeri otot,nyeri untuk melirik;demam berdarah dengue;0.35881939880089353
+kehilangan nafsu makan,kelelahan,mata berair,mata merah;konjungtivitis/mata merah;0.3537101114955787
+demam,kehilangan nafsu makan,muntah,sakit kepala;hepatitis A;0.35731341767007063
+demam,kehilangan nafsu makan,kembung,muntah;hepatitis A;0.4763294514348724
+kehilangan nafsu makan,mual,muntah,nyeri kepala,nyeri otot;hepatitis A;0.4049198311759913
+kelelahan,mual,pusing,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.5249951878597463
+kelelahan,mual,muntah,nyeri dada kiri luas dan tiba-tiba,pusing,riwayat kolesterol tinggi / kencing manis;penyakit jantung koroner;0.5921675855361458
+kehilangan nafsu makan,mata berair,mata merah,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+bersin -bersin,hidung berair,mata berair,mata gatal;rintis alergi;0.405019389993094
+bersin -bersin,demam tinggi,kelelahan,mata berair;campak;0.3815753568949258
+batuk,demam,hidung tersumbat,keluar lendir dari hidung,nyeri wajah;rinosinusitis;0.563264252041658
+bersin -bersin,demam,hidung berair,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.48662066664329723
+batuk,bersin -bersin,hidung tersumbat,kelelahan;infeksi saluran nafas akut;0.42738458971752386
+demam,pembengkakan kelenjar getah bening di leher,sakit kepala,sakit tenggorokan;tonsilitis/amandel;0.4274691358024691
+kehilangan nafsu makan,kembung,kram perut,sakit perut,tinja keras;konstipasi/sembelit;0.44117080924676033
+kehilangan nafsu makan,mual,nyeri kepala,pusing;hepatitis A;0.35731341767007063
+kehilangan nafsu makan,kram perut,mengeden saat buang air besar,tinja keras;konstipasi/sembelit;0.4774947066457209
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,mata bengkak,mata berair;rintis alergi;0.3851867029928638
+bersin -bersin,mata berair;rintis alergi;0.22865013774104684
+batuk,bersin -bersin,kelelahan,sakit tenggorokan;faringitis;0.40136054421768713
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung,mengeden saat buang air besar;konstipasi/sembelit;0.5065227784987364
+lemas,mual,muntah,nyeri otot,nyeri untuk melirik;demam berdarah dengue;0.40018588920083586
+batuk,bersin -bersin,demam,kelelahan;infeksi saluran nafas akut;0.4044799733062248
+demam,kelelahan,muntah,pusing;hepatitis A;0.35317372953912096
+bersin -bersin,demam tinggi,kehilangan nafsu makan,mata berair;campak;0.3815753568949258
+dehidrasi,feses encer,kehilangan nafsu makan,kram perut;diare akut;0.41593228151187434
+bersin -bersin,kehilangan nafsu makan,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.3815753568949258
+batuk,demam,napas bau,sakit tenggorokan;faringitis;0.5438937479753807
+demam,kelelahan,kembung,mual;hepatitis A;0.49909773615509523
+jarang buang air besar dari intensitas biasanya,kembung,kram perut,sakit perut,tinja keras;konstipasi/sembelit;0.5249951878597463
+demam tinggi,kehilangan nafsu makan,kelelahan,mata berair;campak;0.3321013854465198
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kehilangan nafsu makan,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.33210138544651985
+demam,gangguan pendengaran,nyeri bagian telinga,riwayat pilek sebelumnya;otitis media akut;0.6281111124078808
+mual,muntah,sensitif terhadap cahaya,sensitif terhadap suara;migrain;0.45783791330749307
+buang air besar lebih dari 2 kali sehari,demam,kehilangan nafsu makan,mual,muntah;hepatitis A;0.3573134176700706
+batuk,bintik-bintik pada amandel,demam,sakit saat menelan;tonsilitis/amandel;0.42583333333333334
+batuk,demam,hidung tersumbat,nyeri wajah,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.5450669292100603
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,rasa asam di mulut,sakit kepala;maag;0.5394167319955899
+bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,bersin -bersin,kehilangan nafsu makan,mata berair;campak;0.3042722765067915
+lemas,mudah haus,penglihatan kabur,penurunan berat badan;diabetes melitus;0.46295814244064976
+demam tinggi,kehilangan nafsu makan,kelelahan,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4063123426191287
+diare,kembung,sakit perut,sembelit;irritable bowel syndrome;0.46729806379328453
+batuk,demam,pembengkakan kelenjar getah bening di leher,sakit kepala;faringitis;0.40136054421768713
+bersin -bersin,demam tinggi,kehilangan nafsu makan,kelelahan;campak;0.3815753568949257
+demam,kehilangan nafsu makan,kelelahan,mual;hepatitis A;0.4763294514348724
+kehilangan nafsu makan,mual,muntah,nyeri otot;hepatitis A;0.35731341767007063
+feses encer,mual,muntah,sakit kepala;maag;0.3468307920046171
+diare,nyeri kepala,pusing,sembelit;irritable bowel syndrome;0.3476331360946745
+kelelahan,mata berair,mata merah,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga;campak;0.4063123426191287
+buang air besar lebih dari 2 kali sehari,kehilangan nafsu makan,kram perut,muntah;diare akut;0.3815753568949258
+demam tinggi di malam hari,kehilangan nafsu makan,mual,muntah,nyeri kepala;demam tifoid;0.41108775083306437
+bisul berisi air,demam,lemas,nyeri kepala;varisela / cacar air;0.5997501041232819
+demam tinggi,demam turun pada hari keempat tanpa obat,mual,muntah,nyeri otot;demam berdarah dengue;0.48215282388220315
+bintik-bintik pada amandel,demam,pembengkakan kelenjar getah bening di leher,sakit kepala;tonsilitis/amandel;0.40456790123456793
+kehilangan nafsu makan,lidah tertutup selaput putih kotor,muntah,pusing;demam tifoid;0.29237421443972955
+kehilangan nafsu makan,kelelahan,kembung,mual,muntah,pusing;hepatitis A;0.5510369096663857
+bersin -bersin,hidung berair,hidung gatal,hidung tersumbat,mata berair;rintis alergi;0.405019389993094
+feses encer,kehilangan nafsu makan,mual,muntah,sakit kepala;diare akut;0.37816335886400126
+demam tinggi,mual,muntah,nyeri otot,sakit kepala;demam berdarah dengue;0.42240122663784196
+demam,mual,muntah,pusing;hepatitis A;0.43079288199442645
+demam,napas bau,sakit kepala,sakit tenggorokan;tonsilitis/amandel;0.4382716049382716
+demam,nyeri kepala;varisela / cacar air;0.36734693877551017
+diare,kehilangan nafsu makan,mual,muntah,nyeri kepala;demam tifoid;0.41108775083306437
+demam tinggi,demam turun pada hari keempat tanpa obat,mual,muntah,sakit kepala;demam berdarah dengue;0.48215282388220315
+diare,nyeri kepala,nyeri otot,sembelit;demam tifoid;0.3795455068638209
+kehilangan nafsu makan,kelelahan,mual,nyeri kepala;hepatitis A;0.4049198311759913
+kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+batuk,demam,napas bau,sakit kepala,sakit tenggorokan;faringitis;0.5438937479753807
+lemas,mudah haus,mudah lapar,penglihatan kabur;diabetes melitus;0.46295814244064976
+bersin -bersin,mata berair,mata merah,sensitif terhadap cahaya;keratitis akut;0.38752362948960306
+bersin -bersin,demam,hidung berair,kelelahan;infeksi saluran nafas akut;0.40447997330622476
+diare,kram perut,sakit perut,sembelit;irritable bowel syndrome;0.46729806379328453
+bersin -bersin,hidung berair,hidung tersumbat,sakit tenggorokan,tubuh terasa sakit;infeksi saluran nafas akut;0.4668753076680394
+bersin -bersin,debu),dipengaruhi oleh makanan / keadaan tertentu (dingin,hidung tersumbat,mata berair;rintis alergi;0.4446847639935544
+batuk,demam;faringitis;0.40136054421768713
+batuk,demam,napas bau,sakit saat menelan,sakit tenggorokan;faringitis;0.5438937479753807
+batuk,demam,sakit kepala,sakit saat menelan,sakit tenggorokan;faringitis;0.5438937479753807
+dehidrasi,kehilangan nafsu makan,mual,muntah;hepatitis A;0.35731341767007063
+jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kram perut,tinja keras;konstipasi/sembelit;0.4774947066457209
+kehilangan nafsu makan,kembung,kram perut,mengeden saat buang air besar;konstipasi/sembelit;0.4194385629396899
+lemas,mual,muntah,sakit kepala;maag;0.3468307920046171
+bersin -bersin,demam,hidung berair,hidung tersumbat,paru-paru terhambat;infeksi saluran nafas akut;0.48662066664329723
+demam tinggi di malam hari,mual,muntah,pusing;demam tifoid;0.3218586221714075
+kelelahan,mual,muntah,sesak napas;penyakit jantung koroner;0.3852878901714364
+kelelahan,mual,muntah,pusing,riwayat kolesterol tinggi / kencing manis,sesak napas;penyakit jantung koroner;0.5681774435088602
+demam tinggi di malam hari,kehilangan nafsu makan,pusing,sembelit;demam tifoid;0.32314055294235006
+hidung berair,mata bengkak,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+demam tinggi di malam hari,lidah tertutup selaput putih kotor,mual,muntah,pusing;demam tifoid;0.41108775083306437
+kehilangan nafsu makan,pusing;hepatitis A;0.2112482853223594
+bersendawa,mual,muntah,riwayat makan tidak teratur/makan pedas/asam;maag;0.47250528154988924
+buang air besar lebih dari 2 kali sehari,demam,mual,muntah;maag;0.3009943563558183
+batuk,bersin -bersin,demam,hidung tersumbat,tubuh terasa sakit;infeksi saluran nafas akut;0.48662066664329723
+buang air besar lebih dari 2 kali sehari,dehidrasi,demam,kehilangan nafsu makan,mual,muntah;diare akut;0.4127098389271122
+lidah tertutup selaput putih kotor,mual,muntah,nyeri kepala,nyeri otot;demam tifoid;0.41108775083306437
+kehilangan nafsu makan,kelelahan,kulit pucat,pusing,sesak napas;anemia;0.5338091832582571
+batuk,demam,napas bau,sakit saat menelan;tonsilitis/amandel;0.42583333333333334
+diare,kehilangan nafsu makan,nyeri otot,pusing;demam tifoid;0.2616078759371091
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,rasa asam di mulut;maag;0.5070950991531752
+bersin -bersin,hidung berair,hidung tersumbat,mata bengkak,mata berair;rintis alergi;0.3851867029928638
+kencing lebih sering pada malam hari,lemas,mudah haus,penglihatan kabur;diabetes melitus;0.46295814244064976
+bersin -bersin,hidung berair,hidung gatal,hidung tersumbat,mata gatal;rintis alergi;0.405019389993094
+demam,kehilangan nafsu makan,kram perut,mual,muntah,sakit kepala;hepatitis A;0.4763294514348723
+demam tinggi,mual,muntah,nyeri otot,nyeri untuk melirik;demam berdarah dengue;0.4622356248007494
+detak jantung tak teratur,kulit pucat,lemas,pusing,sesak napas;anemia;0.5338091832582571
+batuk,demam,nyeri wajah,tidak bisa atau kurang bisa mencium bau;rinosinusitis;0.4502892061288229
+hidung tersumbat,mata bengkak,mata berair,mata gatal;konjungtivitis/mata merah;0.3537101114955787
+kesemutan,lemas,mudah lapar,penglihatan kabur;diabetes melitus;0.39290920449812583
+kehilangan nafsu makan,kelelahan,kembung,pusing;hepatitis A;0.4049198311759913
+mual,mudah merasa kenyang setelah makan makanan berukuran normal,muntah,sakit kepala;maag;0.42178463554507084
+kehilangan nafsu makan,kelelahan,pusing,sesak napas;anemia;0.4043117341633285
+demam,kelelahan,kembung,pusing;hepatitis A;0.4307928819944264
