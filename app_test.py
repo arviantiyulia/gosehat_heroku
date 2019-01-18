@@ -20,7 +20,7 @@ def flat(listoflist):
 """ untuk kegunaan tes preprocessing => python app_test.py"""
 if __name__ == "__main__":
     # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-    text = "penglihatan kurang, riwayat kelilipan atau trauma pada mata, mata berair, sensitif terhadap cahaya"
+    text = "demam tinggi,kelelahan,mata berair,sensitif terhadap cahaya"
     user_id = "1"
     name_user = "admin"
     conn = create_connection()

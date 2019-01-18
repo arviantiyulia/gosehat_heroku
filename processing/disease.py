@@ -1,7 +1,7 @@
 
 def get_disease(conn, cf, id):
     """mencari penyakit dari database sesuai id gejala maks yang didapat"""
-    max_cf = 0
+    max_cf = 0.35
     id_disease = 0
     # TODO: Set variabel threshold disini
     cf_list = list(zip(id, cf))
@@ -18,7 +18,7 @@ def get_disease(conn, cf, id):
     # jika tidak ambil 3 item diatas dari array cf_list cari di database
 
     for i in range(len(cf_new)):
-        if cf_new[i][1] >= max_cf:
+        if cf_new[i][1] > max_cf:
             max_cf = cf_new[i][1]
             id_disease = cf_new[i][0]
             # print("id_disease = ", id_disease)
@@ -52,7 +52,7 @@ def get_disease(conn, cf, id):
     for item in range(len(cf_list)):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
         disease_name2 = cursor.fetchall()
-        print("ID: ", item, " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
+        print("ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
     # print("cf_list = ", cf_list[0][)
 
     # print(disease_name)
