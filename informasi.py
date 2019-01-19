@@ -1,8 +1,10 @@
-from operator import itemgetter
+import copy
 from collections import Counter
+from operator import itemgetter
 
 from processing.db import create_connection
-from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
+from processing.preprocessing import (filtering, get_stopword, stemming,
+                                      tokenizing)
 from processing.sinonim import get_sinonim
 from processing.symptoms import db_stemming
 
@@ -19,7 +21,7 @@ def get_info(text):
 
     penyakit = []
 
-    sinonim_untuk_gejala = sinonim
+    sinonim_untuk_gejala = copy.deepcopy(sinonim)
 
     # remove
     stopword_info_list = ["apa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
@@ -29,6 +31,8 @@ def get_info(text):
         sinonim_untuk_gejala.remove(stop)
     if "sakit" in sinonim_untuk_gejala:
         sinonim_untuk_gejala.remove("sakit")
+
+    
 
     for i in sinonim_untuk_gejala:
         cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")

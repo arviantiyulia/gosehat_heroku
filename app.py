@@ -49,8 +49,9 @@ from processing.db import create_connection
 from processing.greeting import check_greeting
 from processing.preprocessing import (filtering, get_stopword, stemming,
                                       tokenizing)
-from processing.save_input import (flat, save_history, save_input,
-                                   save_menuinformasi, save_menukonsultasi, delete_menukonsultasi)
+from processing.save_input import (delete_menukonsultasi, flat, save_history,
+                                   save_input, save_menuinformasi,
+                                   save_menukonsultasi)
 from processing.sinonim import get_sinonim
 from processing.symptoms import get_symptoms
 
