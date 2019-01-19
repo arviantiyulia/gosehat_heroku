@@ -419,6 +419,8 @@ def decide_process(text):
         daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
         print("DEBUG> daftar penyakit", daftar_penyakit)
 
+        print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
+
         if len(stop_list) == 1:
             if stop_list[0] == "gejala":
                 return "konsultasi"
@@ -453,8 +455,6 @@ def decide_process(text):
                         return "konsultasi"
             else:
                 return "informasi"
-
-    print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
 
 def message_bot(user_id, name_user, salam, text, conn):

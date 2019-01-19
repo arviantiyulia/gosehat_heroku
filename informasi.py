@@ -16,23 +16,33 @@ def get_info(text):
     conn = create_connection()
     cursor = conn.cursor()
 
+
     penyakit = []
 
-    for i in sinonim:
+    sinonim_untuk_gejala = sinonim
+
+    # remove
+    stopword_info_list = ["apa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
+    stop_list = [word for word in stopword_info_list if word in sinonim_untuk_gejala]
+
+    for stop in stop_list:
+        sinonim_untuk_gejala.remove(stop)
+    if "sakit" in sinonim_untuk_gejala:
+        sinonim_untuk_gejala.remove("sakit")
+
+    for i in sinonim_untuk_gejala:
         cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
         penyakit.append(cursor.fetchall())
 
     arr_penyakit = [e for e in penyakit if e]  # list of tuple to list and not empty
 
     print("DEBUG> arr_penyakit = ", arr_penyakit)
-
     if len(arr_penyakit) != 0:
         penyakit_max = penyakit_count(arr_penyakit, sinonim)
         result = get_keywoard(sinonim, penyakit_max, conn)
     else:
-        result = "Nama penyakit tidak dicantumkan. Silahkan menyertakan nama penyakit dan informasi yang ingin diketahui"
+        result = [["Nama penyakit tidak dicantumkan. Silahkan menyertakan nama penyakit dan informasi yang ingin diketahui"]]
 
-    # print(result[0][0])
     return result
 
 
