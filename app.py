@@ -453,8 +453,12 @@ def decide_process(text):
                         return "informasi"
                     else:
                         return "konsultasi"
+                else:
+                    return "informasi"
             else:
                 return "informasi"
+        else:
+            return "informasi"
 
 
 def message_bot(user_id, name_user, salam, text, conn):
