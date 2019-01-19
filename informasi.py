@@ -24,7 +24,7 @@ def get_info(text):
 
     arr_penyakit = [e for e in penyakit if e]  # list of tuple to list and not empty
 
-    # print("arr_penyakit = ", arr_penyakit)
+    print("DEBUG> arr_penyakit = ", arr_penyakit)
 
     if len(arr_penyakit) != 0:
         penyakit_max = penyakit_count(arr_penyakit, sinonim)
@@ -36,25 +36,29 @@ def get_info(text):
     return result
 
 
+# jelaskan fungsinya
+# TODO nama fungsi gak cocok sama maksudnya
 def penyakit_count(arr_penyakit, sinonim):
     arr_id = []
 
     for row in arr_penyakit:
+        # jika memiliki 2 penyakit, cari yang paling cocok
         if len(row) > 1:
             id_new = get_maxpenyakit(sinonim, row)
             arr_id.append(id_new)
 
+        # jika cuma 1 masukkan aja
         elif len(row) == 1:
             temp_penyakit = row[0][0]
             arr_id.append(temp_penyakit)
 
     count_id = Counter(arr_id)
     id_penyakit = max(count_id)
-    print("arr_id = ", max(count_id))
+    print("DEBUG> penyakit dipilih = ", id_penyakit)
 
     return id_penyakit
 
-
+# TODO tolong dijelaskan ini maksudnya apa fungsinya
 def get_maxpenyakit(sinonim, arr_penyakit):
     arr_penyakitnew = []
 
@@ -78,12 +82,16 @@ def get_maxpenyakit(sinonim, arr_penyakit):
     return max_ti[0]
 
 
+# maksud fungsinya apa?
 def get_keywoard(input, result, conn):
     cursor = conn.cursor()
 
     hasil = []
 
     gejala = get_gejala(cursor, result)
+
+    print("DEBUG> input Informasi = ", input)
+    print("DEBUG> gejala Informasi = ", gejala)
 
     if "apa" in input:
         if "obat" in input or "solusi" in input:
@@ -148,7 +156,7 @@ def get_keywoard(input, result, conn):
             cursor.execute("SELECT definisi_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
             hasil = cursor.fetchall()
 
-    print(hasil)
+    print("DEBUG> hasil informasi = ", hasil)
     return hasil
 
 def get_gejala(cursor, result):

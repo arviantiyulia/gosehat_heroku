@@ -36,7 +36,7 @@ def save_history(user_id, name_user, input, output, conn):
 def save_menuinformasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM menu WHERE id_user LIKE '%" + user_id + "%'")
+    cursor.execute("DELETE FROM menu WHERE id_user = '" + user_id + "'")
     print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
@@ -46,9 +46,15 @@ def save_menuinformasi(user_id, name_user, text, conn):
 def save_menukonsultasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM menu WHERE id_user LIKE '%" + user_id + "%'")
+    cursor.execute("DELETE FROM menu WHERE id_user = '" + user_id + "'")
     print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
 
     return user_id
+
+def delete_menukonsultasi(user_id, conn):
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM menu WHERE id_user = '" + user_id + "'")
+    conn.commit()

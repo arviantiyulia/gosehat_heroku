@@ -29,6 +29,6 @@ def get_cf(conn, sinonim):
 
     end_time = time.time() - start_time
 
-    print("waktu yang dibutuhkan: " + str(end_time))
+    print("DEBUG> waktu yang dibutuhkan: " + str(end_time))
 
     return disease

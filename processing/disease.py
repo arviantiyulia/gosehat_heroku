@@ -25,8 +25,8 @@ def get_disease(conn, cf, id):
         else:
             id_somedisease.append(cf_new[i][0])
 
-    # print("id_somedisease = ", id_somedisease)
-    print("id_disease = ", id_disease)
+    # print("DEBUG> id_somedisease = ", id_somedisease)
+    print("DEBUG> id_disease = ", id_disease)
     # for index in range(len(cf)):
     #     if cf[index] > max_cf:
     #         max_cf = cf[index]
@@ -37,28 +37,28 @@ def get_disease(conn, cf, id):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_disease))
         disease_new = cursor.fetchall()
         disease_name = [[i] for i in disease_new]
-        # print("\nKemungkinan penyakit yang diderita: " + str(disease_name))
-        # print("Dengan nilai certainty factor: ", max_cf)
+        # print("DEBUG> \nKemungkinan penyakit yang diderita: " + str(disease_name))
+        # print("DEBUG> Dengan nilai certainty factor: ", max_cf)
 
     else:
-        print("3 id tertinggi = ", id_somedisease)
+        print("DEBUG> 3 ID tertinggi = ", id_somedisease)
         for id_new in id_somedisease:
             cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_new))
             disease_name.append(cursor.fetchall())
 
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
-    print("\nHasil Certainty Factor: ")
+    print("\nDEBUG> Hasil Certainty Factor: ")
     for item in range(len(cf_list)):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
         disease_name2 = cursor.fetchall()
-        print("ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
-    # print("cf_list = ", cf_list[0][)
+        print("DEBUG> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
+    # print("DEBUG> cf_list = ", cf_list[0][)
 
-    # print(disease_name)
-    # print(disease_name[0][0][1])
+    # print(DEBUG> disease_name)
+    # print(DEBUG> disease_name[0][0][1])
     # HANYA UNTUK TUJUAN DEBUG
-    print("\nKemungkinan penyakit yang diderita: " + str(disease_name[0][0][1]))
-    print("Dengan nilai certainty factor: ", max_cf)
+    print("\nDEBUG> Kemungkinan penyakit yang diderita: " + str(disease_name[0][0][1]))
+    print("DEBUG> Dengan nilai certainty factor: ", max_cf)
 
     return disease_name, max_cf
