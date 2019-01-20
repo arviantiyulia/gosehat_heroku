@@ -174,6 +174,9 @@ def decide_process(text):
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
         if len(stop_list) == 1:
+            # jika ada kata "gejala" dan disebutkan penyakitnya dan gak menyebut gejala
+            if stop_list[0] == "gejala" and len(daftar_penyakit) != 0 and not daftar_gejala:
+                return "informasi"
             if stop_list[0] == "gejala":
                 return "konsultasi"
             if stop_list[0] == "bagaimana":
@@ -182,9 +185,10 @@ def decide_process(text):
                 # jika tidak ada gejala = informasi
                 if not daftar_gejala:
                     return "informasi"
+                # REVISI
                 # jika ada penyakit = informasi
-                elif len(daftar_penyakit) != 0:
-                    return "informasi"
+                # elif len(daftar_penyakit) != 0:
+                #     return "informasi"
                 # selain itu
                 else:
                     return "konsultasi"
@@ -198,7 +202,7 @@ def decide_process(text):
                     if not daftar_gejala:
                         return "informasi"
                     # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-                    if len(daftar_gejala) > 3:
+                    elif len(daftar_gejala) > 3:
                         return "konsultasi"
                     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
                     elif len(daftar_penyakit) != 0:
@@ -206,7 +210,11 @@ def decide_process(text):
                     else:
                         return "konsultasi"
                 else:
-                    return "informasi"    
+                    # REVISI
+                    # return "informasi" 
+                    return "konsultasi"   
+            elif len(daftar_gejala) != 0:
+                return "konsultasi"
             else:
                 return "informasi"
         else:
@@ -272,6 +280,7 @@ if __name__ == "__main__":
             exit(0)
     else:
         decision = decide_process(text)
+        print("DEBUG> pilihan = ", decision)
         if decision == "informasi":
             messages_info = get_info(text)
             messages = salam + name_user + "\n" + messages_info[0][0]
