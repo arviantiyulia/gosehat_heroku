@@ -456,7 +456,7 @@ def decide_process(text):
                     elif len(daftar_penyakit) != 0:
                         return "informasi"
                     else:
-                        return "konsultasi"
+                        return "informasi"
                 elif "obat" in stop_list:
                     if not daftar_gejala:
                         return "informasi"
