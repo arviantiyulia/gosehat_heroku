@@ -656,7 +656,7 @@ def handle_file_message(event):
 @handler.add(FollowEvent)
 def handle_follow(event):
     line_bot_api.reply_message(
-        event.reply_token, TextSendMessage(text='Got follow event'))
+        event.reply_token, TextSendMessage(text='SELAMAT DATANG DI GOSEHAT (laugh)\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, pencegahan, atau penyebab suatu penyakit. Untuk menggunakan chatbot ini cukup kirim pesan apa yang ingin Anda tanyakan atau memilih menu yang tersedia ya. contoh: "Saya sering mengalami pusing, mual, batuk." atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTetap jaga kesehatan ya!'))
 
 
 @handler.add(UnfollowEvent)

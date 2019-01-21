@@ -248,7 +248,7 @@ def remove_duplicate():
 if __name__ == "__main__":
     get_gejala()
     penyakit = get_penyakit()
-    remove_duplicate()
-    # get_gejalapenyakit(penyakit)
-    # combination_samegejala(penyakit)
+    # remove_duplicate()
+    get_gejalapenyakit(penyakit)
+    combination_samegejala(penyakit)
     # combination_other(penyakit)
