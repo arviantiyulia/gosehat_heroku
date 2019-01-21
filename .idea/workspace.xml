@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/testing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="660" lean-forward="true" selection-start-line="660" selection-end-line="660" />
+            <state relative-caret-position="256">
+              <caret line="658" column="79" selection-start-line="658" selection-start-column="79" selection-end-line="658" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -435,12 +432,12 @@
       <workItem from="1547732802190" duration="592000" />
       <workItem from="1547808645105" duration="334000" />
       <workItem from="1547992873434" duration="2179000" />
-      <workItem from="1548074996344" duration="197000" />
+      <workItem from="1548074996344" duration="438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50791000" />
+    <option name="totallyTimeSpent" value="51032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +452,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33963692" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33963692" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -469,7 +466,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.28150573" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28150573" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.8314239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -733,8 +730,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="660" lean-forward="true" selection-start-line="660" selection-end-line="660" />
+        <state relative-caret-position="256">
+          <caret line="658" column="79" selection-start-line="658" selection-start-column="79" selection-end-line="658" selection-end-column="79" />
         </state>
       </provider>
     </entry>
