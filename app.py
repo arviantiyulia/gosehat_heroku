@@ -457,6 +457,9 @@ def decide_process(text):
                         return "informasi"
                     else:
                         return "konsultasi"
+                elif "obat" in stop_list:
+                    if not daftar_gejala:
+                        return "informasi"
                 else:
                     # REVISI
                     # return "informasi" 
