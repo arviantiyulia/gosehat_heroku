@@ -349,13 +349,13 @@ def handle_text_message(event):
 
         # MENU
         if text == '\informasi':
-            messages = "masukkan informasi"
+            messages = "Masukkan informasi yang ingin dicari.\nContoh : 'Apa penyakit maag ?'"
             save_menuinformasi(user_id, name_user, text, conn)
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
 
         elif text == '\konsultasi':
             save_menukonsultasi(user_id, name_user, text, conn)
-            messages = "masukkan konsultasi"
+            messages = "Masukkan keluhan Anda.\nContoh : 'Saya merasa demam, mual pusing muntih. Saya sakit apa ?'"
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
         else:
             cursor.execute("SELECT status FROM menu WHERE id_user = '" + user_id + "'")
@@ -407,7 +407,7 @@ def decide_process(text):
     print("DEBUG> sinonim baru = ", sinonim)
     print("DEBUG> stop_list = ", stop_list)
 
-    if len(stop_list) != 0 :
+    if len(stop_list) != 0:
         daftar_gejala = get_symptoms(conn, sinonim)
         print("DEBUG> daftar gejala", daftar_gejala)
 
@@ -442,7 +442,7 @@ def decide_process(text):
                     return "konsultasi"
             else:
                 return "informasi"
-                
+
         elif len(stop_list) > 1:
             if "apa" in stop_list:
                 if "gejala" in stop_list:
@@ -460,7 +460,7 @@ def decide_process(text):
                 else:
                     # REVISI
                     # return "informasi" 
-                    return "konsultasi"   
+                    return "konsultasi"
             elif len(daftar_gejala) != 0:
                 return "konsultasi"
             else:
