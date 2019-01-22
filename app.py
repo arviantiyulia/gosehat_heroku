@@ -396,7 +396,7 @@ def decide_process(text):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
 
-    stopword_info_list = ["apa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
+    stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
 
     for stop in stop_list:
@@ -457,54 +457,34 @@ def decide_process(text):
                         return "informasi"
                     else:
                         return "informasi"
-                # elif "obat" in stop_list:
-                #     if not daftar_gejala:
-                #         return "informasi"
-                #         # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-                #     if len(daftar_gejala) > 2:
-                #         return "konsultasi"
-                #     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                #     elif len(daftar_penyakit) != 0:
-                #         return "informasi"
-                #     else:
-                #         return "informasi"
-                # elif "cegah" in stop_list:
-                #     if not daftar_gejala:
-                #         return "informasi"
-                #         # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-                #     if len(daftar_gejala) > 2:
-                #         return "konsultasi"
-                #     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                #     elif len(daftar_penyakit) != 0:
-                #         return "informasi"
-                #     else:
-                #         return "informasi"
-                # elif "sebab" in stop_list:
-                #     if not daftar_gejala:
-                #         return "informasi"
-                #         # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-                #     if len(daftar_gejala) > 2:
-                #         return "konsultasi"
-                #     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                #     elif len(daftar_penyakit) != 0:
-                #         return "informasi"
-                #     else:
-                #         return "informasi"
-                # elif "komplikasi" in stop_list:
-                #     if not daftar_gejala:
-                #         return "informasi"
-                #         # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-                #     if len(daftar_gejala) > 2:
-                #         return "konsultasi"
-                #     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                #     elif len(daftar_penyakit) != 0:
-                #         return "informasi"
-                #     else:
-                #         return "informasi"
-                else:
-                    # REVISI
-                    # return "informasi" 
+            elif "bagaimana" in stop_list:
+                if "obat" in stop_list or "solusi" in stop_list or "cegah" in stop_list:
+                    if not daftar_gejala:
+                        return "informasi"
+                        # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
+                    if len(daftar_gejala) > 2:
+                        return "konsultasi"
+                    # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
+                    elif len(daftar_penyakit) != 0:
+                        return "informasi"
+                    else:
+                        return "informasi"
+            elif "mengapa" in stop_list or "kenapa" in stop_list:
+                if not daftar_gejala:
+                    return "informasi"
+                    # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
+                if len(daftar_gejala) > 2:
                     return "konsultasi"
+                # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
+                elif len(daftar_penyakit) != 0:
+                    return "informasi"
+                else:
+                    return "informasi"
+                #
+                # else:
+                #     # REVISI
+                #     # return "informasi"
+                #     return "konsultasi"
             elif len(daftar_gejala) != 0:
                 return "konsultasi"
             else:
