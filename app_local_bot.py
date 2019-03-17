@@ -43,7 +43,6 @@ def message_bot(user_id, name_user, salam, text, conn):
     cursor = conn.cursor()
 
     # jika gejala kosong maka tampilkan pesan
-    # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
     if kondisi_gejala == "kosong":
         disease = check_greeting(sinonim)
         message = message + str(disease)
@@ -51,7 +50,6 @@ def message_bot(user_id, name_user, salam, text, conn):
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
 
-        # TODO: masukin gejala ke database, panggil fungsi bantuan
         save_input(user_id, name_user, sinonim, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -95,7 +93,6 @@ def message_bot(user_id, name_user, salam, text, conn):
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
 
-    # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
         cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -156,8 +153,8 @@ def decide_process(text):
     if "sakit" in sinonim:
         sinonim.remove("sakit")
 
-    print("DEBUG> sinonim baru = ", sinonim)
-    print("DEBUG> stop_list = ", stop_list)
+    # print("DEBUG> sinonim baru = ", sinonim)
+    # print("DEBUG> stop_list = ", stop_list)
 
     if len(stop_list) != 0 :
         daftar_gejala = get_symptoms(conn, sinonim)
@@ -228,7 +225,7 @@ if __name__ == "__main__":
     args = sys.argv
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-        text = "demam tinggi,kelelahan,mata berair,sensitif terhadap cahaya"
+        text = "demam tinggi,tidak mata merah batuk darah, mata berair,sensitif terhadap cahaya"
     else:
         text = args[1]
 

@@ -1,7 +1,7 @@
 from processing.db import create_connection
 from processing.preprocessing import get_stopword, tokenizing, filtering, stemming
 from processing.sinonim import get_sinonim
-from processing.symptoms import get_symptoms
+from processing.symptoms import get_symptoms, exclude_symptoms
 from processing.disease_symptoms import get_id_disease
 from processing.certaintyfactor import certainty_calculate
 from processing.disease import get_disease
@@ -19,16 +19,16 @@ def get_cf(conn, sinonim):
     # stems = stemming(filters)
     # sinonim = get_sinonim(stems)
     # gejala_list = inputs_check(conn, sinonim)
-    symptoms = get_symptoms(conn, sinonim)
-    count_disease_id, uniq_id = get_id_disease(conn, symptoms)
+    symp_db, symptoms = get_symptoms(conn, sinonim)
+    print("symptoms = ", symptoms)
+    ex_symptoms = exclude_symptoms(symp_db, sinonim)
+    count_disease_id, uniq_id = get_id_disease(conn, ex_symptoms)
     cf_calculate = certainty_calculate(count_disease_id)
     # print("calculate = ", cf_calculate)
     disease = get_disease(conn, cf_calculate, uniq_id)
 
-    # TODO: Simpan input user, gejala dan hasil di DB
-
     end_time = time.time() - start_time
 
-    print("DEBUG> waktu yang dibutuhkan: " + str(end_time))
+    # print("DEBUG> waktu yang dibutuhkan: " + str(end_time))
 
     return disease

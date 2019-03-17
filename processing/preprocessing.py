@@ -47,7 +47,7 @@ def filtering(docs, stopwords):
 
     res_token = [text for text in docs if text not in stopwords]
 
-    # print("filtering = ", res_token)
+    print("filtering = ", res_token)
     return res_token
 
 
