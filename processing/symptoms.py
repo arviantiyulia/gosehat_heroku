@@ -1,5 +1,6 @@
 from operator import itemgetter
 from processing.preprocessing import stemming
+from collections import defaultdict
 
 
 def get_symptoms(conn, inputs):
@@ -115,63 +116,68 @@ def db_stemming(gejala_arr):
 
 
 def exclude_symptoms(symptoms, sinonim):
-    
-    arr_symptoms = []
-    arr_count = []
-    arr_count2 = []
-    rmv_symp = []
-    max_item = 0
-
-    for idx in symptoms:
-        arr_symptoms.append([idx[0][1], idx[0][0]])
-    
-    print("arr_symp = ", arr_symptoms)
+    new_symp = []
+    d = defaultdict(list)
 
     word = "tidak"
-    idx_word = sinonim.index(word)
-    next_id = idx_word + 1;
-    word_val = sinonim[next_id]
-    print("word val = ", word_val)
-   
-    for idx, symp in enumerate(arr_symptoms):
-        count = 0
-    #     print("symp = ", idx)
-        if word_val in symp[0]:
-            count += 1
-        arr_count.append([symp[1], symp[0], count])
+    index_word = [i for i,d in enumerate(sinonim) if d==word]
+    print("index word = ", index_word)
+
     
-    print("count = ", arr_count)
+    for symp in symptoms:
+        new_symp.append([symp[0][0], symp[0][1], 0])
+       
+    for idx_word in index_word:
+        symptoms_rmv = remove_symptoms(idx_word, new_symp, sinonim)
+        new_symp = symptoms_rmv
+    
+    gejala_rmv = [i[0] for i in symptoms_rmv]
+
+    return gejala_rmv
+
+
+def count_exclude(sinonim, next_id, new_symp):
+    
+    word_val = sinonim[next_id]
+
+    for symp in new_symp:
+        count = 0
+        if word_val in symp[1]:
+            symp[2] += 1
+    
+    return new_symp
+
+def remove_symptoms(idx_word, new_symp, sinonim):
+
+    arr_symp = []
+    next_id = idx_word + 1;
+    
+    new_symp = count_exclude(sinonim, next_id, new_symp)
+
     jml = 0
-    for idx_count in arr_count:
+    for idx_count in new_symp:
         if idx_count[2] == 1:
             jml += 1
     
-    # print ("jml = ", jml)
     if jml > 1:
         next_id2 = next_id + 1
-        word_val2 = sinonim[next_id2]
-        # for arr_count in arr_count:
-            # arr_count2 = get_count_exclude(arr_count[1], word_val2)
-        for idx, symp in enumerate(arr_count):
-            # print("symp = ", symp)
-            if word_val2 in symp[1]:
-                symp[2] += 1
-            arr_count2.append([symp[0], symp[2]])
-            max_count = max(arr_count2)
 
-        for idx, gjl in enumerate(arr_count2):
-            if gjl[1] > max_item:
-                max_item = gjl[1]
-                index_max = idx
-        rmv_symp = arr_count2.pop(index_max)
+        for i in new_symp:
+            if i[2] == 1:
+                arr_symp.append(i)
 
-        gejala_rmv = [i[0] for i in arr_count2]
+        arr_symp = count_exclude(sinonim, next_id2, arr_symp)
+        
+        check_value = all(map(lambda x: x[2], arr_symp))
 
+        if check_value == True:
+            max_symp = min(arr_symp, key=lambda xs: len(xs[1]))
+        else:
+            max_symp = max(arr_symp, key=lambda x: x[2])       
+             
     else:
-        rmv_symp = arr_count.pop(next_id)
+        max_symp = max(new_symp, key=lambda x: x[2])
+        
+    rmv_symp = new_symp.remove(max_symp)
 
-        gejala_rmv = [i[0] for i in arr_count]
-    
-    print(gejala_rmv)
-
-    return gejala_rmv
+    return new_symp

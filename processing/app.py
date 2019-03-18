@@ -12,19 +12,11 @@ import time
 
 def get_cf(conn, sinonim):
     start_time = time.time()
-    # conn = create_connection()
-    # stopwords = get_stopword('file/konjungsi.csv')
-    # contents = tokenizing(text)
-    # filters = filtering(contents, stopwords)
-    # stems = stemming(filters)
-    # sinonim = get_sinonim(stems)
-    # gejala_list = inputs_check(conn, sinonim)
     symp_db, symptoms = get_symptoms(conn, sinonim)
     print("symptoms = ", symptoms)
     ex_symptoms = exclude_symptoms(symp_db, sinonim)
     count_disease_id, uniq_id = get_id_disease(conn, ex_symptoms)
     cf_calculate = certainty_calculate(count_disease_id)
-    # print("calculate = ", cf_calculate)
     disease = get_disease(conn, cf_calculate, uniq_id)
 
     end_time = time.time() - start_time
