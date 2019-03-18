@@ -133,6 +133,8 @@ def exclude_symptoms(symptoms, sinonim):
     
     gejala_rmv = [i[0] for i in symptoms_rmv]
 
+    print("gjl_rmv = ", gejala_rmv)
+
     return gejala_rmv
 
 
