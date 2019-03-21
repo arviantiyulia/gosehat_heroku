@@ -28,9 +28,9 @@ def get_symptoms(conn, inputs):
         rows.append(cursor.fetchall())
 
     # print("gejala = ", rows[0][1])
-    # print("\nDEBUG> Daftar gejala: ")
-    # for row in rows:
-    #     print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+    print("\nDEBUG> Daftar gejala: ")
+    for row in rows:
+        print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
 
@@ -133,7 +133,20 @@ def exclude_symptoms(symptoms, sinonim):
     
     gejala_rmv = [i[0] for i in symptoms_rmv]
 
-    print("gjl_rmv = ", gejala_rmv)
+    # --- HANYA UNTUK TUJUAN DEBUG ---
+    rows = []
+    for id_gejala in gejala_rmv:
+        cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
+        rows.append(cursor.fetchall())
+
+    # print("gejala = ", rows[0][1])
+    print("\nDEBUG> Daftar gejala: ")
+    for row in rows:
+        print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+    
+    # --- AKHIR DARI DEBUG ---
+
+    # print("gjl_rmv = ", gejala_rmv)
 
     return gejala_rmv
 
