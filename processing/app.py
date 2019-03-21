@@ -14,7 +14,7 @@ def get_cf(conn, sinonim):
     start_time = time.time()
     symp_db, symptoms = get_symptoms(conn, sinonim)
     print("symptoms = ", symptoms)
-    ex_symptoms = exclude_symptoms(symp_db, sinonim)
+    ex_symptoms = exclude_symptoms(conn, symp_db, sinonim)
     count_disease_id, uniq_id = get_id_disease(conn, ex_symptoms)
     cf_calculate = certainty_calculate(count_disease_id)
     disease = get_disease(conn, cf_calculate, uniq_id)

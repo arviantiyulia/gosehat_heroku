@@ -115,9 +115,10 @@ def db_stemming(gejala_arr):
     return gejala_arr
 
 
-def exclude_symptoms(symptoms, sinonim):
+def exclude_symptoms(conn, symptoms, sinonim):
     new_symp = []
     d = defaultdict(list)
+    cursor = conn.cursor()
 
     word = "tidak"
     index_word = [i for i,d in enumerate(sinonim) if d==word]
