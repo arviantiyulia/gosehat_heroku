@@ -13,13 +13,31 @@ def get_symptoms(conn, inputs):
 
     cursor = conn.cursor()
     rows = []
+    inputs_new = []
+
+    d = defaultdict(list)
+
+    word = "tidak"
+    index_word = [i for i, d in enumerate(inputs) if d == word]
+
+    # print("index = ", index_word)
+    for idx, input in enumerate(inputs):
+        if idx in index_word:
+            next_id = idx + 1
+            join_negation = input + " " + inputs[next_id]
+            inputs_new.append(join_negation)
+        else:
+            inputs_new.append(input)
+
+    # print("inputs = ", inputs_new)
+
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
-    for nama_gejala in inputs:
+    for nama_gejala in inputs_new:
         cursor.execute("SELECT * FROM gejala WHERE nama_gejala LIKE '%" + nama_gejala + "%'")
         rows.append(cursor.fetchall())
 
-    result_id = symptoms_count(rows, inputs)
+    result_id = symptoms_count(rows, inputs_new)
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
     rows = []
@@ -33,8 +51,8 @@ def get_symptoms(conn, inputs):
         print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
-
-    return rows, result_id
+    # print("rows = ", result_id)
+    return rows, result_id, inputs_new
 
 def symptoms_count(rows, inputs):
     """
@@ -117,22 +135,49 @@ def db_stemming(gejala_arr):
 
 def exclude_symptoms(conn, symptoms, sinonim):
     new_symp = []
+    arr_negation = []
+    arr_symp = []
     d = defaultdict(list)
     cursor = conn.cursor()
 
     word = "tidak"
-    index_word = [i for i,d in enumerate(sinonim) if d==word]
+    index_word = [i for i,d in enumerate(sinonim) if word in d]
     print("index word = ", index_word)
+    print("sinonim = ", sinonim)
 
     
     for symp in symptoms:
         new_symp.append([symp[0][0], symp[0][1], 0])
-       
+
+    print("new symp = ", new_symp)
+
+    for idx in index_word:
+        arr_negation.append(sinonim[idx])
+
+    for idx, neg in enumerate(arr_negation):
+        for idx_symp, symp in enumerate(new_symp):
+            # print("negation = ", neg, "symp = ", symp[1])
+            if neg in symp[1]:
+                # print("neg = ", neg, "id = ", idx)
+                arr_symp.append(symp)
+                # arr_negation.pop(idx)
+                index_word.pop(idx)
+                new_symp.pop(idx_symp)
+
+    # print("new_symp = ", new_symp)
+    # print("arr_negation = ", arr_negation)
+    # print("index word = ", index_word)
+
     for idx_word in index_word:
-        symptoms_rmv = remove_symptoms(idx_word, new_symp, sinonim)
-        new_symp = symptoms_rmv
-    
-    gejala_rmv = [i[0] for i in symptoms_rmv]
+        new_symp = remove_symptoms(idx_word, new_symp, sinonim)
+        # new_symp = symptoms_rmv
+
+    new_symp.extend(arr_symp)
+
+    print("new simp setalh negasi dihapus = ", new_symp)
+    # print("symptoms_rmv = ", symptoms_rmv)
+
+    gejala_rmv = [i[0] for i in new_symp]
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
     rows = []
@@ -152,48 +197,59 @@ def exclude_symptoms(conn, symptoms, sinonim):
     return gejala_rmv
 
 
-def count_exclude(sinonim, next_id, new_symp):
+def count_exclude(next_id, new_symp):
     
-    word_val = sinonim[next_id]
-
+    # word_val = sinonim[next_id]
+    # print("next_id = ", next_id)
     for symp in new_symp:
+        # print("new_simp2 = ", symp[1])
         count = 0
-        if word_val in symp[1]:
+        if next_id in symp[1]:
             symp[2] += 1
-    
+
+    # print("new symp2 = ", new_symp)
     return new_symp
 
 def remove_symptoms(idx_word, new_symp, sinonim):
 
     arr_symp = []
-    next_id = idx_word + 1;
-    
-    new_symp = count_exclude(sinonim, next_id, new_symp)
+    # next_id = idx_word + 1;
+    read_negation = sinonim[idx_word]
+    val_negation = read_negation.split()
+    # print("next id = ", idx_word)
+
+    print("new simp = ", new_symp)
+    new_symp = count_exclude(val_negation[1], new_symp)
 
     jml = 0
     for idx_count in new_symp:
         if idx_count[2] == 1:
             jml += 1
-    
+
+    print("new simp2 = ", new_symp)
+    print("jml = ", jml)
+
     if jml > 1:
-        next_id2 = next_id + 1
+        next_id2 = idx_word + 1
+        val_negation = sinonim[next_id2]
 
         for i in new_symp:
             if i[2] == 1:
                 arr_symp.append(i)
 
-        arr_symp = count_exclude(sinonim, next_id2, arr_symp)
-        
+        arr_symp = count_exclude(val_negation, arr_symp)
+        # print("arr_symp  = ", arr_symp)
         check_value = all(map(lambda x: x[2], arr_symp))
 
         if check_value == True:
             max_symp = min(arr_symp, key=lambda xs: len(xs[1]))
         else:
-            max_symp = max(arr_symp, key=lambda x: x[2])       
-             
+            max_symp = max(arr_symp, key=lambda x: x[2])
+        # print("max symp = ", max_symp)
     else:
         max_symp = max(new_symp, key=lambda x: x[2])
-        
+
+        # print("max symp = ", max_symp)
     rmv_symp = new_symp.remove(max_symp)
 
     return new_symp

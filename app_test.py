@@ -5,6 +5,7 @@ from processing.sinonim import get_sinonim
 from processing.cek_input import inputs_check
 from processing.greeting import check_greeting
 from processing.save_input import save_input
+from processing.negation import remove_negation
 
 gejala = []
 
@@ -20,7 +21,7 @@ def flat(listoflist):
 """ untuk kegunaan tes preprocessing => python app_test.py"""
 if __name__ == "__main__":
     # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-    text = "mual, muntah, nyeri otot, bintik merah dan tidak gatal pada kulit, demam tinggi"
+    text = "mual, muntah, nyeri otot, bintik merah di kulit, demam tinggi, tidak pusing"
 
     user_id = "1"
     name_user = "admin"
@@ -30,6 +31,7 @@ if __name__ == "__main__":
     contents = tokenizing(text)
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
+    # negation = remove_negation(stems)
     sinonim = get_sinonim(stems)
     print(sinonim)
     kondisi_gejala = inputs_check(conn, sinonim)
