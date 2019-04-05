@@ -117,6 +117,9 @@ def callback():
 def handle_text_message(event):
     text = event.message.text
     profile = line_bot_api.get_profile(event.source.user_id)
+    time = dt.datetime.now()
+
+    print("time = ", time)
 
     if text == 'profile':
         if isinstance(event.source, SourceUser):
