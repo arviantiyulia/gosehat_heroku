@@ -29,7 +29,7 @@ def get_symptoms(conn, inputs):
         else:
             inputs_new.append(input)
 
-    # print("inputs = ", inputs_new)
+    print("inputs new = ", inputs_new)
 
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
@@ -174,7 +174,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
 
     new_symp.extend(arr_symp)
 
-    print("new simp setalh negasi dihapus = ", new_symp)
+    # print("new simp setalh negasi dihapus = ", new_symp)
     # print("symptoms_rmv = ", symptoms_rmv)
 
     gejala_rmv = [i[0] for i in new_symp]
