@@ -127,7 +127,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             output_sistem = msg_penyakit + result[0][0][1]
             disease_id = result[0][0][0]
-            # print("id_disease = ", disease_id)
             save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
 
         # jika yang terdeteksi lebih dari 1 penyakit

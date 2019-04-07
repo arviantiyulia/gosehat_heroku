@@ -117,9 +117,6 @@ def callback():
 def handle_text_message(event):
     text = event.message.text
     profile = line_bot_api.get_profile(event.source.user_id)
-    time = dt.datetime.now()
-
-    print("time = ", time)
 
     if text == 'profile':
         if isinstance(event.source, SourceUser):
@@ -336,6 +333,7 @@ def handle_text_message(event):
         # set user_id dan profile (untuk nama)
         user_id = event.source.user_id;
         name_user = line_bot_api.get_profile(event.source.user_id).display_name
+        time = dt.datetime.now()
 
         if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                          second=0) and dt.datetime.now() > dt.datetime.now().replace(
@@ -373,7 +371,7 @@ def handle_text_message(event):
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
             elif count_menu[0][0] == '\konsultasi':
-                messages = message_bot(user_id, name_user, salam, text, conn)
+                messages = message_bot(user_id, name_user, salam, text, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
         else:
@@ -384,7 +382,7 @@ def handle_text_message(event):
                 messages = salam + name_user + "\n" + messages_info[0][0]
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
-                messages = message_bot(user_id, name_user, salam, text, conn)
+                messages = message_bot(user_id, name_user, salam, text, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             delete_menukonsultasi(user_id, conn)
 
@@ -496,7 +494,7 @@ def decide_process(text):
             return "informasi"
 
 
-def message_bot(user_id, name_user, salam, text, conn):
+def message_bot(user_id, name_user, salam, text, time, conn):
     msg_penyakit = "Kemungkinan Anda terkena penyakit "
     msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
     msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
@@ -550,7 +548,10 @@ def message_bot(user_id, name_user, salam, text, conn):
                               + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1]
-                save_history(user_id, name_user, text, output_sistem, conn)
+                disease_id = result[0][0][0]
+                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+
+                # save_history(user_id, name_user, text, output_sistem, conn)
 
             # jika yang terdeteksi lebih dari 1 penyakit
             else:
@@ -561,7 +562,9 @@ def message_bot(user_id, name_user, salam, text, conn):
                           + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-                save_history(user_id, name_user, text, output_sistem, conn)
+                disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
+                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                # save_history(user_id, name_user, text, output_sistem, conn)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
@@ -595,7 +598,9 @@ def message_bot(user_id, name_user, salam, text, conn):
                           + "\n\n" + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1]
-            save_history(user_id, name_user, text, output_sistem, conn)
+            disease_id = result[0][0][0]
+            save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            # save_history(user_id, name_user, text, output_sistem, conn)
 
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
@@ -606,7 +611,9 @@ def message_bot(user_id, name_user, salam, text, conn):
                           2] + "\n\n" + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-            save_history(user_id, name_user, text, output_sistem, conn)
+            disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
+            save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            # save_history(user_id, name_user, text, output_sistem, conn)
 
     return message
 
