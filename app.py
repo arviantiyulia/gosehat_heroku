@@ -193,7 +193,7 @@ def handle_text_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'imagemap':
         pass
-    elif text == 'flex':
+    elif text == 'tentang':
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
@@ -207,21 +207,21 @@ def handle_text_message(event):
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
+                    TextComponent(text='Tentang Aplikasi', weight='bold', size='xl'),
                     # review
-                    BoxComponent(
-                        layout='baseline',
-                        margin='md',
-                        contents=[
-                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
-                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(size='sm', url='https://example.com/grey_star.png'),
-                            TextComponent(text='4.0', size='sm', color='#999999', margin='md',
-                                          flex=0)
-                        ]
-                    ),
+                    # BoxComponent(
+                    #     layout='baseline',
+                    #     margin='md',
+                    #     contents=[
+                    #         IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                    #         IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                    #         IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                    #         IconComponent(size='sm', url='https://example.com/gold_star.png'),
+                    #         IconComponent(size='sm', url='https://example.com/grey_star.png'),
+                    #         TextComponent(text='4.0', size='sm', color='#999999', margin='md',
+                    #                       flex=0)
+                    #     ]
+                    # ),
                     # info
                     BoxComponent(
                         layout='vertical',
@@ -233,39 +233,41 @@ def handle_text_message(event):
                                 spacing='sm',
                                 contents=[
                                     TextComponent(
-                                        text='Place',
+                                        text='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
+                                             '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+                                             '',
                                         color='#aaaaaa',
                                         size='sm',
-                                        flex=1
+                                        # flex=1
                                     ),
-                                    TextComponent(
-                                        text='Shinjuku, Tokyo',
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5
-                                    )
+                                    # TextComponent(
+                                    #     text='Shinjuku, Tokyo',
+                                    #     wrap=True,
+                                    #     color='#666666',
+                                    #     size='sm',
+                                    #     flex=5
+                                    # )
                                 ],
                             ),
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='Time',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        flex=1
-                                    ),
-                                    TextComponent(
-                                        text="10:00 - 23:00",
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5,
-                                    ),
-                                ],
-                            ),
+                            # BoxComponent(
+                            #     layout='baseline',
+                            #     spacing='sm',
+                            #     contents=[
+                            #         TextComponent(
+                            #             text='Time',
+                            #             color='#aaaaaa',
+                            #             size='sm',
+                            #             flex=1
+                            #         ),
+                            #         TextComponent(
+                            #             text="10:00 - 23:00",
+                            #             wrap=True,
+                            #             color='#666666',
+                            #             size='sm',
+                            #             flex=5,
+                            #         ),
+                            #     ],
+                            # ),
                         ],
                     )
                 ],
