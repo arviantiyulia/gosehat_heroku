@@ -224,7 +224,7 @@ def handle_text_message(event):
                     # ),
                     # info
                     BoxComponent(
-                        layout='vertical',
+                        layout='horizontal',
                         margin='lg',
                         spacing='sm',
                         contents=[
