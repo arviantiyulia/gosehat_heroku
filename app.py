@@ -532,7 +532,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         if count_input[0][0] <= 3:
             message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
-            save_history(user_id, name_user, text, message, conn)
+            disease_id = 0
+            save_history(user_id, name_user, text, message, disease_id, time, conn)
+            # save_history(user_id, name_user, text, message, conn)
 
         else:
             cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
