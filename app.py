@@ -197,7 +197,7 @@ def handle_text_message(event):
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='https://example.com/cafe.jpg',
+                url='image/logo_new.png',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
