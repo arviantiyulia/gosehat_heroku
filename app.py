@@ -224,31 +224,33 @@ def handle_text_message(event):
                     # ),
                     # info
                     BoxComponent(
-                        layout='horizontal',
+                        layout='vertical',
                         margin='lg',
                         spacing='sm',
-                        contents=[
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
+                        contents='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
                                              '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
-                                             '',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        # flex=1
-                                    ),
-                                    # TextComponent(
-                                    #     text='Shinjuku, Tokyo',
-                                    #     wrap=True,
-                                    #     color='#666666',
-                                    #     size='sm',
-                                    #     flex=5
-                                    # )
-                                ],
-                            ),
+                                             ''
+                            # BoxComponent(
+                            #     layout='baseline',
+                            #     spacing='sm',
+                            #     contents=[
+                            #         TextComponent(
+                            #             text='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
+                            #                  '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+                            #                  '',
+                            #             color='#aaaaaa',
+                            #             size='sm',
+                            #             # flex=1
+                            #         ),
+                            #         # TextComponent(
+                            #         #     text='Shinjuku, Tokyo',
+                            #         #     wrap=True,
+                            #         #     color='#666666',
+                            #         #     size='sm',
+                            #         #     flex=5
+                            #         # )
+                            #     ],
+                            # ),
                             # BoxComponent(
                             #     layout='baseline',
                             #     spacing='sm',
@@ -268,7 +270,7 @@ def handle_text_message(event):
                             #         ),
                             #     ],
                             # ),
-                        ],
+                        # ],
                     )
                 ],
             ),
