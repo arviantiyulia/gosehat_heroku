@@ -201,7 +201,7 @@ def handle_text_message(event):
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
-                action=URIAction(uri='http://example.com', label='label')
+                # action=URIAction(uri='http://example.com', label='label')
             ),
             body=BoxComponent(
                 layout='vertical',
