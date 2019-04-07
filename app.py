@@ -179,11 +179,11 @@ def handle_text_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'image_carousel':
         image_carousel_template = ImageCarouselTemplate(columns=[
-            ImageCarouselColumn(image_url='https://via.placeholder.com/1024x1024',
+            ImageCarouselColumn(text='hoge1', image_url='https://via.placeholder.com/1024x1024',
                                 action=DatetimePickerAction(label='datetime',
                                                             data='datetime_postback',
                                                             mode='datetime')),
-            ImageCarouselColumn(image_url='https://via.placeholder.com/1024x1024',
+            ImageCarouselColumn(text='hoge1', image_url='https://via.placeholder.com/1024x1024',
                                 action=DatetimePickerAction(label='date',
                                                             data='date_postback',
                                                             mode='date'))
