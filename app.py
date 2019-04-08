@@ -568,6 +568,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                           + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+
+                for dis in result:
+                    print("dis = ", dis)
+
                 disease_id = str(result[0][0][0]) + "," + str(result[1][0][0]) + "," + str(result[2][0][0])
                 save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
                 # save_history(user_id, name_user, text, output_sistem, conn)
@@ -617,6 +621,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                           2] + "\n\n" + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+
+            for dis in result:
+                print("dis = ", dis)
+
             disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
             save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
             # save_history(user_id, name_user, text, output_sistem, conn)
