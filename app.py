@@ -197,7 +197,7 @@ def handle_text_message(event):
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='http://example.com',
+                url='http://localhost/static/image/logo_new.png',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
@@ -572,7 +572,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 for dis in result:
                     disease_id = dis[0][0]
                     save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
-                    print("dis = ", dis)
+                    # print("dis = ", dis)
 
                 # disease_id = str(result[0][0][0]) + "," + str(result[1][0][0]) + "," + str(result[2][0][0])
                 # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
@@ -627,7 +627,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             for dis in result:
                 disease_id = dis[0][0]
                 save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
-                print("dis = ", dis)
+                # print("dis = ", dis)
 
             # disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
             # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
