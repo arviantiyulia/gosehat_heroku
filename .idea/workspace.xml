@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="307" column="23" selection-start-line="307" selection-start-column="23" selection-end-line="307" selection-end-column="23" />
+            <state relative-caret-position="125">
+              <caret line="312" column="29" lean-forward="true" selection-start-line="312" selection-start-column="29" selection-end-line="312" selection-end-column="29" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -65,7 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print</find>
       <find>profile</find>
       <find>id</find>
       <find>bers</find>
@@ -95,6 +91,7 @@
       <find>time</find>
       <find>datetime</find>
       <find>save_histo</find>
+      <find>image</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -378,12 +375,12 @@
       <workItem from="1554437525092" duration="3922000" />
       <workItem from="1554539929481" duration="594000" />
       <workItem from="1554608263458" duration="12096000" />
-      <workItem from="1554696192344" duration="7309000" />
+      <workItem from="1554696192344" duration="7624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115392000" />
+    <option name="totallyTimeSpent" value="115707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -693,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="307" column="23" selection-start-line="307" selection-start-column="23" selection-end-line="307" selection-end-column="23" />
+        <state relative-caret-position="125">
+          <caret line="312" column="29" lean-forward="true" selection-start-line="312" selection-start-column="29" selection-end-line="312" selection-end-column="29" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>

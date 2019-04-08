@@ -306,8 +306,10 @@ def handle_text_message(event):
         url = request.url_root + '/static/image/logo_new.png'
         app.logger.info("url=" + url)
         line_bot_api.reply_message(
-            event.reply_token,
-            ImageSendMessage(url, url)
+            event.reply_token,[
+                ImageSendMessage(url, url),
+                TextSendMessage(text='Display name: ' + profile.display_name),
+            ]
         )
     elif text == 'quick_reply':
         line_bot_api.reply_message(
