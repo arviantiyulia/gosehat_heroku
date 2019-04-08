@@ -197,7 +197,7 @@ def handle_text_message(event):
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='http://localhost/static/image/logo_new.png',
+                url='http://gosehat.heroku.com/static/image/logo_new.png',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
