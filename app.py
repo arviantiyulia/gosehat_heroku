@@ -303,12 +303,11 @@ def handle_text_message(event):
             message
         )
     elif text == 'image':
+        url = request.url_root + '/static/image/logo_new.png'
+        app.logger.info("url=" + url)
         line_bot_api.reply_message(
             event.reply_token,
-            ImageSendMessage(
-                original_content_url='http://gosehat.heroku.com/static/image/logo_new.png',
-                preview_image_url='http://gosehat.heroku.com/static/image/logo_new.png'
-            )
+            ImageSendMessage(url, url)
         )
     elif text == 'quick_reply':
         line_bot_api.reply_message(
