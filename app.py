@@ -570,10 +570,12 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
 
                 for dis in result:
+                    disease_id = dis[0][0]
+                    save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
                     print("dis = ", dis)
 
-                disease_id = str(result[0][0][0]) + "," + str(result[1][0][0]) + "," + str(result[2][0][0])
-                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                # disease_id = str(result[0][0][0]) + "," + str(result[1][0][0]) + "," + str(result[2][0][0])
+                # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
                 # save_history(user_id, name_user, text, output_sistem, conn)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -623,10 +625,12 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
 
             for dis in result:
+                disease_id = dis[0][0]
+                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
                 print("dis = ", dis)
 
-            disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
-            save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            # disease_id = result[0][0][0] + "," + result[1][0][0] + "," + result[2][0][0]
+            # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
             # save_history(user_id, name_user, text, output_sistem, conn)
 
     return message
