@@ -428,23 +428,23 @@ def decide_process(text):
 
         if len(stop_list) == 1:
             # jika ada kata "gejala" dan disebutkan penyakitnya dan gak menyebut gejala
-            if stop_list[0] == "gejala" and len(daftar_penyakit) != 0 and not daftar_gejala:
+            if stop_list[0] == "gejala" and len(daftar_penyakit) != 0:
                 return "informasi"
-            # if stop_list[0] == "gejala":
-            #     return "konsultasi"
-            # if stop_list[0] == "bagaimana":
-            #     return "konsultasi"
-            # if stop_list[0] == "apa" and len(daftar_penyakit):
-            #     # jika tidak ada gejala = informasi
-            #     if not daftar_gejala:
-            #         return "informasi"
-            #     # REVISI
-            #     # jika ada penyakit = informasi
-            #     # elif len(daftar_penyakit) != 0:
-            #     #     return "informasi"
-            #     # selain itu
-            #     else:
-            #         return "konsultasi"
+            if stop_list[0] == "gejala":
+                return "konsultasi"
+            if stop_list[0] == "bagaimana":
+                return "konsultasi"
+            if stop_list[0] == "apa" and len(daftar_penyakit):
+                # jika tidak ada gejala = informasi
+                if not daftar_gejala:
+                    return "informasi"
+                # REVISI
+                # jika ada penyakit = informasi
+                # elif len(daftar_penyakit) != 0:
+                #     return "informasi"
+                # selain itu
+                else:
+                    return "konsultasi"
             else:
                 return "informasi"
 
