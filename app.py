@@ -42,7 +42,7 @@ from linebot.models import (AudioMessage, BeaconEvent, BoxComponent,
                             StickerMessage, StickerSendMessage,
                             TemplateSendMessage, TextComponent, TextMessage,
                             TextSendMessage, UnfollowEvent, URIAction,
-                            VideoMessage)
+                            VideoMessage, ImageSendMessage)
 from processing.app import get_cf
 from processing.cek_input import inputs_check
 from processing.db import create_connection
@@ -301,6 +301,14 @@ def handle_text_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             message
+        )
+    elif text == 'image':
+        line_bot_api.reply_message(
+            event.reply_token,
+            ImageSendMessage(
+                original_content_url='http://gosehat.heroku.com/static/image/logo_new.png',
+                preview_image_url='http://gosehat.heroku.com/static/image/logo_new.png'
+            )
         )
     elif text == 'quick_reply':
         line_bot_api.reply_message(
