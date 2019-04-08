@@ -305,10 +305,12 @@ def handle_text_message(event):
     elif text == 'image':
         url = request.url_root + '/static/image/logo_new.png'
         app.logger.info("url=" + url)
+        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+
         line_bot_api.reply_message(
             event.reply_token,[
                 ImageSendMessage(url, url),
-                TextSendMessage(text='Display name: ' + profile.display_name),
+                TextSendMessage(text=text),
             ]
         )
     elif text == 'quick_reply':
