@@ -302,7 +302,7 @@ def handle_text_message(event):
             message
         )
     elif text == 'tentang':
-        url = request.url_root + '/static/image/logo_new.png'
+        url = request.url_root + '/static/image/tentang.png'
         app.logger.info("url=" + url)
         text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin ' \
                'Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
