@@ -304,8 +304,8 @@ def handle_text_message(event):
     elif text == 'tentang':
         url = request.url_root + '/static/image/tentang.png'
         app.logger.info("url=" + url)
-        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin ' \
-               'Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh:\n1. Arvianti Yulia Maulfa \n2. Entin ' \
+               'Martiana Kusumaningtyas \n3. Fadilah Fahrul Hardiansyah\n'
 
         line_bot_api.reply_message(
             event.reply_token, [
