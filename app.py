@@ -22,27 +22,26 @@ import tempfile
 from argparse import ArgumentParser
 
 from flask import Flask, abort, request
-
-from informasi import get_info
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot.models import (AudioMessage, BeaconEvent, BoxComponent,
-                            BubbleContainer, ButtonComponent, ButtonsTemplate,
+                            BubbleContainer, ButtonsTemplate,
                             CameraAction, CameraRollAction, CarouselColumn,
                             CarouselTemplate, ConfirmTemplate,
                             DatetimePickerAction, FileMessage, FlexSendMessage,
-                            FollowEvent, IconComponent, ImageCarouselColumn,
+                            FollowEvent, ImageCarouselColumn,
                             ImageCarouselTemplate, ImageComponent,
                             ImageMessage, JoinEvent, LeaveEvent,
                             LocationAction, LocationMessage,
                             LocationSendMessage, MessageAction, MessageEvent,
                             PostbackAction, PostbackEvent, QuickReply,
-                            QuickReplyButton, SeparatorComponent, SourceGroup,
-                            SourceRoom, SourceUser, SpacerComponent,
-                            StickerMessage, StickerSendMessage,
+                            QuickReplyButton, SourceGroup,
+                            SourceRoom, SourceUser, StickerMessage, StickerSendMessage,
                             TemplateSendMessage, TextComponent, TextMessage,
                             TextSendMessage, UnfollowEvent, URIAction,
                             VideoMessage, ImageSendMessage)
+
+from informasi import get_info
 from processing.app import get_cf
 from processing.cek_input import inputs_check
 from processing.db import create_connection
@@ -228,48 +227,48 @@ def handle_text_message(event):
                         margin='lg',
                         spacing='sm',
                         contents='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
-                                             '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
-                                             ''
-                            # BoxComponent(
-                            #     layout='baseline',
-                            #     spacing='sm',
-                            #     contents=[
-                            #         TextComponent(
-                            #             text='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
-                            #                  '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
-                            #                  '',
-                            #             color='#aaaaaa',
-                            #             size='sm',
-                            #             # flex=1
-                            #         ),
-                            #         # TextComponent(
-                            #         #     text='Shinjuku, Tokyo',
-                            #         #     wrap=True,
-                            #         #     color='#666666',
-                            #         #     size='sm',
-                            #         #     flex=5
-                            #         # )
-                            #     ],
-                            # ),
-                            # BoxComponent(
-                            #     layout='baseline',
-                            #     spacing='sm',
-                            #     contents=[
-                            #         TextComponent(
-                            #             text='Time',
-                            #             color='#aaaaaa',
-                            #             size='sm',
-                            #             flex=1
-                            #         ),
-                            #         TextComponent(
-                            #             text="10:00 - 23:00",
-                            #             wrap=True,
-                            #             color='#666666',
-                            #             size='sm',
-                            #             flex=5,
-                            #         ),
-                            #     ],
-                            # ),
+                                 '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+                                 ''
+                        # BoxComponent(
+                        #     layout='baseline',
+                        #     spacing='sm',
+                        #     contents=[
+                        #         TextComponent(
+                        #             text='GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh :'
+                        #                  '1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+                        #                  '',
+                        #             color='#aaaaaa',
+                        #             size='sm',
+                        #             # flex=1
+                        #         ),
+                        #         # TextComponent(
+                        #         #     text='Shinjuku, Tokyo',
+                        #         #     wrap=True,
+                        #         #     color='#666666',
+                        #         #     size='sm',
+                        #         #     flex=5
+                        #         # )
+                        #     ],
+                        # ),
+                        # BoxComponent(
+                        #     layout='baseline',
+                        #     spacing='sm',
+                        #     contents=[
+                        #         TextComponent(
+                        #             text='Time',
+                        #             color='#aaaaaa',
+                        #             size='sm',
+                        #             flex=1
+                        #         ),
+                        #         TextComponent(
+                        #             text="10:00 - 23:00",
+                        #             wrap=True,
+                        #             color='#666666',
+                        #             size='sm',
+                        #             flex=5,
+                        #         ),
+                        #     ],
+                        # ),
                         # ],
                     )
                 ],
@@ -305,10 +304,11 @@ def handle_text_message(event):
     elif text == 'image':
         url = request.url_root + '/static/image/logo_new.png'
         app.logger.info("url=" + url)
-        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
+        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin ' \
+               'Martiana Kusumaningtyas, 3. Fadilah Fahrul Hardiansyah '
 
         line_bot_api.reply_message(
-            event.reply_token,[
+            event.reply_token, [
                 ImageSendMessage(url, url),
                 TextSendMessage(text=text),
             ]
@@ -412,7 +412,8 @@ def decide_process(text):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
 
-    stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
+    stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi",
+                          "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
 
     for stop in stop_list:
@@ -513,7 +514,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_penyakit = "Kemungkinan Anda terkena penyakit "
     msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
     msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
-    msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
+    # msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
@@ -561,7 +562,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                               + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                               + msg_pengobatan + output[0][4] + "\n" \
                               + msg_pencegahan + output[0][5] + "\n" \
-                              + msg_komplikasi + str(output[0][6]) \
+                              + str(output[0][6]) \
                               + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1]
@@ -617,7 +618,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                           + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                           + msg_pengobatan + output[0][4] + "\n" \
                           + msg_pencegahan + output[0][5] + "\n" \
-                          + msg_komplikasi + str(output[0][6]) \
+                          + str(output[0][6]) \
                           + "\n\n" + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1]
@@ -719,7 +720,8 @@ def handle_file_message(event):
 @handler.add(FollowEvent)
 def handle_follow(event):
     line_bot_api.reply_message(
-        event.reply_token, TextSendMessage(text='SELAMAT DATANG DI GOSEHAT! \n\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, pencegahan, atau penyebab suatu penyakit. \n\nUntuk menggunakan chatbot ini cukup kirim pesan apa yang ingin Anda tanyakan atau memilih menu yang tersedia ya. \ncontoh: "Saya sering mengalami pusing, mual, batuk." atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTetap jaga kesehatan ya!'))
+        event.reply_token, TextSendMessage(
+            text='SELAMAT DATANG DI GOSEHAT! \n\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, pencegahan, atau penyebab suatu penyakit. \n\nUntuk menggunakan chatbot ini cukup kirim pesan apa yang ingin Anda tanyakan atau memilih menu yang tersedia ya. \ncontoh: "Saya sering mengalami pusing, mual, batuk." atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTetap jaga kesehatan ya!'))
 
 
 @handler.add(UnfollowEvent)
