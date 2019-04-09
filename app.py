@@ -192,7 +192,7 @@ def handle_text_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == 'imagemap':
         pass
-    elif text == 'tentang':
+    elif text == 'image':
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
@@ -301,7 +301,7 @@ def handle_text_message(event):
             event.reply_token,
             message
         )
-    elif text == 'image':
+    elif text == 'tentang':
         url = request.url_root + '/static/image/logo_new.png'
         app.logger.info("url=" + url)
         text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh 1. Arvianti Yulia Maulfa, 2. Entin ' \
