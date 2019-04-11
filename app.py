@@ -538,7 +538,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
 
-        print("input = ", input)
+        print("input = ", symp_db)
         # TODO: masukin gejala ke database, panggil fungsi bantuan
         save_input(user_id, name_user, input, conn)
 
