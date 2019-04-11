@@ -447,16 +447,17 @@ def decide_process(text):
             if stop_list[0] == "bagaimana":
                 return "konsultasi"
             if stop_list[0] == "apa" and len(daftar_penyakit):
+                return "informasi"
                 # jika tidak ada gejala = informasi
-                if not daftar_gejala:
-                    return "informasi"
+                # if not daftar_gejala:
+                #     return "informasi"
                 # REVISI
                 # jika ada penyakit = informasi
                 # elif len(daftar_penyakit) != 0:
                 #     return "informasi"
                 # selain itu
-                else:
-                    return "konsultasi"
+                # else:
+                #     return "konsultasi"
             else:
                 return "informasi"
 
