@@ -525,6 +525,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
     kondisi_gejala = inputs_check(conn, sinonim)
+    symp_db, symptoms, input = get_symptoms(conn, sinonim)
 
     cursor = conn.cursor()
 
@@ -537,8 +538,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
 
+        print("input = ", input)
         # TODO: masukin gejala ke database, panggil fungsi bantuan
-        save_input(user_id, name_user, sinonim, conn)
+        save_input(user_id, name_user, input, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()

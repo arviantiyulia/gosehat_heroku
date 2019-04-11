@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="356" column="31" lean-forward="true" selection-start-line="356" selection-start-column="31" selection-end-line="356" selection-end-column="31" />
+            <state relative-caret-position="145">
+              <caret line="540" column="18" selection-start-line="540" selection-start-column="8" selection-end-line="540" selection-end-column="18" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -62,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/save_input.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="680">
@@ -82,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id</find>
       <find>bers</find>
       <find>tinggi</find>
       <find>spl</find>
@@ -112,6 +109,7 @@
       <find>save_histo</find>
       <find>image</find>
       <find>komplikasi</find>
+      <find>save_input</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -399,12 +397,12 @@
       <workItem from="1554696192344" duration="9902000" />
       <workItem from="1554793441780" duration="988000" />
       <workItem from="1554795808294" duration="2251000" />
-      <workItem from="1554973909430" duration="1305000" />
+      <workItem from="1554973909430" duration="1844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122529000" />
+    <option name="totallyTimeSpent" value="123068000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,13 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/database.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -709,20 +700,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/save_input.py">
+    <entry file="file://$PROJECT_DIR$/processing/database.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="40">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="356" column="31" lean-forward="true" selection-start-line="356" selection-start-column="31" selection-end-line="356" selection-end-column="31" />
+        <state relative-caret-position="145">
+          <caret line="540" column="18" selection-start-line="540" selection-start-column="8" selection-end-line="540" selection-end-column="18" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/save_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
