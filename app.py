@@ -540,7 +540,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         print("input = ", symp_db)
         # TODO: masukin gejala ke database, panggil fungsi bantuan
-        save_input(user_id, name_user, symp_db, conn)
+        # save_input(user_id, name_user, symp_db, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
