@@ -477,25 +477,25 @@ def decide_process(text):
                         return "informasi"
             elif "bagaimana" in stop_list:
                 if "obat" in stop_list or "solusi" in stop_list or "cegah" in stop_list:
+                    if len(daftar_penyakit) != 0:
+                        return "informasi"
                     if not daftar_gejala:
                         return "informasi"
                         # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
                     if len(daftar_gejala) > 2:
                         return "konsultasi"
                     # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                    elif len(daftar_penyakit) != 0:
-                        return "informasi"
                     else:
                         return "informasi"
             elif "mengapa" in stop_list or "kenapa" in stop_list:
+                if len(daftar_penyakit) != 0:
+                    return "informasi"
                 if not daftar_gejala:
                     return "informasi"
                     # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
                 if len(daftar_gejala) > 2:
                     return "konsultasi"
                 # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-                elif len(daftar_penyakit) != 0:
-                    return "informasi"
                 else:
                     return "informasi"
                 #

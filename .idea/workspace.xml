@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_local_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_local_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/database.ini" beforeDir="false" afterPath="$PROJECT_DIR$/processing/database.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/symptoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/symptoms.py" afterDir="false" />
-    </list>
+    <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/database.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="20">
+              <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -46,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1684">
@@ -162,12 +155,12 @@
       <find>inputs</find>
       <find>input new</find>
       <find>save_in</find>
-      <find>disease_id</find>
       <find>hasil</find>
       <find>new symp2</find>
       <find>n</find>
       <find>new symp</find>
       <find>new sy</find>
+      <find>disease_id</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -207,11 +200,11 @@
         <option value="$PROJECT_DIR$/file/konjungsi.csv" />
         <option value="$PROJECT_DIR$/file/sinonim.csv" />
         <option value="$PROJECT_DIR$/processing/save_input.py" />
-        <option value="$PROJECT_DIR$/processing/database.ini" />
         <option value="$PROJECT_DIR$/processing/disease.py" />
         <option value="$PROJECT_DIR$/processing/symptoms.py" />
         <option value="$PROJECT_DIR$/app_local_bot.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/processing/database.ini" />
       </list>
     </option>
   </component>
@@ -455,12 +448,12 @@
       <workItem from="1554696192344" duration="9902000" />
       <workItem from="1554793441780" duration="988000" />
       <workItem from="1554795808294" duration="2251000" />
-      <workItem from="1554973909430" duration="10080000" />
+      <workItem from="1554973909430" duration="10321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131304000" />
+    <option name="totallyTimeSpent" value="131545000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -730,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/database.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/processing/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -778,6 +764,13 @@
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/database.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
