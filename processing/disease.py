@@ -48,11 +48,11 @@ def get_disease(conn, cf, id):
 
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
-    # print("\nDEBUG> Hasil Certainty Factor: ")
-    # for item in range(len(cf_list)):
-    #     cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
-    #     disease_name2 = cursor.fetchall()
-    #     print("DEBUG> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
+    print("\nDEBUG> Hasil Certainty Factor: ")
+    for item in range(len(cf_list)):
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
+        disease_name2 = cursor.fetchall()
+        print("DEBUG> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
     # print("DEBUG> cf_list = ", cf_list[0][)
 
     # print(DEBUG> disease_name)

@@ -52,7 +52,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     elif kondisi_gejala == "kurang":
 
         print("input save = ", symp_db)
-        save_input(user_id, name_user, sinonim, conn)
+        save_input(user_id, name_user, symp_db, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
@@ -93,8 +93,14 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                           + "\n\n" + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-                disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
-                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
+                # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+
+                for dis in result:
+                    disease_id = dis[0][0]
+                    save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                    # print("dis = ", dis)
+
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
@@ -140,8 +146,12 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                           2] + "\n\n" + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-            disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
-            save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
+            # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            for dis in result:
+                disease_id = dis[0][0]
+                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                # print("dis = ", dis)
 
     return message
 
@@ -234,7 +244,8 @@ if __name__ == "__main__":
     args = sys.argv
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-        text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
+        # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
+        text  = "pilek"
     else:
         text = args[1]
 

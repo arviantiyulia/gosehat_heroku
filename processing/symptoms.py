@@ -149,7 +149,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
     for symp in symptoms:
         new_symp.append([symp[0][0], symp[0][1], 0])
 
-    print("new symp = ", new_symp)
+    # print("new symp = ", new_symp)
 
     for idx in index_word:
         arr_negation.append(sinonim[idx])
