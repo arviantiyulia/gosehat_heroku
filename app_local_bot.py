@@ -43,6 +43,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     cursor = conn.cursor()
 
+    penyakit_result = ""
+    definisi_result = ""
+
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
         disease = check_greeting(sinonim)
@@ -87,14 +90,14 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             # jika yang terdeteksi lebih dari 1 penyakit
             else:
                 # print("hasil = ", result)
-                message = message + salam + name_user + "\n" \
-                          + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                          + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] \
-                          + "\n\n" + msg_peringatan
+                for idx in result:
+                    penyakit_result = penyakit_result + " , " +  idx[0][1]
+                    definisi_result = definisi_result + "\n\n" + idx[0][2]
 
-                output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+                message = message + salam + name_user + "\n" + msg_penyakit + penyakit_result + "\n" + definisi_result + "\n\n" + msg_peringatan
+                output_sistem = msg_penyakit + penyakit_result
                 # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
-                # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                # save_history(user_id, name_user, text, output_sistem, id_result, time, conn)
 
                 for dis in result:
                     disease_id = dis[0][0]
@@ -140,6 +143,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
             # print("hasil = ", )
+            for idx in result:
+                print("idx = ", idx)
+
             message = message + salam + name_user + "\n" \
                       + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
                       + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][
@@ -245,7 +251,7 @@ if __name__ == "__main__":
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        text  = "pilek"
+        text  = "demam tinggi, pilek"
     else:
         text = args[1]
 
