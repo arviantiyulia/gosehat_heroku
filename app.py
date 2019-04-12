@@ -527,6 +527,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     kondisi_gejala = inputs_check(conn, sinonim)
     symp_db, symptoms, input = get_symptoms(conn, sinonim)
 
+    penyakit_result = ""
+    definisi_result = ""
+
     cursor = conn.cursor()
 
     # jika gejala kosong maka tampilkan pesan
