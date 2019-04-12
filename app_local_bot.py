@@ -54,8 +54,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
 
-        print("input save = ", symp_db)
-        save_input(user_id, name_user, symp_db, conn)
+        # print("input save = ", symp_db)
+        input_to_sinonim = ",".join(input)
+        print("input to sinonim = ", input_to_sinonim)
+        save_input(user_id, name_user, symp_db, input_to_sinonim, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
@@ -66,10 +68,13 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             save_history(user_id, name_user, text, message, disease_id, time, conn)
 
         else:
-            cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
+            cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
             gejala_db = cursor.fetchall()
-            gejala = [i[0] for i in gejala_db]
-            result, cf = get_cf(conn, gejala)
+            print("gejala_db = ", gejala_db)
+            gejala = [i[0].split(',') for i in gejala_db]
+            gejala_flat = flat(gejala)
+            print("gejala = ", gejala_flat)
+            result, cf = get_cf(conn, gejala_flat)
             # print("result = ", result)
 
             # jika yang terdeteksi hanya 1 penyakit
@@ -117,8 +122,12 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             result, cf = get_cf(conn, sinonim)
 
         else:
-            gejala_new = [i[0] for i in gejala_db]
-            sinonim.append(gejala_new)
+            gejala = [i[0].split(',') for i in gejala_db]
+            gejala_flat = flat(gejala)
+            # gejala_new = [i[0] for i in gejala_db]
+            # gejala_new = [i[0] for i in gejala_db]
+            print("gejala new in = ", gejala_flat)
+            sinonim.append(gejala_flat)
             gejala_new2 = flat(sinonim)
             result, cf = get_cf(conn, gejala_new2)
 
@@ -251,7 +260,7 @@ if __name__ == "__main__":
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        text  = "demam tinggi, pilek"
+        text  = "batuk, demam, pusing, pilek"
     else:
         text = args[1]
 

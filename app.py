@@ -538,10 +538,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
 
-        print("input save = ", symp_db)
-        print("input 0 = ", symp_db[0][0][1])
-        # TODO: masukin gejala ke database, panggil fungsi bantuan
-        save_input(user_id, name_user, symp_db, conn)
+        input_to_sinonim = ",".join(input)
+        print("input to sinonim = ", input_to_sinonim)
+        save_input(user_id, name_user, symp_db, input_to_sinonim, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
@@ -549,14 +548,16 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         if count_input[0][0] <= 3:
             message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
             disease_id = 0
-            save_history(user_id, name_user, text, message, disease_id, time, conn)
-            # save_history(user_id, name_user, text, message, conn)
+            save_history(user_id, name_user, input_to_sinonim, message, disease_id, time, conn)
 
         else:
             cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
             gejala_db = cursor.fetchall()
-            gejala = [i[0] for i in gejala_db]
-            result, cf = get_cf(conn, gejala)
+            print("gejala_db = ", gejala_db)
+            gejala = [i[0].split(',') for i in gejala_db]
+            gejala_flat = flat(gejala)
+            print("gejala = ", gejala_flat)
+            result, cf = get_cf(conn, gejala_flat)
             # print("result = ", result)
 
             # jika yang terdeteksi hanya 1 penyakit
@@ -587,11 +588,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 for dis in result:
                     disease_id = dis[0][0]
                     save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
-                    # print("dis = ", dis)
-
-                # disease_id = str(result[0][0][0]) + "," + str(result[1][0][0]) + "," + str(result[2][0][0])
-                # save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
-                # save_history(user_id, name_user, text, output_sistem, conn)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
@@ -599,16 +595,19 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
-        cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
+        cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
         if gejala_db is None:
             result, cf = get_cf(conn, sinonim)
 
         else:
-            gejala_new = [i[0] for i in gejala_db]
-            sinonim.append(gejala_new)
+            gejala = [i[0].split(',') for i in gejala_db]
+            gejala_flat = flat(gejala)
+            # gejala_new = [i[0] for i in gejala_db]
+            sinonim.append(gejala_flat)
             gejala_new2 = flat(sinonim)
+            print("gejala_new 2 = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")

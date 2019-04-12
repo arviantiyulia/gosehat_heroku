@@ -1,13 +1,13 @@
 gejala = []
 
 
-def save_input(user_id, name_user, inputs, conn):
+def save_input(user_id, name_user, inputs, input_user, conn):
     cursor = conn.cursor()
 
     for i in range(len(inputs)):
         cursor.execute(
-            "INSERT INTO gejala_input(user_id, nama_user, nama_gejala) VALUES('" + user_id + "', '" + name_user + "','" +
-            inputs[i][0][1] + "')")
+            "INSERT INTO gejala_input(user_id, nama_user, nama_gejala, input_user) VALUES('" + user_id + "', '" + name_user + "','" +
+            inputs[i][0][1] + "', '" + input_user + "')")
         conn.commit()
 
     return inputs
