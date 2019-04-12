@@ -115,7 +115,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
-        cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
+        cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
         if gejala_db is None:
@@ -127,8 +127,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             # gejala_new = [i[0] for i in gejala_db]
             # gejala_new = [i[0] for i in gejala_db]
             print("gejala new in = ", gejala_flat)
-            sinonim.append(gejala_flat)
-            gejala_new2 = flat(sinonim)
+            # sinonim.append(gejala_flat)
+            gejala_new2 = sinonim + gejala_flat
+            print("gejala_new_in 2 = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")

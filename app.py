@@ -604,10 +604,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         else:
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
-            # gejala_new = [i[0] for i in gejala_db]
-            sinonim.append(gejala_flat)
-            gejala_new2 = flat(sinonim)
-            print("gejala_new 2 = ", gejala_new2)
+            print("gejala new in = ", gejala_flat)
+            gejala_new2 = sinonim + gejala_flat
+            print("gejala_new_in 2 = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
