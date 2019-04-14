@@ -549,7 +549,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
 
-        if count_input[0][0] <= 3:
+        if count_input[0][0] <= 2:
             message = message + "Apakah ada gejala lain ?\n\nGejala yang anda masukkan kurang. Masukkan minimal 4 gejala agar mendapatkan hasil yang akurat"
             disease_id = 0
             save_history(user_id, name_user, input_to_sinonim, message, disease_id, time, conn)

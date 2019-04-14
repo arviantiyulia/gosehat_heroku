@@ -409,12 +409,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Flask server.TugasAkhir" />
       <item itemvalue="Python.app_test" />
+      <item itemvalue="Python.informasi (1)" />
+      <item itemvalue="Python.informasi" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.testing" />
-      <item itemvalue="Python.informasi" />
-      <item itemvalue="Python.informasi (1)" />
+      <item itemvalue="Flask server.TugasAkhir" />
     </list>
     <recent_temporary>
       <list>
