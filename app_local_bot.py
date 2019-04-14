@@ -261,7 +261,7 @@ if __name__ == "__main__":
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        text  = "batuk, demam, pusing, pilek"
+        text  = "beberapa hari ini kepala bagian kiri saya sakit, . saya kenapa ya ?"
     else:
         text = args[1]
 
