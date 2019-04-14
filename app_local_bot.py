@@ -180,7 +180,7 @@ def decide_process(text):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
 
-    stopword_info_list = ["apa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
+    stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
 
     for stop in stop_list:
@@ -188,8 +188,8 @@ def decide_process(text):
     if "sakit" in sinonim:
         sinonim.remove("sakit")
 
-    # print("DEBUG> sinonim baru = ", sinonim)
-    # print("DEBUG> stop_list = ", stop_list)
+    print("DEBUG> sinonim baru = ", sinonim)
+    print("DEBUG> stop_list = ", stop_list)
 
     if len(stop_list) != 0 :
         daftar_gejala = get_symptoms(conn, sinonim)
@@ -206,24 +206,22 @@ def decide_process(text):
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
         if len(stop_list) == 1:
+            # ==== KOMENTAR MISBAH | PUNYA VIAN
             # jika ada kata "gejala" dan disebutkan penyakitnya dan gak menyebut gejala
-            if stop_list[0] == "gejala" and len(daftar_penyakit) != 0 and not daftar_gejala:
-                return "informasi"
-            if stop_list[0] == "gejala":
+            # if stop_list[0] == "gejala" and len(daftar_penyakit) != 0:
+            #     return "informasi"
+            # if stop_list[0] == "kenapa" and len(daftar_penyakit) == 0:
+            #     return "konsultasi"
+            # if stop_list[0] == "gejala":
+            #     return "konsultasi"
+            # if stop_list[0] == "bagaimana":
+            #     return "konsultasi"
+            # if stop_list[0] == "apa" and len(daftar_penyakit):
+            #     return "informasi"
+            
+            # ==== MISBAH BARU
+            if len(daftar_penyakit) == 0:
                 return "konsultasi"
-            if stop_list[0] == "bagaimana":
-                return "konsultasi"
-            if stop_list[0] == "apa":
-                # jika tidak ada gejala = informasi
-                if not daftar_gejala:
-                    return "informasi"
-                # REVISI
-                # jika ada penyakit = informasi
-                # elif len(daftar_penyakit) != 0:
-                #     return "informasi"
-                # selain itu
-                else:
-                    return "konsultasi"
             else:
                 return "informasi"
                 
@@ -261,7 +259,7 @@ if __name__ == "__main__":
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        text  = "beberapa hari ini kepala bagian kiri saya sakit, . saya kenapa ya ?"
+        text  = "batuk, demam, pusing, pilek"
     else:
         text = args[1]
 
