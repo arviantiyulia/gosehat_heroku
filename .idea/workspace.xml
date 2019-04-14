@@ -44,10 +44,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="612" column="25" lean-forward="true" selection-start-line="612" selection-start-column="25" selection-end-line="612" selection-end-column="25" />
+            <state relative-caret-position="-3643">
+              <caret line="528" selection-start-line="528" selection-end-line="528" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="704" column="1" selection-start-line="704" selection-end-line="704" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processing/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_local_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="124" column="12" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="132" selection-end-column="50" />
+            <state relative-caret-position="2200">
+              <caret line="124" column="12" selection-start-line="124" selection-start-column="12" selection-end-line="132" selection-end-column="50" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -106,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>apa</find>
       <find>result[0]</find>
       <find>/calback</find>
       <find>muncul</find>
@@ -136,6 +156,7 @@
       <find>save</find>
       <find>flat</find>
       <find>message</find>
+      <find>t</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -200,6 +221,11 @@
             <path>
               <item name="TugasAkhir" type="b2602c69:ProjectViewProjectNode" />
               <item name="TugasAkhir" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TugasAkhir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TugasAkhir" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TugasAkhir" type="b2602c69:ProjectViewProjectNode" />
@@ -426,12 +452,14 @@
       <workItem from="1554973909430" duration="11231000" />
       <workItem from="1555024158231" duration="585000" />
       <workItem from="1555042853296" duration="10860000" />
-      <workItem from="1555068045015" duration="2078000" />
+      <workItem from="1555068045015" duration="2802000" />
+      <workItem from="1555157095091" duration="1342000" />
+      <workItem from="1555211025777" duration="439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145978000" />
+    <option name="totallyTimeSpent" value="148483000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,7 +474,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33661118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3472012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -460,7 +488,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26841244" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26841244" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.8314239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -667,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/processing/cek_input.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -688,13 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/app.py">
+    <entry file="file://$PROJECT_DIR$/processing/database.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -715,6 +733,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app_local_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="124" column="12" selection-start-line="124" selection-start-column="12" selection-end-line="132" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/processing/disease.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -729,27 +757,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/database.ini">
+    <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="4" selection-end-column="29" />
+        <state relative-caret-position="121">
+          <caret line="704" column="1" selection-start-line="704" selection-end-line="704" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_local_bot.py">
+    <entry file="file://$PROJECT_DIR$/processing/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="124" column="12" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="132" selection-end-column="50" />
+        <state relative-caret-position="179">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="612" column="25" lean-forward="true" selection-start-line="612" selection-start-column="25" selection-end-line="612" selection-end-column="25" />
+        <state relative-caret-position="-3643">
+          <caret line="528" selection-start-line="528" selection-end-line="528" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>

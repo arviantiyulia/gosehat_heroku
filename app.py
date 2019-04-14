@@ -549,7 +549,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         count_input = cursor.fetchall()
 
         if count_input[0][0] <= 3:
-            message = message + "Gejala yang anda masukkan kurang akurat.\nApakah ada gejala lain ?"
+            message = message + "Apakah ada gejala lain ?\n\nGejala yang anda masukkan kurang. Masukkan minimal 4 gejala agar mendapatkan hasil yang akurat"
             disease_id = 0
             save_history(user_id, name_user, input_to_sinonim, message, disease_id, time, conn)
 
@@ -582,7 +582,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             # jika yang terdeteksi lebih dari 1 penyakit
             else:
                 for idx in result:
-                    penyakit_result = penyakit_result + " , " +  idx[0][1]
+                    penyakit_result = penyakit_result + " , " + idx[0][1]
                     definisi_result = definisi_result + "\n\n" + idx[0][2]
 
                 message = message + salam + name_user + "\n" + msg_penyakit + penyakit_result + "\n" + definisi_result + "\n\n" + msg_peringatan
@@ -641,7 +641,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             for dis in result:
                 disease_id = dis[0][0]
                 save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
-
 
     return message
 
@@ -719,7 +718,14 @@ def handle_file_message(event):
 def handle_follow(event):
     line_bot_api.reply_message(
         event.reply_token, TextSendMessage(
-            text='SELAMAT DATANG DI GOSEHAT! \n\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, pencegahan, atau penyebab suatu penyakit. \n\nUntuk menggunakan chatbot ini cukup kirim pesan apa yang ingin Anda tanyakan atau memilih menu yang tersedia ya. \ncontoh: "Saya sering mengalami pusing, mual, batuk." atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTetap jaga kesehatan ya!'))
+            text='SELAMAT DATANG DI GOSEHAT! \n\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk '
+                 'konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, '
+                 'pencegahan, atau penyebab suatu penyakit. \ncontoh: "Saya sering mengalami pusing, mual, batuk. Saya '
+                 'sakit apa ?" atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTahapan pemakaian '
+                 'aplikasi GoSehat :\n1. Ketikkan pesan seperti pada contoh diatas atau pilih menu \n2. Anda bisa '
+                 'mengetikkan gejala untuk mendeteksi penyakit pada tubuh Anda\n3. Anda bisa mengetikkan nama penyakit '
+                 'untuk mengetahui jenis penyakit\n4. Tunggu hingga aplikasi memberikan Anda jawaban\n\nTetap jaga '
+                 'kesehatan ya!'))
 
 
 @handler.add(UnfollowEvent)
