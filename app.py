@@ -526,7 +526,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
     symp_db, symptoms, input = get_symptoms(conn, sinonim)
-    kondisi_gejala = cek_total_gejala(symp_db)
+    if text.lower() != 'tidak':
+        kondisi_gejala = cek_total_gejala(symp_db)
+    else:
+        kondisi_gejala = 'ada'
 
     penyakit_result = ""
     definisi_result = ""
@@ -549,10 +552,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
 
-        if count_input[0][0] <= 2:
+        if count_input[0][0] <= 3:
             message = message + "Apakah ada gejala lain ?\n\nGejala yang anda masukkan kurang. Masukkan minimal 4 gejala agar mendapatkan hasil yang akurat"
             disease_id = 0
             save_history(user_id, name_user, input_to_sinonim, message, disease_id, time, conn)
+
 
         else:
             cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")

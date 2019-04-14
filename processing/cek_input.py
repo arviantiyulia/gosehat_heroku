@@ -3,7 +3,7 @@ def cek_total_gejala(gejala):
     if len(gejala) == 0:
         return "kosong"
     # TODO: cek if jika rows (gejala) kurang dari sama dengan 3 return text kurang
-    elif len(gejala) <= 2:
+    elif len(gejala) <= 3:
         return "kurang"
     else:
         return "ada"

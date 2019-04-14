@@ -39,7 +39,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
     symp_db, symptoms, input = get_symptoms(conn, sinonim)
-    kondisi_gejala = cek_total_gejala(symp_db)
+
+    if text.lower() != 'tidak':
+        kondisi_gejala = cek_total_gejala(symp_db)
+    else:
+        kondisi_gejala = 'ada'
 
     cursor = conn.cursor()
 
