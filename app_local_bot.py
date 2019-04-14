@@ -62,7 +62,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         # print("input save = ", symp_db)
         input_to_sinonim = ",".join(input)
-        print("input to sinonim = ", input_to_sinonim)
+        print("DEBUG> Sinonim disimpan ke tabel (gejala input) = ", input_to_sinonim)
         save_input(user_id, name_user, symp_db, input_to_sinonim, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -76,10 +76,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         else:
             cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
             gejala_db = cursor.fetchall()
-            print("gejala_db = ", gejala_db)
+            print("DEBUG> Kurang | Gejala di DB = ", gejala_db)
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
-            print("gejala = ", gejala_flat)
+            print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
             result, cf = get_cf(conn, gejala_flat)
             # print("result = ", result)
 
@@ -125,7 +125,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
-        print("gejala db = ", gejala_db)
+        print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
 
         if gejala_db is None:
             result, cf = get_cf(conn, sinonim)
@@ -135,10 +135,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             gejala_flat = flat(gejala)
             # gejala_new = [i[0] for i in gejala_db]
             # gejala_new = [i[0] for i in gejala_db]
-            print("gejala new in = ", gejala_flat)
+            print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
             # sinonim.append(gejala_flat)
             gejala_new2 = sinonim + gejala_flat
-            print("gejala_new_in 2 = ", gejala_new2)
+            print("DEBUG> Kurang | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -163,7 +163,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         else:
             # print("hasil = ", )
             for idx in result:
-                print("idx = ", idx)
+                print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
 
             message = message + salam + name_user + "\n" \
                       + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \

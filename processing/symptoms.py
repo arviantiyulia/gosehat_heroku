@@ -29,20 +29,20 @@ def get_symptoms(conn, inputs):
     for idx, input in enumerate(inputs):
         if idx in index_word:
 
-            print("idx = ", idx)
+            print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
             # cek_next_index = idx + 1
             if inputs[idx + 1] == "sakit":
                 next_id = idx + 2
-                print("benar")
+                print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
             else:
                 next_id = idx + 1
-                print("salah")
+                print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")
             join_negation = input + " " + inputs[next_id]
             inputs_new.append(join_negation)
         else:
             inputs_new.append(input)
 
-    print("inputs new = ", inputs_new)
+    print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
 
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
@@ -59,9 +59,9 @@ def get_symptoms(conn, inputs):
         rows.append(cursor.fetchall())
 
     # print("gejala = ", rows[0][1])
-    print("\nDEBUG> Daftar gejala: ")
+    print("\nINFO> @symptoms.get_symptoms Daftar gejala: ")
     for row in rows:
-        print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+        print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
     # print("rows = ", result_id)
@@ -132,7 +132,7 @@ def get_max_id(input, row):
 
     id_max = id_min_count
 
-    print("max id = ", id_max)
+    print("INFO> Max id @symptomps = ", id_max)
 
     return id_max
 
@@ -158,14 +158,14 @@ def exclude_symptoms(conn, symptoms, sinonim):
 
     word = "tidak"
     index_word = [i for i,d in enumerate(sinonim) if word in d]
-    print("index word = ", index_word)
-    print("sinonim = ", sinonim)
+    print("DEBUG> @symptoms.exclude_symptoms index word = ", index_word)
+    print("DEBUG> @symptoms.exclude_symptoms sinonim = ", sinonim)
 
     
     for symp in symptoms:
         new_symp.append([symp[0][0], symp[0][1], 0])
 
-    print("sinonim exclude = ", sinonim)
+    print("DEBUG> sinonim exclude @symptoms.exclude_symptoms = ", sinonim)
 
     for idx in index_word:
         arr_negation.append(sinonim[idx])
@@ -180,7 +180,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
                 index_word.pop(idx)
                 new_symp.pop(idx_symp)
 
-    print("new_symp = ", new_symp)
+    print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
     # print("arr_negation = ", arr_negation)
     # print("index word = ", index_word)
 
@@ -202,9 +202,9 @@ def exclude_symptoms(conn, symptoms, sinonim):
         rows.append(cursor.fetchall())
 
     # print("gejala = ", rows[0][1])
-    print("\nDEBUG> Daftar gejala: ")
+    print("\nINFO> @symptoms.exclude_symptoms Daftar gejala: ")
     for row in rows:
-        print("DEBUG> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+        print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
 
@@ -234,7 +234,7 @@ def remove_symptoms(idx_word, new_symp, sinonim):
     val_negation = read_negation.split()
     # print("next id = ", idx_word)
 
-    print("new simp = ", new_symp)
+    print("DEBUG> @symptoms.remove_symptoms new simp = ", new_symp)
     new_symp = count_exclude(val_negation[1], new_symp)
 
     jml = 0
@@ -242,8 +242,8 @@ def remove_symptoms(idx_word, new_symp, sinonim):
         if idx_count[2] == 1:
             jml += 1
 
-    print("new simp2 = ", new_symp)
-    print("jml = ", jml)
+    print("DEBUG> @symptoms.remove_symptoms new simp2 = ", new_symp)
+    print("DEBUG> @symptoms.remove_symptoms jml = ", jml)
 
     if jml > 1:
         if sinonim[idx_word + 1] == "sakit":

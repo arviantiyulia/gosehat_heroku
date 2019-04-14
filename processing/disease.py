@@ -41,18 +41,18 @@ def get_disease(conn, cf, id):
         # print("DEBUG> Dengan nilai certainty factor: ", max_cf)
 
     else:
-        print("DEBUG> 3 ID tertinggi = ", id_somedisease)
+        print("INFO> 3 ID tertinggi = ", id_somedisease)
         for id_new in id_somedisease:
             cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_new))
             disease_name.append(cursor.fetchall())
 
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
-    print("\nDEBUG> Hasil Certainty Factor: ")
+    print("\nINFO> Hasil Certainty Factor: ")
     for item in range(len(cf_list)):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
         disease_name2 = cursor.fetchall()
-        print("DEBUG> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
+        print("INFO> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
     # print("DEBUG> cf_list = ", cf_list[0][)
 
     # print(DEBUG> disease_name)
