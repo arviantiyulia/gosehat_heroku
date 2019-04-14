@@ -74,6 +74,7 @@ def symptoms_count(rows, inputs):
             temp_gejala2 = row[0][0]
             arr_id.append(temp_gejala2)
 
+
     id_gejala = list(set(arr_id))
 
     return id_gejala
@@ -117,6 +118,8 @@ def get_max_id(input, row):
             id_min_count = temp_max_count[len_count][0]
 
     id_max = id_min_count
+
+    print("max id = ", id_max)
 
     return id_max
 

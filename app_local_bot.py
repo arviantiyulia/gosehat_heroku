@@ -33,17 +33,17 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
-    stopwords = get_stopword('file/konjungsi.csv')
-    contents = tokenizing(text)
-    filters = filtering(contents, stopwords)
-    stems = stemming(filters)
-    sinonim = get_sinonim(stems)
-    symp_db, symptoms, input = get_symptoms(conn, sinonim)
-
-    if text.lower() != 'tidak':
-        kondisi_gejala = cek_total_gejala(symp_db)
-    else:
+    if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
+        sinonim = []
+    else:
+        stopwords = get_stopword('file/konjungsi.csv')
+        contents = tokenizing(text)
+        filters = filtering(contents, stopwords)
+        stems = stemming(filters)
+        sinonim = get_sinonim(stems)
+        symp_db, symptoms, input = get_symptoms(conn, sinonim)
+        kondisi_gejala = cek_total_gejala(symp_db)
 
     cursor = conn.cursor()
 
@@ -266,7 +266,8 @@ if __name__ == "__main__":
     if len(args) == 1:
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        text  = "batuk, demam, pusing, pilek"
+        # text  = "Saya merasa mual dan kepala serasa berputar, saya sakit apa?"
+        text = "tidak"
     else:
         text = args[1]
 
