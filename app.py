@@ -384,7 +384,7 @@ def handle_text_message(event):
                 disease_id = 0
                 messages_info = get_info(text)
                 messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, messages_info[0][0], messages_info[0][0], disease_id, time, conn)
+                save_history(user_id, name_user, text , messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
             elif count_menu[0][0] == '\konsultasi':
@@ -398,7 +398,7 @@ def handle_text_message(event):
                 disease_id  = 0
                 messages_info = get_info(text)
                 messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, messages_info[0][0], messages_info[0][0], disease_id, time, conn)
+                save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
                 messages = message_bot(user_id, name_user, salam, text, time, conn)
