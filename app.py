@@ -522,6 +522,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     message = ""
     if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
+        sinonim = []
     else:
         stopwords = get_stopword('file/konjungsi.csv')
         contents = tokenizing(text)
