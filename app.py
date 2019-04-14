@@ -720,7 +720,8 @@ def handle_follow(event):
         event.reply_token, TextSendMessage(
             text='SELAMAT DATANG DI GOSEHAT! \n\nGoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk '
                  'konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan, '
-                 'pencegahan, atau penyebab suatu penyakit. \ncontoh: "Saya sering mengalami pusing, mual, batuk. Saya '
+                 'pencegahan, atau penyebab suatu penyakit. \n\nCukup kirim pesan apa yang ingin Anda tanyakan atau '
+                 'memilih menu yang tersedia ya.\ncontoh: "Saya sering mengalami pusing, mual, batuk. Saya '
                  'sakit apa ?" atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTahapan pemakaian '
                  'aplikasi GoSehat :\n1. Ketikkan pesan seperti pada contoh diatas atau pilih menu \n2. Anda bisa '
                  'mengetikkan gejala untuk mendeteksi penyakit pada tubuh Anda\n3. Anda bisa mengetikkan nama penyakit '
