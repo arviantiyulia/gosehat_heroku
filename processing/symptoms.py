@@ -21,9 +21,22 @@ def get_symptoms(conn, inputs):
     index_word = [i for i, d in enumerate(inputs) if d == word]
 
     # print("index = ", index_word)
+    # for idx_tidak in index_word:
+    #     cek_next_index = index_word + 1
+
+    # print("index = ", cek_next_index)
+
     for idx, input in enumerate(inputs):
         if idx in index_word:
-            next_id = idx + 1
+
+            print("idx = ", idx)
+            # cek_next_index = idx + 1
+            if inputs[idx + 1] == "sakit":
+                next_id = idx + 2
+                print("benar")
+            else:
+                next_id = idx + 1
+                print("salah")
             join_negation = input + " " + inputs[next_id]
             inputs_new.append(join_negation)
         else:
@@ -152,7 +165,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
     for symp in symptoms:
         new_symp.append([symp[0][0], symp[0][1], 0])
 
-    # print("new symp = ", new_symp)
+    print("sinonim exclude = ", sinonim)
 
     for idx in index_word:
         arr_negation.append(sinonim[idx])
@@ -167,7 +180,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
                 index_word.pop(idx)
                 new_symp.pop(idx_symp)
 
-    # print("new_symp = ", new_symp)
+    print("new_symp = ", new_symp)
     # print("arr_negation = ", arr_negation)
     # print("index word = ", index_word)
 
@@ -233,7 +246,10 @@ def remove_symptoms(idx_word, new_symp, sinonim):
     print("jml = ", jml)
 
     if jml > 1:
-        next_id2 = idx_word + 1
+        if sinonim[idx_word + 1] == "sakit":
+            next_id2 = idx_word + 2
+        else:
+            next_id2 = idx_word + 3
         val_negation = sinonim[next_id2]
 
         for i in new_symp:

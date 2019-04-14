@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app_local_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_local_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processing/symptoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/symptoms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="533" lean-forward="true" selection-start-line="522" selection-start-column="4" selection-end-line="533" />
+            <state relative-caret-position="39">
+              <caret line="530" column="36" selection-start-line="530" selection-start-column="36" selection-end-line="530" selection-end-column="36" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_local_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1001">
-              <caret line="269" column="22" lean-forward="true" selection-start-line="269" selection-start-column="22" selection-end-line="269" selection-end-column="22" />
+            <state relative-caret-position="76">
+              <caret line="190" column="71" selection-start-line="190" selection-start-column="64" selection-end-line="190" selection-end-column="71" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/symptoms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+            <state relative-caret-position="123">
+              <caret line="179" column="34" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="34" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -104,8 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>enu</find>
-      <find>bisa</find>
       <find>next_id</find>
       <find>get_cf</find>
       <find>history</find>
@@ -132,8 +130,10 @@
       <find>nama penyakit</find>
       <find>nama</find>
       <find>message</find>
-      <find>3</find>
       <find>symptoms_count</find>
+      <find>sinonim</find>
+      <find>3</find>
+      <find>idx</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -175,9 +175,9 @@
         <option value="$PROJECT_DIR$/processing/save_input.py" />
         <option value="$PROJECT_DIR$/informasi.py" />
         <option value="$PROJECT_DIR$/processing/cek_input.py" />
+        <option value="$PROJECT_DIR$/app_local_bot.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/processing/symptoms.py" />
-        <option value="$PROJECT_DIR$/app_local_bot.py" />
       </list>
     </option>
   </component>
@@ -431,7 +431,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155047000" />
+    <option name="totallyTimeSpent" value="160838000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,6 +444,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24810892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,7 +460,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.497545" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.63338786" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.8314239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -701,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processing/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -728,10 +719,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app_local_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="190" column="71" selection-start-line="190" selection-start-column="64" selection-end-line="190" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="533" lean-forward="true" selection-start-line="522" selection-start-column="4" selection-end-line="533" />
+        <state relative-caret-position="39">
+          <caret line="530" column="36" selection-start-line="530" selection-start-column="36" selection-end-line="530" selection-end-column="36" />
           <folding>
             <element signature="e#580#619#0" expanded="true" />
           </folding>
@@ -740,20 +751,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/processing/symptoms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+        <state relative-caret-position="123">
+          <caret line="179" column="34" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="34" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_local_bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1001">
-          <caret line="269" column="22" lean-forward="true" selection-start-line="269" selection-start-column="22" selection-end-line="269" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
