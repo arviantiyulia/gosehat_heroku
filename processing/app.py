@@ -5,7 +5,6 @@ from processing.symptoms import get_symptoms, exclude_symptoms
 from processing.disease_symptoms import get_id_disease
 from processing.certaintyfactor import certainty_calculate
 from processing.disease import get_disease
-from processing.cek_input import inputs_check
 from processing.greeting import check_greeting
 import time
 

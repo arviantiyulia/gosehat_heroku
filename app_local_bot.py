@@ -3,7 +3,7 @@ import sys
 
 from informasi import get_info
 from processing.app import get_cf
-from processing.cek_input import inputs_check
+from processing.cek_input import cek_total_gejala
 from processing.db import create_connection
 from processing.greeting import check_greeting
 from processing.preprocessing import (filtering, get_stopword, stemming,
@@ -38,8 +38,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    kondisi_gejala = inputs_check(conn, sinonim)
     symp_db, symptoms, input = get_symptoms(conn, sinonim)
+    kondisi_gejala = cek_total_gejala(symp_db)
 
     cursor = conn.cursor()
 
@@ -48,11 +48,13 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
+        print("INFO> gejala kosong")
         disease = check_greeting(sinonim)
         message = message + str(disease)
 
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
+        print("INFO> gejala kurang")
 
         # print("input save = ", symp_db)
         input_to_sinonim = ",".join(input)
@@ -115,6 +117,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
+        print("INFO> gejala cukup")
         cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
@@ -315,11 +318,13 @@ if __name__ == "__main__":
         decision = decide_process(text)
         print("DEBUG> pilihan = ", decision)
         if decision == "informasi":
+            print("INFO> masuk informasi")
             messages_info = get_info(text)
             messages = salam + name_user + "\n" + messages_info[0][0]
             print(messages)
             exit(0)
         else:
+            print("INFO> masuk konsultasi")
             messages = message_bot(user_id, name_user, salam, text, time, conn)
             print(messages)
             exit(0)
