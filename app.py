@@ -604,8 +604,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
+        print("INFO> gejala cukup")
         cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
+
+        print("gejala db = ", gejala_db)
 
         if gejala_db is None:
             result, cf = get_cf(conn, sinonim)

@@ -125,6 +125,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
+        print("gejala db = ", gejala_db)
+
         if gejala_db is None:
             result, cf = get_cf(conn, sinonim)
 
@@ -175,6 +177,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 disease_id = dis[0][0]
                 save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
                 # print("dis = ", dis)
+
+        # cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
+        # conn.commit()
 
     return message
 
