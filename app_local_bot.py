@@ -55,6 +55,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
         print("INFO> gejala kosong")
+        print("DEBUG> jumlah penyakit = ", jml_penyakit)
         if jml_penyakit == 0:
             disease = check_greeting(sinonim)
         elif jml_penyakit > 0:

@@ -19,7 +19,14 @@ def cek_total_penyakit(conn, sinonim):
         cursor.execute("SELECT * FROM penyakit WHERE nama_penyakit LIKE '%" + sinonim + "%'")
         rows.append(cursor.fetchall())
 
-    return len(rows), rows
+    print("DEBUG> penyakit = ", rows)
+    print("DEBUG> penyakit 0 = ", rows[0])
+
+    if not rows[0]:
+        print("benar")
+        return 0, None
+    else:
+        return len(rows), rows
 
 
 def isListEmpty(inList):
