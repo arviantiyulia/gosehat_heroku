@@ -1,5 +1,6 @@
 # Fungsi untuk cek total gejala input dari user
 def cek_total_gejala(gejala):
+
     if len(gejala) == 0:
         return "kosong"
     # TODO: cek if jika rows (gejala) kurang dari sama dengan 3 return text kurang
@@ -7,6 +8,18 @@ def cek_total_gejala(gejala):
         return "kurang"
     else:
         return "ada"
+
+def cek_total_penyakit(conn, sinonim):
+
+    cursor = conn.cursor()
+
+    rows = []
+
+    for sinonim in sinonim:
+        cursor.execute("SELECT * FROM penyakit WHERE nama_penyakit LIKE '%" + sinonim + "%'")
+        rows.append(cursor.fetchall())
+
+    return len(rows), rows
 
 
 def isListEmpty(inList):

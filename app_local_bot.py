@@ -3,7 +3,7 @@ import sys
 
 from informasi import get_info
 from processing.app import get_cf
-from processing.cek_input import cek_total_gejala
+from processing.cek_input import cek_total_gejala, cek_total_penyakit
 from processing.db import create_connection
 from processing.greeting import check_greeting
 from processing.preprocessing import (filtering, get_stopword, stemming,
@@ -44,16 +44,23 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         sinonim = get_sinonim(stems)
         symp_db, symptoms, input = get_symptoms(conn, sinonim)
         kondisi_gejala = cek_total_gejala(symp_db)
+        jml_penyakit, penyakit = cek_total_penyakit(conn, sinonim)
 
     cursor = conn.cursor()
 
     penyakit_result = ""
     definisi_result = ""
+    disease = ""
 
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
         print("INFO> gejala kosong")
-        disease = check_greeting(sinonim)
+        if jml_penyakit == 0:
+            disease = check_greeting(sinonim)
+        elif jml_penyakit > 0:
+            for pnykt in penyakit:
+                disease = disease + pnykt[0][2] + "\n\n"
+            # print(disease)
         message = message + str(disease)
 
     # jika gejalanya kurang
@@ -272,7 +279,7 @@ if __name__ == "__main__":
         # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
         # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
         # text  = "Saya merasa mual dan kepala serasa berputar, saya sakit apa?"
-        text = "tidak"
+        text = "mag"
     else:
         text = args[1]
 
