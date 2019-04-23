@@ -537,6 +537,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     penyakit_result = ""
     definisi_result = ""
+    disease = ""
 
     cursor = conn.cursor()
 
@@ -551,7 +552,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 disease = disease + pnykt[0][2] + "\n\n"
             # print(disease)
         message = message + str(disease)
-
 
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
