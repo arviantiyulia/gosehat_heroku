@@ -546,6 +546,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     if kondisi_gejala == "kosong":
         print("INFO> gejala kosong")
         disease_id = 0
+        print("DEBUG> jumlah penyakit = ", jml_penyakit)
         if jml_penyakit == 0:
             disease = check_greeting(sinonim)
             # message = message + str(disease)
