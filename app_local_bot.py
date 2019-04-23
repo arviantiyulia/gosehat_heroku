@@ -135,8 +135,16 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
 
-        if gejala_db is None:
-            result, cf = get_cf(conn, sinonim)
+        if not gejala_db:
+            print("sinonim app = ", sinonim)
+            if len(sinonim) == 0:
+                disease = check_greeting(sinonim)
+                message = message + str(disease)
+                return message
+
+            else:
+                print("gejala benar")
+                result, cf = get_cf(conn, sinonim)
 
         else:
             gejala = [i[0].split(',') for i in gejala_db]

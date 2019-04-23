@@ -401,7 +401,7 @@ def handle_text_message(event):
                 save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
-                messages = salam + name_user + "\n" + message_bot(user_id, name_user, salam, text, time, conn)
+                messages = message_bot(user_id, name_user, salam, text, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             delete_menukonsultasi(user_id, conn)
 
@@ -627,9 +627,14 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
 
-        if gejala_db is None:
-
-            result, cf = get_cf(conn, sinonim)
+        if not gejala_db:
+            print("sinonim app = ", sinonim)
+            if len(sinonim) == 0:
+                disease = check_greeting(sinonim)
+                message = message + str(disease)
+                return message
+            else:
+                result, cf = get_cf(conn, sinonim)
 
         else:
             gejala = [i[0].split(',') for i in gejala_db]
