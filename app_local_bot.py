@@ -35,6 +35,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     message = ""
     timestamp = tm.time()
+    cursor = conn.cursor()
+    penyakit_result = ""
+    definisi_result = ""
+    disease = ""
 
 
     if text.lower() == 'tidak':
@@ -50,11 +54,18 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         kondisi_gejala = cek_total_gejala(symp_db)
         jml_penyakit, penyakit = cek_total_penyakit(conn, sinonim)
 
-    cursor = conn.cursor()
+        cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
+        get_time = cursor.fetchall()
 
-    penyakit_result = ""
-    definisi_result = ""
-    disease = ""
+        print("get time = ", get_time)
+        if get_time:
+            timestamp_now = tm.time() - float(get_time[0][1])
+
+            if timestamp_now >= 3600:
+                cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
+                conn.commit()
+                print("hapus gejala expired")
+
 
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":

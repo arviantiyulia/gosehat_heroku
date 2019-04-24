@@ -517,6 +517,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     message = ""
     timestamp = tm.time()
+    penyakit_result = ""
+    definisi_result = ""
+    disease = ""
+
+    cursor = conn.cursor()
 
     if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
@@ -531,11 +536,18 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         kondisi_gejala = cek_total_gejala(symp_db)
         jml_penyakit, penyakit = cek_total_penyakit(conn, sinonim)
 
-    penyakit_result = ""
-    definisi_result = ""
-    disease = ""
+        cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
+        get_time = cursor.fetchall()
 
-    cursor = conn.cursor()
+        print("get time = ", get_time)
+        if get_time:
+            timestamp_now = tm.time() - float(get_time[0][1])
+
+            if timestamp_now >= 3600:
+                cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
+                conn.commit()
+                print("hapus gejala expired")
+
 
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
@@ -615,7 +627,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
         print("INFO> gejala cukup")
-        cursor.execute("SELECT DISTINCT input_user FROM gejala_input WHERE user_id = '" + user_id + "'")
+        cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
         print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
@@ -629,7 +641,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 result, cf = get_cf(conn, sinonim)
 
         else:
-
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
             print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
