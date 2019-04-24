@@ -15,6 +15,7 @@
 from __future__ import unicode_literals
 
 import datetime as dt
+import time
 import errno
 import os
 import sys
@@ -384,7 +385,7 @@ def handle_text_message(event):
                 disease_id = 0
                 messages_info = get_info(text)
                 messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text , messages_info[0][0], disease_id, time, conn)
+                save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
             elif count_menu[0][0] == '\konsultasi':
@@ -395,7 +396,7 @@ def handle_text_message(event):
             decision = decide_process(text)
             print("DEBUG> pilihan = ", decision)
             if decision == "informasi":
-                disease_id  = 0
+                disease_id = 0
                 messages_info = get_info(text)
                 messages = salam + name_user + "\n" + messages_info[0][0]
                 save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
@@ -455,7 +456,7 @@ def decide_process(text):
             #     return "konsultasi"
             # if stop_list[0] == "apa" and len(daftar_penyakit):
             #     return "informasi"
-            
+
             # ==== MISBAH BARU
             if len(daftar_penyakit) == 0:
                 return "konsultasi"
@@ -499,11 +500,6 @@ def decide_process(text):
                 # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
                 else:
                     return "informasi"
-                #
-                # else:
-                #     # REVISI
-                #     # return "informasi"
-                #     return "konsultasi"
             elif len(daftar_gejala) != 0:
                 return "konsultasi"
             else:
@@ -520,6 +516,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
+    timestamp = time.time()
+
     if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
         sinonim = []
@@ -533,8 +531,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         kondisi_gejala = cek_total_gejala(symp_db)
         jml_penyakit, penyakit = cek_total_penyakit(conn, sinonim)
 
-
-
     penyakit_result = ""
     definisi_result = ""
     disease = ""
@@ -542,7 +538,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     cursor = conn.cursor()
 
     # jika gejala kosong maka tampilkan pesan
-    # TODO: mending hapus aja gejala yang sebelumnya di db biar fresh
     if kondisi_gejala == "kosong":
         print("INFO> gejala kosong")
         disease_id = 0
@@ -565,7 +560,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         input_to_sinonim = ",".join(input)
         print("DEBUG> Sinonim disimpan ke tabel (gejala input) = ", input_to_sinonim)
-        save_input(user_id, name_user, symp_db, input_to_sinonim, conn)
+        save_input(user_id, name_user, symp_db, input_to_sinonim, timestamp, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
@@ -600,7 +595,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 disease_id = result[0][0][0]
                 save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
 
-                # save_history(user_id, name_user, text, output_sistem, conn)
 
             # jika yang terdeteksi lebih dari 1 penyakit
             else:
@@ -618,7 +612,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
 
-    # TODO: sebelum di lakukan hitung cf tambahkan gejala yang disimpan di db ke kata yang akan di proses
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
         print("INFO> gejala cukup")
@@ -628,7 +621,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
 
         if not gejala_db:
-            print("sinonim app = ", sinonim)
             if len(sinonim) == 0:
                 disease = check_greeting(sinonim)
                 message = message + str(disease)
