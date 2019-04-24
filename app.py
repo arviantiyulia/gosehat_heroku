@@ -15,7 +15,7 @@
 from __future__ import unicode_literals
 
 import datetime as dt
-import time
+import time as tm
 import errno
 import os
 import sys
@@ -516,7 +516,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
-    timestamp = time.time()
+    timestamp = tm.time()
 
     if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
@@ -629,6 +629,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 result, cf = get_cf(conn, sinonim)
 
         else:
+
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
             print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)

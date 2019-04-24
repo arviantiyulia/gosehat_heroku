@@ -1,5 +1,6 @@
 import datetime as dt
 import sys
+import time as tm
 
 from informasi import get_info
 from processing.app import get_cf
@@ -33,6 +34,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
     message = ""
+    timestamp = tm.time()
+
+
     if text.lower() == 'tidak':
         kondisi_gejala = 'ada'
         sinonim = []
@@ -68,10 +72,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     elif kondisi_gejala == "kurang":
         print("INFO> gejala kurang")
 
-        # print("input save = ", symp_db)
+        print("timestamp = ", timestamp)
         input_to_sinonim = ",".join(input)
         print("DEBUG> Sinonim disimpan ke tabel (gejala input) = ", input_to_sinonim)
-        save_input(user_id, name_user, symp_db, input_to_sinonim, conn)
+        save_input(user_id, name_user, symp_db, input_to_sinonim, timestamp, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
         count_input = cursor.fetchall()
