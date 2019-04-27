@@ -429,36 +429,34 @@ def decide_process(text):
     print("DEBUG> sinonim baru = ", sinonim)
     print("DEBUG> stop_list = ", stop_list)
 
+    daftar_gejala = get_symptoms(conn, sinonim)
+    print("DEBUG> daftar gejala", daftar_gejala)
+
+    daftar_penyakit = []
+    for i in sinonim:
+        cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
+        daftar_penyakit.append(cursor.fetchall())
+
+    daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
+    print("DEBUG> daftar penyakit", daftar_penyakit)
+
     if len(stop_list) != 0:
-        daftar_gejala = get_symptoms(conn, sinonim)
-        print("DEBUG> daftar gejala", daftar_gejala)
-
-        daftar_penyakit = []
-        for i in sinonim:
-            cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
-            daftar_penyakit.append(cursor.fetchall())
-
-        daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
-        print("DEBUG> daftar penyakit", daftar_penyakit)
 
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
         if len(stop_list) == 1:
-            # ==== KOMENTAR MISBAH | PUNYA VIAN
-            # jika ada kata "gejala" dan disebutkan penyakitnya dan gak menyebut gejala
-            # if stop_list[0] == "gejala" and len(daftar_penyakit) != 0:
-            #     return "informasi"
-            # if stop_list[0] == "kenapa" and len(daftar_penyakit) == 0:
-            #     return "konsultasi"
-            # if stop_list[0] == "gejala":
-            #     return "konsultasi"
-            # if stop_list[0] == "bagaimana":
-            #     return "konsultasi"
-            # if stop_list[0] == "apa" and len(daftar_penyakit):
-            #     return "informasi"
 
             # ==== MISBAH BARU
+            # if len(daftar_penyakit) == 0:
+            #     return "konsultasi"
+            #
+            # else:
+            #     return "informasi"
+
+            #VIAN BARU
             if len(daftar_penyakit) == 0:
+                return "konsultasi"
+            elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
                 return "konsultasi"
             else:
                 return "informasi"
@@ -506,6 +504,14 @@ def decide_process(text):
                 return "informasi"
         else:
             return "informasi"
+
+    else:
+        if len(daftar_gejala) == 0:
+            return "informasi"
+        elif len(daftar_penyakit) > 0:
+            return "informasi"
+        else:
+            return "konsultasi"
 
 
 def message_bot(user_id, name_user, salam, text, time, conn):

@@ -14,15 +14,37 @@ def get_sinonim(inputs):
         for r in read_data:
             sinonims.append(r)
 
-    for input in inputs:
-        found = False
-        for index in range(len(sinonims)):
-            if input == sinonims[index][1]:
-                found = True
-                sin_inputs.append(sinonims[index][0])
-                break
-        if found == False:
-            sin_inputs.append(input)
+    total_index = -1
+
+    found = False
+    for idx_input, input in enumerate(inputs):
+        if idx_input <= total_index: #digunakan untuk mengecek jika indexnya kurang dari index yang dicari
+            continue
+        else:
+            for index in range(len(sinonims)):
+                if input in sinonims[index][1]:
+                    panjang_sinonim = len(sinonims[index][1].split(" "))
+                    index_input = inputs[idx_input:panjang_sinonim+idx_input]
+                    join_input = ' '.join(index_input)
+
+                    if join_input == sinonims[index][1]:
+                        # print("berhasil di sinonim")
+                        found = True
+                        sin_inputs.append(sinonims[index][0])
+                        total_index = idx_input + (panjang_sinonim - 1) #
+                        break
+                    else:
+                        # print("tidak sama dan tidak di sinonim")
+                        found = False
+
+                else:
+                    # print("tidak ada di sinonim")
+                    found = False
+
+            if found == False:
+                # print("input = ", input)
+                sin_inputs.append(input)
+
 
     print("DEBUG> sinonim = ", sin_inputs)
     return sin_inputs

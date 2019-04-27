@@ -230,21 +230,26 @@ def decide_process(text):
         sinonim.remove(stop)
     if "sakit" in sinonim:
         sinonim.remove("sakit")
+    if "demam" in sinonim:
+        sinonim.remove("demam")
 
     print("DEBUG> sinonim baru = ", sinonim)
     print("DEBUG> stop_list = ", stop_list)
 
+    daftar_gejala, id_gejala, nama_gejala = get_symptoms(conn, sinonim)
+    print("DEBUG> daftar gejala", daftar_gejala)
+    print("DEBUG> panjang gejala : ", len(daftar_gejala))
+
+    daftar_penyakit = []
+    for i in sinonim:
+        cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
+        daftar_penyakit.append(cursor.fetchall())
+
+    daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
+    print("DEBUG> daftar penyakit", daftar_penyakit)
+    # print("DEBUG> panjang penyakit = ", len(daftar_penyakit[0]))
+
     if len(stop_list) != 0 :
-        daftar_gejala = get_symptoms(conn, sinonim)
-        print("DEBUG> daftar gejala", daftar_gejala)
-
-        daftar_penyakit = []
-        for i in sinonim:
-            cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
-            daftar_penyakit.append(cursor.fetchall())
-
-        daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
-        print("DEBUG> daftar penyakit", daftar_penyakit)
 
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
@@ -264,6 +269,8 @@ def decide_process(text):
             
             # ==== MISBAH BARU
             if len(daftar_penyakit) == 0:
+                return "konsultasi"
+            elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
                 return "konsultasi"
             else:
                 return "informasi"
@@ -292,6 +299,14 @@ def decide_process(text):
                 return "informasi"
         else:
             return "informasi"
+
+    else:
+        if len(daftar_gejala) == 0:
+            return "informasi"
+        elif len(daftar_penyakit) > 0:
+            return "informasi"
+        else:
+            return "konsultasi"
 
 
 """ untuk kegunaan tes line bot, contoh python app_local_bot.py <argumen input user>"""
