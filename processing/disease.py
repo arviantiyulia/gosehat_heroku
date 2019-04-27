@@ -1,7 +1,7 @@
 
 def get_disease(conn, cf, id):
     """mencari penyakit dari database sesuai id gejala maks yang didapat"""
-    max_cf = 0.32
+    max_cf = 0.3
     id_disease = 0
     # TODO: Set variabel threshold disini
     cf_list = list(zip(id, cf))

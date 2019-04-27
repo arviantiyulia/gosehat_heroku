@@ -30,9 +30,8 @@ def get_symptoms(conn, inputs):
         if idx in index_word:
 
             print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
-            # cek_next_index = idx + 1
-            print("index = ", len(inputs) - 1)
-            if len(inputs) > 1:
+
+            if len(inputs) > 1: #untuk mengecek jika yang dimasukkan "tidak" saja
                 if inputs[idx + 1] == "sakit":
                     next_id = idx + 2
                     print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
