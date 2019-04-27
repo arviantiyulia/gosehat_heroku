@@ -31,14 +31,22 @@ def get_symptoms(conn, inputs):
 
             print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
             # cek_next_index = idx + 1
-            if inputs[idx + 1] == "sakit":
-                next_id = idx + 2
-                print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
+            print("index = ", len(inputs) - 1)
+            if len(inputs) > 1:
+                if inputs[idx + 1] == "sakit":
+                    next_id = idx + 2
+                    print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
+                else:
+                    next_id = idx + 1
+                    print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")
+
+                join_negation = input + " " + inputs[next_id]
+                inputs_new.append(join_negation)
+
+                print("input new = ", inputs_new)
+
             else:
-                next_id = idx + 1
-                print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")
-            join_negation = input + " " + inputs[next_id]
-            inputs_new.append(join_negation)
+                inputs_new.append(input)
         else:
             inputs_new.append(input)
 
@@ -250,6 +258,7 @@ def remove_symptoms(idx_word, new_symp, sinonim):
             next_id2 = idx_word + 2
         else:
             next_id2 = idx_word + 3
+
         val_negation = sinonim[next_id2]
 
         for i in new_symp:

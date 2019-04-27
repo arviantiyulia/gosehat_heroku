@@ -425,6 +425,8 @@ def decide_process(text):
         sinonim.remove(stop)
     if "sakit" in sinonim:
         sinonim.remove("sakit")
+    if "demam" in sinonim:
+        sinonim.remove("demam")
 
     print("DEBUG> sinonim baru = ", sinonim)
     print("DEBUG> stop_list = ", stop_list)
