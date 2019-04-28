@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_local_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_local_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/sinonim.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file/sinonim.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/symptoms.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/symptoms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="280">
               <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
             </state>
           </provider>
@@ -63,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/processing/symptoms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-389">
+            <state relative-caret-position="-1049">
               <caret line="33" column="81" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -87,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_local_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="299" column="13" lean-forward="true" selection-start-line="299" selection-start-column="13" selection-end-line="300" selection-end-column="26" />
+            <state relative-caret-position="240">
+              <caret line="309" lean-forward="true" selection-start-line="309" selection-end-line="309" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -112,7 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disease_id</find>
       <find>flat</find>
       <find>t</find>
       <find>nama penyakit</find>
@@ -142,6 +136,7 @@
       <find>arr_penyakit</find>
       <find>decide</find>
       <find>gejala kosong</find>
+      <find>greet</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -446,12 +441,12 @@
       <workItem from="1556182557271" duration="1361000" />
       <workItem from="1556250455826" duration="22051000" />
       <workItem from="1556333486430" duration="11296000" />
-      <workItem from="1556374722414" duration="2522000" />
+      <workItem from="1556374722414" duration="3924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229146000" />
+    <option name="totallyTimeSpent" value="230548000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,7 +474,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31423897" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2782324" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.8314239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -750,10 +745,13 @@
     <entry file="file://$PROJECT_DIR$/file/penyakit.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="1164">
+          <caret line="507" column="18" selection-start-line="506" selection-start-column="13" selection-end-line="507" selection-end-column="18" />
+          <folding>
+            <element signature="e#580#619#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -766,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/processing/symptoms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
+        <state relative-caret-position="-1049">
           <caret line="33" column="81" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="81" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -774,20 +772,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1164">
-          <caret line="507" column="18" selection-start-line="506" selection-start-column="13" selection-end-line="507" selection-end-column="18" />
-          <folding>
-            <element signature="e#580#619#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="280">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_local_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="299" column="13" lean-forward="true" selection-start-line="299" selection-start-column="13" selection-end-line="300" selection-end-column="26" />
+        <state relative-caret-position="240">
+          <caret line="309" lean-forward="true" selection-start-line="309" selection-end-line="309" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
