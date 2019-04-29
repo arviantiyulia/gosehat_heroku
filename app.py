@@ -431,7 +431,7 @@ def decide_process(text):
     print("DEBUG> sinonim baru = ", sinonim)
     print("DEBUG> stop_list = ", stop_list)
 
-    daftar_gejala = get_symptoms(conn, sinonim)
+    daftar_gejala, id_gejala, nama_gejala = get_symptoms(conn, sinonim)
     print("DEBUG> daftar gejala", daftar_gejala)
 
     daftar_penyakit = []

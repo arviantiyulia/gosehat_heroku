@@ -7,6 +7,7 @@ from processing.preprocessing import (filtering, get_stopword, stemming,
                                       tokenizing)
 from processing.sinonim import get_sinonim
 from processing.symptoms import db_stemming
+from processing.greeting import check_greeting
 
 
 def get_info(text):
@@ -38,7 +39,13 @@ def get_info(text):
         cursor.execute("SELECT id_penyakit, nama_penyakit FROM penyakit WHERE nama_penyakit LIKE '%" + i + "%'")
         penyakit.append(cursor.fetchall())
 
+
     arr_penyakit = [e for e in penyakit if e]  # list of tuple to list and not empty
+
+    if len(arr_penyakit) == 0:
+        messages = check_greeting(sinonim)
+
+        return messages
 
     print("DEBUG> arr_penyakit = ", arr_penyakit)
     if len(arr_penyakit) != 0:
