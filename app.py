@@ -463,47 +463,6 @@ def decide_process(text):
             else:
                 return "informasi"
 
-        # elif len(stop_list) > 1:
-        #     if "apa" in stop_list:
-        #         if "gejala" in stop_list or "obat" in stop_list or "solusi" in stop_list or "komplikasi" in stop_list or "sebab" in stop_list or "cegah" in stop_list:
-        #             # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #             if len(daftar_penyakit) != 0:
-        #                 return "informasi"
-        #             if not daftar_gejala:
-        #                 return "informasi"
-        #             # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #             if len(daftar_gejala) > 2:
-        #                 return "konsultasi"
-        #             # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-        #             else:
-        #                 return "informasi"
-        #     elif "bagaimana" in stop_list:
-        #         if "obat" in stop_list or "solusi" in stop_list or "cegah" in stop_list:
-        #             if len(daftar_penyakit) != 0:
-        #                 return "informasi"
-        #             if not daftar_gejala:
-        #                 return "informasi"
-        #                 # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #             if len(daftar_gejala) > 2:
-        #                 return "konsultasi"
-        #             # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-        #             else:
-        #                 return "informasi"
-        #     elif "mengapa" in stop_list or "kenapa" in stop_list:
-        #         if len(daftar_penyakit) != 0:
-        #             return "informasi"
-        #         if not daftar_gejala:
-        #             return "informasi"
-        #             # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #         if len(daftar_gejala) > 2:
-        #             return "konsultasi"
-        #         # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-        #         else:
-        #             return "informasi"
-        #     elif len(daftar_gejala) != 0:
-        #         return "konsultasi"
-        #     else:
-        #         return "informasi"
         else:
             return "informasi"
 
@@ -607,9 +566,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                     message = message + salam + name_user + "\n" \
                               + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                               + msg_pengobatan + output[0][4] + "\n" \
-                              + msg_pencegahan + output[0][5] + "\n" \
-                              + str(output[0][6]) \
-                              + "\n\n" + msg_peringatan
+                              + msg_pencegahan + output[0][5] + "\n\n" \
+                              + (str(output[0][6]) + "\n\n" if output[0][6] is not None else '') \
+                              + msg_peringatan
 
                 output_sistem = msg_penyakit + result[0][0][1]
                 disease_id = result[0][0][0]
@@ -665,9 +624,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 message = message + salam + name_user + "\n" \
                           + msg_penyakit + output[0][1] + "\n" + output[0][2] \
                           + msg_pengobatan + output[0][4] + "\n" \
-                          + msg_pencegahan + output[0][5] + "\n" \
-                          + str(output[0][6]) \
-                          + "\n\n" + msg_peringatan
+                          + msg_pencegahan + output[0][5] + "\n\n" \
+                          + (str(output[0][6]) + "\n\n" if output[0][6] is not None else '') \
+                          + msg_peringatan
 
             output_sistem = msg_penyakit + result[0][0][1]
             disease_id = result[0][0][0]
