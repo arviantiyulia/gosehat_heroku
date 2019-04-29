@@ -383,8 +383,11 @@ def handle_text_message(event):
         if len(count_menu) != 0:
             if count_menu[0][0] == '\informasi':
                 disease_id = 0
-                messages_info = get_info(text)
-                messages = salam + name_user + "\n" + messages_info[0][0]
+                sinonim, penyakit, messages_info = get_info(text)
+                if len(penyakit) == 0:
+                    messages = check_greeting(sinonim)
+                else:
+                    messages = salam + name_user + "\n" + messages_info[0][0]
                 save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
@@ -397,8 +400,11 @@ def handle_text_message(event):
             print("DEBUG> pilihan = ", decision)
             if decision == "informasi":
                 disease_id = 0
-                messages_info = get_info(text)
-                messages = salam + name_user + "\n" + messages_info[0][0]
+                sinonim, penyakit, messages_info = get_info(text)
+                if len(penyakit) == 0:
+                    messages = check_greeting(sinonim)
+                else:
+                    messages = salam + name_user + "\n" + messages_info[0][0]
                 save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
@@ -469,7 +475,7 @@ def decide_process(text):
     else:
         if len(daftar_gejala) == 0:
             return "informasi"
-        elif len(daftar_penyakit) > 0:
+        elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
             return "informasi"
         else:
             return "konsultasi"
@@ -499,6 +505,14 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
+
+        if len(sinonim) <= 2 :
+            gabung_sinonim = ' '.join(sinonim)
+
+            if gabung_sinonim == 'selamat pagi' or gabung_sinonim == 'selamat malam' or gabung_sinonim == 'pagi' or gabung_sinonim == 'malam':
+                greeting = check_greeting(sinonim)
+                return greeting
+
         symp_db, symptoms, input = get_symptoms(conn, sinonim)
         kondisi_gejala = cek_total_gejala(symp_db)
         jml_penyakit, penyakit = cek_total_penyakit(conn, sinonim)

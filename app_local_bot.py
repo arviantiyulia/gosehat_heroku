@@ -53,7 +53,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
 
-            if gabung_sinonim == 'selamat siang' or gabung_sinonim == 'selamat malam':
+            if gabung_sinonim == 'selamat pagi' or gabung_sinonim == 'selamat malam' or gabung_sinonim == 'pagi' or gabung_sinonim == 'malam':
                 greeting = check_greeting(sinonim)
                 return greeting
 
@@ -310,7 +310,7 @@ def decide_process(text):
     else:
         if len(daftar_gejala) == 0:
             return "informasi"
-        elif len(daftar_penyakit) > 0:
+        elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
             return "informasi"
         else:
             return "konsultasi"
@@ -367,7 +367,7 @@ if __name__ == "__main__":
 
     if len(count_menu) != 0:
         if count_menu[0][0] == '\informasi':
-            messages_info = get_info(text)
+            penyakit, messages_info = get_info(text)
             messages = salam + name_user + "\n" + messages_info[0][0]
             print(messages)
             delete_menukonsultasi(user_id, conn)
@@ -382,8 +382,12 @@ if __name__ == "__main__":
         print("DEBUG> pilihan = ", decision)
         if decision == "informasi":
             print("INFO> masuk informasi")
-            messages_info = get_info(text)
-            messages = salam + name_user + "\n" + messages_info[0][0]
+            sinonim, penyakit, messages_info = get_info(text)
+            if len(penyakit) == 0:
+                gabung_sinonim = ' '.join(sinonim)
+                messages = check_greeting(sinonim)
+            else:
+                messages = salam + name_user + "\n" + messages_info[0][0]
             print(messages)
             exit(0)
         else:

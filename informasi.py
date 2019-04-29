@@ -45,7 +45,7 @@ def get_info(text):
     if len(arr_penyakit) == 0:
         messages = check_greeting(sinonim)
 
-        return messages
+        return sinonim, arr_penyakit, messages
 
     print("DEBUG> arr_penyakit = ", arr_penyakit)
     if len(arr_penyakit) != 0:
@@ -54,7 +54,7 @@ def get_info(text):
     else:
         result = [["Nama penyakit tidak dicantumkan. Silahkan menyertakan nama penyakit dan informasi yang ingin diketahui"]]
 
-    return result
+    return sinonim, arr_penyakit, result
 
 
 # jelaskan fungsinya
