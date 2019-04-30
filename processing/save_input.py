@@ -1,6 +1,3 @@
-gejala = []
-
-
 def save_input(user_id, name_user, inputs, input_user, timestamp, conn):
     cursor = conn.cursor()
 
@@ -14,6 +11,8 @@ def save_input(user_id, name_user, inputs, input_user, timestamp, conn):
 
 
 def flat(listoflist):
+    gejala = []
+    
     for item in listoflist:
         if type(item) != list:
             gejala.append(item)
