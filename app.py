@@ -488,6 +488,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     # msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
+    gejala = []
     message = ""
     timestamp = tm.time()
     penyakit_result = ""
