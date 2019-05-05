@@ -386,9 +386,10 @@ def handle_text_message(event):
                 sinonim, penyakit, messages_info = get_info(text)
                 if len(penyakit) == 0:
                     messages = check_greeting(sinonim)
+                    save_history(user_id, name_user, text, messages, disease_id, time, conn)
                 else:
                     messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
+                    save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
             elif count_menu[0][0] == '\konsultasi':
@@ -587,7 +588,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
                 output_sistem = msg_penyakit + result[0][0][1]
                 disease_id = result[0][0][0]
-                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                save_history(user_id, name_user, text, output_sistem, "", disease_id, time, conn)
 
 
             # jika yang terdeteksi lebih dari 1 penyakit
@@ -601,7 +602,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
                 for dis in result:
                     disease_id = dis[0][0]
-                    save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                    save_history(user_id, name_user, text, output_sistem, "", disease_id, time, conn)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
@@ -621,14 +622,20 @@ def message_bot(user_id, name_user, salam, text, time, conn):
                 return message
             else:
                 result, cf = get_cf(conn, sinonim)
+                # untuk mendapatkan daftar string gejala
+                symp_db, symptoms, input = get_symptoms(conn, sinonim)
+                string_gejala = ', '.join([symp[0][1] for symp in symp_db])
 
         else:
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
-            print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
+            print("DEBUG> Cukup | Gejala yang digabung = ", gejala_flat)
             gejala_new2 = sinonim + gejala_flat
-            print("DEBUG> Kurang | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
+            print("DEBUG> Cukup | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
+            # untuk mendapatkan daftar string gejala
+            symp_db, symptoms, input = get_symptoms(conn, gejala_new2)
+            string_gejala = ', '.join([symp[0][1] for symp in symp_db])
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
@@ -645,7 +652,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             output_sistem = msg_penyakit + result[0][0][1]
             disease_id = result[0][0][0]
-            save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+            save_history(user_id, name_user, text, output_sistem, string_gejala, disease_id, time, conn)
 
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
@@ -659,7 +666,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             for dis in result:
                 disease_id = dis[0][0]
-                save_history(user_id, name_user, text, output_sistem, disease_id, time, conn)
+                save_history(user_id, name_user, text, output_sistem, string_gejala, disease_id, time, conn)
 
     return message
 

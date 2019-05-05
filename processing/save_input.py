@@ -22,12 +22,12 @@ def flat(listoflist):
     return gejala
 
 
-def save_history(user_id, name_user, input, output, disease_id, time, conn):
+def save_history(user_id, name_user, input, output, daftar_gejala, disease_id, time, conn):
     cursor = conn.cursor()
 
     # print("INSERT INTO history(user_id, name_user, input_user, output_sistem) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "')")
     cursor.execute(
-        "INSERT INTO history(user_id, name_user, input_user, output_sistem, id_penyakit, time) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "','" + str(disease_id) + "','" + str(time) + "')")
+        "INSERT INTO history(user_id, name_user, input_user, output_sistem, daftar_gejala, id_penyakit, time) VALUES('" + user_id + "', '" + name_user + "','" + input + "','" + output + "','" + daftar_gejala + "','" + str(disease_id) + "','" + str(time) + "')")
     conn.commit()
 
     return user_id
