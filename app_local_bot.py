@@ -26,6 +26,11 @@ def flat(listoflist):
                 gejala.append(num)
     return gejala
 
+# def hapus_kata_sakit(data):
+    """ hapus kata sakit """
+    while 'sakit' in data:
+        data.remove('sakit')
+
 def message_bot(user_id, name_user, salam, text, time, conn):
     msg_penyakit = "Kemungkinan Anda terkena penyakit "
     msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
@@ -50,6 +55,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
+        # hapus_kata_sakit(sinonim)
+        
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
 
@@ -236,6 +243,7 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
+    hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
