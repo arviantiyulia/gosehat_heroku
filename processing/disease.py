@@ -13,6 +13,7 @@ def get_disease(conn, cf, id):
     # TODO: urutkan cf_list dari tinggi ke rendah
     # cf_list.sort(key=lambda tup: tup[1], reverse=True)
     cf_new = sorted(cf_list,key=lambda x: x[1], reverse=True)[0:3]
+    cf_diurutkan = sorted(cf_list,key=lambda x: x[1], reverse=True)
 
     # cek apakah melebihi threshold, jika melebihi langsung set max cf (pakai yang bawah)
     # jika tidak ambil 3 item diatas dari array cf_list cari di database
@@ -49,10 +50,10 @@ def get_disease(conn, cf, id):
 
     # --- HANYA UNTUK TUJUAN DEBUG ---
     print("\nINFO> Hasil Certainty Factor: ")
-    for item in range(len(cf_list)):
-        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_list[item][0]))
+    for item in range(len(cf_diurutkan)):
+        cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_diurutkan[item][0]))
         disease_name2 = cursor.fetchall()
-        print("INFO> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_list[item][1])
+        print("INFO> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_diurutkan[item][1])
     # print("DEBUG> cf_list = ", cf_list[0][)
 
     # print(DEBUG> disease_name)
