@@ -55,6 +55,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             if gabung_sinonim == 'selamat pagi' or gabung_sinonim == 'selamat malam' or gabung_sinonim == 'pagi' or gabung_sinonim == 'malam':
                 greeting = check_greeting(sinonim)
+                disease_id = 0
+                save_history(user_id, name_user, text, greeting, "", disease_id, time, conn)
                 return greeting
 
         symp_db, symptoms, input = get_symptoms(conn, sinonim)
@@ -392,7 +394,7 @@ if __name__ == "__main__":
             if len(penyakit) == 0:
                 gabung_sinonim = ' '.join(sinonim)
                 messages = check_greeting(sinonim)
-                save_history(user_id, name_user, text, messages, disease_id, time, conn)
+                save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
             else:
                 messages = salam + name_user + "\n" + messages_info[0][0]
                 save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)

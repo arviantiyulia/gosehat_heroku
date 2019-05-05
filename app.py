@@ -404,9 +404,10 @@ def handle_text_message(event):
                 sinonim, penyakit, messages_info = get_info(text)
                 if len(penyakit) == 0:
                     messages = check_greeting(sinonim)
+                    save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
                 else:
                     messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
+                    save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
                 messages = message_bot(user_id, name_user, salam, text, time, conn)
@@ -513,6 +514,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             if gabung_sinonim == 'selamat pagi' or gabung_sinonim == 'selamat malam' or gabung_sinonim == 'pagi' or gabung_sinonim == 'malam':
                 greeting = check_greeting(sinonim)
+                disease_id = 0
+                save_history(user_id, name_user, text, greeting, "", disease_id, time, conn)
                 return greeting
 
         symp_db, symptoms, input = get_symptoms(conn, sinonim)
