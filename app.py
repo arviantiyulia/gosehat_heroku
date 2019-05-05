@@ -386,10 +386,10 @@ def handle_text_message(event):
                 sinonim, penyakit, messages_info = get_info(text)
                 if len(penyakit) == 0:
                     messages = check_greeting(sinonim)
-                    save_history(user_id, name_user, text, messages, disease_id, time, conn)
+                    save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
                 else:
                     messages = salam + name_user + "\n" + messages_info[0][0]
-                    save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
+                    save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
                 delete_menukonsultasi(user_id, conn)
             elif count_menu[0][0] == '\konsultasi':
@@ -406,7 +406,7 @@ def handle_text_message(event):
                     messages = check_greeting(sinonim)
                 else:
                     messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
+                save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
                 messages = message_bot(user_id, name_user, salam, text, time, conn)
@@ -563,7 +563,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         if count_input[0][0] <= 3:
             message = message + "Apakah ada gejala lain ?\n\nGejala yang anda masukkan kurang. Masukkan minimal 4 gejala agar mendapatkan hasil yang akurat. \n\n Atau jawab TIDAK jika tidak ada gejala yang ingin ditambahkan."
             disease_id = 0
-            save_history(user_id, name_user, input_to_sinonim, message, disease_id, time, conn)
+            save_history(user_id, name_user, input_to_sinonim, message, "", disease_id, time, conn)
 
 
         else:

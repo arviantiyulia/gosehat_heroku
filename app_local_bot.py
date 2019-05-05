@@ -395,7 +395,7 @@ if __name__ == "__main__":
                 save_history(user_id, name_user, text, messages, disease_id, time, conn)
             else:
                 messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text, messages_info[0][0], disease_id, time, conn)
+                save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
             print(messages)
             exit(0)
         else:
