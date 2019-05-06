@@ -21,6 +21,11 @@ def flat(listoflist):
                 gejala.append(num)
     return gejala
 
+def hapus_kata_sakit(data):
+    """ hapus kata sakit """
+    while 'sakit' in data:
+        data.remove('sakit')
+
 
 def save_history(user_id, name_user, input, output, daftar_gejala, disease_id, time, conn):
     cursor = conn.cursor()

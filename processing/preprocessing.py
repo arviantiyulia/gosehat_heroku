@@ -65,7 +65,12 @@ def stemming(doc):
     len_array = len(doc)
     for i in range(len_array):
         temp = doc[i]
-        result_stem = stemmer.stem(temp)
+        if doc[i] == 'menelan':
+            result_stem = 'telan'
+        elif doc[i] == 'perasaan':
+            result_stem = 'rasa'
+        else:
+            result_stem = stemmer.stem(temp)
         stem.append(result_stem)
 
     # print("stemming = ", stem)

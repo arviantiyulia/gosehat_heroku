@@ -32,9 +32,20 @@ def get_symptoms(conn, inputs):
             print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
 
             if len(inputs) > 1: #untuk mengecek jika yang dimasukkan "tidak" saja
-                if inputs[idx + 1] == "sakit":
-                    next_id = idx + 2
+                panjang_list = len(inputs) - 1
+                # jika didepan kata tidak sudah tidak ada kata lagi
+                # maka skip
+                if (idx + 1) > panjang_list:
+                    break
+                elif inputs[idx + 1] == "sakit":
+                    # cek apakah setelah kata 'sakit' masih ada kata
+                    # jika masih ada maka lanjutkan perasaan
+                    # jika tidak skip
                     print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
+                    if (idx + 2) <= panjang_list:
+                        next_id = idx + 2
+                    else:
+                        continue
                 else:
                     next_id = idx + 1
                     print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")

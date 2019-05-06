@@ -49,7 +49,7 @@ from processing.db import create_connection
 from processing.greeting import check_greeting
 from processing.preprocessing import (filtering, get_stopword, stemming,
                                       tokenizing)
-from processing.save_input import (delete_menukonsultasi, flat, save_history,
+from processing.save_input import (delete_menukonsultasi, flat, hapus_kata_sakit, save_history,
                                    save_input, save_menuinformasi,
                                    save_menukonsultasi)
 from processing.sinonim import get_sinonim
@@ -424,6 +424,7 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
+    # hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi",
                           "cegah"]
@@ -508,6 +509,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
+        # hapus_kata_sakit(sinonim)
 
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
@@ -626,8 +628,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             else:
                 result, cf = get_cf(conn, sinonim)
                 # untuk mendapatkan daftar string gejala
+                print("\n----------proses dibawah ini untuk daftar gejala yang disimpan ke histroy------------")
                 symp_db, symptoms, input = get_symptoms(conn, sinonim)
                 string_gejala = ', '.join([symp[0][1] for symp in symp_db])
+                print("-------------------------selesai-------------------------\n")
 
         else:
             gejala = [i[0].split(',') for i in gejala_db]
@@ -637,8 +641,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             print("DEBUG> Cukup | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
             result, cf = get_cf(conn, gejala_new2)
             # untuk mendapatkan daftar string gejala
+            print("\n----------proses dibawah ini untuk daftar gejala yang disimpan ke histroy------------")
             symp_db, symptoms, input = get_symptoms(conn, gejala_new2)
             string_gejala = ', '.join([symp[0][1] for symp in symp_db])
+            print("-------------------------selesai-------------------------\n")
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
