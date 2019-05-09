@@ -42,10 +42,10 @@ def get_info(text):
 
     arr_penyakit = [e for e in penyakit if e]  # list of tuple to list and not empty
 
-    if len(arr_penyakit) == 0:
-        messages = check_greeting(sinonim)
+    # if len(arr_penyakit) == 0:
+    #     messages = check_greeting(sinonim)
 
-        return sinonim, arr_penyakit, messages
+    #     return sinonim, arr_penyakit, messages
 
     print("DEBUG> arr_penyakit = ", arr_penyakit)
     if len(arr_penyakit) != 0:

@@ -51,7 +51,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
-        hapus_kata_sakit(sinonim)
+        # hapus_kata_sakit(sinonim)
         
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
@@ -243,7 +243,7 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    hapus_kata_sakit(sinonim)
+    # hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
@@ -290,12 +290,18 @@ def decide_process(text):
             #     return "informasi"
             
             # ==== MISBAH BARU
-            if len(daftar_penyakit) == 0:
-                return "konsultasi"
-            elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
-                return "konsultasi"
-            else:
+            if len(daftar_penyakit) == 0 and len(daftar_gejala) <= 2:
                 return "informasi"
+            elif len(daftar_penyakit) > 0 and len(daftar_gejala) <= 2:
+                return "informasi"
+            else:
+                return "konsultasi"
+            # if len(daftar_penyakit) == 0:
+            #     return "konsultasi"
+            # elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 2:
+            #     return "konsultasi"
+            # else:
+            #     return "informasi"
                 
         # elif len(stop_list) > 1:
         #     if "apa" in stop_list:
@@ -323,6 +329,8 @@ def decide_process(text):
             return "informasi"
 
     else:
+        
+        print("len gejala = ", len(daftar_gejala))
         if len(daftar_gejala) == 0:
             return "informasi"
         elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
@@ -399,7 +407,7 @@ if __name__ == "__main__":
             print("INFO> masuk informasi")
             disease_id = 0
             sinonim, penyakit, messages_info = get_info(text)
-            if len(penyakit) == 0:
+            if len(penyakit) == 0 and len(sinonim) <= 2:
                 gabung_sinonim = ' '.join(sinonim)
                 messages = check_greeting(sinonim)
                 save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
