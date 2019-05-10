@@ -52,7 +52,7 @@ def get_info(text):
         penyakit_max = penyakit_count(arr_penyakit, sinonim)
         result = get_keywoard(sinonim, penyakit_max, conn)
     else:
-        result = [["Nama penyakit tidak dicantumkan. Silahkan menyertakan nama penyakit dan informasi yang ingin diketahui"]]
+        result = [[("Nama penyakit tidak dicantumkan. Silahkan menyertakan nama penyakit dan informasi yang ingin diketahui",)]]
 
     return sinonim, arr_penyakit, result
 
@@ -74,10 +74,13 @@ def penyakit_count(arr_penyakit, sinonim):
             arr_id.append(temp_penyakit)
 
     count_id = Counter(arr_id)
-    id_penyakit = max(count_id)
-    print("DEBUG> penyakit dipilih = ", id_penyakit)
+    for key, value in count_id.items():
+        if value > 1:
+            id_penyakit = max(count_id)
+            return [id_penyakit]
 
-    return id_penyakit
+    # ketika semua counternya 1
+    return arr_id
 
 # TODO tolong dijelaskan ini maksudnya apa fungsinya
 def get_maxpenyakit(sinonim, arr_penyakit):
@@ -95,9 +98,8 @@ def get_maxpenyakit(sinonim, arr_penyakit):
         count = 0
         for nama_gejala in gj[2].split(" "):
             if nama_gejala in sinonim:
-                count += 1;
+                count += 1
         gj[1] = count
-
     max_ti = max(stem_penyakit, key=itemgetter(1))  # mencari id yang memiliki count tertinggi
 
     return max_ti[0]
@@ -116,66 +118,80 @@ def get_keywoard(input, result, conn):
 
     if "apa" in input:
         if "obat" in input or "solusi" in input:
-            cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "sebab" in input:
-            cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "gejala" in input:
             hasil = gejala
 
         elif "komplikasi" in input:
-            cursor.execute("SELECT komplikasi_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT komplikasi_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "cegah" in input:
-            cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         else:
-            cursor.execute("SELECT definisi_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT definisi_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
     elif "mengapa" in input or "kenapa" in input:
-        cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-        hasil = cursor.fetchall()
+        for res in result:
+            cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+            hasil.append(cursor.fetchall())
 
     elif "bagaimana" in input:
         if "obat" in input or "solusi" in input:
-            cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "cegah" in input:
-            cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
         else:
-            cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
     else:
         if "obat" in input or "solusi" in input:
-            cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pengobatan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "sebab" in input:
-            cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT penyebab_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "gejala" in input:
             hasil = gejala
 
         elif "komplikasi" in input:
-            cursor.execute("SELECT komplikasi_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT komplikasi_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         elif "cegah" in input:
-            cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT pencegahan_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
         else:
-            cursor.execute("SELECT definisi_penyakit FROM penyakit WHERE id_penyakit = '" + str(result) + "'")
-            hasil = cursor.fetchall()
+            for res in result:
+                cursor.execute("SELECT definisi_penyakit FROM penyakit WHERE id_penyakit = '" + str(res) + "'")
+                hasil.append(cursor.fetchall())
 
     print("DEBUG> hasil informasi = ", hasil)
     return hasil
@@ -184,10 +200,9 @@ def get_gejala(cursor, result):
     id_gejala = []
     gejala = []
 
-    cursor.execute(
-        "SELECT gejala_penyakit.id_gejala FROM penyakit JOIN gejala_penyakit ON gejala_penyakit.id_penyakit = penyakit.id_penyakit WHERE penyakit.id_penyakit = '" + str(
-            result) + "'")
-    id_gejala.append(cursor.fetchall())
+    for res in result:
+        cursor.execute("SELECT gejala_penyakit.id_gejala FROM penyakit JOIN gejala_penyakit ON gejala_penyakit.id_penyakit = penyakit.id_penyakit WHERE penyakit.id_penyakit = '" + str(res) + "'")
+        id_gejala.append(cursor.fetchall())
 
     arr_gejala = [e for e in id_gejala if e]
 

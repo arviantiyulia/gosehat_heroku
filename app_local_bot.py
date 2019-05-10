@@ -290,9 +290,9 @@ def decide_process(text):
             #     return "informasi"
             
             # ==== MISBAH BARU
-            if len(daftar_penyakit) == 0 and len(daftar_gejala) <= 2:
+            if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
                 return "informasi"
-            elif len(daftar_penyakit) > 0 and len(daftar_gejala) <= 2:
+            elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
                 return "informasi"
             else:
                 return "konsultasi"
@@ -331,9 +331,15 @@ def decide_process(text):
     else:
         
         print("len gejala = ", len(daftar_gejala))
-        if len(daftar_gejala) == 0:
+        # if len(daftar_gejala) == 0:
+        #     return "informasi"
+        # elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
+        #     return "informasi"
+        # else:
+        #     return "konsultasi"
+        if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
             return "informasi"
-        elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
+        elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
             return "informasi"
         else:
             return "konsultasi"
@@ -412,8 +418,10 @@ if __name__ == "__main__":
                 messages = check_greeting(sinonim)
                 save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
             else:
-                messages = salam + name_user + "\n" + messages_info[0][0]
-                save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
+                messages = salam + name_user
+                for msg in messages_info:
+                    messages = messages + "\n" + msg[0][0]
+                save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
             print(messages)
             exit(0)
         else:
