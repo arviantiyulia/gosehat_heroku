@@ -337,7 +337,9 @@ def decide_process(text):
         #     return "informasi"
         # else:
         #     return "konsultasi"
-        if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
+        if len(sinonim) == 1 and "tidak" in sinonim:
+            return "konsultasi"
+        elif len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
             return "informasi"
         elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
             return "informasi"

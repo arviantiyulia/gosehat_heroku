@@ -1,5 +1,5 @@
 from operator import itemgetter
-from processing.preprocessing import stemming
+from processing.preprocessing import stemming, filtering, get_stopword
 from collections import defaultdict
 
 
@@ -158,11 +158,17 @@ def get_max_id(input, row):
 def db_stemming(gejala_arr):
     """digunakan untuk melakukan stemming hasil gejala yang didapat dari database"""
 
+    stopwords = get_stopword('file/konjungsi.csv')
     for gj in gejala_arr:
         gejala_split = gj[2].split(" ")
-        gejala_stemm = stemming(gejala_split)
+        gejala_filter = filtering(gejala_split, stopwords)
+        gejala_stemm = stemming(gejala_filter)
         gejala_join = ' '.join(gejala_stemm)
         gj[2] = gejala_join
+
+        print("gejala filter = ", gejala_filter)
+        print("gejala stemm = ", gejala_stemm)
+    print("gejala arr = ", gejala_arr)
 
     return gejala_arr
 
