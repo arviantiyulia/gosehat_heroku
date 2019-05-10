@@ -403,11 +403,13 @@ def handle_text_message(event):
                 disease_id = 0
                 sinonim, penyakit, messages_info = get_info(text)
                 if len(penyakit) == 0:
+                    gabung_sinonim = ' '.join(sinonim)
                     messages = check_greeting(sinonim)
                     save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
                 else:
-                    messages = salam + name_user + "\n" + messages_info[0][0]
-                    save_history(user_id, name_user, text, messages_info[0][0], "", disease_id, time, conn)
+                    for msg in messages_info:
+                        messages = messages + "\n" + msg[0][0]
+                    save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text=(messages)))
             else:
                 messages = message_bot(user_id, name_user, salam, text, time, conn)
@@ -465,20 +467,33 @@ def decide_process(text):
             #     return "informasi"
 
             #VIAN BARU
-            if len(daftar_penyakit) == 0:
-                return "konsultasi"
-            elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
-                return "konsultasi"
-            else:
+            # if len(daftar_penyakit) == 0:
+            #     return "konsultasi"
+            # elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
+            #     return "konsultasi"
+            # else:
+            #     return "informasi"
+
+            if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
                 return "informasi"
+            elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
+                return "informasi"
+            else:
+                return "konsultasi"
 
         else:
             return "informasi"
 
     else:
-        if len(daftar_gejala) == 0:
+        # if len(daftar_gejala) == 0:
+        #     return "informasi"
+        # elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
+        #     return "informasi"
+        # else:
+        #     return "konsultasi"
+        if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
             return "informasi"
-        elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
+        elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
             return "informasi"
         else:
             return "konsultasi"
