@@ -403,10 +403,11 @@ def handle_text_message(event):
                 disease_id = 0
                 sinonim, penyakit, messages_info = get_info(text)
                 if len(penyakit) == 0:
-                    gabung_sinonim = ' '.join(sinonim)
+                    # gabung_sinonim = ' '.join(sinonim)
                     messages = check_greeting(sinonim)
                     save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
                 else:
+                    messages = salam + name_user
                     for msg in messages_info:
                         messages = messages + "\n" + msg[0][0]
                     save_history(user_id, name_user, text, messages, "", disease_id, time, conn)

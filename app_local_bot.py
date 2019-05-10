@@ -416,7 +416,7 @@ if __name__ == "__main__":
             disease_id = 0
             sinonim, penyakit, messages_info = get_info(text)
             if len(penyakit) == 0 and len(sinonim) <= 2:
-                gabung_sinonim = ' '.join(sinonim)
+                # gabung_sinonim = ' '.join(sinonim)
                 messages = check_greeting(sinonim)
                 save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
             else:
