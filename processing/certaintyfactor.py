@@ -27,6 +27,6 @@ def certainty_calculate(id_dis):
         elif len(cf_ur) >= 2:
             cf_old = calculate_cf(cf_ur, len(cf_ur))
 
-        arr_cf.append(cf_old)
+        arr_cf.append(round(cf_old, 5))
 
     return arr_cf
