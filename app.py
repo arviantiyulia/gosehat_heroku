@@ -427,7 +427,7 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    hapus_kata_sakit(sinonim)
+    # hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi",
                           "cegah"]
@@ -527,7 +527,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
-        hapus_kata_sakit(sinonim)
+        # hapus_kata_sakit(sinonim)
 
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
