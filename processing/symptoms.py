@@ -166,9 +166,9 @@ def db_stemming(gejala_arr):
         gejala_join = ' '.join(gejala_stemm)
         gj[2] = gejala_join
 
-        print("gejala filter = ", gejala_filter)
-        print("gejala stemm = ", gejala_stemm)
-    print("gejala arr = ", gejala_arr)
+    #     print("gejala filter = ", gejala_filter)
+    #     print("gejala stemm = ", gejala_stemm)
+    # print("gejala arr = ", gejala_arr)
 
     return gejala_arr
 
