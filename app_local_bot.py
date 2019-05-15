@@ -340,7 +340,7 @@ def decide_process(text):
         if len(sinonim) == 1 and "tidak" in sinonim:
             return "konsultasi"
         elif len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
-            return "informasi"
+            return "konsultasi"
         elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
             return "informasi"
         else:
@@ -363,8 +363,10 @@ if __name__ == "__main__":
     conn = create_connection()
     cursor = conn.cursor()
 
-    user_id = "1"
-    name_user = "admin"
+    # user_id = "1"
+    # name_user = "admin"
+    user_id = "2"
+    name_user = "admin misbah"
     time = dt.datetime.now()
     print("time = ", time)
 
