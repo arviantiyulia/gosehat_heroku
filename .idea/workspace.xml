@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/sinonim.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file/sinonim.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/konjungsi.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file/konjungsi.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/konjungsi_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file/konjungsi_info.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_local_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="53" column="15" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="15" />
+            <state relative-caret-position="211">
+              <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -69,26 +70,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="42" column="7" selection-start-line="42" selection-end-line="42" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file/konjungsi_info.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15820">
-              <caret line="791" column="7" selection-start-line="791" selection-start-column="7" selection-end-line="791" selection-end-column="7" />
+            <state relative-caret-position="276">
+              <caret line="806" column="2" selection-start-line="806" selection-start-column="2" selection-end-line="806" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/file/konjungsi_info.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="792" column="2" selection-start-line="792" selection-start-column="2" selection-end-line="792" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="149">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -136,8 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>salam</find>
-      <find>check</find>
       <find>sesak</find>
       <find>49</find>
       <find>komplikasi</find>
@@ -166,6 +165,8 @@
       <find>preprocessing</find>
       <find>get_st</find>
       <find>hapus</find>
+      <find>id</find>
+      <find>adm</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
@@ -207,12 +208,12 @@
         <option value="$PROJECT_DIR$/processing/app.py" />
         <option value="$PROJECT_DIR$/textmining_testing.py" />
         <option value="$PROJECT_DIR$/informasi.py" />
-        <option value="$PROJECT_DIR$/file/konjungsi.csv" />
-        <option value="$PROJECT_DIR$/file/konjungsi_info.csv" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/processing/symptoms.py" />
         <option value="$PROJECT_DIR$/app_local_bot.py" />
         <option value="$PROJECT_DIR$/file/sinonim.csv" />
+        <option value="$PROJECT_DIR$/file/konjungsi.csv" />
+        <option value="$PROJECT_DIR$/file/konjungsi_info.csv" />
       </list>
     </option>
   </component>
@@ -487,12 +488,12 @@
       <workItem from="1557457543469" duration="9411000" />
       <workItem from="1557638116440" duration="2387000" />
       <workItem from="1557784477662" duration="1051000" />
-      <workItem from="1557905557576" duration="4456000" />
+      <workItem from="1557905557576" duration="8523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291253000" />
+    <option name="totallyTimeSpent" value="295320000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,7 +521,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.47463176" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.299509" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5015129" side_tool="true" weight="0.8314239" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -798,20 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="42" column="7" selection-start-line="42" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/konjungsi_info.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15820">
-          <caret line="791" column="7" selection-start-line="791" selection-start-column="7" selection-end-line="791" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/processing/certaintyfactor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -836,20 +823,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app_local_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="53" column="15" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="15" />
+        <state relative-caret-position="211">
+          <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/sinonim.csv">
+    <entry file="file://$PROJECT_DIR$/file/konjungsi.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="276">
+          <caret line="806" column="2" selection-start-line="806" selection-start-column="2" selection-end-line="806" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/konjungsi_info.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="792" column="2" selection-start-line="792" selection-start-column="2" selection-end-line="792" selection-end-column="2" />
         </state>
       </provider>
     </entry>
