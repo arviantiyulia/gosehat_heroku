@@ -215,14 +215,20 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
             # print("hasil = ", )
+            # for idx in result:
+            #     print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
             for idx in result:
-                print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
+                penyakit_result = penyakit_result + " , " + idx[0][1]
+                definisi_result = definisi_result + "\n\n" + idx[0][2]
 
-            message = message + salam + name_user + "\n" \
-                      + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-                      + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] + "\n\n" + msg_peringatan
+            message = message + salam + name_user + "\n" + msg_penyakit + penyakit_result + "\n" + definisi_result + "\n\n" + msg_peringatan
+            output_sistem = msg_penyakit + penyakit_result
 
-            output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
+            # message = message + salam + name_user + "\n" \
+            #           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
+            #           + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] + "\n\n" + msg_peringatan
+            #
+            # output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
             # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
             # save_history(user_id, name_user, text, output_sistem, "", disease_id, time, conn)
             for dis in result:
