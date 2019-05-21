@@ -23,8 +23,18 @@ def flat(listoflist):
 
 def hapus_kata_sakit(data):
     """ hapus kata sakit """
-    while 'sakit' in data:
-        data.remove('sakit')
+    word = "sakit"
+    # for index,word in enumerate(data):
+    index_word = [i for i, d in enumerate(data) if word in d]
+    print("index sakit = ", index_word)
+
+    for index_sakit in index_word:
+        if data[index_sakit + 1] == 'apa':
+            data.pop(index_sakit)
+            data.pop(index_sakit + 1)
+        elif data[index_sakit - 1] == 'apa':
+            data.pop(index_sakit)
+            data.pop(index_sakit - 1)
 
 
 def save_history(user_id, name_user, input, output, daftar_gejala, disease_id, time, conn):

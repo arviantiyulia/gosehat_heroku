@@ -527,7 +527,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         filters = filtering(contents, stopwords)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
-        # hapus_kata_sakit(sinonim)
+        hapus_kata_sakit(sinonim)
 
         if len(sinonim) <= 2 :
             gabung_sinonim = ' '.join(sinonim)
@@ -657,12 +657,22 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             print("DEBUG> Cukup | Gejala yang digabung = ", gejala_flat)
             gejala_new2 = sinonim + gejala_flat
             print("DEBUG> Cukup | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
-            result, cf = get_cf(conn, gejala_new2)
+
             # untuk mendapatkan daftar string gejala
             print("\n----------proses dibawah ini untuk daftar gejala yang disimpan ke histroy------------")
             symp_db, symptoms, input = get_symptoms(conn, gejala_new2)
             string_gejala = ', '.join([symp[0][1] for symp in symp_db])
             print("-------------------------selesai-------------------------\n")
+
+            if len(symp_db) <= 1:
+                disease_id = 0
+                output_sistem = "Maaf data kurang akurat. Sistem tidak bisa memberikan diagnosa.\nSilahkan masukkan keluhan Anda kembali."
+                save_history(user_id, name_user, text, output_sistem, string_gejala, disease_id, time, conn)
+                cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
+                conn.commit()
+                return salam + name_user + "\n" + output_sistem
+            else:
+                result, cf = get_cf(conn, gejala_new2)
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
             conn.commit()
