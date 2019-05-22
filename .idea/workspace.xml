@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="270a71d3-0660-485e-82b5-374ad0681002" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_local_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_local_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processing/save_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/save_input.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="666" column="32" selection-start-line="666" selection-start-column="32" selection-end-line="666" selection-end-column="32" />
+            <state relative-caret-position="188">
+              <caret line="673" column="16" selection-start-line="673" selection-start-column="16" selection-end-line="673" selection-end-column="16" />
               <folding>
                 <element signature="e#580#619#0" expanded="true" />
               </folding>
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/processing/save_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+            <state relative-caret-position="114">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -218,8 +217,8 @@
         <option value="$PROJECT_DIR$/file/konjungsi_info.csv" />
         <option value="$PROJECT_DIR$/file/sinonim.csv" />
         <option value="$PROJECT_DIR$/file/konjungsi.csv" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/app_local_bot.py" />
+        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/processing/save_input.py" />
       </list>
     </option>
@@ -498,12 +497,12 @@
       <workItem from="1557905557576" duration="10140000" />
       <workItem from="1558066567951" duration="4586000" />
       <workItem from="1558418439109" duration="6243000" />
-      <workItem from="1558508363639" duration="1781000" />
+      <workItem from="1558508363639" duration="3157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309547000" />
+    <option name="totallyTimeSpent" value="310923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,7 +514,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49759614" visible="true" weight="0.25416037" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -837,16 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="666" column="32" selection-start-line="666" selection-start-column="32" selection-end-line="666" selection-end-column="32" />
-          <folding>
-            <element signature="e#580#619#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_local_bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -857,10 +847,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="673" column="16" selection-start-line="673" selection-start-column="16" selection-end-line="673" selection-end-column="16" />
+          <folding>
+            <element signature="e#580#619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/processing/save_input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        <state relative-caret-position="114">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
