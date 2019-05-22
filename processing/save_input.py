@@ -28,10 +28,12 @@ def hapus_kata_sakit(data):
     index_word = [i for i, d in enumerate(data) if word in d]
     print("index sakit = ", index_word)
 
+    print("data kata = ", data)
+
     for index_sakit in index_word:
         if data[index_sakit + 1] == 'apa':
             data.pop(index_sakit)
-            data.pop(index_sakit + 1)
+            data.pop(index_sakit - (index_sakit + 1))
         elif data[index_sakit - 1] == 'apa':
             data.pop(index_sakit)
             data.pop(index_sakit - 1)
