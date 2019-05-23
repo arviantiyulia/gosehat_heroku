@@ -192,7 +192,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             string_gejala = ', '.join([symp[0][1] for symp in symp_db])
             print("-------------------------selesai-------------------------\n")
 
-            if len(symp_db) <= 2:
+            if len(symp_db) <= 1:
                 disease_id = 0
                 output_sistem = "Maaf data kurang akurat. Sistem tidak bisa memberikan diagnosa.\nSilahkan masukkan keluhan Anda kembali."
                 save_history(user_id, name_user, text, output_sistem, string_gejala, disease_id, time, conn)
