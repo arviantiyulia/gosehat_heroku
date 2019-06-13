@@ -31,8 +31,11 @@ def hapus_kata_sakit(data):
     print("data kata = ", data)
 
     for index_sakit in index_word:
+        # jika kata sudah terakhir, dan kata sebelumnya bukan 'apa', skip
+        if (index_sakit + 1) >= len(data) and data[index_sakit - 1] != 'apa':
+            continue
         # jika kata sudah terakhir, dan kata sebelumnya adalah apa
-        if (index_sakit + 1) >= len(data) and data[index_sakit - 1] == 'apa':
+        elif (index_sakit + 1) >= len(data) and data[index_sakit - 1] == 'apa':
             data.pop(index_sakit)
             data.pop(index_sakit - 1)
             break
