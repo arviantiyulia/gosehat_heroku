@@ -31,16 +31,20 @@ def hapus_kata_sakit(data):
     print("data kata = ", data)
 
     for index_sakit in index_word:
-        if (index_sakit + 1) >= len(data):
-            data.pop(index_sakit)
-            break
-        elif data[index_sakit + 1] == 'apa':
-            data.pop(index_sakit)
-            data.pop(index_sakit - (index_sakit + 1))
-        elif data[index_sakit - 1] == 'apa':
+        # jika kata sudah terakhir, dan kata sebelumnya adalah apa
+        if (index_sakit + 1) >= len(data) and data[index_sakit - 1] == 'apa':
             data.pop(index_sakit)
             data.pop(index_sakit - 1)
-
+            break
+        # jika di depan kata 'sakit' adalah 'apa'
+        elif data[index_sakit + 1] == 'apa':
+            data.pop(index_sakit)
+            data.pop(index_sakit) # hapus kedua kalinya untuk menghapus kalimat apa di depan sakit
+        # jika index tidak 0 dan kata sebelumnya adalah 'apa'
+        elif index_sakit != 0 and data[index_sakit - 1] == 'apa':
+            data.pop(index_sakit)
+            data.pop(index_sakit - 1)
+        
 
 def save_history(user_id, name_user, input, output, daftar_gejala, disease_id, time, conn):
     cursor = conn.cursor()
