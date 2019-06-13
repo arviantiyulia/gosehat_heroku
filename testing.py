@@ -251,4 +251,4 @@ if __name__ == "__main__":
     # remove_duplicate()
     get_gejalapenyakit(penyakit)
     combination_samegejala(penyakit)
-    combination_other(penyakit)
+    # combination_other(penyakit)

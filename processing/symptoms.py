@@ -201,7 +201,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
                 # print("neg = ", neg, "id = ", idx)
                 arr_symp.append(symp)
                 # arr_negation.pop(idx)
-                index_word.pop(idx)
+                # index_word.pop(idx)
                 new_symp.pop(idx_symp)
 
     print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
