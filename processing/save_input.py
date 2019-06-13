@@ -32,6 +32,7 @@ def hapus_kata_sakit(data):
 
     for index_sakit in index_word:
         if (index_sakit + 1) >= len(data):
+            data.pop(index_sakit)
             break
         elif data[index_sakit + 1] == 'apa':
             data.pop(index_sakit)
