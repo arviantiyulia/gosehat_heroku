@@ -26,9 +26,9 @@ def hapus_kata_sakit(data):
     word = "sakit"
     # for index,word in enumerate(data):
     index_word = [i for i, d in enumerate(data) if word in d]
-    print("index sakit = ", index_word)
+    # print("index sakit = ", index_word)
 
-    print("data kata = ", data)
+    # print("data kata = ", data)
 
     for index_sakit in index_word:
         # jika kata sudah terakhir, dan kata sebelumnya bukan 'apa', skip
@@ -63,7 +63,7 @@ def save_menuinformasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
     cursor.execute("DELETE FROM menu WHERE id_user = '" + user_id + "'")
-    print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
+    # print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
 
@@ -73,7 +73,7 @@ def save_menukonsultasi(user_id, name_user, text, conn):
     cursor = conn.cursor()
 
     cursor.execute("DELETE FROM menu WHERE id_user = '" + user_id + "'")
-    print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
+    # print("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     cursor.execute("INSERT INTO menu(id_user, nama_user, status) VALUES('" + user_id + "', '" + name_user + "','" + text + "')")
     conn.commit()
 

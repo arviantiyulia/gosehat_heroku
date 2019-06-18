@@ -392,7 +392,7 @@ def handle_text_message(event):
             cursor.execute("SELECT status FROM menu WHERE id_user = '" + user_id + "'")
             count_menu = cursor.fetchall()
 
-        print("DEBUG> count menu = ", count_menu)
+        # print("DEBUG> count menu = ", count_menu)
 
         if len(count_menu) != 0:
             if count_menu[0][0] == '\informasi':
@@ -453,11 +453,11 @@ def decide_process(text):
     if "demam" in sinonim:
         sinonim.remove("demam")
 
-    print("DEBUG> sinonim baru = ", sinonim)
-    print("DEBUG> stop_list = ", stop_list)
+    # print("DEBUG> sinonim baru = ", sinonim)
+    # print("DEBUG> stop_list = ", stop_list)
 
     daftar_gejala, id_gejala, nama_gejala = get_symptoms(conn, sinonim)
-    print("DEBUG> daftar gejala", daftar_gejala)
+    # print("DEBUG> daftar gejala", daftar_gejala)
 
     daftar_penyakit = []
     for i in sinonim:

@@ -42,5 +42,5 @@ def get_sinonim(inputs):
                 sin_inputs.append(input)
 
 
-    print("DEBUG> sinonim = ", sin_inputs)
+    # print("DEBUG> sinonim = ", sin_inputs)
     return sin_inputs

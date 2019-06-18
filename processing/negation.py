@@ -8,5 +8,5 @@ def remove_negation(input):
             input.remove(input_after)
             input.remove(input_before)
 
-    print("input_new", input)
+    # print("input_new", input)
     return input
