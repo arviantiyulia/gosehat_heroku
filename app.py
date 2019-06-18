@@ -302,7 +302,7 @@ def handle_text_message(event):
             event.reply_token,
             message
         )
-    elif text == 'tentang aplikasi':
+    elif text.lower() == 'tentang aplikasi':
         url = request.url_root + '/static/image/tentang.png'
         app.logger.info("url=" + url)
         text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh:\n1. Arvianti Yulia Maulfa \n2. Entin ' \
@@ -314,7 +314,7 @@ def handle_text_message(event):
                 TextSendMessage(text=text),
             ]
         )
-    elif text == 'informasi aplikasi':
+    elif text.lower() == 'informasi aplikasi':
         text = 'GoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk ' \
                'konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan,' \
                'pencegahan, atau penyebab suatu penyakit. \n\nCukup kirim pesan apa yang ingin Anda tanyakan atau ' \
