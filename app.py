@@ -427,7 +427,6 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    # hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi",
                           "cegah"]
@@ -459,22 +458,6 @@ def decide_process(text):
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
         if len(stop_list) >= 1:
-
-            # ==== MISBAH BARU
-            # if len(daftar_penyakit) == 0:
-            #     return "konsultasi"
-            #
-            # else:
-            #     return "informasi"
-
-            #VIAN BARU
-            # if len(daftar_penyakit) == 0:
-            #     return "konsultasi"
-            # elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 1:
-            #     return "konsultasi"
-            # else:
-            #     return "informasi"
-
             if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
                 return "informasi"
             elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
@@ -486,12 +469,6 @@ def decide_process(text):
             return "informasi"
 
     else:
-        # if len(daftar_gejala) == 0:
-        #     return "informasi"
-        # elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
-        #     return "informasi"
-        # else:
-        #     return "konsultasi"
         if len(sinonim) == 1 and "tidak" in sinonim:
             return "konsultasi"
         if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
@@ -506,10 +483,8 @@ def message_bot(user_id, name_user, salam, text, time, conn):
     msg_penyakit = "Kemungkinan Anda terkena penyakit "
     msg_pengobatan = "\n\n#Pengobatan \nPertolongan pertama yang bisa dilakukan adalah "
     msg_pencegahan = "\n#Pencegahan \nPencegahan yang bisa dilakukan adalah "
-    # msg_komplikasi = "\n#Komplikasi \nKomplikasi yang terjadi jika penyakit tidak segera ditangani yaitu "
     msg_peringatan = "Silahkan menghubungi dokter untuk mendapatkan informasi dan penanganan yang lebih baik"
 
-    gejala = []
     message = ""
     timestamp = tm.time()
     penyakit_result = ""
@@ -562,14 +537,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         print("DEBUG> jumlah penyakit = ", jml_penyakit)
         if jml_penyakit == 0:
             disease = check_greeting(sinonim)
-            # message = message + str(disease)
-            # save_history(user_id, name_user, text, message, "", disease_id, time, conn)
         elif jml_penyakit > 0:
             for pnykt in penyakit:
                 disease = disease + pnykt[0][2] + "\n\n"
-                # disease_id = pnykt[0][0]
+
         message = message + str(disease)
-        # for disease_idx in disease_id
         save_history(user_id, name_user, text, message, "", disease_id, time, conn)
 
     # jika gejalanya kurang
@@ -597,7 +569,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             gejala_flat = flat(gejala)
             print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
             result, cf = get_cf(conn, gejala_flat)
-            # print("result = ", result)
 
             # jika yang terdeteksi hanya 1 penyakit
             if len(result) == 1:

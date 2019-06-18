@@ -50,21 +50,8 @@ def import_penyakit(conn, gj):
 def import_gejala_penyakit(conn, gp):
 
     cursor = conn.cursor()
-    penyakit_gejala = []
 
-    # for idx_gp in range(len(gp)):
-    #     len_gp = len(gp[idx_gp])
-    #     penyakit = gp[idx_gp][0]
-    #
-    #     gejala = gp[idx_gp][1:len_gp]
-    #
-    #     penyakit_gejala.append([penyakit,gejala])
-    #
-    # print(penyakit_gejala)
     for pg in gp:
-        # for g in daftar_gejala:
-        #     cursor.execute("INSERT INTO gejala_penyakit(id_penyakit, id_gejala) VALUES('"+penyakit+"','"+g+"')")
-        #     conn.commit()
         cursor.execute("INSERT INTO gejala_penyakit(id_penyakit, id_gejala, bobot) VALUES('"+pg[0]+"','"+pg[1]+"','"+pg[2]+"')")
         conn.commit()
 

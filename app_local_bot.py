@@ -70,7 +70,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
         get_time = cursor.fetchall()
 
-        # print("get time = ", get_time)
         if get_time:
             timestamp_now = tm.time() - float(get_time[0][1])
 
@@ -89,7 +88,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         elif jml_penyakit > 0:
             for pnykt in penyakit:
                 disease = disease + pnykt[0][2] + "\n\n"
-            # print(disease)
         message = message + str(disease)
 
     # jika gejalanya kurang
@@ -117,7 +115,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             gejala_flat = flat(gejala)
             print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
             result, cf = get_cf(conn, gejala_flat)
-            # print("result = ", result)
 
             # jika yang terdeteksi hanya 1 penyakit
             if len(result) == 1:
@@ -136,20 +133,16 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
             # jika yang terdeteksi lebih dari 1 penyakit
             else:
-                # print("hasil = ", result)
                 for idx in result:
                     penyakit_result = penyakit_result + " , " +  idx[0][1]
                     definisi_result = definisi_result + "\n\n" + idx[0][2]
 
                 message = message + salam + name_user + "\n" + msg_penyakit + penyakit_result + "\n" + definisi_result + "\n\n" + msg_peringatan
                 output_sistem = msg_penyakit + penyakit_result
-                # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
-                # save_history(user_id, name_user, text, output_sistem, "", id_result, time, conn)
 
                 for dis in result:
                     disease_id = dis[0][0]
                     save_history(user_id, name_user, text, output_sistem, "", disease_id, time, conn)
-                    # print("dis = ", dis)
 
 
             cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -223,9 +216,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
-            # print("hasil = ", )
-            # for idx in result:
-            #     print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
             for idx in result:
                 penyakit_result = penyakit_result + " , " + idx[0][1]
                 definisi_result = definisi_result + "\n\n" + idx[0][2]
@@ -233,21 +223,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
             message = message + salam + name_user + "\n" + msg_penyakit + penyakit_result + "\n" + definisi_result + "\n\n" + msg_peringatan
             output_sistem = msg_penyakit + penyakit_result
 
-            # message = message + salam + name_user + "\n" \
-            #           + msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1] \
-            #           + "\n\n" + result[0][0][2] + "\n\n" + result[1][0][2] + "\n\n" + result[2][0][2] + "\n\n" + msg_peringatan
-            #
-            # output_sistem = msg_penyakit + result[0][0][1] + " , " + result[1][0][1] + " , " + result[2][0][1]
-            # disease_id = result[0][0][0] + " , " + result[1][0][0] + " , " + result[2][0][0]
-            # save_history(user_id, name_user, text, output_sistem, "", disease_id, time, conn)
             for dis in result:
                 disease_id = dis[0][0]
                 save_history(user_id, name_user, text, output_sistem, string_gejala, disease_id, time, conn)
-                # print("dis = ", dis)
-
-        # cursor.execute("DELETE FROM gejala_input WHERE user_id = '" + user_id + "'")
-        # conn.commit()
-
     return message
 
 def decide_process(text):
@@ -258,7 +236,6 @@ def decide_process(text):
     filters = filtering(contents, stopwords)
     stems = stemming(filters)
     sinonim = get_sinonim(stems)
-    # hapus_kata_sakit(sinonim)
 
     stopword_info_list = ["apa", "kenapa", "mengapa", "bagaimana", "obat", "sebab", "solusi", "gejala", "komplikasi", "cegah"]
     stop_list = [word for word in stopword_info_list if word in sinonim]
@@ -284,74 +261,22 @@ def decide_process(text):
 
     daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
     print("DEBUG> daftar penyakit", daftar_penyakit)
-    # print("DEBUG> panjang penyakit = ", len(daftar_penyakit[0]))
 
     if len(stop_list) != 0 :
 
         print("DEBUG> ------------ END DECIDE PROCESS --------------\n")
 
         if len(stop_list) >= 1:
-            # ==== KOMENTAR MISBAH | PUNYA VIAN
-            # jika ada kata "gejala" dan disebutkan penyakitnya dan gak menyebut gejala
-            # if stop_list[0] == "gejala" and len(daftar_penyakit) != 0:
-            #     return "informasi"
-            # if stop_list[0] == "kenapa" and len(daftar_penyakit) == 0:
-            #     return "konsultasi"
-            # if stop_list[0] == "gejala":
-            #     return "konsultasi"
-            # if stop_list[0] == "bagaimana":
-            #     return "konsultasi"
-            # if stop_list[0] == "apa" and len(daftar_penyakit):
-            #     return "informasi"
-            
-            # ==== MISBAH BARU
             if len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
                 return "informasi"
             elif len(daftar_penyakit) > 0 and len(daftar_gejala) < 2:
                 return "informasi"
             else:
                 return "konsultasi"
-            # if len(daftar_penyakit) == 0:
-            #     return "konsultasi"
-            # elif len(daftar_penyakit) > 0 and len(daftar_gejala) > 2:
-            #     return "konsultasi"
-            # else:
-            #     return "informasi"
-                
-        # elif len(stop_list) > 1:
-        #     if "apa" in stop_list:
-        #         if "gejala" in stop_list:
-        #             # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #             if not daftar_gejala:
-        #                 return "informasi"
-        #             # jika ada keyword APA dan GEJALA tapi tidak ada daftar gejala = informasi
-        #             elif len(daftar_gejala) > 3:
-        #                 return "konsultasi"
-        #             # jika ada keyword APA dan GEJALA tapi ada daftar penyakit
-        #             elif len(daftar_penyakit) != 0:
-        #                 return "informasi"
-        #             else:
-        #                 return "konsultasi"
-        #         else:
-        #             # REVISI
-        #             # return "informasi"
-        #             return "konsultasi"
-        #     elif len(daftar_gejala) != 0:
-        #         return "konsultasi"
-        #     else:
-        #         return "informasi"
         else:
             return "informasi"
 
     else:
-        
-        print("len gejala = ", len(daftar_gejala))
-        # if len(daftar_gejala) == 0:
-        #     return "informasi"
-        # elif len(daftar_penyakit) > 0 and len(daftar_gejala) == 0:
-        #     return "informasi"
-        # else:
-        #     return "konsultasi"
         if len(sinonim) == 1 and "tidak" in sinonim:
             return "konsultasi"
         elif len(daftar_penyakit) == 0 and len(daftar_gejala) < 2:
@@ -368,9 +293,6 @@ if __name__ == "__main__":
     # dapatkan argumen cmd, contoh: python app_local_bot.py "saya merasa mual muntah"
     args = sys.argv
     if len(args) == 1:
-        # text = "saya mual, muntah, bintik merah pada kulit, nyeri untuk melirik"
-        # text = "demam tinggi,mata tidak merah, batuk darah, mata berair, tidak bisa tidur, kepala tidak sakit, sensitif terhadap cahaya"
-        # text  = "Saya merasa mual dan kepala serasa berputar, saya sakit apa?"
         text = "mag"
     else:
         text = args[1]
@@ -378,10 +300,8 @@ if __name__ == "__main__":
     conn = create_connection()
     cursor = conn.cursor()
 
-    # user_id = "1"
-    # name_user = "admin"
-    user_id = "2"
-    name_user = "admin misbah"
+    user_id = "1"
+    name_user = "admin"
     time = dt.datetime.now()
     print("time = ", time)
 
@@ -433,7 +353,6 @@ if __name__ == "__main__":
             disease_id = 0
             sinonim, penyakit, messages_info = get_info(text)
             if len(penyakit) == 0 and len(sinonim) <= 2:
-                # gabung_sinonim = ' '.join(sinonim)
                 messages = check_greeting(sinonim)
                 save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
             else:

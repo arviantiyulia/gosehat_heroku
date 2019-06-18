@@ -20,12 +20,6 @@ def get_symptoms(conn, inputs):
     word = "tidak"
     index_word = [i for i, d in enumerate(inputs) if d == word]
 
-    # print("index = ", index_word)
-    # for idx_tidak in index_word:
-    #     cek_next_index = index_word + 1
-
-    # print("index = ", cek_next_index)
-
     for idx, input in enumerate(inputs):
         if idx in index_word:
 
@@ -76,13 +70,11 @@ def get_symptoms(conn, inputs):
         cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
         rows.append(cursor.fetchall())
 
-    # print("gejala = ", rows[0][1])
     print("\nINFO> @symptoms.get_symptoms Daftar gejala: ")
     for row in rows:
         print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
-    # print("rows = ", result_id)
     return rows, result_id, inputs_new
 
 def symptoms_count(rows, inputs):
@@ -166,10 +158,6 @@ def db_stemming(gejala_arr):
         gejala_join = ' '.join(gejala_stemm)
         gj[2] = gejala_join
 
-    #     print("gejala filter = ", gejala_filter)
-    #     print("gejala stemm = ", gejala_stemm)
-    # print("gejala arr = ", gejala_arr)
-
     return gejala_arr
 
 
@@ -196,26 +184,16 @@ def exclude_symptoms(conn, symptoms, sinonim):
 
     for idx, neg in enumerate(arr_negation):
         for idx_symp, symp in enumerate(new_symp):
-            # print("negation = ", neg, "symp = ", symp[1])
             if neg in symp[1]:
-                # print("neg = ", neg, "id = ", idx)
                 arr_symp.append(symp)
-                # arr_negation.pop(idx)
-                # index_word.pop(idx)
                 new_symp.pop(idx_symp)
 
     print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
-    # print("arr_negation = ", arr_negation)
-    # print("index word = ", index_word)
 
     for idx_word in index_word:
         new_symp = remove_symptoms(idx_word, new_symp, sinonim)
-        # new_symp = symptoms_rmv
 
     new_symp.extend(arr_symp)
-
-    # print("new simp setalh negasi dihapus = ", new_symp)
-    # print("symptoms_rmv = ", symptoms_rmv)
 
     gejala_rmv = [i[0] for i in new_symp]
 
@@ -225,38 +203,27 @@ def exclude_symptoms(conn, symptoms, sinonim):
         cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
         rows.append(cursor.fetchall())
 
-    # print("gejala = ", rows[0][1])
     print("\nINFO> @symptoms.exclude_symptoms Daftar gejala: ")
     for row in rows:
         print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
 
-    # print("gjl_rmv = ", gejala_rmv)
-
     return gejala_rmv
 
 
 def count_exclude(next_id, new_symp):
-    
-    # word_val = sinonim[next_id]
-    # print("next_id = ", next_id)
     for symp in new_symp:
-        # print("new_simp2 = ", symp[1])
-        count = 0
         if next_id in symp[1]:
             symp[2] += 1
 
-    # print("new symp2 = ", new_symp)
     return new_symp
 
 def remove_symptoms(idx_word, new_symp, sinonim):
 
     arr_symp = []
-    # next_id = idx_word + 1;
     read_negation = sinonim[idx_word]
     val_negation = read_negation.split()
-    # print("next id = ", idx_word)
 
     print("DEBUG> @symptoms.remove_symptoms new simp = ", new_symp)
     new_symp = count_exclude(val_negation[1], new_symp)
@@ -289,11 +256,9 @@ def remove_symptoms(idx_word, new_symp, sinonim):
             max_symp = min(arr_symp, key=lambda xs: len(xs[1]))
         else:
             max_symp = max(arr_symp, key=lambda x: x[2])
-        # print("max symp = ", max_symp)
     else:
         max_symp = max(new_symp, key=lambda x: x[2])
 
-        # print("max symp = ", max_symp)
     rmv_symp = new_symp.remove(max_symp)
 
     return new_symp

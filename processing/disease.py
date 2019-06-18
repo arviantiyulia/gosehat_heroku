@@ -6,12 +6,9 @@ def get_disease(conn, cf, id):
     # TODO: Set variabel threshold disini
     cf_list = list(zip(id, cf))
     cursor = conn.cursor()
-    cf_new = []
     id_somedisease = []
     disease_name = []
 
-    # TODO: urutkan cf_list dari tinggi ke rendah
-    # cf_list.sort(key=lambda tup: tup[1], reverse=True)
     cf_new = sorted(cf_list,key=lambda x: x[1], reverse=True)[0:3]
     cf_diurutkan = sorted(cf_list,key=lambda x: x[1], reverse=True)
 
@@ -22,24 +19,16 @@ def get_disease(conn, cf, id):
         if cf_new[i][1] > max_cf:
             max_cf = cf_new[i][1]
             id_disease = cf_new[i][0]
-            # print("id_disease = ", id_disease)
         else:
             id_somedisease.append(cf_new[i][0])
 
-    # print("DEBUG> id_somedisease = ", id_somedisease)
     print("DEBUG> id_disease = ", id_disease)
-    # for index in range(len(cf)):
-    #     if cf[index] > max_cf:
-    #         max_cf = cf[index]
-    #         id_disease = id[index]
 
     # --- AKHIR DARI DEBUG ---
     if id_disease != 0:
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(id_disease))
         disease_new = cursor.fetchall()
         disease_name = [[i] for i in disease_new]
-        # print("DEBUG> \nKemungkinan penyakit yang diderita: " + str(disease_name))
-        # print("DEBUG> Dengan nilai certainty factor: ", max_cf)
 
     else:
         print("INFO> 3 ID tertinggi = ", id_somedisease)
@@ -54,12 +43,6 @@ def get_disease(conn, cf, id):
         cursor.execute("SELECT * FROM penyakit WHERE id_penyakit = " + str(cf_diurutkan[item][0]))
         disease_name2 = cursor.fetchall()
         print("INFO> ID: ", disease_name2[0][0], " Nama: ", disease_name2[0][1], " CF: ", cf_diurutkan[item][1])
-    # print("DEBUG> cf_list = ", cf_list[0][)
 
-    # print(DEBUG> disease_name)
-    # print(DEBUG> disease_name[0][0][1])
-    # HANYA UNTUK TUJUAN DEBUG
-    # print("\nDEBUG> Kemungkinan penyakit yang diderita: " + str(disease_name[0][0][1]))
-    # print("DEBUG> Dengan nilai certainty factor: ", max_cf)
 
     return disease_name, max_cf

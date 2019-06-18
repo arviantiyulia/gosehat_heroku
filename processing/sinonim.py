@@ -28,21 +28,17 @@ def get_sinonim(inputs):
                     join_input = ' '.join(index_input)
 
                     if join_input == sinonims[index][1]:
-                        # print("berhasil di sinonim")
                         found = True
                         sin_inputs.append(sinonims[index][0])
                         total_index = idx_input + (panjang_sinonim - 1) #
                         break
                     else:
-                        # print("tidak sama dan tidak di sinonim")
                         found = False
 
                 else:
-                    # print("tidak ada di sinonim")
                     found = False
 
             if found == False:
-                # print("input = ", input)
                 sin_inputs.append(input)
 
 

@@ -5,8 +5,8 @@ def open_csv():
 
     with open('file/greeting.csv', 'r') as csvfile:
         read_data = csv.reader(csvfile)
-        #looping tiap baris dari file csv
-        for r in read_data:
+
+        for r in read_data: #looping tiap baris dari file csv
             greeting.append(r)
 
     return greeting
