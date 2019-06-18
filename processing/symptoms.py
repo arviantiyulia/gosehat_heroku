@@ -23,7 +23,7 @@ def get_symptoms(conn, inputs):
     for idx, input in enumerate(inputs):
         if idx in index_word:
 
-            print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
+            # print("DEBUG> @symptoms.get_symptoms (mencari tidak) sekarang index ke = ", idx)
 
             if len(inputs) > 1: #untuk mengecek jika yang dimasukkan "tidak" saja
                 panjang_list = len(inputs) - 1
@@ -35,26 +35,26 @@ def get_symptoms(conn, inputs):
                     # cek apakah setelah kata 'sakit' masih ada kata
                     # jika masih ada maka lanjutkan perasaan
                     # jika tidak skip
-                    print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
+                    # print("DEBUG> @symptoms.get_symptoms BENAR di depan ada kata 'sakit'")
                     if (idx + 2) <= panjang_list:
                         next_id = idx + 2
                     else:
                         continue
                 else:
                     next_id = idx + 1
-                    print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")
+                    # print("DEBUG> @symptoms.get_symptoms SALAH di depan bukan kata 'sakit'")
 
                 join_negation = input + " " + inputs[next_id]
                 inputs_new.append(join_negation)
 
-                print("input new = ", inputs_new)
+                # print("input new = ", inputs_new)
 
             else:
                 inputs_new.append(input)
         else:
             inputs_new.append(input)
 
-    print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
+    # print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
 
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
@@ -142,7 +142,7 @@ def get_max_id(input, row):
 
     id_max = id_min_count
 
-    print("INFO> Max id @symptomps = ", id_max)
+    # print("INFO> Max id @symptomps = ", id_max)
 
     return id_max
 
@@ -170,14 +170,14 @@ def exclude_symptoms(conn, symptoms, sinonim):
 
     word = "tidak"
     index_word = [i for i,d in enumerate(sinonim) if word in d]
-    print("DEBUG> @symptoms.exclude_symptoms index word = ", index_word)
-    print("DEBUG> @symptoms.exclude_symptoms sinonim = ", sinonim)
+    # print("DEBUG> @symptoms.exclude_symptoms index word = ", index_word)
+    # print("DEBUG> @symptoms.exclude_symptoms sinonim = ", sinonim)
 
     
     for symp in symptoms:
         new_symp.append([symp[0][0], symp[0][1], 0])
 
-    print("DEBUG> sinonim exclude @symptoms.exclude_symptoms = ", sinonim)
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms = ", sinonim)
 
     for idx in index_word:
         arr_negation.append(sinonim[idx])
@@ -188,7 +188,7 @@ def exclude_symptoms(conn, symptoms, sinonim):
                 arr_symp.append(symp)
                 new_symp.pop(idx_symp)
 
-    print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
 
     for idx_word in index_word:
         new_symp = remove_symptoms(idx_word, new_symp, sinonim)
@@ -225,7 +225,7 @@ def remove_symptoms(idx_word, new_symp, sinonim):
     read_negation = sinonim[idx_word]
     val_negation = read_negation.split()
 
-    print("DEBUG> @symptoms.remove_symptoms new simp = ", new_symp)
+    # print("DEBUG> @symptoms.remove_symptoms new simp = ", new_symp)
     new_symp = count_exclude(val_negation[1], new_symp)
 
     jml = 0
@@ -233,8 +233,8 @@ def remove_symptoms(idx_word, new_symp, sinonim):
         if idx_count[2] == 1:
             jml += 1
 
-    print("DEBUG> @symptoms.remove_symptoms new simp2 = ", new_symp)
-    print("DEBUG> @symptoms.remove_symptoms jml = ", jml)
+    # print("DEBUG> @symptoms.remove_symptoms new simp2 = ", new_symp)
+    # print("DEBUG> @symptoms.remove_symptoms jml = ", jml)
 
     if jml > 1:
         if sinonim[idx_word + 1] == "sakit":
@@ -249,7 +249,7 @@ def remove_symptoms(idx_word, new_symp, sinonim):
                 arr_symp.append(i)
 
         arr_symp = count_exclude(val_negation, arr_symp)
-        # print("arr_symp  = ", arr_symp)
+
         check_value = all(map(lambda x: x[2], arr_symp))
 
         if check_value == True:
