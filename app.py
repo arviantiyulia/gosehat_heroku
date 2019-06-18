@@ -534,7 +534,6 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
         get_time = cursor.fetchall()
 
-        print("get time = ", get_time)
         if get_time:
             timestamp_now = tm.time() - float(get_time[0][1])
 

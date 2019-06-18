@@ -70,9 +70,9 @@ def get_symptoms(conn, inputs):
         cursor.execute("SELECT * FROM gejala WHERE id_gejala='" + str(id_gejala) + "'")
         rows.append(cursor.fetchall())
 
-    print("\nINFO> @symptoms.get_symptoms Daftar gejala: ")
-    for row in rows:
-        print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
+    # print("\nINFO> @symptoms.get_symptoms Daftar gejala: ")
+    # for row in rows:
+    #     print("INFO> ID: ", row[0][0], " Nama Gejala: ", row[0][1])
     
     # --- AKHIR DARI DEBUG ---
     return rows, result_id, inputs_new

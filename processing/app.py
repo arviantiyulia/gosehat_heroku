@@ -19,4 +19,6 @@ def get_cf(conn, sinonim):
 
     end_time = time.time() - start_time
 
+    print("waktu = ", end_time)
+
     return disease
