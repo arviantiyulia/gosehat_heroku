@@ -315,8 +315,15 @@ def handle_text_message(event):
             ]
         )
     elif text == 'informasi aplikasi':
-        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh:\n1. Arvianti Yulia Maulfa \n2. Entin ' \
-               'Martiana Kusumaningtyas \n3. Fadilah Fahrul Hardiansyah\n'
+        text = 'GoSehat adalah chatbot (aplikasi pintar) yang dapat digunakan untuk ' \
+               'konsultasi kesehatan secara gratis! Anda dapat bertanya seputar kesehatan seperti pengobatan,' \
+               'pencegahan, atau penyebab suatu penyakit. \n\nCukup kirim pesan apa yang ingin Anda tanyakan atau ' \
+               'memilih menu yang tersedia ya.\ncontoh: "Saya sering mengalami pusing, mual, batuk. Saya ' \
+               'sakit apa ?" atau menanyakan informasi seperti "Haloo, untuk obat maag apa ya?" \n\nTahapan pemakaian ' \
+               'aplikasi GoSehat :\n1. Ketikkan pesan seperti pada contoh diatas atau pilih menu \n2. Anda bisa ' \
+               'mengetikkan gejala untuk mendeteksi penyakit pada tubuh Anda\n3. Anda bisa mengetikkan nama penyakit ' \
+               'untuk mengetahui jenis penyakit\n4. Tunggu hingga aplikasi memberikan Anda jawaban\n\nTetap jaga ' \
+               'kesehatan ya!'
 
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=text),
