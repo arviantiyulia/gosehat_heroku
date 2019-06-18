@@ -465,7 +465,7 @@ def decide_process(text):
         daftar_penyakit.append(cursor.fetchall())
 
     daftar_penyakit = [e for e in daftar_penyakit if e]  # list of tuple to list and not empty
-    print("DEBUG> daftar penyakit", daftar_penyakit)
+    # print("DEBUG> daftar penyakit", daftar_penyakit)
 
     if len(stop_list) != 0:
 
@@ -546,9 +546,9 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # jika gejala kosong maka tampilkan pesan
     if kondisi_gejala == "kosong":
-        print("INFO> gejala kosong")
+        # print("INFO> gejala kosong")
         disease_id = 0
-        print("DEBUG> jumlah penyakit = ", jml_penyakit)
+        # print("DEBUG> jumlah penyakit = ", jml_penyakit)
         if jml_penyakit == 0:
             disease = check_greeting(sinonim)
         elif jml_penyakit > 0:
@@ -560,10 +560,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # jika gejalanya kurang
     elif kondisi_gejala == "kurang":
-        print("INFO> gejala kurang")
+        # print("INFO> gejala kurang")
 
         input_to_sinonim = ",".join(input)
-        print("DEBUG> Sinonim disimpan ke tabel (gejala input) = ", input_to_sinonim)
+        # print("DEBUG> Sinonim disimpan ke tabel (gejala input) = ", input_to_sinonim)
         save_input(user_id, name_user, symp_db, input_to_sinonim, timestamp, conn)
 
         cursor.execute("SELECT COUNT (*) FROM gejala_input WHERE user_id = '" + user_id + "'")
@@ -578,10 +578,10 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         else:
             cursor.execute("SELECT nama_gejala FROM gejala_input WHERE user_id = '" + user_id + "'")
             gejala_db = cursor.fetchall()
-            print("DEBUG> Kurang | Gejala di DB = ", gejala_db)
+            # print("DEBUG> Kurang | Gejala di DB = ", gejala_db)
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
-            print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
+            # print("DEBUG> Kurang | Gejala yang digabung = ", gejala_flat)
             result, cf = get_cf(conn, gejala_flat)
 
             # jika yang terdeteksi hanya 1 penyakit
@@ -617,11 +617,11 @@ def message_bot(user_id, name_user, salam, text, time, conn):
 
     # setelah sukses hapus yang ada di db
     elif kondisi_gejala == "ada":
-        print("INFO> gejala cukup")
+        # print("INFO> gejala cukup")
         cursor.execute("SELECT DISTINCT input_user, time FROM gejala_input WHERE user_id = '" + user_id + "'")
         gejala_db = cursor.fetchall()
 
-        print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
+        # print("DEBUG> Cukup | Gejala di DB = ", gejala_db)
 
         if not gejala_db:
             if len(sinonim) == 0:
@@ -639,15 +639,15 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         else:
             gejala = [i[0].split(',') for i in gejala_db]
             gejala_flat = flat(gejala)
-            print("DEBUG> Cukup | Gejala yang digabung = ", gejala_flat)
+            # print("DEBUG> Cukup | Gejala yang digabung = ", gejala_flat)
             gejala_new2 = sinonim + gejala_flat
-            print("DEBUG> Cukup | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
+            # print("DEBUG> Cukup | Gejala yang digabung + kalimat sebelum = ", gejala_new2)
 
             # untuk mendapatkan daftar string gejala
-            print("\n----------proses dibawah ini untuk daftar gejala yang disimpan ke histroy------------")
+            # print("\n----------proses dibawah ini untuk daftar gejala yang disimpan ke histroy------------")
             symp_db, symptoms, input = get_symptoms(conn, gejala_new2)
             string_gejala = ', '.join([symp[0][1] for symp in symp_db])
-            print("-------------------------selesai-------------------------\n")
+            # print("-------------------------selesai-------------------------\n")
 
             if len(symp_db) <= 1:
                 disease_id = 0
@@ -679,7 +679,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         # jika yang terdeteksi lebih dari 1 penyakit
         else:
             for idx in result:
-                print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
+                # print("DEBUG> Penyakit lebih > 1 | Penyakit = ", idx)
                 penyakit_result = penyakit_result + " , " + idx[0][1]
                 definisi_result = definisi_result + "\n\n" + idx[0][2]
 
