@@ -302,7 +302,7 @@ def handle_text_message(event):
             event.reply_token,
             message
         )
-    elif text == 'tentang':
+    elif text == 'tentang aplikasi':
         url = request.url_root + '/static/image/tentang.png'
         app.logger.info("url=" + url)
         text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh:\n1. Arvianti Yulia Maulfa \n2. Entin ' \
@@ -313,6 +313,13 @@ def handle_text_message(event):
                 ImageSendMessage(url, url),
                 TextSendMessage(text=text),
             ]
+        )
+    elif text == 'informasi aplikasi':
+        text = 'GoSehat merupakan aplikasi konsultasi kesehatan yang dibangun oleh:\n1. Arvianti Yulia Maulfa \n2. Entin ' \
+               'Martiana Kusumaningtyas \n3. Fadilah Fahrul Hardiansyah\n'
+
+        line_bot_api.reply_message(
+            event.reply_token, TextSendMessage(text=text),
         )
     elif text == 'quick_reply':
         line_bot_api.reply_message(
