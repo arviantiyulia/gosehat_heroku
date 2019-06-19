@@ -66,7 +66,7 @@ def get_gejalapenyakit(penyakit):
         print("data = ", data)
         nilai_cf = [cf]
         zips = zip(list, data, nilai_cf)
-        newfilepath = 'testing.csv'
+        newfilepath = 'testing all.csv'
 
         with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
             writer = csv.writer(f, delimiter=";")
@@ -250,5 +250,5 @@ if __name__ == "__main__":
     penyakit = get_penyakit()
     # remove_duplicate()
     get_gejalapenyakit(penyakit)
-    combination_samegejala(penyakit)
+    # combination_samegejala(penyakit)
     # combination_other(penyakit)

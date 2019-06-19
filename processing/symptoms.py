@@ -64,6 +64,7 @@ def get_symptoms(conn, inputs):
 
     result_id = symptoms_count(rows, inputs_new)
 
+
     # --- HANYA UNTUK TUJUAN DEBUG ---
     rows = []
     for id_gejala in result_id:
@@ -162,7 +163,7 @@ def db_stemming(gejala_arr):
 
 
 def exclude_symptoms(conn, symptoms, sinonim):
-    new_symp = []
+    symp_in_db = []
     arr_negation = []
     arr_symp = []
     d = defaultdict(list)
@@ -173,30 +174,63 @@ def exclude_symptoms(conn, symptoms, sinonim):
     # print("DEBUG> @symptoms.exclude_symptoms index word = ", index_word)
     # print("DEBUG> @symptoms.exclude_symptoms sinonim = ", sinonim)
 
-    
     for symp in symptoms:
-        new_symp.append([symp[0][0], symp[0][1], 0])
-
-    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms = ", sinonim)
+        symp_in_db.append([symp[0][0], symp[0][1], 0])
 
     for idx in index_word:
         arr_negation.append(sinonim[idx])
 
-    for idx, neg in enumerate(arr_negation):
-        for idx_symp, symp in enumerate(new_symp):
-            if neg in symp[1]:
-                arr_symp.append(symp)
-                new_symp.pop(idx_symp)
+    # print("DEBUG> @symptoms.exclude_symptoms arr_negation = ", arr_negation)
 
-    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms new_symp = ", new_symp)
+    # =========================
+    # dibawah adalah proses untuk me-stemming symtom di db dan mereplace
+    symp_array_mau_distem = []
+    for idx_symp, symp_word in enumerate(symp_in_db):
+        temp = []
+        for item in symp_word[1].split(' '):
+            temp.append(item)
+
+        symp_array_mau_distem.append(temp)
+
+    stemmed_list = []
+    for item in symp_array_mau_distem:
+        stemmed_list.append(stemming(item))
+
+    # print('@symptoms.exclude_symptoms symp_array_mau_distem = ', symp_array_mau_distem)
+    # print('@symptoms.exclude_symptoms stemmed list = ', stemmed_list)
+
+    # join stemming list
+    stemmed_list_group = []
+    for item in stemmed_list:
+        stemmed_list_group.append(' '.join(item))
+
+    # replace di list symp di db
+    for idx, symp_word in enumerate(symp_in_db):
+        symp_word[1] = stemmed_list_group[idx]
+
+    # print('@symptoms.exclude_symptoms SYMP IN DB STEMMED = ', symp_in_db)
+
+    # akhir dari me-stemming symptom
+    # =========================
+
+    for idx, negation_word in enumerate(arr_negation):
+        for idx_symp, symp_word in enumerate(symp_in_db):
+            if negation_word in symp_word[1]:
+                arr_symp.append(symp_word)
+                symp_in_db.pop(idx_symp)
+
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms arr_symp = ", arr_symp)
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms symp_in_db = ", symp_in_db)
 
     for idx_word in index_word:
-        new_symp = remove_symptoms(idx_word, new_symp, sinonim)
+        symp_in_db = remove_symptoms(idx_word, symp_in_db, sinonim)
 
-    new_symp.extend(arr_symp)
+    symp_in_db.extend(arr_symp)
 
-    gejala_rmv = [i[0] for i in new_symp]
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms symp_in_db new = ", symp_in_db)
 
+    gejala_rmv = [i[0] for i in symp_in_db]
+    # print("DEBUG> sinonim exclude @symptoms.exclude_symptoms gejala_rmv = ", gejala_rmv)
     # --- HANYA UNTUK TUJUAN DEBUG ---
     rows = []
     for id_gejala in gejala_rmv:
@@ -212,39 +246,43 @@ def exclude_symptoms(conn, symptoms, sinonim):
     return gejala_rmv
 
 
-def count_exclude(next_id, new_symp):
-    for symp in new_symp:
-        if next_id in symp[1]:
+def count_exclude(word, symp_in_db):
+    for symp in symp_in_db:
+        if word in symp[1]:
             symp[2] += 1
 
-    return new_symp
+    return symp_in_db
 
-def remove_symptoms(idx_word, new_symp, sinonim):
+def remove_symptoms(idx_word, symp_in_db, sinonim):
 
     arr_symp = []
     read_negation = sinonim[idx_word]
     val_negation = read_negation.split()
 
-    # print("DEBUG> @symptoms.remove_symptoms new simp = ", new_symp)
-    new_symp = count_exclude(val_negation[1], new_symp)
+    # print("DEBUG> @symptoms.remove_symptoms val negation = ", val_negation)
+    # print("DEBUG> @symptoms.remove_symptoms idx_word = ", idx_word)
+    symp_in_db = count_exclude(val_negation[1], symp_in_db)
+    # print("DEBUG> @symptoms.remove_symptoms new simp = ", symp_in_db)
 
     jml = 0
-    for idx_count in new_symp:
+    for idx_count in symp_in_db:
         if idx_count[2] == 1:
             jml += 1
 
-    # print("DEBUG> @symptoms.remove_symptoms new simp2 = ", new_symp)
+    # print("DEBUG> @symptoms.remove_symptoms new simp2 = ", symp_in_db)
     # print("DEBUG> @symptoms.remove_symptoms jml = ", jml)
 
-    if jml > 1:
+    if jml > 1: #jika "tidak" terdapat pada lebih dari 1 gejala
+        # jika kata setelah 'tidak ____' = sakit
         if sinonim[idx_word + 1] == "sakit":
             next_id2 = idx_word + 2
+        # jika kata setelah 'tidak ____' bukan sakit
         else:
             next_id2 = idx_word + 3
 
         val_negation = sinonim[next_id2]
 
-        for i in new_symp:
+        for i in symp_in_db:
             if i[2] == 1:
                 arr_symp.append(i)
 
@@ -257,8 +295,8 @@ def remove_symptoms(idx_word, new_symp, sinonim):
         else:
             max_symp = max(arr_symp, key=lambda x: x[2])
     else:
-        max_symp = max(new_symp, key=lambda x: x[2])
+        max_symp = max(symp_in_db, key=lambda x: x[2])
 
-    rmv_symp = new_symp.remove(max_symp)
+    rmv_symp = symp_in_db.remove(max_symp)
 
-    return new_symp
+    return symp_in_db
