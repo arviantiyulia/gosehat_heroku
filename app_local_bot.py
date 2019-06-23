@@ -50,6 +50,7 @@ def message_bot(user_id, name_user, salam, text, time, conn):
         print(text)
         contents = tokenizing(text)
         filters = filtering(contents, stopwords)
+        print("filtering = ", filters)
         stems = stemming(filters)
         sinonim = get_sinonim(stems)
         hapus_kata_sakit(sinonim)
