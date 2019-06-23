@@ -65,7 +65,7 @@ def stemming(doc):
     for i in range(len_array):
         temp = doc[i]
         if doc[i] == 'menelan':
-            result_stem = 'telan'
+            result_stem = 'nelan'
         elif doc[i] == 'perasaan':
             result_stem = 'rasa'
         else:
