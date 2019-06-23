@@ -97,7 +97,7 @@ def cekserver():
 
     content = request.get_json()
     text = content['text']
-    user_id = 99
+    user_id = '99'
     name_user = 'cekserver'
     time = dt.datetime.now()
 
