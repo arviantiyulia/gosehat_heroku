@@ -131,11 +131,11 @@ def cekserver():
                 messages = messages + "\n\n" + msg[0][0]
             save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
         result_message['message'] = messages
-        return jsonify(json.dumps(result_message))
+        return jsonify(result_message)
     else:
         messages = message_bot(user_id, name_user, salam, text, time, conn)
         result_message['message'] = messages
-        return jsonify(json.dumps(result_message))
+        return jsonify(result_message)
     delete_menukonsultasi(user_id, conn)
 
 
