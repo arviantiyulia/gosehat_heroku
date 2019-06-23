@@ -20,6 +20,7 @@ import errno
 import os
 import sys
 import tempfile
+import json
 from argparse import ArgumentParser
 
 from flask import Flask, abort, request, jsonify
@@ -100,6 +101,7 @@ def cekserver():
     user_id = '99'
     name_user = 'cekserver'
     time = dt.datetime.now()
+    result_message = {}
 
     if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
                                                         second=0) and dt.datetime.now() > dt.datetime.now().replace(
@@ -128,10 +130,12 @@ def cekserver():
             for msg in messages_info:
                 messages = messages + "\n\n" + msg[0][0]
             save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
-        return jsonify(messages)
+        result_message['message'] = messages
+        return jsonify(json.dumps(result_message))
     else:
         messages = message_bot(user_id, name_user, salam, text, time, conn)
-        return jsonify(messages)
+        result_message['message'] = messages
+        return jsonify(json.dumps(result_message))
     delete_menukonsultasi(user_id, conn)
 
 
