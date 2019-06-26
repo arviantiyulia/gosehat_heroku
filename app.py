@@ -20,9 +20,10 @@ import errno
 import os
 import sys
 import tempfile
+import json
 from argparse import ArgumentParser
 
-from flask import Flask, abort, request
+from flask import Flask, abort, request, jsonify
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot.models import (AudioMessage, BeaconEvent, BoxComponent,
@@ -88,6 +89,54 @@ def make_static_tmp_dir():
 @app.route("/")
 def test():
     return 'It Works'
+
+
+@app.route("/cekserver", methods=['POST'])
+def cekserver():
+    conn = create_connection()
+    cursor = conn.cursor()
+
+    content = request.get_json()
+    text = content['text']
+    user_id = '99'
+    name_user = 'cekserver'
+    time = dt.datetime.now()
+    result_message = {}
+
+    if dt.datetime.now() < dt.datetime.now().replace(hour=12, minute=0,
+                                                        second=0) and dt.datetime.now() > dt.datetime.now().replace(
+        hour=0, minute=0, second=0):
+        salam = "Selamat Pagi "
+    elif dt.datetime.now() > dt.datetime.now().replace(hour=12, minute=0,
+                                                        second=0) and dt.datetime.now() < dt.datetime.now().replace(
+        hour=18, minute=0, second=0):
+        salam = "Selamat Siang "
+    elif dt.datetime.now() > dt.datetime.now().replace(hour=18, minute=0, second=0):
+        salam = "Selamat Malam "
+    else:
+        salam = "Assalamualaikum "    
+    
+    decision = decide_process(text)
+    print("DEBUG> pilihan = ", decision)
+    if decision == "informasi":
+        disease_id = 0
+        sinonim, penyakit, messages_info = get_info(text)
+        if len(penyakit) == 0 and len(sinonim) <= 2:
+            # gabung_sinonim = ' '.join(sinonim)
+            messages = check_greeting(sinonim)
+            save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
+        else:
+            messages = salam + name_user
+            for msg in messages_info:
+                messages = messages + "\n\n" + msg[0][0]
+            save_history(user_id, name_user, text, messages, "", disease_id, time, conn)
+        result_message['message'] = messages
+        return jsonify(result_message)
+    else:
+        messages = message_bot(user_id, name_user, salam, text, time, conn)
+        result_message['message'] = messages
+        return jsonify(result_message)
+    delete_menukonsultasi(user_id, conn)
 
 
 @app.route("/callback", methods=['POST'])
