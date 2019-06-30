@@ -303,6 +303,7 @@ def remove_symptoms(idx_word, symp_in_db, sinonim):
     elif jml == 1:
         # remove dari gejala
         max_symp = max(symp_in_db, key=lambda x: x[2])
-        # print("\nDEBUG> @symptoms.remove_symptoms max_symp = ", max_symp)
+        print("\nDEBUG> @symptoms.remove_symptoms max_symp = ", max_symp)
+        rmv_symp = symp_in_db.remove(max_symp)
 
     return symp_in_db
