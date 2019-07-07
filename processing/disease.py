@@ -22,7 +22,7 @@ def get_disease(conn, cf, id):
         else:
             id_somedisease.append(cf_new[i][0])
 
-    print("DEBUG> id_disease = ", id_disease)
+    # print("DEBUG> id_disease = ", id_disease)
 
     # --- AKHIR DARI DEBUG ---
     if id_disease != 0:

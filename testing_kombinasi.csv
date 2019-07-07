@@ -1,0 +1,35 @@
+gejala;kemungkinan penyakit;hasil diagnosa;certainty factor
+muntah,mual;maag;maag;0.26885
+;migrain;;
+;penyakit jantung koroner;;
+;hepatitis A;;
+;demam tifoid;;
+;demam berdarah dengue;;
+;diare akut;;
+mata berair,mata merah;campak;konjungtivitis/mata merah;0.35371
+;konjungtivitis/mata merah;;
+mata berair,bersin-bersin;campak;rintis alergi;0.22865
+;rintis alergi;;
+kelelahan,kehilangan nafsu makan;campak;anemia;0.29136
+;hepatitis A;;
+;anemia;;
+kelelahan,bersin-bersin;campak,infeksi saluran napas akut;anemia;0.22222
+batuk,demam;faringitis;faringitis;0.40136
+;rinosinusitis;;
+;tonsilitis/amandel;;
+nyeri kepala,demam;varisela / cacar air;varisela / cacar air;0.30667
+;hepatitis A;;
+mata berair,mata gatal;konjungtivitis/mata merah;konjungtivitis/mata merah;0.35371
+;rintis alergi;;
+kelelahan,demam;hepatitis A;hepatitis A;0.264
+;infeksi saluran napas akut;;
+sembelit,diare;demam tifoid;irritable bowel syndrome;0.40289
+;irritable bowel syndrome;;
+sakit kepala,demam;diare akut,tonsilitis/amandel;otitis media akut;0.25641
+lemas,penglihatan kabur;diabetes melitus;hipertensi;0.22773
+;hipertensi;;
+mata berair,sensitif terhadap cahaya;campak;keratitis akut;0.38752
+;keratitis akut;;
+kram perut,kehilangan nafsu makan;diare akut;diare akut;0.2
+;konstipasi/sembelit;;
+sakit kepala,demam;diare akut,tonsilitis/amandel;otitis media akut;0.25641

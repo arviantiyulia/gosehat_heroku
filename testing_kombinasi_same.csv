@@ -1,0 +1,49 @@
+muntah,sakit kepala,mual;maag,demam berdarah dengue;maag;0.31124
+muntah,mual;maag,migrain;maag;0.26885
+muntah,mual;maag,penyakit jantung koroner;maag;0.26885
+muntah,mual;maag,hepatitis A;maag;0.26885
+muntah,mual;maag,demam tifoid;maag;0.26885
+muntah,sakit kepala,mual;maag,diare akut;maag;0.31124
+kelelahan,kehilangan nafsu makan;anemia,campak;anemia;0.29136
+kelelahan,sesak napas,pusing;anemia,penyakit jantung koroner;anemia;0.35435
+lemas,detak jantung tak teratur,sesak napas;anemia,hipertensi;anemia;0.3359
+kelelahan,kehilangan nafsu makan,pusing;anemia,hepatitis A;anemia;0.35435
+kehilangan nafsu makan,pusing;anemia,demam tifoid;hepatitis A;0.2272
+muntah,mual;demam berdarah dengue,migrain;maag;0.26885
+muntah,mual;demam berdarah dengue,penyakit jantung koroner;maag;0.26885
+muntah,mual;demam berdarah dengue,hepatitis A;maag;0.26885
+muntah,nyeri otot,mual;demam berdarah dengue,demam tifoid;maag;0.26885
+muntah,sakit kepala,mual;demam berdarah dengue,diare akut;maag;0.31124
+lemas,penglihatan kabur;diabetes melitus,hipertensi;hipertensi;0.22773
+demam,nyeri bagian telinga,gangguan pendengaran;otitis media efusi,otitis media supuratif kronik;otitis media akut;0.53214
+demam,nyeri bagian telinga,riwayat hidung berair sebelumnya,gangguan pendengaran;otitis media efusi,otitis media akut;otitis media akut;0.62811
+mata berair,sensitif terhadap cahaya;campak,keratitis akut;keratitis akut;0.38752
+mata berair,mata merah;campak,konjungtivitis/mata merah;konjungtivitis/mata merah;0.35371
+mata berair,bersin-bersin;campak,rintis alergi;rintis alergi;0.22865
+kelelahan,kehilangan nafsu makan;campak,hepatitis A;anemia;0.29136
+kelelahan,bersin-bersin;campak,infeksi saluran napas akut;anemia;0.22222
+muntah,mual;migrain,penyakit jantung koroner;maag;0.26885
+muntah,mual;migrain,hepatitis A;maag;0.26885
+muntah,mual;migrain,demam tifoid;maag;0.26885
+muntah,mual;migrain,diare akut;maag;0.26885
+batuk,demam;rinosinusitis,faringitis;faringitis;0.40136
+batuk,hidung tersumbat,demam;rinosinusitis,infeksi saluran napas akut;faringitis;0.40136
+batuk,demam;rinosinusitis,tonsilitis/amandel;faringitis;0.40136
+batuk,sakit tenggorokan,demam;faringitis,infeksi saluran napas akut;faringitis;0.54389
+batuk,sakit tenggorokan,demam;faringitis,tonsilitis/amandel;faringitis;0.54389
+keluar cairan selain bening,demam,nyeri bagian telinga,gangguan pendengaran;otitis media supuratif kronik,otitis media akut;otitis media akut;0.59212
+kelelahan,muntah,mual,pusing;penyakit jantung koroner,hepatitis A;penyakit jantung koroner;0.31699
+muntah,mual,pusing;penyakit jantung koroner,demam tifoid;maag;0.26885
+muntah,mual;penyakit jantung koroner,diare akut;maag;0.26885
+nyeri kepala,demam;varisela / cacar air,hepatitis A;varisela / cacar air;0.30667
+mata berair,mata gatal;konjungtivitis/mata merah,rintis alergi;konjungtivitis/mata merah;0.35371
+hidung tersumbat,hidung berair,bersin-bersin;rintis alergi,infeksi saluran napas akut;rintis alergi;0.38915
+kram perut,kehilangan nafsu makan;konstipasi/sembelit,diare akut;diare akut;0.2
+kram perut,sakit perut,kembung;konstipasi/sembelit,irritable bowel syndrome;konstipasi/sembelit;0.28681
+nyeri kepala,muntah,kehilangan nafsu makan,mual,pusing;hepatitis A,demam tifoid;hepatitis A;0.37434
+kelelahan,demam;hepatitis A,infeksi saluran napas akut;hepatitis A;0.264
+muntah,demam,kehilangan nafsu makan,mual;hepatitis A,diare akut;hepatitis A;0.45595
+muntah,kehilangan nafsu makan,mual;demam tifoid,diare akut;hepatitis A;0.31994
+sembelit,diare;demam tifoid,irritable bowel syndrome;irritable bowel syndrome;0.40289
+batuk,sakit tenggorokan,demam;infeksi saluran napas akut,tonsilitis/amandel;faringitis;0.54389
+sakit kepala,demam;diare akut,tonsilitis/amandel;otitis media akut;0.25641

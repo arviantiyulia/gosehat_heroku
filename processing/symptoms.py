@@ -54,7 +54,7 @@ def get_symptoms(conn, inputs):
         else:
             inputs_new.append(input)
 
-    print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
+    # print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
 
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
@@ -303,7 +303,7 @@ def remove_symptoms(idx_word, symp_in_db, sinonim):
     elif jml == 1:
         # remove dari gejala
         max_symp = max(symp_in_db, key=lambda x: x[2])
-        print("\nDEBUG> @symptoms.remove_symptoms max_symp = ", max_symp)
+        # print("\nDEBUG> @symptoms.remove_symptoms max_symp = ", max_symp)
         rmv_symp = symp_in_db.remove(max_symp)
 
     return symp_in_db

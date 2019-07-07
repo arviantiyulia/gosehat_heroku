@@ -46,14 +46,14 @@ def get_gejalapenyakit(penyakit):
 
     for i in id_gejala:
         name_gejala = [item[0].split(" ") for item in i]
-        print("old = ", name_gejala)
+        # print("old = ", name_gejala)
         gj = [element for sub in name_gejala for element in sub]
-        print("gj = ", gj)
+        # print("gj = ", gj)
 
         # print("name gejala = ", i)
         list_gj = ",".join(map("-".join, i))
         list = [list_gj]
-        print("list_gj = ", list)
+        # print("list_gj = ", list)
 
         stopwords = get_stopword('file/konjungsi.csv')
         filters = filtering(gj, stopwords)
@@ -61,9 +61,9 @@ def get_gejalapenyakit(penyakit):
         sinonim = get_sinonim(stems)
         result, cf = get_cf(conn, sinonim)
 
-        print("result = ", cf)
+        # print("result = ", cf)
         data = [result[0][0][1]]
-        print("data = ", data)
+        # print("data = ", data)
         nilai_cf = [cf]
         zips = zip(list, data, nilai_cf)
         newfilepath = 'testing all.csv'
@@ -89,6 +89,8 @@ def combination_samegejala(penyakit):
     for i in range(len(arr_penyakit)):
         list_gj = []
         arr_gejala = []
+        
+        
 
         print("penyakit = ", arr_penyakit[i])
         for j in arr_penyakit[i]:
@@ -105,12 +107,39 @@ def combination_samegejala(penyakit):
                 if list_gj[0][x] == list_gj[1][y]:
                     arr_gejala.append(list_gj[0][x])
 
+
         if len(arr_gejala) >= 2:
+            # baru tambahkan id penyakit
+            new_list_penyakit = []
+            list_penyakit = []
+            id_penyakit = []
+
+            for k in arr_penyakit[i]:
+                cursor.execute(
+                        "SELECT penyakit.nama_penyakit FROM penyakit WHERE id_penyakit = " + str(k))
+                id_penyakit.append(cursor.fetchall())
+
+                # list_penyakit.append([i[0] for i in id_penyakit]) 
+            # print("id penyakit = ", [i[0] for i in id_penyakit])
+            # print("penyakit list = ", flat(list_penyakit))
+
+            for y in id_penyakit:
+                for z in y:
+                    list_penyakit.append(z[0])
+                    new_list_penyakit = ",".join(map("".join, list_penyakit))
+            
+            # print("z = ", new_list_penyakit)
+
+
+            # new_list_penyakit = ",".join(map("".join, flat(list_penyakit)))
+            penyakit_join_list = [new_list_penyakit]
+            # print("new list penyakit = ", penyakit_join_list)
+
             # print(gj)
             name_gejala = [item.split(" ") for item in arr_gejala]
             # print("old = ", arr_gejala)
             gj = [element for sub in name_gejala for element in sub]
-            print("gj = ", gj)
+            # print("gj = ", gj)
 
             stopwords = get_stopword('file/konjungsi.csv')
             filters = filtering(gj, stopwords)
@@ -121,12 +150,14 @@ def combination_samegejala(penyakit):
             list_gj = ",".join(map("".join, arr_gejala))
             list = [list_gj]
 
-            print("result = ", list)
+            # print("result = ", list)
             data = [result[0][0][1]]
-            print("data = ", data)
+            # print("data = ", data)
             nilai_cf = [cf]
-            zips = zip(list, data, nilai_cf)
-            newfilepath = 'testing.csv'
+            # print("nilai cf = ", nilai_cf)
+            # print("array penyakit ke-i = ", arr_penyakit[i])
+            zips = zip(list, penyakit_join_list, data, nilai_cf)
+            newfilepath = 'testing_kombinasi_same.csv'
 
             with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
                 writer = csv.writer(f, delimiter=";")
@@ -156,7 +187,7 @@ def combination_other(penyakit):
 
             list_gj.append([i[0] for i in id_gejala])  # convert list of tuple to list
 
-        print("penyakit = ", list_gj)
+        # print("penyakit = ", arr_penyakit[i])
         # compare list 1 dan list 2
         for x in range(len(list_gj[0])):
             for y in range(len(list_gj[1])):
@@ -168,13 +199,47 @@ def combination_other(penyakit):
 
             list_othergj = []
 
+            # baru tambahkan id penyakit
+            new_list_penyakit = []
+            list_penyakit = []
+            id_penyakit = []
+
+            for k in arr_penyakit[i]:
+                cursor.execute(
+                        "SELECT penyakit.nama_penyakit FROM penyakit WHERE id_penyakit = " + str(k))
+                id_penyakit.append(cursor.fetchall())
+
+                # list_penyakit.append([i[0] for i in id_penyakit]) 
+            # print("id penyakit = ", [i[0] for i in id_penyakit])
+            # print("penyakit list = ", flat(list_penyakit))
+
+            for l in id_penyakit:
+                for j in l:
+                    list_penyakit.append(j[0])
+                    new_list_penyakit = ",".join(map("".join, list_penyakit))
+            
+            # print("z = ", new_list_penyakit)
+
+
+            # new_list_penyakit = ",".join(map("".join, flat(list_penyakit)))
+            penyakit_join_list = [new_list_penyakit]
+            # print("new list penyakit = ", penyakit_join_list)
+
+            gejala_same_join = ",".join(map("".join, arr_gejala))
+            gejala_same_list = [gejala_same_join]
+
+            # print("gejala same list = ", gejala_same_list)
+
             for y in arr_penyakit[i]:
+                
                 cursor.execute(
                     "SELECT gejala.nama_gejala FROM gejala_penyakit JOIN gejala ON gejala_penyakit.id_gejala = gejala.id_gejala WHERE gejala_penyakit.id_penyakit = " + str(y))
                 other_gejala = cursor.fetchall()
 
                 list_othergj.append([i[0] for i in other_gejala])
+            
             # print("list_other gejala = ", list_othergj)
+
             for gj in list_othergj:
                 arr_gejalanew = []
                 arr_othergejala = [text for text in gj if text not in arr_gejala]
@@ -188,7 +253,7 @@ def combination_other(penyakit):
 
                     split_gj = [item.split(" ") for item in list_comb]
                     arr_gj = [element for sub in split_gj for element in sub]
-                    print("ag = ", arr_gj)
+                    # print("gejala gabungan = ", list_comb)
 
                     stopwords = get_stopword('file/konjungsi.csv')
                     filters = filtering(arr_gj, stopwords)
@@ -199,12 +264,12 @@ def combination_other(penyakit):
                     join_gj = ",".join(map("".join, list_comb))
                     list_gj = [join_gj]
 
-                    print("result = ", list_gj)
+                    # print("result = ", list_gj)
                     data = [result[0][0][1]]
-                    print("data = ", data)
+                    # print("data = ", data)
                     nilai_cf = [cf]
-                    zips = zip(list_gj, data, nilai_cf)
-                    newfilepath = 'testing.csv'
+                    zips = zip(gejala_same_list, list_gj, penyakit_join_list, data, nilai_cf)
+                    newfilepath = 'testing_kombinasiother2.csv'
                     with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
                         writer = csv.writer(f, delimiter=";")
                         for row in zips:
@@ -217,24 +282,24 @@ def combination_other(penyakit):
 def remove_duplicate():
 
     data = []
-    with open('testing.csv', 'r') as csvfile:
+    with open('testing_kombinasiother2.csv', 'r') as csvfile:
         read_data = csv.reader(csvfile, delimiter=';')
         for r in read_data:
             data.append(r)
-    print("data lama = ", data)
+    # print("data lama = ", data)
 
     for i in data:
-        string_gj = i[0].split(',')
+        string_gj = i[1].split(',')
         sort_gj = sorted(string_gj)
 
-        i[0] = sort_gj
+        i[1] = sort_gj
 
-        join_gj = ",".join(map("".join, i[0]))
-        i[0] = join_gj
+        join_gj = ",".join(map("".join, i[1]))
+        i[1] = join_gj
 
     data2 = set(map(tuple,data))
 
-    newfilepath = 'duplicate.csv'
+    newfilepath = 'duplicate_newnew.csv'
     with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
         writer = csv.writer(f, delimiter=";")
         for row in data2:
@@ -246,9 +311,9 @@ def remove_duplicate():
     return data
 
 if __name__ == "__main__":
-    get_gejala()
+    # get_gejala()
     penyakit = get_penyakit()
     # remove_duplicate()
-    get_gejalapenyakit(penyakit)
-    # combination_samegejala(penyakit)
+    # get_gejalapenyakit(penyakit)
+    combination_samegejala(penyakit)
     # combination_other(penyakit)
