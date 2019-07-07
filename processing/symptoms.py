@@ -54,7 +54,7 @@ def get_symptoms(conn, inputs):
         else:
             inputs_new.append(input)
 
-    # print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
+    print("DEBUG> Input baru @symptoms.get_symptoms =  ", inputs_new)
 
 
     # looping untuk mengambil data yang sesuai di database dengan inputan
