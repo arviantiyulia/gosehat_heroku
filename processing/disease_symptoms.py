@@ -8,7 +8,6 @@ def get_id_disease(conn, symptoms):
     penyakit_list = get_penyakit_list(symptoms, cursor)
     all_gejala_penyakit_list = get_all_gejala_penyakit(penyakit_list, cursor)
     normalized_data = normalize_weight(gejala_penyekit_selected, all_gejala_penyakit_list)
-
     return normalized_data, uniquekeys
 
 def get_penyakit_list(symptoms, cursor):

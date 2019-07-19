@@ -44,6 +44,7 @@ def get_gejalapenyakit(penyakit):
                 y[0]))
         id_gejala.append(cursor.fetchall())
 
+    print("id gejala = ",id_gejala)
     for i in id_gejala:
         name_gejala = [item[0].split(" ") for item in i]
         # print("old = ", name_gejala)
@@ -66,7 +67,7 @@ def get_gejalapenyakit(penyakit):
         # print("data = ", data)
         nilai_cf = [cf]
         zips = zip(list, data, nilai_cf)
-        newfilepath = 'testing all.csv'
+        newfilepath = 'testing all new.csv'
 
         with open(newfilepath, 'a', encoding="ISO-8859-1", newline='') as f:
             writer = csv.writer(f, delimiter=";")
@@ -314,6 +315,6 @@ if __name__ == "__main__":
     # get_gejala()
     penyakit = get_penyakit()
     # remove_duplicate()
-    # get_gejalapenyakit(penyakit)
-    combination_samegejala(penyakit)
+    get_gejalapenyakit(penyakit)
+    # combination_samegejala(penyakit)
     # combination_other(penyakit)

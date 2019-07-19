@@ -1,0 +1,34 @@
+muntah,sakit kepala,mudah merasa kenyang setelah makan makanan berukuran normal,bersendawa,kembung,perih di ulu hati,rasa asam di mulut,mual,riwayat makan tidak teratur/makan pedas/asam;maag;0.65565
+kelelahan,lemas,detak jantung tak teratur,sesak napas,kulit pucat,kehilangan nafsu makan,pusing;anemia;0.66651
+demam tinggi,lemas,muntah,sakit kepala,nyeri otot,demam turun pada hari keempat tanpa obat,nyeri untuk melirik,bercak merah dan tidak gatal pada kulit,mual;demam berdarah dengue;0.65622
+kesemutan,lemas,penglihatan kabur,kencing lebih sering pada malam hari,mudah haus,mudah lapar,penurunan berat badan;diabetes melitus;0.66352
+hidung tersumbat,nyeri belakang salah satu mata,salah satu mata berair,gejala muncul pada malam hari,nyeri tiba-tiba dalam durasi detik,mata merah;cluster type headache;0.6656
+rasa penuh di bagian dalam telinga,tidak bisa tidur / insomnia,demam,nyeri bagian telinga,riwayat hidung berair sebelumnya,gangguan pendengaran;otitis media efusi;0.63398
+demam tinggi,mata berair,ruam berwarna merah kecoklatan yang diawali dari sekitar telinga,bercak kecil berwarna putih keabu-abuan di mulut dan tenggorokan,kelelahan,sensitif terhadap cahaya,kehilangan nafsu makan,bersin-bersin,mata merah;campak;0.58696
+sensitif terhadap cahaya,muntah,sensitif terhadap suara,dipengaruhi oleh siklus menstruasi atau makanan tertentu (kopi,sakit kepala sebagian kiri atau kanan,mual;migrain;0.66929
+adanya tekanan atau stress,kepala seperti diikat di seluruh bagian,leher dan pundak kaku,sakit kepala berlangsung selama berjam-jam;tension type headache;0.68486
+hidung tersumbat,tercium bau tidak sedap jika menunduk,keluar lendir dari hidung,nyeri wajah,tidak bisa atau kurang bisa mencium bau,demam,batuk;rinosinusitis;0.66245
+sakit tenggorokan,suara serak,kesulitan menelan,demam,batuk;faringitis;0.67421
+kesemutan,kurang sensitif terhadap sentuhan,kemampuan tangan atau jari berkurang,nyeri telapak tangan,membaik dengan mengibaskan tangan,ibu jari, telunjuk, jari manis nyeri / kesemutan;sindrom terowongan karpal;0.59805
+keluar cairan berulang kali,keluar cairan selain bening,demam,nyeri bagian telinga,gangguan pendengaran,gangguan keseimbangan;otitis media supuratif kronik;0.66811
+kelelahan,muntah,sesak napas,nyeri dada kiri luas dan tiba-tiba,riwayat kolesterol tinggi / kencing manis,mual,pusing;penyakit jantung koroner;0.66632
+pusing berputar dipengaruhi posisi kepala,telinga berdenging,sensasi merasa akan terjatuh,mata berkunang,telinga terasa penuh,berkeringat dingin,mual;vertigo;0.66061
+berhenti dengan menekan cuping hidung,hidung nyeri,keluar darah dari lubang hidung,demam;epistaksis/mimisan;0.69638
+mata berair,mata nyeri,sensitif terhadap cahaya,penglihatan berkurang,riwayat kelilipan / trauma pada mata (ketusuk),iritasi pada mata;keratitis akut;0.6699
+lemas,nyeri kepala,kulit gatal,bisul berisi air,demam;varisela / cacar air;0.68363
+mata berair,mata gatal,adanya kotoran mata di pagi hari,kelopak mata sering menempel pada pagi hari,riwayat kontak positif konjungtivitis,mata merah;konjungtivitis/mata merah;0.66753
+mata berair,hidung tersumbat,hidung berair,mata gatal,mata bengkak,bersin-bersin,hidung gatal,dipengaruhi oleh makanan / keadaan tertentu (dingin,debu);rintis alergi;0.52576
+kram perut,sakit perut,mengeden saat buang air besar,tinja keras,jarang buang air besar dari intensitas biasanya,kehilangan nafsu makan,kembung;konstipasi/sembelit;0.66445
+riwayat konsumsi obat antihipertensi,lemas,penglihatan kabur,detak jantung tak teratur,sesak napas,sakit kepala belakang;hipertensi;0.6725
+kelelahan,nyeri kepala,muntah,kulit kekuningan,demam,kehilangan nafsu makan,mual,pusing;hepatitis A;0.63161
+nyeri kepala,muntah,sembelit,nyeri otot,demam tinggi di malam hari,lidah tertutup selaput putih kotor,kehilangan nafsu makan,mual,diare,pusing;demam tifoid;0.63461
+sesak napas,nyeri dada,penurunan berat badan,dahak,batuk darah,berkeringat di malam hari,batuk;tuberkulosis;0.58951
+liang telinga gatal,liang telinga merah dan nyeri,keluar cairan bening yang tidak berbau,benjolan kecil saluran telinga,demam,rasa sakit jika daun telinga ditarik,mengorek telinga terlalu sering;otitis eksterna;0.60043
+hidung tersumbat,hidung berair,sakit tenggorokan,tubuh terasa sakit,kelelahan,demam,bersin-bersin,batuk,paru-paru terhambat;infeksi saluran napas akut;0.65724
+keluar cairan selain bening,demam,nyeri bagian telinga,riwayat hidung berair sebelumnya,gangguan pendengaran;otitis media akut;0.67579
+feses encer,buang air besar lebih dari 2 kali sehari,kram perut,muntah,dehidrasi,sakit kepala,demam,kehilangan nafsu makan,mual;diare akut;0.65698
+sakit tenggorokan,sakit kepala,sakit saat menelan,napas bau,pembengkakan kelenjar getah bening di leher,bintik-bintik pada amandel,demam,batuk;tonsilitis/amandel;0.65812
+kram perut,sakit perut,sembelit,adanya tekanan atau stress,kembung,diare;irritable bowel syndrome;0.67068
+nyeri sendi,sendi pangkal ibu jari kaki bengkak dan merah,riwayat asam urat tinggi,nyeri memberat untuk aktivitas setelah istirahat,benjolan bawah kulit,demam;artritis gout/asam urat;0.55415
+mata nyeri,kelumpuhan pada salah satu sisi wajah,sensitif terhadap suara,kelopak mata sisi yang lumpuh tidak tertutup sempurna,gangguan mengecap di satu sisi,rasa tebal pada pipi atau mulut sisi yang lumpuh,garis keriput dan kening hilang,terkena angin di wajah malam hari;bells balsy;0.63696
+keluarnya cairan dari vagina,cairan selain warna putih,cairan berbau tidak sedap,rasa gatal di vagina bagian luar,rasa panas di vagina;keputihan abnormal;0.67373
